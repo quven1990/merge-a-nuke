@@ -1,0 +1,41 @@
+name: Purge Cloudflare cache after deploy
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: cf-cache-purge
+  cancel-in-progress: false
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Wait for Cloudflare Pages build
+        run: sleep 90
+
+      - name: Purge entire zone cache
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
+        run: |
+          if [ -z "$CF_API_TOKEN" ] || [ -z "$CF_ZONE_ID" ]; then
+            echo "::error::CF_API_TOKEN or CF_ZONE_ID is not set in repository secrets."
+            exit 1
+          fi
+
+          response=$(curl -fsSL -X POST \
+            "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}')
+
+          echo "$response"
+          echo "$response" | grep -q '"success":true' || {
+            echo "::error::Cloudflare purge failed"
+            exit 1
+          }
+          echo "Cache purged successfully."
