@@ -27,15 +27,23 @@ jobs:
             exit 1
           fi
 
-          response=$(curl -fsSL -X POST \
+          http_code=$(curl -sS -o /tmp/cf-purge-response.json -w "%{http_code}" -X POST \
             "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
             -H "Authorization: Bearer ${CF_API_TOKEN}" \
             -H "Content-Type: application/json" \
             --data '{"purge_everything":true}')
 
-          echo "$response"
-          echo "$response" | grep -q '"success":true' || {
-            echo "::error::Cloudflare purge failed"
+          echo "HTTP ${http_code}"
+          cat /tmp/cf-purge-response.json
+          echo ""
+
+          if [ "$http_code" != "200" ]; then
+            echo "::error::Cloudflare purge failed with HTTP ${http_code}. Check API token permissions and Zone ID."
+            exit 1
+          fi
+
+          grep -q '"success":true' /tmp/cf-purge-response.json || {
+            echo "::error::Cloudflare API returned success=false"
             exit 1
           }
           echo "Cache purged successfully."
