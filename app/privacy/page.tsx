@@ -56,10 +56,11 @@ export default function PrivacyPage() {
                     </li>
                     <li>
                       <strong className="text-foreground">Cookies:</strong>{" "}
-                      We do not set first-party cookies for tracking. Cloudflare
-                      may use cookies or similar technologies for security and
-                      bot protection. If we add analytics later, we will update
-                      this policy before or when that service goes live.
+                      We do not set first-party cookies for advertising.
+                      Plausible Analytics does not use cookies. Microsoft Clarity
+                      may use cookies and similar technologies for session
+                      analytics. Cloudflare may use cookies for security and bot
+                      protection.
                     </li>
                   </ul>
                 </>
@@ -105,12 +106,33 @@ export default function PrivacyPage() {
                     .
                   </li>
                   <li>
-                    <strong className="text-foreground">
-                      Analytics [planned]
-                    </strong>{" "}
-                    — we may add privacy-friendly analytics (for example
-                    Cloudflare Web Analytics). We will disclose the provider here
-                    before enabling it.
+                    <strong className="text-foreground">Microsoft Clarity</strong>{" "}
+                    — session analytics, heatmaps, and interaction recordings to
+                    help us improve the site. Clarity may collect page views,
+                    clicks, scroll behavior, and device/browser information. See{" "}
+                    <a
+                      href="https://privacy.microsoft.com/en-us/privacystatement"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Microsoft Privacy Statement
+                    </a>
+                    .
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Plausible Analytics</strong>{" "}
+                    — privacy-friendly, cookieless traffic measurement. Plausible
+                    collects page views and basic device/browser information in
+                    aggregate. It does not use cookies and does not track you
+                    across other websites. See{" "}
+                    <a
+                      href="https://plausible.io/data-policy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Plausible&apos;s Data Policy
+                    </a>
+                    .
                   </li>
                 </ul>
               ),

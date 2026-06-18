@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 
+import { ClarityAnalytics } from '@/components/clarity-analytics'
+import { PlausibleAnalytics } from '@/components/plausible-analytics'
 import { SEO_PAGES } from '@/lib/seo-pages'
 import { getSiteUrl, SITE_NAME } from '@/lib/site'
 import './globals.css'
@@ -83,7 +85,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} bg-background`}
     >
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <PlausibleAnalytics />
+        <ClarityAnalytics />
+        {children}
+      </body>
     </html>
   )
 }
