@@ -3,19 +3,78 @@ name: Purge Cloudflare cache after deploy
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 concurrency:
   group: cf-cache-purge
   cancel-in-progress: false
 
+env:
+  CF_PAGES_PROJECT: merge-a-nuke-5nm
+
 jobs:
   purge:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
 
     steps:
-      - name: Wait for Cloudflare Pages build
-        run: sleep 90
+      - name: Wait for Cloudflare Pages production deployment
+        if: github.event_name == 'push'
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          GIT_COMMIT: ${{ github.sha }}
+        run: |
+          if [ -z "$CF_API_TOKEN" ] || [ -z "$CF_ACCOUNT_ID" ]; then
+            echo "::error::CF_API_TOKEN or CF_ACCOUNT_ID is not set in repository secrets."
+            exit 1
+          fi
+
+          echo "Waiting for Pages deployment of ${GIT_COMMIT}..."
+
+          for attempt in $(seq 1 90); do
+            response=$(curl -sS \
+              "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/pages/projects/${CF_PAGES_PROJECT}/deployments?env=production&per_page=15" \
+              -H "Authorization: Bearer ${CF_API_TOKEN}")
+
+            if ! echo "$response" | jq -e '.success == true' >/dev/null; then
+              echo "Cloudflare API error:"
+              echo "$response" | jq .
+              exit 1
+            fi
+
+            deployment=$(echo "$response" | jq -c --arg sha "$GIT_COMMIT" '
+              .result[]
+              | select(.deployment_trigger.metadata.commit_hash == $sha)
+              | {id, stage: .latest_stage.name, status: .latest_stage.status}
+            ' | head -1)
+
+            if [ -z "$deployment" ]; then
+              echo "Attempt ${attempt}/90: deployment not found yet for ${GIT_COMMIT}"
+              sleep 10
+              continue
+            fi
+
+            stage=$(echo "$deployment" | jq -r '.stage')
+            status=$(echo "$deployment" | jq -r '.status')
+            dep_id=$(echo "$deployment" | jq -r '.id')
+            echo "Attempt ${attempt}/90: deployment ${dep_id} stage=${stage} status=${status}"
+
+            if [ "$stage" = "deploy" ] && [ "$status" = "success" ]; then
+              echo "Production deployment is live."
+              exit 0
+            fi
+
+            if [ "$status" = "failure" ] || [ "$status" = "canceled" ]; then
+              echo "::error::Pages deployment failed (${status})"
+              exit 1
+            fi
+
+            sleep 10
+          done
+
+          echo "::error::Timed out waiting for Cloudflare Pages deployment"
+          exit 1
 
       - name: Purge entire zone cache
         env:
