@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ExternalLink, Gamepad2, Radiation, Users } from "lucide-react"
 
+import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
 import { NAV_ITEMS } from "@/lib/navigation"
 import { ROBLOX_GAME_ABOUT_URL, ROBLOX_GAME_URL } from "@/lib/game-links"
 import { CONTACT_EMAIL } from "@/lib/site-contact"
@@ -61,8 +62,9 @@ export function SiteFooter() {
             </p>
             <ul className="mt-4 space-y-2">
               <li>
-                <a
+                <TrackedOutboundLink
                   href={ROBLOX_GAME_URL}
+                  placement="footer"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -70,11 +72,12 @@ export function SiteFooter() {
                   <Gamepad2 className="size-4 shrink-0" aria-hidden="true" />
                   Play on Roblox
                   <ExternalLink className="size-3 opacity-60" aria-hidden="true" />
-                </a>
+                </TrackedOutboundLink>
               </li>
               <li>
-                <a
+                <TrackedOutboundLink
                   href={ROBLOX_GAME_ABOUT_URL}
+                  placement="footer"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -82,7 +85,7 @@ export function SiteFooter() {
                   <Users className="size-4 shrink-0" aria-hidden="true" />
                   Group &amp; Discord
                   <ExternalLink className="size-3 opacity-60" aria-hidden="true" />
-                </a>
+                </TrackedOutboundLink>
               </li>
             </ul>
           </div>

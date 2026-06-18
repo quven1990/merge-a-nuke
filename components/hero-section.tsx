@@ -1,4 +1,3 @@
-import Link from "next/link"
 import {
   Atom,
   ArrowUpRight,
@@ -12,8 +11,8 @@ import {
   TrendingUp,
 } from "lucide-react"
 
+import { TrackedCtaLink } from "@/components/tracked-cta-link"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { WikiIllustration } from "@/components/wiki-illustration"
 import { cn } from "@/lib/utils"
 
@@ -152,32 +151,33 @@ export function HeroSection() {
           </p>
 
           <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
-            <Button
-              size="lg"
-              nativeButton={false}
-              render={<Link href="/codes" />}
-              className="h-12 w-full rounded-xl px-6 text-sm font-bold bg-primary text-primary-foreground shadow-md hover:bg-primary/90 sm:w-auto"
+            <TrackedCtaLink
+              href="/codes"
+              label="View Working Codes"
+              placement="hero_primary"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 text-sm font-bold text-primary-foreground shadow-md hover:bg-primary/90 sm:w-auto"
             >
               <Atom className="size-4" aria-hidden="true" />
               View Working Codes
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              nativeButton={false}
-              render={<Link href="/beginner-guide" />}
-              className="h-12 w-full rounded-xl border-primary/40 px-6 text-sm font-bold text-foreground hover:bg-primary/10 sm:w-auto"
+            </TrackedCtaLink>
+            <TrackedCtaLink
+              href="/beginner-guide"
+              label="Start Beginner Guide"
+              placement="hero_primary"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-primary/40 bg-transparent px-6 text-sm font-bold text-foreground hover:bg-primary/10 sm:w-auto"
             >
               <Sparkles className="size-4" aria-hidden="true" />
               Start Beginner Guide
-            </Button>
+            </TrackedCtaLink>
           </div>
 
           <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10">
             {INFO_CARDS.map((card) => (
-              <Link
+              <TrackedCtaLink
                 key={card.title}
                 href={card.href}
+                label={card.title}
+                placement="hero_card"
                 className={QUICK_LINK_CLASS}
                 aria-label={`${card.title}: ${card.note}`}
               >
@@ -195,7 +195,7 @@ export function HeroSection() {
                   className="absolute top-3 right-3 size-3.5 text-muted-foreground/50 transition-colors group-hover:text-primary"
                   aria-hidden="true"
                 />
-              </Link>
+              </TrackedCtaLink>
             ))}
           </div>
         </div>
@@ -221,9 +221,11 @@ export function HeroSection() {
 
             <div className="mt-4 grid grid-cols-2 gap-3">
               {GAME_LOOP.map((item) => (
-                <Link
+                <TrackedCtaLink
                   key={item.title}
                   href={item.href}
+                  label={item.title}
+                  placement="hero_loop"
                   className={cn(
                     "group relative rounded-2xl border p-3 transition-all hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card",
                     item.color,
@@ -242,7 +244,7 @@ export function HeroSection() {
                     className="absolute top-2.5 right-2.5 size-3 text-muted-foreground/40 transition-colors group-hover:text-foreground"
                     aria-hidden="true"
                   />
-                </Link>
+                </TrackedCtaLink>
               ))}
             </div>
 

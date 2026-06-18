@@ -5,9 +5,11 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Atom, Menu, Radiation, X } from "lucide-react"
 
+import { TrackedCtaLink } from "@/components/tracked-cta-link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { NAV_ITEMS } from "@/lib/navigation"
+import { trackPlausible } from "@/lib/analytics"
 import { cn } from "@/lib/utils"
 
 export function SiteHeader() {
@@ -81,21 +83,29 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button
-            nativeButton={false}
-            render={<Link href="/codes" />}
-            className="hidden rounded-xl bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 sm:inline-flex"
+          <TrackedCtaLink
+            href="/codes"
+            label="Check Codes"
+            placement="header"
+            className="hidden items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 sm:inline-flex"
           >
             <Atom className="size-4" aria-hidden="true" />
             Check Codes
-          </Button>
+          </TrackedCtaLink>
           <Button
             variant="outline"
             size="icon"
             className="lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => {
+              setOpen((value) => {
+                if (!value) {
+                  trackPlausible("nav_open", { page: pathname })
+                }
+                return !value
+              })
+            }}
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </Button>
@@ -126,14 +136,15 @@ export function SiteHeader() {
                 </Link>
               )
             })}
-            <Button
-              nativeButton={false}
-              render={<Link href="/codes" />}
-              className="col-span-2 mt-2 bg-primary text-primary-foreground hover:bg-primary/90"
+            <TrackedCtaLink
+              href="/codes"
+              label="Check Codes"
+              placement="header_mobile"
+              className="col-span-2 mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
             >
               <Atom className="size-4" aria-hidden="true" />
               Check Codes
-            </Button>
+            </TrackedCtaLink>
           </nav>
         </div>
       )}

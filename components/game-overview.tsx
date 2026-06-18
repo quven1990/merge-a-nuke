@@ -1,4 +1,3 @@
-import Link from "next/link"
 import {
   Calendar,
   ExternalLink,
@@ -7,6 +6,8 @@ import {
   Users,
 } from "lucide-react"
 
+import { TrackedCtaLink } from "@/components/tracked-cta-link"
+import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
 import { GAME_FACTS, ROBLOX_GAME_ABOUT_URL, ROBLOX_GAME_URL } from "@/lib/game-links"
 
 export function GameOverview() {
@@ -61,8 +62,9 @@ export function GameOverview() {
           </p>
           <ul className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <li>
-              <a
+              <TrackedOutboundLink
                 href={ROBLOX_GAME_URL}
+                placement="game_overview"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl border border-border/70 bg-card px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/50 hover:text-primary"
@@ -70,11 +72,12 @@ export function GameOverview() {
                 <Gamepad2 className="size-4 shrink-0" aria-hidden="true" />
                 Play on Roblox
                 <ExternalLink className="size-3.5 opacity-60" aria-hidden="true" />
-              </a>
+              </TrackedOutboundLink>
             </li>
             <li>
-              <a
+              <TrackedOutboundLink
                 href={ROBLOX_GAME_ABOUT_URL}
+                placement="game_overview"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl border border-border/70 bg-card px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/50 hover:text-primary"
@@ -82,16 +85,18 @@ export function GameOverview() {
                 <Users className="size-4 shrink-0" aria-hidden="true" />
                 Group &amp; Discord
                 <ExternalLink className="size-3.5 opacity-60" aria-hidden="true" />
-              </a>
+              </TrackedOutboundLink>
             </li>
             <li>
-              <Link
+              <TrackedCtaLink
                 href="/codes"
+                label="Working codes list"
+                placement="game_overview"
                 className="inline-flex items-center gap-2 rounded-xl border border-border/70 bg-card px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/50 hover:text-primary"
               >
                 <Calendar className="size-4 shrink-0" aria-hidden="true" />
                 Working codes list
-              </Link>
+              </TrackedCtaLink>
             </li>
           </ul>
         </div>

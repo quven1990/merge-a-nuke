@@ -1,4 +1,3 @@
-import Link from "next/link"
 import {
   Coins,
   Combine,
@@ -12,6 +11,7 @@ import {
   Trophy,
 } from "lucide-react"
 
+import { TrackedCtaLink } from "@/components/tracked-cta-link"
 import { SectionHeading } from "@/components/hud"
 
 type Guide = {
@@ -110,9 +110,11 @@ export function GuideCards() {
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {GUIDES.map((guide, i) => (
-            <Link
+            <TrackedCtaLink
               key={guide.title}
               href={guide.href}
+              label={guide.title}
+              placement="guide_cards"
               className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-card/70 p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-primary/50 hover:shadow-md"
             >
               <span
@@ -137,7 +139,7 @@ export function GuideCards() {
                 <span className="size-1.5 rounded-full bg-muted-foreground/40 transition-colors group-hover:bg-primary" />
                 Open guide →
               </span>
-            </Link>
+            </TrackedCtaLink>
           ))}
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { usePathname } from "next/navigation"
 import {
   AlertTriangle,
   Check,
@@ -16,6 +17,7 @@ import { SectionHeading } from "@/components/hud"
 import { Button } from "@/components/ui/button"
 import { WikiIllustration } from "@/components/wiki-illustration"
 import { ACTIVE_CODES } from "@/lib/codes-data"
+import { toPlausibleCodeName, trackPlausible } from "@/lib/analytics"
 
 type CodeEntry = (typeof ACTIVE_CODES)[number]
 
@@ -45,12 +47,21 @@ const REDEEM_STEPS = [
 ] as const
 
 export function CodesSection() {
+  const pathname = usePathname()
   const [copied, setCopied] = useState<string | null>(null)
 
   const copy = async (code: string) => {
     try {
       await navigator.clipboard.writeText(code)
       setCopied(code)
+      const codeName = toPlausibleCodeName(code)
+      if (codeName) {
+        trackPlausible("copy_code", {
+          code: codeName,
+          page: pathname,
+          source: "codes_table",
+        })
+      }
       setTimeout(() => setCopied((c) => (c === code ? null : c)), 1500)
     } catch {
       setCopied(null)
