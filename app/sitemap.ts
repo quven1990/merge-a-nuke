@@ -3,6 +3,8 @@ import type { MetadataRoute } from "next"
 import { NAV_ITEMS } from "@/lib/navigation"
 import { getSiteUrl } from "@/lib/site"
 
+export const dynamic = "force-static"
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl()
   const lastModified = new Date("2026-06-18")
