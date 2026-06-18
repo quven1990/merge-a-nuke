@@ -57,10 +57,10 @@ export default function PrivacyPage() {
                     <li>
                       <strong className="text-foreground">Cookies:</strong>{" "}
                       We do not set first-party cookies for advertising.
-                      Plausible Analytics does not use cookies. Microsoft Clarity
-                      may use cookies and similar technologies for session
-                      analytics. Cloudflare may use cookies for security and bot
-                      protection.
+                      Plausible Analytics does not use cookies. Google Analytics
+                      and Microsoft Clarity may use cookies and similar
+                      technologies for analytics. Cloudflare may use cookies for
+                      security and bot protection.
                     </li>
                   </ul>
                 </>
@@ -102,6 +102,21 @@ export default function PrivacyPage() {
                       rel="noopener noreferrer"
                     >
                       Roblox Privacy and Cookie Policy
+                    </a>
+                    .
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Google Analytics 4</strong>{" "}
+                    — website traffic and usage measurement. Google may collect
+                    page views, referral sources, device/browser information,
+                    and general interaction data through cookies (such as{" "}
+                    <code className="text-foreground">_ga</code>). See{" "}
+                    <a
+                      href="https://policies.google.com/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Google&apos;s Privacy Policy
                     </a>
                     .
                   </li>

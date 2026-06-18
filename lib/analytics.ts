@@ -10,3 +10,9 @@ export const CLARITY_PROJECT_ID =
 
 export const CLARITY_ENABLED =
   process.env.NODE_ENV === "production" && Boolean(CLARITY_PROJECT_ID)
+
+export const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_ID ?? "G-PPJ67VV8R4"
+
+export const GA_ENABLED =
+  process.env.NODE_ENV === "production" && Boolean(GA_MEASUREMENT_ID)
