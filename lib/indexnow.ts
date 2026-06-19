@@ -17,3 +17,27 @@ export function getIndexNowUrlList(siteUrl = SITE_URL): string[] {
     ...legalPaths.map((path) => `${siteUrl}${path}`),
   ]
 }
+
+export type IndexNowPayload = {
+  host: string
+  key: string
+  keyLocation: string
+  urlList: string[]
+}
+
+/** Bulk submission body per IndexNow / Bing Webmaster docs. */
+export function buildIndexNowPayload(siteUrl = SITE_URL): IndexNowPayload {
+  const host = siteUrl.replace(/^https?:\/\//, "")
+
+  return {
+    host,
+    key: INDEXNOW_KEY,
+    keyLocation: getIndexNowKeyLocation(siteUrl),
+    urlList: getIndexNowUrlList(siteUrl),
+  }
+}
+
+export const INDEXNOW_ENDPOINTS = [
+  "https://api.indexnow.org/indexnow",
+  "https://www.bing.com/indexnow",
+] as const
