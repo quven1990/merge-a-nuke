@@ -85,6 +85,10 @@ jobs:
           }
           echo "Cache purged successfully."
 
+      - name: Checkout repository
+        if: github.event_name == 'workflow_dispatch' || steps.verify.outputs.should_purge == 'true'
+        uses: actions/checkout@v4
+
       - name: Submit URLs to IndexNow
         if: github.event_name == 'workflow_dispatch' || steps.verify.outputs.should_purge == 'true'
         run: |
