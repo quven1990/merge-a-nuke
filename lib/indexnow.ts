@@ -1,7 +1,7 @@
 import { NAV_ITEMS } from "@/lib/navigation"
 import { SITE_URL } from "@/lib/site"
 
-export const INDEXNOW_KEY = "cf0515852563426a84e29c142842e3bb"
+export const INDEXNOW_KEY = "0db64cc9fdae45179c18788b5cc458d2"
 
 export function getIndexNowKeyLocation(siteUrl = SITE_URL) {
   return `${siteUrl}/${INDEXNOW_KEY}.txt`

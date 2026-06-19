@@ -2,7 +2,7 @@
 set -euo pipefail
 
 HOST="${INDEXNOW_HOST:-mergeanuke.site}"
-KEY="${INDEXNOW_KEY:-cf0515852563426a84e29c142842e3bb}"
+KEY="${INDEXNOW_KEY:-0db64cc9fdae45179c18788b5cc458d2}"
 SITE_URL="https://${HOST}"
 KEY_LOCATION="${SITE_URL}/${KEY}.txt"
 SITEMAP_URL="${SITE_URL}/sitemap.xml"
