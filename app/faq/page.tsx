@@ -21,7 +21,7 @@ export default function FaqPage() {
           description={page.intro}
           tldr={page.tldr}
         />
-        <FaqSection />
+        <FaqSection showSisterWikis />
         <RelatedGuides current={page.path} />
       </main>
     </SiteShell>

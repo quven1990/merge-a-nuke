@@ -6,9 +6,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { SisterWikisSection } from "@/components/sister-wikis-section"
 import { FAQS } from "@/lib/faqs"
 
-export function FaqSection() {
+export function FaqSection({ showSisterWikis = false }: { showSisterWikis?: boolean }) {
   return (
     <section
       id="faq"
@@ -42,6 +43,7 @@ export function FaqSection() {
             ))}
           </Accordion>
         </div>
+        {showSisterWikis ? <SisterWikisSection /> : null}
       </div>
     </section>
   )
