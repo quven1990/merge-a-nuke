@@ -84,3 +84,9 @@ jobs:
             exit 1
           }
           echo "Cache purged successfully."
+
+      - name: Submit URLs to IndexNow
+        if: github.event_name == 'workflow_dispatch' || steps.verify.outputs.should_purge == 'true'
+        run: |
+          chmod +x scripts/submit-indexnow.sh
+          bash scripts/submit-indexnow.sh
