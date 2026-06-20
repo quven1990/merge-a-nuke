@@ -1,4 +1,4 @@
-import type { LucideIcon } from "lucide-react"
+import type { ComponentType } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -20,7 +20,10 @@ export function SectionHeading({
   title,
   tag,
 }: {
-  icon: LucideIcon
+  icon: ComponentType<{
+    className?: string
+    "aria-hidden"?: boolean | "true" | "false"
+  }>
   kicker: string
   title: string
   tag?: string

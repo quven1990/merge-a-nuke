@@ -1,4 +1,6 @@
+import Link from "next/link"
 import {
+  ArrowUpRight,
   Boxes,
   Clock,
   Coins,
@@ -16,36 +18,43 @@ const STEPS = [
     icon: Ticket,
     title: "Redeem all active codes",
     desc: "Grab every working code first so you start with extra cash and nukes.",
+    href: "/codes",
   },
   {
     icon: Combine,
     title: "Merge starter nukes",
     desc: "Combine your lowest bombs quickly to free up space and raise income.",
+    href: "/beginner-guide#how-to-merge",
   },
   {
     icon: Combine,
     title: "Spend on Store upgrades",
     desc: "Buy Spawn Speed, then Spawn Tier and Max Spawn — see the Upgrades guide for order.",
+    href: "/upgrades",
   },
   {
     icon: Boxes,
     title: "Keep your base organized",
     desc: "A tidy layout makes merging faster and prevents costly mistakes.",
+    href: "/beginner-guide#how-to-merge",
   },
   {
     icon: Rocket,
     title: "Unlock stronger nukes",
     desc: "Push toward higher tiers once your income can support the jump.",
+    href: "/progression",
   },
   {
     icon: Swords,
     title: "Try raids only when income is stable",
     desc: "Raiding too early stalls your growth — build a steady base first.",
+    href: "/raid",
   },
   {
     icon: Lock,
     title: "Lock your base before going offline",
     desc: "Protect your progress so you return to a safe, productive base.",
+    href: "/offline-cash",
   },
 ]
 
@@ -74,7 +83,11 @@ export function QuickStart() {
               <span className="absolute -left-[41px] flex size-8 items-center justify-center rounded-full border border-primary/40 bg-card text-primary shadow-sm">
                 <step.icon className="size-4" aria-hidden="true" />
               </span>
-              <div className="rounded-2xl border border-border/70 bg-card/70 p-4 shadow-sm">
+              <Link
+                href={step.href}
+                className="group block min-h-11 rounded-2xl border border-border/70 bg-card/70 p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                aria-label={`${step.title} — open guide`}
+              >
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-semibold text-primary">
                     Step {i + 1}
@@ -86,7 +99,14 @@ export function QuickStart() {
                 <p className="mt-1 text-sm text-muted-foreground">
                   {step.desc}
                 </p>
-              </div>
+                <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-primary">
+                  Open this guide
+                  <ArrowUpRight
+                    className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    aria-hidden="true"
+                  />
+                </span>
+              </Link>
             </li>
           ))}
         </ol>

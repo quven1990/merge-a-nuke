@@ -32,7 +32,12 @@ export function FaqSection({ showSisterWikis = false }: { showSisterWikis?: bool
         <div className="mt-8 rounded-2xl border border-border/70 bg-card/70 px-5 shadow-sm">
           <Accordion>
             {FAQS.map((item, i) => (
-              <AccordionItem key={item.q} value={`faq-${i}`}>
+              <AccordionItem
+                key={item.q}
+                value={`faq-${i}`}
+                id={item.q === "Is rebirth worth it?" ? "rebirth" : undefined}
+                className="scroll-mt-24"
+              >
                 <AccordionTrigger className="text-base font-semibold text-foreground hover:no-underline hover:text-primary">
                   {item.q}
                 </AccordionTrigger>

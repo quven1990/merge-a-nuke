@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import {
   AlertTriangle,
@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button"
 import { WikiIllustration } from "@/components/wiki-illustration"
 import { ACTIVE_CODES } from "@/lib/codes-data"
 import { toPlausibleCodeName, trackPlausible } from "@/lib/analytics"
+import { cn } from "@/lib/utils"
 
 type CodeEntry = (typeof ACTIVE_CODES)[number]
 
@@ -46,14 +47,55 @@ const REDEEM_STEPS = [
   },
 ] as const
 
+type CopyToast = {
+  code: string
+  ok: boolean
+}
+
+async function copyToClipboard(text: string): Promise<boolean> {
+  if (navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(text)
+      return true
+    } catch {
+      // Fall through to legacy copy.
+    }
+  }
+
+  try {
+    const textarea = document.createElement("textarea")
+    textarea.value = text
+    textarea.setAttribute("readonly", "")
+    textarea.style.position = "fixed"
+    textarea.style.left = "-9999px"
+    document.body.appendChild(textarea)
+    textarea.select()
+    const ok = document.execCommand("copy")
+    document.body.removeChild(textarea)
+    return ok
+  } catch {
+    return false
+  }
+}
+
 export function CodesSection() {
   const pathname = usePathname()
   const [copied, setCopied] = useState<string | null>(null)
+  const [toast, setToast] = useState<CopyToast | null>(null)
+
+  useEffect(() => {
+    if (!toast) return
+
+    const timer = window.setTimeout(() => setToast(null), 3000)
+    return () => window.clearTimeout(timer)
+  }, [toast])
 
   const copy = async (code: string) => {
-    try {
-      await navigator.clipboard.writeText(code)
+    const ok = await copyToClipboard(code)
+
+    if (ok) {
       setCopied(code)
+      setToast({ code, ok: true })
       const codeName = toPlausibleCodeName(code)
       if (codeName) {
         trackPlausible("copy_code", {
@@ -62,10 +104,12 @@ export function CodesSection() {
           source: "codes_table",
         })
       }
-      setTimeout(() => setCopied((c) => (c === code ? null : c)), 1500)
-    } catch {
-      setCopied(null)
+      window.setTimeout(() => setCopied((current) => (current === code ? null : current)), 2000)
+      return
     }
+
+    setCopied(null)
+    setToast({ code, ok: false })
   }
 
   return (
@@ -104,6 +148,10 @@ export function CodesSection() {
             </span>
           </div>
 
+          <p className="border-b border-border/40 px-4 py-2 text-xs text-muted-foreground lg:hidden">
+            Tap a code to copy, then paste in Store → Type Code Here.
+          </p>
+
           <div className="hidden grid-cols-[1fr_1.4fr_1.4fr_0.8fr_auto] gap-4 border-b border-border/40 px-4 py-2.5 text-xs font-medium text-muted-foreground lg:grid">
             <span>Code</span>
             <span>Reward</span>
@@ -113,82 +161,124 @@ export function CodesSection() {
           </div>
 
           <ul className="divide-y divide-border/40">
-            {CODES.map((row, i) => (
-              <li
-                key={row.code}
-                className="grid grid-cols-1 items-center gap-3 px-4 py-4 transition-colors hover:bg-primary/5 lg:grid-cols-[1fr_1.4fr_1.4fr_0.8fr_auto] lg:gap-4"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-xs text-muted-foreground lg:hidden">
-                    Code
-                  </span>
-                  <span className="hidden text-xs text-muted-foreground lg:inline">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="flex flex-col gap-1">
-                    <code className="w-fit rounded-lg border border-primary/40 bg-primary/10 px-3 py-1.5 font-mono text-sm font-bold tracking-wider text-primary">
-                      {row.code}
-                    </code>
-                    {row.highlight ? (
-                      <span className="text-[10px] font-semibold text-boom">
-                        {row.highlight}
-                      </span>
-                    ) : null}
-                  </div>
-                </div>
+            {CODES.map((row, i) => {
+              const isCopied = copied === row.code
 
-                <div className="lg:contents">
-                  <span className="text-sm text-foreground">
-                    <span className="mr-2 text-xs text-muted-foreground lg:hidden">
-                      Reward
-                    </span>
-                    {row.reward}
-                  </span>
-                  <span className="text-sm text-muted-foreground">
-                    <span className="mr-2 text-xs text-muted-foreground lg:hidden">
-                      Source
-                    </span>
-                    {row.source}
-                  </span>
-                  <span
-                    className={
-                      row.status === "Active"
-                        ? "flex items-center gap-1.5 text-xs font-semibold text-primary"
-                        : "flex items-center gap-1.5 text-xs font-semibold text-hazard"
-                    }
+              return (
+                <li
+                  key={row.code}
+                  className="px-4 py-4 transition-colors hover:bg-primary/5 lg:grid lg:grid-cols-[1fr_1.4fr_1.4fr_0.8fr_auto] lg:items-center lg:gap-4"
+                >
+                  <button
+                    type="button"
+                    onClick={() => copy(row.code)}
+                    aria-label={`Copy code ${row.code}`}
+                    className={cn(
+                      "flex min-h-11 w-full items-center justify-between gap-3 rounded-xl border px-3 py-3 text-left transition-colors active:scale-[0.99] lg:hidden",
+                      isCopied
+                        ? "border-primary bg-primary/15"
+                        : "border-primary/35 bg-primary/5 hover:bg-primary/10",
+                    )}
                   >
+                    <div className="min-w-0">
+                      <code className="font-mono text-lg font-bold tracking-wider text-primary">
+                        {row.code}
+                      </code>
+                      {row.highlight ? (
+                        <span className="mt-0.5 block text-[11px] font-semibold text-boom">
+                          {row.highlight}
+                        </span>
+                      ) : null}
+                      <span className="mt-1 block text-xs text-muted-foreground">
+                        {isCopied ? "Copied!" : "Tap to copy"}
+                      </span>
+                    </div>
+                    <span
+                      className={cn(
+                        "flex size-10 shrink-0 items-center justify-center rounded-full border",
+                        isCopied
+                          ? "border-primary bg-primary/20 text-primary"
+                          : "border-primary/30 bg-background text-primary",
+                      )}
+                      aria-hidden="true"
+                    >
+                      {isCopied ? (
+                        <Check className="size-4" />
+                      ) : (
+                        <Copy className="size-4" />
+                      )}
+                    </span>
+                  </button>
+
+                  <div className="mt-3 space-y-2 lg:mt-0 lg:contents">
+                    <div className="hidden items-center gap-3 lg:flex">
+                      <span className="text-xs text-muted-foreground">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <div className="flex flex-col gap-1">
+                        <code className="w-fit rounded-lg border border-primary/40 bg-primary/10 px-3 py-1.5 font-mono text-sm font-bold tracking-wider text-primary">
+                          {row.code}
+                        </code>
+                        {row.highlight ? (
+                          <span className="text-[10px] font-semibold text-boom">
+                            {row.highlight}
+                          </span>
+                        ) : null}
+                      </div>
+                    </div>
+
+                    <span className="block text-sm text-foreground lg:contents">
+                      <span className="mr-2 text-xs text-muted-foreground lg:hidden">
+                        Reward
+                      </span>
+                      {row.reward}
+                    </span>
+                    <span className="block text-sm text-muted-foreground lg:contents">
+                      <span className="mr-2 text-xs text-muted-foreground lg:hidden">
+                        Source
+                      </span>
+                      {row.source}
+                    </span>
                     <span
                       className={
                         row.status === "Active"
-                          ? "size-1.5 rounded-full bg-primary"
-                          : "size-1.5 rounded-full bg-hazard"
+                          ? "flex items-center gap-1.5 text-xs font-semibold text-primary"
+                          : "flex items-center gap-1.5 text-xs font-semibold text-hazard"
                       }
-                    />
-                    {row.status}
-                  </span>
-                </div>
+                    >
+                      <span
+                        className={
+                          row.status === "Active"
+                            ? "size-1.5 rounded-full bg-primary"
+                            : "size-1.5 rounded-full bg-hazard"
+                        }
+                      />
+                      {row.status}
+                    </span>
+                  </div>
 
-                <div className="lg:text-right">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full rounded-xl border-primary/40 font-mono text-xs font-bold text-primary hover:bg-primary/10 lg:w-auto"
-                    onClick={() => copy(row.code)}
-                    aria-label={`Copy code ${row.code}`}
-                  >
-                    {copied === row.code ? (
-                      <>
-                        <Check className="size-3.5" /> Copied
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="size-3.5" /> Copy
-                      </>
-                    )}
-                  </Button>
-                </div>
-              </li>
-            ))}
+                  <div className="hidden lg:block lg:text-right">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="rounded-xl border-primary/40 font-mono text-xs font-bold text-primary hover:bg-primary/10"
+                      onClick={() => copy(row.code)}
+                      aria-label={`Copy code ${row.code}`}
+                    >
+                      {isCopied ? (
+                        <>
+                          <Check className="size-3.5" /> Copied
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="size-3.5" /> Copy
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </li>
+              )
+            })}
           </ul>
         </div>
 
@@ -252,6 +342,31 @@ export function CodesSection() {
           </p>
         </div>
       </div>
+
+      {toast ? (
+        <div
+          role="status"
+          aria-live="polite"
+          className={cn(
+            "pointer-events-none fixed inset-x-4 bottom-6 z-50 mx-auto max-w-md rounded-2xl border px-4 py-3 shadow-lg backdrop-blur-sm",
+            toast.ok
+              ? "border-primary/40 bg-card/95 text-foreground"
+              : "border-hazard/40 bg-card/95 text-foreground",
+          )}
+        >
+          {toast.ok ? (
+            <p className="text-sm font-semibold">
+              <span className="text-primary">{toast.code}</span> copied — paste
+              in Store → Type Code Here
+            </p>
+          ) : (
+            <p className="text-sm font-semibold text-hazard">
+              Could not copy {toast.code}. Long-press the code to select it
+              manually.
+            </p>
+          )}
+        </div>
+      ) : null}
     </section>
   )
 }

@@ -1,8 +1,8 @@
+import type { ComponentType } from "react"
 import {
   Coins,
   Combine,
   Lock,
-  type LucideIcon,
   ScrollText,
   Sparkles,
   Swords,
@@ -15,7 +15,7 @@ import { TrackedCtaLink } from "@/components/tracked-cta-link"
 import { SectionHeading } from "@/components/hud"
 
 type Guide = {
-  icon: LucideIcon
+  icon: ComponentType<{ className?: string }>
   title: string
   desc: string
   href: string

@@ -87,10 +87,19 @@ export function SiteHeader() {
             href="/codes"
             label="Check Codes"
             placement="header"
-            className="hidden items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 sm:inline-flex"
+            aria-current={pathname === "/codes" ? "page" : undefined}
+            className={cn(
+              "inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-3 text-sm font-bold shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:px-4",
+              pathname === "/codes"
+                ? "border border-primary/50 bg-primary/15 text-primary"
+                : "bg-primary text-primary-foreground hover:-translate-y-0.5 hover:bg-primary/90",
+            )}
           >
             <Atom className="size-4" aria-hidden="true" />
-            Check Codes
+            <span className="sm:hidden">Codes</span>
+            <span className="hidden sm:inline">
+              {pathname === "/codes" ? "Viewing Codes" : "Check Codes"}
+            </span>
           </TrackedCtaLink>
           <Button
             variant="outline"
@@ -136,15 +145,6 @@ export function SiteHeader() {
                 </Link>
               )
             })}
-            <TrackedCtaLink
-              href="/codes"
-              label="Check Codes"
-              placement="header_mobile"
-              className="col-span-2 mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
-            >
-              <Atom className="size-4" aria-hidden="true" />
-              Check Codes
-            </TrackedCtaLink>
           </nav>
         </div>
       )}
