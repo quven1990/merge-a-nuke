@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 
+import { PageFaqSection } from "@/components/page-faq-section"
 import { PageIntro } from "@/components/page-intro"
 import { RelatedGuides } from "@/components/related-guides"
 import { SiteShell } from "@/components/site-shell"
@@ -22,6 +23,7 @@ export default function UpgradesPage() {
           tldr={page.tldr}
         />
         <StoreUpgrades />
+        <PageFaqSection pagePath={page.path} />
         <RelatedGuides current={page.path} />
       </main>
     </SiteShell>

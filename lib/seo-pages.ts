@@ -23,6 +23,8 @@ export const SEO_PAGES = {
     h1: "Merge a Nuke Wiki",
     intro:
       "Codes, beginner tips, raid strategy, nuke tiers, offline cash, and progression guides for Merge a Nuke on Roblox — all in one place.",
+    tldr:
+      "Working codes: ATOMIC ($10,000 + 20 nukes), UPDATE2 ($10,000 + 10 nukes), BOOM ($5,000). New players: redeem codes → merge 2+2 → buy Spawn Speed then Spawn Tier → lock base before raiding.",
     breadcrumb: "Home",
   },
   codes: {

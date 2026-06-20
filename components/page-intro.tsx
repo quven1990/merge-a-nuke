@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 
+import { QuickAnswer } from "@/components/quick-answer"
+
 type PageIntroProps = {
   title: string
   description: string
@@ -39,16 +41,7 @@ export function PageIntro({
         <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground text-pretty sm:text-lg">
           {description}
         </p>
-        {tldr ? (
-          <div className="mt-6 max-w-3xl rounded-2xl border border-primary/25 bg-primary/5 p-4 sm:p-5">
-            <h2 className="text-sm font-bold uppercase tracking-wide text-primary">
-              Quick answer
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-foreground sm:text-base">
-              {tldr}
-            </p>
-          </div>
-        ) : null}
+        {tldr ? <QuickAnswer className="mt-6 max-w-3xl">{tldr}</QuickAnswer> : null}
       </div>
     </div>
   )

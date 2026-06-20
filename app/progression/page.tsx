@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 
+import { PageFaqSection } from "@/components/page-faq-section"
 import { PageIntro } from "@/components/page-intro"
 import { ProgressionRoadmap } from "@/components/progression-roadmap"
 import { RelatedGuides } from "@/components/related-guides"
@@ -22,6 +23,7 @@ export default function ProgressionPage() {
           tldr={page.tldr}
         />
         <ProgressionRoadmap />
+        <PageFaqSection pagePath={page.path} />
         <RelatedGuides current={page.path} />
       </main>
     </SiteShell>

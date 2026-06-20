@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 
 import { MergeGuide } from "@/components/merge-guide"
+import { PageFaqSection } from "@/components/page-faq-section"
 import { PageIntro } from "@/components/page-intro"
 import { PlayerJourney } from "@/components/player-journey"
 import { QuickStart } from "@/components/quick-start"
@@ -26,6 +27,7 @@ export default function BeginnerGuidePage() {
         <PlayerJourney />
         <QuickStart />
         <MergeGuide />
+        <PageFaqSection pagePath={page.path} />
         <RelatedGuides current={page.path} />
       </main>
     </SiteShell>

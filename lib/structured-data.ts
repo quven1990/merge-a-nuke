@@ -2,8 +2,12 @@ import { ACTIVE_CODES } from "@/lib/codes-data"
 import { FAQS } from "@/lib/faqs"
 import { ROBLOX_GAME_ABOUT_URL, ROBLOX_GAME_URL } from "@/lib/game-links"
 import { MERGE_STEPS } from "@/lib/merge-guide-data"
+import { getPageFaqs, type PageFaq } from "@/lib/page-faqs"
+import { PVP_RAID_STEPS } from "@/lib/raid-guide-data"
 import type { SeoPageConfig } from "@/lib/seo-pages"
 import { getSiteUrl, SITE_NAME } from "@/lib/site"
+import { NUKE_TIER_ROWS } from "@/lib/tier-list-data"
+import { EARLY_UPGRADE_ROUTE, STORE_UPGRADES } from "@/lib/upgrades-data"
 
 const LAST_MODIFIED = "2026-06-18"
 
@@ -87,11 +91,11 @@ function buildBreadcrumbList(siteUrl: string, page: SeoPageConfig) {
   }
 }
 
-function buildFaqPage() {
+function buildFaqPageFromItems(items: readonly PageFaq[]) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: FAQS.map((item) => ({
+    mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.q,
       acceptedAnswer: {
@@ -100,6 +104,10 @@ function buildFaqPage() {
       },
     })),
   }
+}
+
+function buildFaqPage() {
+  return buildFaqPageFromItems(FAQS)
 }
 
 function buildCodeRedeemHowTo() {
@@ -168,6 +176,66 @@ function buildCodeItemList() {
   }
 }
 
+function buildUpgradeItemList() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Merge a Nuke Store upgrade priority",
+    itemListElement: STORE_UPGRADES.map((entry, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: entry.name,
+      description: `${entry.priority} priority — ${entry.freeRoute}`,
+    })),
+  }
+}
+
+function buildTierItemList() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Merge a Nuke nuke tier list by merge level",
+    itemListElement: NUKE_TIER_ROWS.map((entry, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: `${entry.mergeLevel} — ${entry.nuke}`,
+      description: entry.notes,
+    })),
+  }
+}
+
+function buildProgressionHowTo() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "Merge a Nuke early progression route",
+    description:
+      "Recommended free-player upgrade and merge order for Merge a Nuke on Roblox.",
+    step: EARLY_UPGRADE_ROUTE.map((text, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: `Step ${index + 1}`,
+      text,
+    })),
+  }
+}
+
+function buildRaidHowTo() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to raid player bases in Merge a Nuke",
+    description:
+      "PvP raid checklist for Merge a Nuke — scout shields, pick targets, and protect your board.",
+    step: PVP_RAID_STEPS.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.title,
+      text: step.desc,
+    })),
+  }
+}
+
 export function buildPageStructuredData(page: SeoPageConfig): object[] {
   const siteUrl = getSiteUrl()
   const graphs: object[] = []
@@ -184,6 +252,11 @@ export function buildPageStructuredData(page: SeoPageConfig): object[] {
 
   if (page.path === "/" || page.path === "/faq") {
     graphs.push(buildFaqPage())
+  } else {
+    const pageFaqs = getPageFaqs(page.path)
+    if (pageFaqs.length > 0) {
+      graphs.push(buildFaqPageFromItems(pageFaqs))
+    }
   }
 
   if (page.path === "/" || page.path === "/codes") {
@@ -196,6 +269,22 @@ export function buildPageStructuredData(page: SeoPageConfig): object[] {
 
   if (page.path === "/" || page.path === "/beginner-guide") {
     graphs.push(buildMergeHowTo())
+  }
+
+  if (page.path === "/progression") {
+    graphs.push(buildProgressionHowTo())
+  }
+
+  if (page.path === "/upgrades") {
+    graphs.push(buildUpgradeItemList())
+  }
+
+  if (page.path === "/tier-list") {
+    graphs.push(buildTierItemList())
+  }
+
+  if (page.path === "/raid") {
+    graphs.push(buildRaidHowTo())
   }
 
   return graphs

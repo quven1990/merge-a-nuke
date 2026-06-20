@@ -13,7 +13,9 @@ import {
 
 import { TrackedCtaLink } from "@/components/tracked-cta-link"
 import { Badge } from "@/components/ui/badge"
+import { QuickAnswer } from "@/components/quick-answer"
 import { WikiIllustration } from "@/components/wiki-illustration"
+import { SEO_PAGES } from "@/lib/seo-pages"
 import { cn } from "@/lib/utils"
 
 const INFO_CARDS = [
@@ -149,6 +151,12 @@ export function HeroSection() {
             codes, beginner tips, raid strategy, nuke tiers, offline cash, and
             progression guides in one place.
           </p>
+
+          {SEO_PAGES.home.tldr ? (
+            <QuickAnswer className="mt-5 max-w-xl" compact>
+              {SEO_PAGES.home.tldr}
+            </QuickAnswer>
+          ) : null}
 
           <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
             <TrackedCtaLink

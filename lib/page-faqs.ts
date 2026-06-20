@@ -1,0 +1,153 @@
+import type { SeoPageConfig } from "@/lib/seo-pages"
+
+export type PageFaq = {
+  q: string
+  a: string
+}
+
+export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
+  "/codes": [
+    {
+      q: "What is the active code for Merge a Nuke?",
+      a: "As of June 18, 2026, try ATOMIC first ($10,000 + 20 nukes), then UPDATE2 ($10,000 + 10 nukes), then BOOM ($5,000). Redeem in Store → Type Code Here → Redeem.",
+    },
+    {
+      q: "How do I redeem Merge a Nuke codes?",
+      a: 'Launch Merge a Nuke on Roblox, open Store on the left, scroll to "Type Code Here" at the bottom, paste the code exactly, and click Redeem.',
+    },
+    {
+      q: "Why is a Merge a Nuke code not working?",
+      a: "Codes fail when expired, already redeemed, or typed incorrectly. Try ATOMIC, then UPDATE2, then BOOM. Rejoin on a fresh session if one code fails.",
+    },
+    {
+      q: "When do Merge a Nuke codes update?",
+      a: "Nuke The Game often drops new codes on Fridays. Check this codes page after each weekly patch for updated rewards.",
+    },
+  ],
+  "/beginner-guide": [
+    {
+      q: "How do I merge nukes in Merge a Nuke?",
+      a: "Drag two nukes of the same merge level together — only identical tiers combine (2+2=4, 4+4=8). High-tier nukes cannot merge with lower bombs.",
+    },
+    {
+      q: "What should beginners buy first in the Store?",
+      a: "Redeem codes first, then buy Spawn Speed, then Spawn Tier so new nukes spawn at higher levels. See the full upgrade order on the Upgrades guide.",
+    },
+    {
+      q: "When should a new player start raiding?",
+      a: "Wait until your income is stable and you can lock your base. Raiding too early can stall growth if you lose merge progress.",
+    },
+    {
+      q: "How do I protect my base as a beginner?",
+      a: "Activate Lock Base before merging in busy lobbies and always lock before logging off. Keep your layout tidy so merges stay fast.",
+    },
+  ],
+  "/progression": [
+    {
+      q: "What is the best early progression path in Merge a Nuke?",
+      a: "Codes → Spawn Speed → Spawn Tier → merge toward 16+ → lock base → raid only when your economy is stable. Rebirth unlocks higher Index tiers later.",
+    },
+    {
+      q: "When should I merge to higher nuke tiers?",
+      a: "Merge low duplicates quickly to free board space, then push toward 16, 32, and 64 once Spawn Tier and income upgrades are online.",
+    },
+    {
+      q: "When should I start raiding in progression?",
+      a: "Raid after income upgrades are working and you can lock your base. Early PvP is risky if your board still depends on low-tier spawns.",
+    },
+    {
+      q: "Is rebirth worth it in Merge a Nuke?",
+      a: "Yes when growth slows — rebirth unlocks higher Index nukes beyond the mid-game cap (community runs report ~35 tiers before rebirth).",
+    },
+  ],
+  "/upgrades": [
+    {
+      q: "What Store upgrades should I buy first in Merge a Nuke?",
+      a: "Spawn Speed first, then Spawn Tier, then Max Spawn. Upgrade Lock Base duration before long merge sessions or offline play.",
+    },
+    {
+      q: "What does Spawn Tier do?",
+      a: "It raises the level new nukes spawn at (for example level 1 → level 2 → level 4), skipping weaker early bombs over time.",
+    },
+    {
+      q: "Should free players buy Robux upgrades?",
+      a: "Robux boosts are optional. Spawn Speed, Spawn Tier, Max Spawn, and Lock Base carry most free-to-play progression.",
+    },
+    {
+      q: "When should I upgrade Lock Base?",
+      a: "Before any long merge session, before going offline, and when other players are raiding nearby — default shield time is short.",
+    },
+  ],
+  "/tier-list": [
+    {
+      q: "How does the Merge a Nuke tier system work?",
+      a: "Merge levels double each step (2→4→8→16→32→64…). Higher merge numbers generally mean stronger nukes and better income.",
+    },
+    {
+      q: "What nuke tier should I aim for before heavy raiding?",
+      a: "Community gameplay points to chasing 64+ before committing to heavy PvP, while keeping lower tiers merged away quickly.",
+    },
+    {
+      q: "Is this Merge a Nuke tier list official?",
+      a: "No. Names and notes are community-reported from gameplay footage. Cross-check the in-game Index after Friday updates.",
+    },
+    {
+      q: "Why are low merge levels ranked lowest?",
+      a: "Level 1–8 bombs earn little cash and raid poorly. Merge them immediately instead of hoarding board space.",
+    },
+  ],
+  "/raid": [
+    {
+      q: "How does PvP raiding work in Merge a Nuke?",
+      a: "Launch nukes at another player's base to steal cash, but only if their Lock Base shield is down. Getting raided can wipe nukes from your board.",
+    },
+    {
+      q: "When should I start raiding?",
+      a: "When income is stable, your board has mid-tier nukes, and you can lock before and after attacks. Raiding too early slows growth.",
+    },
+    {
+      q: "What is the center city in Merge a Nuke?",
+      a: "A PvE target in the map center with a long cooldown (often 40+ minutes in footage). It pays large rewards and is not the same as player-base PvP.",
+    },
+    {
+      q: "How do I defend my base from raids?",
+      a: "Lock before offline play, upgrade Lock Base duration, and avoid leaving high-tier merge chains exposed in public lobbies.",
+    },
+  ],
+  "/offline-cash": [
+    {
+      q: "Do nukes earn cash while offline in Merge a Nuke?",
+      a: "Yes. The official Roblox game description says nukes earn cash every second, even while you are offline.",
+    },
+    {
+      q: "How do I maximize offline cash?",
+      a: "Merge to your highest practical tier, upgrade income sources, tidy your board, and lock your base before closing the game.",
+    },
+    {
+      q: "Should I lock my base before logging off?",
+      a: "Yes. Lock Base protects your island from raids while you are away and helps safeguard merge progress you built offline.",
+    },
+    {
+      q: "What should I spend offline earnings on?",
+      a: "Reinvest in Spawn Speed, Spawn Tier, or Max Spawn first so your next session starts with faster income, not cosmetic buys.",
+    },
+  ],
+}
+
+export function getPageFaqs(path: SeoPageConfig["path"]): PageFaq[] {
+  return PAGE_FAQS[path] ?? []
+}
+
+export function getPageFaqHeading(path: SeoPageConfig["path"]): string {
+  const headings: Partial<Record<SeoPageConfig["path"], string>> = {
+    "/codes": "Common questions about Merge a Nuke codes",
+    "/beginner-guide": "Common beginner questions",
+    "/progression": "Common progression questions",
+    "/upgrades": "Common Store upgrade questions",
+    "/tier-list": "Common tier list questions",
+    "/raid": "Common raid & defense questions",
+    "/offline-cash": "Common offline cash questions",
+  }
+
+  return headings[path] ?? "Common questions"
+}
