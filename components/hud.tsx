@@ -8,7 +8,12 @@ export function HazardDivider({ className }: { className?: string }) {
       className={cn("relative h-3 w-full overflow-hidden", className)}
       aria-hidden="true"
     >
-      <div className="hazard-band absolute inset-0 opacity-80" />
+      <div className="hazard-band absolute inset-0 opacity-80">
+        <div className="hazard-band-track">
+          <div className="hazard-band-tile" />
+          <div className="hazard-band-tile" />
+        </div>
+      </div>
       <div className="absolute inset-0 bg-background/15" />
     </div>
   )
