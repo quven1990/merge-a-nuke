@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 
+import { BelowFold } from "@/components/below-fold"
 import { MergeGuide } from "@/components/merge-guide"
 import { CodesSection } from "@/components/codes-section"
 import { FaqSection } from "@/components/faq-section"
@@ -23,26 +24,28 @@ export default function Page() {
     <SiteShell seoPage={SEO_PAGES.home}>
       <main>
         <HeroSection />
-        <HazardDivider />
-        <GameOverview />
-        <HazardDivider />
-        <CodesSection />
-        <HazardDivider />
-        <MergeGuide />
-        <HazardDivider />
-        <QuickStart />
-        <HazardDivider />
-        <GuideCards />
-        <HazardDivider />
-        <ProgressionRoadmap />
-        <HazardDivider />
-        <TierList />
-        <HazardDivider />
-        <RaidDefense />
-        <HazardDivider />
-        <OfflineCash />
-        <HazardDivider />
-        <FaqSection />
+        <BelowFold>
+          <HazardDivider />
+          <GameOverview />
+          <HazardDivider />
+          <CodesSection />
+          <HazardDivider />
+          <MergeGuide />
+          <HazardDivider />
+          <QuickStart />
+          <HazardDivider />
+          <GuideCards />
+          <HazardDivider />
+          <ProgressionRoadmap />
+          <HazardDivider />
+          <TierList />
+          <HazardDivider />
+          <RaidDefense />
+          <HazardDivider />
+          <OfflineCash />
+          <HazardDivider />
+          <FaqSection />
+        </BelowFold>
       </main>
     </SiteShell>
   )

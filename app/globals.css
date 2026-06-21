@@ -315,4 +315,9 @@
       'Segoe UI',
       sans-serif;
   }
+
+  .below-fold {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 36rem;
+  }
 }
