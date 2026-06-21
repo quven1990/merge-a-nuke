@@ -124,6 +124,17 @@ export function CodesSection() {
     setToast({ code, ok: false })
   }
 
+  const openRobloxAfterCopy = (code: string) => {
+    const codeName = toPlausibleCodeName(code)
+    if (codeName) {
+      trackPlausible("codes_open_roblox", {
+        code: codeName,
+        page: pathname,
+      })
+    }
+    setToast(null)
+  }
+
   return (
     <section
       id="codes"
@@ -386,7 +397,7 @@ export function CodesSection() {
                       placement="codes_toast"
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => setToast(null)}
+                      onClick={() => openRobloxAfterCopy(toast.code)}
                       className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card"
                     >
                       <Gamepad2 className="size-4 shrink-0" aria-hidden="true" />

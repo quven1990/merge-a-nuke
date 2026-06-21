@@ -57,6 +57,10 @@ export type PlausibleEventProps = {
     page: string
     source: "codes_table"
   }
+  codes_open_roblox: {
+    code: PlausibleCodeName
+    page: string
+  }
   outbound_click: {
     destination: OutboundDestination
     page: string

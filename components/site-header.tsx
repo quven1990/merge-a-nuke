@@ -1,5 +1,7 @@
 import Link from "next/link"
-import { Atom, Radiation } from "lucide-react"
+import { Radiation } from "lucide-react"
+
+import { HeaderCodesCta } from "@/components/header-codes-cta"
 
 import { SiteHeaderMobileMenu } from "@/components/site-header-mobile-menu"
 import { SiteHeaderNav } from "@/components/site-header-nav"
@@ -33,14 +35,7 @@ export function SiteHeader() {
         <SiteHeaderNav navItems={NAV_ITEMS} />
 
         <div className="flex items-center gap-2">
-          <Link
-            href="/codes"
-            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-3 text-sm font-bold text-primary-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:px-4"
-          >
-            <Atom className="size-4" aria-hidden="true" />
-            <span className="sm:hidden">Codes</span>
-            <span className="hidden sm:inline">Check Codes</span>
-          </Link>
+          <HeaderCodesCta />
           <SiteHeaderMobileMenu navItems={NAV_ITEMS} />
         </div>
       </div>
