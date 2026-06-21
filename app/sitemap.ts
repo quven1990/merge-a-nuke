@@ -5,14 +5,33 @@ import { getSiteUrl } from "@/lib/site"
 
 export const dynamic = "force-static"
 
+/** Last content update per indexable path (YYYY-MM-DD), from recent git history. */
+const PAGE_LAST_MODIFIED: Record<string, string> = {
+  "/": "2026-06-21",
+  "/codes": "2026-06-20",
+  "/beginner-guide": "2026-06-20",
+  "/progression": "2026-06-20",
+  "/upgrades": "2026-06-20",
+  "/tier-list": "2026-06-20",
+  "/raid": "2026-06-20",
+  "/offline-cash": "2026-06-20",
+  "/faq": "2026-06-20",
+  "/privacy": "2026-06-18",
+  "/terms": "2026-06-18",
+}
+
+const DEFAULT_LAST_MODIFIED = "2026-06-18"
+
+function getLastModified(path: string) {
+  return new Date(PAGE_LAST_MODIFIED[path] ?? DEFAULT_LAST_MODIFIED)
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl()
-  const lastModified = new Date("2026-06-18")
-  const homeLastModified = new Date("2026-06-21")
 
   const guidePages = NAV_ITEMS.map((item) => ({
     url: `${siteUrl}${item.href}`,
-    lastModified,
+    lastModified: getLastModified(item.href),
     changeFrequency: "weekly" as const,
     priority: item.href === "/codes" ? 0.9 : 0.8,
   }))
@@ -25,14 +44,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: siteUrl,
-      lastModified: homeLastModified,
+      lastModified: getLastModified("/"),
       changeFrequency: "weekly",
       priority: 1,
     },
     ...guidePages,
     ...legalPages.map((page) => ({
       url: `${siteUrl}${page.path}`,
-      lastModified,
+      lastModified: getLastModified(page.path),
       changeFrequency: "monthly" as const,
       priority: page.priority,
     })),
