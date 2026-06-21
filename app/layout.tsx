@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist } from 'next/font/google'
 
 import { ClarityAnalytics } from '@/components/clarity-analytics'
 import { Ga4Analytics } from '@/components/ga4-analytics'
@@ -8,10 +8,12 @@ import { SEO_PAGES } from '@/lib/seo-pages'
 import { getSiteUrl, SITE_NAME } from '@/lib/site'
 import './globals.css'
 
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const geistSans = Geist({
+  variable: '--font-geist-sans',
   subsets: ['latin'],
+  display: 'swap',
+  adjustFontFallback: true,
+  preload: true,
 })
 
 const siteUrl = getSiteUrl()
@@ -84,7 +86,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} bg-background`}
+      className={`${geistSans.variable} bg-background`}
     >
       <body className="font-sans antialiased">
         <PlausibleAnalytics />
