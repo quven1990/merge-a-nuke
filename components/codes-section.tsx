@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { createPortal } from "react-dom"
 import { usePathname } from "next/navigation"
 import {
   AlertTriangle,
@@ -14,10 +15,12 @@ import {
 } from "lucide-react"
 
 import { SectionHeading } from "@/components/hud"
+import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
 import { Button } from "@/components/ui/button"
 import { WikiIllustration } from "@/components/wiki-illustration"
 import { ACTIVE_CODES } from "@/lib/codes-data"
 import { toPlausibleCodeName, trackPlausible } from "@/lib/analytics"
+import { ROBLOX_GAME_URL } from "@/lib/game-links"
 import { cn } from "@/lib/utils"
 
 type CodeEntry = (typeof ACTIVE_CODES)[number]
@@ -52,6 +55,9 @@ type CopyToast = {
   ok: boolean
 }
 
+const COPY_TOAST_SUCCESS_MS = 8000
+const COPY_TOAST_ERROR_MS = 4000
+
 async function copyToClipboard(text: string): Promise<boolean> {
   if (navigator.clipboard?.writeText) {
     try {
@@ -82,11 +88,17 @@ export function CodesSection() {
   const pathname = usePathname()
   const [copied, setCopied] = useState<string | null>(null)
   const [toast, setToast] = useState<CopyToast | null>(null)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     if (!toast) return
 
-    const timer = window.setTimeout(() => setToast(null), 3000)
+    const duration = toast.ok ? COPY_TOAST_SUCCESS_MS : COPY_TOAST_ERROR_MS
+    const timer = window.setTimeout(() => setToast(null), duration)
     return () => window.clearTimeout(timer)
   }, [toast])
 
@@ -343,30 +355,74 @@ export function CodesSection() {
         </div>
       </div>
 
-      {toast ? (
-        <div
-          role="status"
-          aria-live="polite"
-          className={cn(
-            "pointer-events-none fixed inset-x-4 bottom-6 z-50 mx-auto max-w-md rounded-2xl border px-4 py-3 shadow-lg backdrop-blur-sm",
-            toast.ok
-              ? "border-primary/40 bg-card/95 text-foreground"
-              : "border-hazard/40 bg-card/95 text-foreground",
-          )}
-        >
-          {toast.ok ? (
-            <p className="text-sm font-semibold">
-              <span className="text-primary">{toast.code}</span> copied — paste
-              in Store → Type Code Here
-            </p>
-          ) : (
-            <p className="text-sm font-semibold text-hazard">
-              Could not copy {toast.code}. Long-press the code to select it
-              manually.
-            </p>
-          )}
-        </div>
-      ) : null}
+      {mounted && toast
+        ? createPortal(
+            <div
+              role="status"
+              aria-live="polite"
+              className={cn(
+                "fixed inset-x-4 z-[100] mx-auto max-w-lg sm:inset-x-auto sm:left-1/2 sm:w-[min(100%,32rem)] sm:-translate-x-1/2",
+                "bottom-[max(1rem,env(safe-area-inset-bottom))]",
+                "rounded-2xl border px-4 py-4 shadow-xl backdrop-blur-md",
+                toast.ok
+                  ? "border-primary/40 bg-card/95 text-foreground"
+                  : "border-hazard/40 bg-card/95 text-foreground",
+              )}
+            >
+              {toast.ok ? (
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold">
+                      <span className="font-mono text-primary">{toast.code}</span>{" "}
+                      copied
+                    </p>
+                    <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+                      Open Roblox, then paste in Store → Type Code Here → Redeem.
+                    </p>
+                  </div>
+                  <div className="grid shrink-0 grid-cols-1 gap-2 sm:grid-cols-[auto_auto]">
+                    <TrackedOutboundLink
+                      href={ROBLOX_GAME_URL}
+                      placement="codes_toast"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setToast(null)}
+                      className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+                    >
+                      <Gamepad2 className="size-4 shrink-0" aria-hidden="true" />
+                      Open Roblox
+                    </TrackedOutboundLink>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className="min-h-11 rounded-xl border-border/70"
+                      onClick={() => setToast(null)}
+                    >
+                      Not now
+                    </Button>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex items-start justify-between gap-3">
+                  <p className="text-sm font-semibold text-hazard">
+                    Could not copy {toast.code}. Long-press the code to select it
+                    manually.
+                  </p>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    className="shrink-0"
+                    onClick={() => setToast(null)}
+                  >
+                    Close
+                  </Button>
+                </div>
+              )}
+            </div>,
+            document.body,
+          )
+        : null}
     </section>
   )
 }

@@ -39,6 +39,7 @@ export type OutboundPlacement =
   | "game_overview"
   | "footer"
   | "privacy"
+  | "codes_toast"
   | "other"
 
 export type CtaPlacement =
