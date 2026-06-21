@@ -2,32 +2,26 @@
 
 > Independent fan-made strategy wiki for Merge a Nuke on Roblox — not affiliated with Roblox Corporation or Nuke The Game.
 
-Last updated: 2026-06-18
-
-## Quick answer
+Last updated: 2026-06-21
 
 Working codes (June 2026): ATOMIC ($10,000 + 20 nukes), UPDATE2 ($10,000 + 10 nukes), BOOM ($5,000). New players: redeem codes → merge same-level pairs (2+2=4) → buy Spawn Speed then Spawn Tier → lock base before raiding.
 
+Codes and balance can change after Friday game updates. Tier names and some stats are community-reported — verify in the in-game Index.
+
 ## Primary guides
 
-- https://mergeanuke.site/ — Wiki hub with codes, beginner route, tier list, raid tips, and FAQ
-- https://mergeanuke.site/codes — Active codes, rewards, redeem steps
-- https://mergeanuke.site/beginner-guide — First steps, merge rules, early mistakes
-- https://mergeanuke.site/upgrades — Store upgrade priority for free players
-- https://mergeanuke.site/progression — Stage-by-stage growth path
-- https://mergeanuke.site/tier-list — Merge levels and community-reported nuke names
-- https://mergeanuke.site/raid — PvP raids, center city, Lock Base defense
-- https://mergeanuke.site/offline-cash — Passive income and pre-logout setup
-- https://mergeanuke.site/faq — Full FAQ including rebirth and code troubleshooting
+- [Wiki Home](https://mergeanuke.site/): Codes, beginner route, tier list, raid tips, and FAQ
+- [Codes](https://mergeanuke.site/codes): Active codes, rewards, and step-by-step redeem instructions
+- [Beginner Guide](https://mergeanuke.site/beginner-guide): First steps, merge rules, and early mistakes to avoid
+- [Upgrades](https://mergeanuke.site/upgrades): Store upgrade priority for free players
+- [Progression](https://mergeanuke.site/progression): Stage-by-stage growth path
+- [Tier List](https://mergeanuke.site/tier-list): Merge levels and community-reported nuke names
+- [Raid Guide](https://mergeanuke.site/raid): PvP raids, center city, and Lock Base defense
+- [Offline Cash](https://mergeanuke.site/offline-cash): Passive income and pre-logout setup
+- [FAQ](https://mergeanuke.site/faq): Rebirth, code troubleshooting, and wiki scope
 
-## Data notes
+## Optional
 
-- Codes and balance can change after Friday game updates.
-- Tier names and some stats are community-reported — verify in the in-game Index.
-- Official game: Roblox experience by Nuke The Game.
-
-## Contact
-
-- Email: contact@mergeanuke.site
-- Privacy: https://mergeanuke.site/privacy
-- Terms: https://mergeanuke.site/terms
+- [Privacy Policy](https://mergeanuke.site/privacy): Analytics, cookies, and data handling
+- [Terms of Use](https://mergeanuke.site/terms): Fan-site disclaimer and liability limits
+- [Contact](mailto:contact@mergeanuke.site): Questions or corrections about this wiki
