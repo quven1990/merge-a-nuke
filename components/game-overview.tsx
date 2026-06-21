@@ -32,8 +32,9 @@ export function GameOverview() {
           <strong className="text-foreground">Nuke The Game</strong>. Buy or earn
           bombs, merge identical ones into stronger nukes, stack passive cash
           (even offline), raid other bases for loot, and lock your base before you
-          log off. This wiki is an independent fan guide — not affiliated with the
-          developer.
+          log off. Use this independent fan wiki for working codes, upgrade
+          priorities, tier lists, raid strategies, offline cash tips, and rebirth
+          advice. It is not affiliated with the developer.
         </p>
 
         <dl className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">

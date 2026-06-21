@@ -10,6 +10,7 @@ import { NUKE_TIER_ROWS } from "@/lib/tier-list-data"
 import { EARLY_UPGRADE_ROUTE, STORE_UPGRADES } from "@/lib/upgrades-data"
 
 const LAST_MODIFIED = "2026-06-18"
+const HOME_LAST_MODIFIED = "2026-06-21"
 
 function pageUrl(siteUrl: string, path: SeoPageConfig["path"]) {
   return path === "/" ? siteUrl : `${siteUrl}${path}`
@@ -49,7 +50,7 @@ function buildWebPage(siteUrl: string, page: SeoPageConfig) {
     name: page.title,
     description: page.description,
     url: pageUrl(siteUrl, page.path),
-    dateModified: LAST_MODIFIED,
+    dateModified: page.path === "/" ? HOME_LAST_MODIFIED : LAST_MODIFIED,
     inLanguage: "en-US",
     isPartOf: {
       "@type": "WebSite",

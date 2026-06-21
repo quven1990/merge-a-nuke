@@ -8,6 +8,7 @@ export const dynamic = "force-static"
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl()
   const lastModified = new Date("2026-06-18")
+  const homeLastModified = new Date("2026-06-21")
 
   const guidePages = NAV_ITEMS.map((item) => ({
     url: `${siteUrl}${item.href}`,
@@ -24,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: siteUrl,
-      lastModified,
+      lastModified: homeLastModified,
       changeFrequency: "weekly",
       priority: 1,
     },

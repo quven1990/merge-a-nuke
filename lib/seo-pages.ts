@@ -17,9 +17,9 @@ export type SeoPageConfig = {
 export const SEO_PAGES = {
   home: {
     path: "/",
-    title: "Merge a Nuke Wiki | Merge a Nuke Roblox Guide",
+    title: "Merge a Nuke Wiki: Codes, Tier List & Guides",
     description:
-      "Merge a Nuke Wiki is a fan-made guide for Merge a Nuke on Roblox. Find working codes, beginner tips, tier lists, raid guides, and offline cash advice.",
+      "Merge a Nuke Roblox wiki with working codes, upgrade priorities, tier lists, raid strategies, offline cash, and rebirth advice. Updated after Friday patches.",
     h1: "Merge a Nuke Wiki",
     intro:
       "Codes, beginner tips, raid strategy, nuke tiers, offline cash, and progression guides for Merge a Nuke on Roblox — all in one place.",

@@ -146,10 +146,10 @@ export function HeroSection() {
             </span>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground text-pretty sm:mt-6 sm:text-lg">
-            Your fan-made <strong className="text-foreground">Merge a Nuke Wiki</strong>{" "}
-            for <strong className="text-foreground">Merge a Nuke</strong> on Roblox —
-            codes, beginner tips, raid strategy, nuke tiers, offline cash, and
-            progression guides in one place.
+            A fan-made <strong className="text-foreground">Merge a Nuke Wiki</strong>{" "}
+            for Roblox players — find working codes, upgrade priorities, nuke
+            tier lists, raid strategies, offline cash tips, and rebirth advice
+            in one place.
           </p>
 
           {SEO_PAGES.home.tldr ? (
