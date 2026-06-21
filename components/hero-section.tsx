@@ -1,6 +1,7 @@
 import { Bomb } from "lucide-react"
 
 import { HeroGameLoopCardLazy } from "@/components/hero-game-loop-lazy"
+import { HeroCodesChips } from "@/components/hero-codes-chips"
 import {
   HeroInfoCardTrackedLinks,
   HeroPrimaryTrackedLinks,
@@ -59,8 +60,10 @@ export function HeroSection() {
 
           <HeroPrimaryTrackedLinks />
 
+          <HeroCodesChips className="mt-5" />
+
           {SEO_PAGES.home.tldr ? (
-            <QuickAnswer className="mt-5 max-w-xl" compact>
+            <QuickAnswer className="mt-4 max-w-xl" compact>
               {SEO_PAGES.home.tldr}
             </QuickAnswer>
           ) : null}

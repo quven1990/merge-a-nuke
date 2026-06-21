@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button"
 import { WikiIllustration } from "@/components/wiki-illustration"
 import { ACTIVE_CODES } from "@/lib/codes-data"
 import { toPlausibleCodeName, trackPlausible } from "@/lib/analytics"
+import { copyToClipboard } from "@/lib/copy-to-clipboard"
 import { ROBLOX_GAME_URL } from "@/lib/game-links"
 import { cn } from "@/lib/utils"
 
@@ -57,32 +58,6 @@ type CopyToast = {
 
 const COPY_TOAST_SUCCESS_MS = 8000
 const COPY_TOAST_ERROR_MS = 4000
-
-async function copyToClipboard(text: string): Promise<boolean> {
-  if (navigator.clipboard?.writeText) {
-    try {
-      await navigator.clipboard.writeText(text)
-      return true
-    } catch {
-      // Fall through to legacy copy.
-    }
-  }
-
-  try {
-    const textarea = document.createElement("textarea")
-    textarea.value = text
-    textarea.setAttribute("readonly", "")
-    textarea.style.position = "fixed"
-    textarea.style.left = "-9999px"
-    document.body.appendChild(textarea)
-    textarea.select()
-    const ok = document.execCommand("copy")
-    document.body.removeChild(textarea)
-    return ok
-  } catch {
-    return false
-  }
-}
 
 export function CodesSection() {
   const pathname = usePathname()

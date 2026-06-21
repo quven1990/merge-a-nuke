@@ -55,7 +55,7 @@ export type PlausibleEventProps = {
   copy_code: {
     code: PlausibleCodeName
     page: string
-    source: "codes_table"
+    source: "codes_table" | "hero_chips"
   }
   codes_open_roblox: {
     code: PlausibleCodeName

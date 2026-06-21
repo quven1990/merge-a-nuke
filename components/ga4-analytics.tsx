@@ -12,9 +12,9 @@ export function Ga4Analytics() {
       <Script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        strategy="lazyOnload"
+        strategy="afterInteractive"
       />
-      <Script id="ga4-init" strategy="lazyOnload">
+      <Script id="ga4-init" strategy="afterInteractive">
         {`window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());

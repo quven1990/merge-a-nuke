@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist } from 'next/font/google'
 
-import { DeferredSecondaryAnalytics } from '@/components/deferred-secondary-analytics'
+import { DeferredClarityAnalytics } from '@/components/deferred-clarity-analytics'
+import { DeferredGa4Analytics } from '@/components/deferred-ga4-analytics'
 import { PlausibleAnalytics } from '@/components/plausible-analytics'
 import { SEO_PAGES } from '@/lib/seo-pages'
 import { getSiteUrl, SITE_NAME } from '@/lib/site'
@@ -90,7 +91,8 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         {children}
         <PlausibleAnalytics />
-        <DeferredSecondaryAnalytics />
+        <DeferredClarityAnalytics />
+        <DeferredGa4Analytics />
       </body>
     </html>
   )
