@@ -14,27 +14,31 @@ export function HeroCodesChips({ className }: { className?: string }) {
   const [copied, setCopied] = useState<string | null>(null)
 
   const copy = async (code: string) => {
-    const ok = await copyToClipboard(code)
+    try {
+      const ok = await copyToClipboard(code)
 
-    if (!ok) {
+      if (!ok) {
+        setCopied(null)
+        return
+      }
+
+      setCopied(code)
+      const codeName = toPlausibleCodeName(code)
+      if (codeName) {
+        trackPlausible("copy_code", {
+          code: codeName,
+          page: pathname,
+          source: "hero_chips",
+        })
+      }
+      window.setTimeout(() => setCopied((current) => (current === code ? null : current)), 2000)
+    } catch {
       setCopied(null)
-      return
     }
-
-    setCopied(code)
-    const codeName = toPlausibleCodeName(code)
-    if (codeName) {
-      trackPlausible("copy_code", {
-        code: codeName,
-        page: pathname,
-        source: "hero_chips",
-      })
-    }
-    window.setTimeout(() => setCopied((current) => (current === code ? null : current)), 2000)
   }
 
   return (
-    <div className={cn("max-w-xl", className)}>
+    <div className={cn("notranslate max-w-xl", className)} translate="no">
       <div className="flex items-center gap-2">
         <Ticket className="size-4 text-primary" aria-hidden="true" />
         <p className="text-sm font-semibold text-foreground">Working codes — tap to copy</p>
@@ -47,7 +51,7 @@ export function HeroCodesChips({ className }: { className?: string }) {
             <li key={entry.code}>
               <button
                 type="button"
-                onClick={() => copy(entry.code)}
+                onClick={() => void copy(entry.code)}
                 className={cn(
                   "flex w-full min-w-0 items-center justify-between gap-3 rounded-xl border px-3 py-2.5 text-left shadow-sm transition-all sm:w-auto",
                   isCopied

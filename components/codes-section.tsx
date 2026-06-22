@@ -16,7 +16,6 @@ import {
 
 import { SectionHeading } from "@/components/hud"
 import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
-import { Button } from "@/components/ui/button"
 import { WikiIllustration } from "@/components/wiki-illustration"
 import { ACTIVE_CODES } from "@/lib/codes-data"
 import { toPlausibleCodeName, trackPlausible } from "@/lib/analytics"
@@ -59,6 +58,15 @@ type CopyToast = {
 const COPY_TOAST_SUCCESS_MS = 8000
 const COPY_TOAST_ERROR_MS = 4000
 
+const DESKTOP_COPY_BUTTON_CLASS =
+  "inline-flex h-7 items-center justify-center gap-1 rounded-xl border border-primary/40 bg-background px-2.5 font-mono text-xs font-bold text-primary transition-colors hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+
+const TOAST_OUTLINE_BUTTON_CLASS =
+  "inline-flex min-h-11 items-center justify-center rounded-xl border border-border/70 bg-background px-4 text-sm font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+
+const TOAST_GHOST_BUTTON_CLASS =
+  "inline-flex h-7 shrink-0 items-center justify-center rounded-lg px-2.5 text-sm font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+
 export function CodesSection() {
   const pathname = usePathname()
   const [copied, setCopied] = useState<string | null>(null)
@@ -78,25 +86,30 @@ export function CodesSection() {
   }, [toast])
 
   const copy = async (code: string) => {
-    const ok = await copyToClipboard(code)
+    try {
+      const ok = await copyToClipboard(code)
 
-    if (ok) {
-      setCopied(code)
-      setToast({ code, ok: true })
-      const codeName = toPlausibleCodeName(code)
-      if (codeName) {
-        trackPlausible("copy_code", {
-          code: codeName,
-          page: pathname,
-          source: "codes_table",
-        })
+      if (ok) {
+        setCopied(code)
+        setToast({ code, ok: true })
+        const codeName = toPlausibleCodeName(code)
+        if (codeName) {
+          trackPlausible("copy_code", {
+            code: codeName,
+            page: pathname,
+            source: "codes_table",
+          })
+        }
+        window.setTimeout(() => setCopied((current) => (current === code ? null : current)), 2000)
+        return
       }
-      window.setTimeout(() => setCopied((current) => (current === code ? null : current)), 2000)
-      return
-    }
 
-    setCopied(null)
-    setToast({ code, ok: false })
+      setCopied(null)
+      setToast({ code, ok: false })
+    } catch {
+      setCopied(null)
+      setToast({ code, ok: false })
+    }
   }
 
   const openRobloxAfterCopy = (code: string) => {
@@ -113,7 +126,8 @@ export function CodesSection() {
   return (
     <section
       id="codes"
-      className="relative scroll-mt-20 border-b border-border/60 py-16 lg:py-20"
+      translate="no"
+      className="notranslate relative scroll-mt-20 border-b border-border/60 py-16 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
@@ -169,7 +183,7 @@ export function CodesSection() {
                 >
                   <button
                     type="button"
-                    onClick={() => copy(row.code)}
+                    onClick={() => void copy(row.code)}
                     aria-label={`Copy code ${row.code}`}
                     className={cn(
                       "flex min-h-11 w-full items-center justify-between gap-3 rounded-xl border px-3 py-3 text-left transition-colors active:scale-[0.99] lg:hidden",
@@ -256,23 +270,22 @@ export function CodesSection() {
                   </div>
 
                   <div className="hidden lg:block lg:text-right">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="rounded-xl border-primary/40 font-mono text-xs font-bold text-primary hover:bg-primary/10"
-                      onClick={() => copy(row.code)}
+                    <button
+                      type="button"
+                      className={DESKTOP_COPY_BUTTON_CLASS}
+                      onClick={() => void copy(row.code)}
                       aria-label={`Copy code ${row.code}`}
                     >
                       {isCopied ? (
                         <>
-                          <Check className="size-3.5" /> Copied
+                          <Check className="size-3.5" aria-hidden="true" /> Copied
                         </>
                       ) : (
                         <>
-                          <Copy className="size-3.5" /> Copy
+                          <Copy className="size-3.5" aria-hidden="true" /> Copy
                         </>
                       )}
-                    </Button>
+                    </button>
                   </div>
                 </li>
               )
@@ -346,8 +359,9 @@ export function CodesSection() {
             <div
               role="status"
               aria-live="polite"
+              translate="no"
               className={cn(
-                "fixed inset-x-4 z-[100] mx-auto max-w-lg sm:inset-x-auto sm:left-1/2 sm:w-[min(100%,32rem)] sm:-translate-x-1/2",
+                "notranslate fixed inset-x-4 z-[100] mx-auto max-w-lg sm:inset-x-auto sm:left-1/2 sm:w-[min(100%,32rem)] sm:-translate-x-1/2",
                 "bottom-[max(1rem,env(safe-area-inset-bottom))]",
                 "rounded-2xl border px-4 py-4 shadow-xl backdrop-blur-md",
                 toast.ok
@@ -378,14 +392,13 @@ export function CodesSection() {
                       <Gamepad2 className="size-4 shrink-0" aria-hidden="true" />
                       Open Roblox
                     </TrackedOutboundLink>
-                    <Button
+                    <button
                       type="button"
-                      variant="outline"
-                      className="min-h-11 rounded-xl border-border/70"
+                      className={TOAST_OUTLINE_BUTTON_CLASS}
                       onClick={() => setToast(null)}
                     >
                       Not now
-                    </Button>
+                    </button>
                   </div>
                 </div>
               ) : (
@@ -394,15 +407,13 @@ export function CodesSection() {
                     Could not copy {toast.code}. Long-press the code to select it
                     manually.
                   </p>
-                  <Button
+                  <button
                     type="button"
-                    variant="ghost"
-                    size="sm"
-                    className="shrink-0"
+                    className={TOAST_GHOST_BUTTON_CLASS}
                     onClick={() => setToast(null)}
                   >
                     Close
-                  </Button>
+                  </button>
                 </div>
               )}
             </div>,
