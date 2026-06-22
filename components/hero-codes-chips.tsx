@@ -7,6 +7,7 @@ import { Check, Copy, Ticket } from "lucide-react"
 import { ACTIVE_CODES } from "@/lib/codes-data"
 import { toPlausibleCodeName, trackPlausible } from "@/lib/analytics"
 import { copyToClipboard } from "@/lib/copy-to-clipboard"
+import { REDEEM_SHORT_PATH } from "@/lib/redeem-guide-data"
 import { TrackedCtaLink } from "@/components/tracked-cta-link"
 import { cn } from "@/lib/utils"
 
@@ -95,7 +96,7 @@ export function HeroCodesChips({ className }: { className?: string }) {
         })}
       </ul>
       <p className="mt-2 text-xs text-muted-foreground">
-        Redeem in Store → Type Code Here.{" "}
+        Redeem via {REDEEM_SHORT_PATH}.{" "}
         <TrackedCtaLink
           href="/codes"
           label="Full redeem guide"

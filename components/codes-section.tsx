@@ -24,44 +24,30 @@ import { toPlausibleCodeName, trackPlausible } from "@/lib/analytics"
 import { getContentCheckedDate, getContentMonthYear } from "@/lib/content-freshness"
 import { copyToClipboard } from "@/lib/copy-to-clipboard"
 import { ROBLOX_GAME_URL } from "@/lib/game-links"
+import { REDEEM_SHORT_PATH, REDEEM_STEPS } from "@/lib/redeem-guide-data"
+import { cn } from "@/lib/utils"
 
 const CODES_MONTH_YEAR = getContentMonthYear()
 const CODES_CHECKED_DATE = getContentCheckedDate()
-import { cn } from "@/lib/utils"
 
 type CodeEntry = (typeof ACTIVE_CODES)[number]
 
 const CODES: CodeEntry[] = ACTIVE_CODES
 
+const REDEEM_STEP_ICONS = {
+  "open-game": Gamepad2,
+  "open-shop": Store,
+  "scroll-to-code-box": ScrollText,
+  redeem: MousePointerClick,
+} as const
+
+const REDEEM_STEPS_WITH_ICONS = REDEEM_STEPS.map((step) => ({
+  ...step,
+  icon: REDEEM_STEP_ICONS[step.id],
+}))
+
 const REDEEM_LINK_CLASS =
   "inline-block rounded-md py-1 font-semibold text-primary underline decoration-primary/40 underline-offset-2 hover:decoration-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card"
-
-const REDEEM_STEPS = [
-  {
-    id: "open-game",
-    icon: Gamepad2,
-    title: "Open the game",
-    desc: "Launch Merge a Nuke on Roblox and load into your base.",
-  },
-  {
-    id: "open-store",
-    icon: Store,
-    title: "Open Store",
-    desc: "Click the Store button on the left side of the screen.",
-  },
-  {
-    id: "find-code-box",
-    icon: ScrollText,
-    title: "Find the code box",
-    desc: 'Scroll to the bottom of the Store menu until you see "Type Code Here".',
-  },
-  {
-    id: "redeem",
-    icon: MousePointerClick,
-    title: "Redeem",
-    desc: "Paste the code exactly as written, then click Redeem to claim your reward.",
-  },
-] as const
 
 type CopyToast = {
   code: string
@@ -125,7 +111,7 @@ export function CodesSection() {
     }
   }
 
-  const renderRedeemStepDesc = (step: (typeof REDEEM_STEPS)[number]) => {
+  const renderRedeemStepDesc = (step: (typeof REDEEM_STEPS_WITH_ICONS)[number]) => {
     if (step.id === "open-game") {
       return (
         <>
@@ -196,7 +182,7 @@ export function CodesSection() {
           </div>
 
           <p className="border-b border-border/40 px-4 py-2 text-xs text-muted-foreground lg:hidden">
-            Tap a code to copy, then paste in Store → Type Code Here.
+            Tap a code to copy, then redeem via {REDEEM_SHORT_PATH}.
           </p>
 
           <div className="hidden grid-cols-[1fr_1.4fr_1.4fr_0.8fr_auto] gap-4 border-b border-border/40 px-4 py-2.5 text-xs font-medium text-muted-foreground lg:grid">
@@ -339,7 +325,7 @@ export function CodesSection() {
             </p>
 
             <ol className="mt-6 grid gap-4 sm:grid-cols-2">
-              {REDEEM_STEPS.map((step, i) => (
+              {REDEEM_STEPS_WITH_ICONS.map((step, i) => (
                 <li
                   key={step.id}
                   className="flex gap-4 rounded-2xl border border-border/70 bg-card/70 p-4 shadow-sm"
@@ -364,7 +350,7 @@ export function CodesSection() {
 
             <div className="mt-5 rounded-2xl border border-primary/25 bg-primary/5 p-4 sm:p-5">
               <p className="text-sm text-muted-foreground">
-                After redeeming codes in Store:
+                After redeeming codes in Shop:
               </p>
               <TrackedCtaLink
                 href="/beginner-guide"
@@ -382,7 +368,7 @@ export function CodesSection() {
             src="/images/codes-rewards.webp"
             alt="Roblox-style illustration of code rewards with cash, coins, and small yellow studded nukes"
             variant="float"
-            caption="Redeem codes in Store for cash and nukes"
+            caption="Redeem codes in Shop for cash and nukes"
             className="mx-auto w-full max-w-sm lg:max-w-none lg:justify-self-center"
           />
         </div>
@@ -398,8 +384,7 @@ export function CodesSection() {
             active as of{" "}
             <strong className="text-foreground">June 18, 2026</strong> per
             community trackers — if one fails, try the others in order, rejoin
-            the game on a fresh session, and copy codes exactly in Store → Type
-            Code Here → Redeem.
+            the game on a fresh session, and follow {REDEEM_SHORT_PATH}.
           </p>
         </div>
       </div>
@@ -427,7 +412,7 @@ export function CodesSection() {
                       copied
                     </p>
                     <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
-                      Open Roblox, then paste in Store → Type Code Here → Redeem.
+                      Open Roblox, then {REDEEM_SHORT_PATH}.
                     </p>
                   </div>
                   <div className="grid shrink-0 grid-cols-1 gap-2 sm:grid-cols-[auto_auto]">

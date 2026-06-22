@@ -1,4 +1,5 @@
 import { getContentMonthYear } from "@/lib/content-freshness"
+import { REDEEM_SHORT_PATH } from "@/lib/redeem-guide-data"
 
 const CODES_MONTH_YEAR = getContentMonthYear()
 
@@ -28,19 +29,19 @@ export const SEO_PAGES = {
     intro:
       "Codes, beginner tips, raid strategy, nuke tiers, offline cash, and progression guides for Merge a Nuke on Roblox — all in one place.",
     tldr:
-      "Tap Copy on a working code below, then redeem in Store → Type Code Here. New players: merge 2+2 → buy Spawn Speed then Spawn Tier → lock base before raiding.",
+      `Tap Copy on a working code below, then redeem via ${REDEEM_SHORT_PATH}. New players: merge 2+2 → buy Spawn Speed then Spawn Tier → lock base before raiding.`,
     breadcrumb: "Home",
   },
   codes: {
     path: "/codes",
     title: `Merge a Nuke Codes (${CODES_MONTH_YEAR}) — 3 Working Roblox Codes`,
     description:
-      `3 working Merge a Nuke codes for Roblox (${CODES_MONTH_YEAR}): ATOMIC $10K + 20 nukes, UPDATE2 $10K + 10, BOOM $5K. Tap Copy, then redeem in Store → Type Code Here.`,
+      `3 working Merge a Nuke codes for Roblox (${CODES_MONTH_YEAR}): ATOMIC $10K + 20 nukes, UPDATE2 $10K + 10, BOOM $5K. Tap Copy, then ${REDEEM_SHORT_PATH}.`,
     h1: `Merge a Nuke Codes (${CODES_MONTH_YEAR})`,
     intro:
-      "Working Merge a Nuke codes for Roblox, plus the exact steps to redeem them in the Store menu.",
+      "Working Merge a Nuke codes for Roblox, plus the exact steps to redeem them in the Shop menu.",
     tldr:
-      "Try ATOMIC ($10,000 + 20 nukes), then UPDATE2 ($10,000 + 10 nukes), then BOOM ($5,000). Open Store → Type Code Here → Redeem.",
+      `Try ATOMIC ($10,000 + 20 nukes), then UPDATE2 ($10,000 + 10 nukes), then BOOM ($5,000). ${REDEEM_SHORT_PATH}.`,
     breadcrumb: "Codes",
     openGraphImage: {
       url: "/images/codes-rewards.webp",

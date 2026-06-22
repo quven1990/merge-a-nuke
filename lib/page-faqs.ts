@@ -1,4 +1,5 @@
 import type { SeoPageConfig } from "@/lib/seo-pages"
+import { REDEEM_FAQ_ANSWER, REDEEM_SHORT_PATH } from "@/lib/redeem-guide-data"
 
 export type PageFaq = {
   q: string
@@ -9,11 +10,11 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
   "/codes": [
     {
       q: "What is the active code for Merge a Nuke?",
-      a: "As of June 18, 2026, try ATOMIC first ($10,000 + 20 nukes), then UPDATE2 ($10,000 + 10 nukes), then BOOM ($5,000). Redeem in Store → Type Code Here → Redeem.",
+      a: `As of June 18, 2026, try ATOMIC first ($10,000 + 20 nukes), then UPDATE2 ($10,000 + 10 nukes), then BOOM ($5,000). Redeem via ${REDEEM_SHORT_PATH}.`,
     },
     {
       q: "How do I redeem Merge a Nuke codes?",
-      a: 'Launch Merge a Nuke on Roblox, open Store on the left, scroll to "Type Code Here" at the bottom, paste the code exactly, and click Redeem.',
+      a: REDEEM_FAQ_ANSWER,
     },
     {
       q: "Why is a Merge a Nuke code not working?",

@@ -1,3 +1,5 @@
+import { REDEEM_SHORT_PATH } from "@/lib/redeem-guide-data"
+
 export type StoreUpgrade = {
   name: string
   priority: "Essential" | "High" | "Medium" | "Late-game"
@@ -7,7 +9,7 @@ export type StoreUpgrade = {
 }
 
 export const EARLY_UPGRADE_ROUTE = [
-  "Redeem all active codes for starting cash and nukes.",
+  `Redeem all active codes first (${REDEEM_SHORT_PATH}) for starting cash and nukes.`,
   "Buy Spawn Speed first — community gameplay shows a big early boost for a few thousand cash.",
   "Save for Spawn Tier so new nukes spawn at level 2 instead of level 1.",
   "Raise Max Spawn so more nukes appear at once, then keep merging duplicates.",

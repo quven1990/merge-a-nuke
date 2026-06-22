@@ -1,3 +1,4 @@
+import { REDEEM_FAQ_ANSWER, REDEEM_SHORT_PATH } from "@/lib/redeem-guide-data"
 import { SITE_URL } from "@/lib/site"
 
 export const FAQS = [
@@ -7,11 +8,11 @@ export const FAQS = [
   },
   {
     q: "What is the active code for Merge a Nuke?",
-    a: `As of June 18, 2026, try ATOMIC first ($10,000 + 20 nukes), then UPDATE2 ($10,000 + 10 nukes), then BOOM ($5,000). Redeem in Store → Type Code Here → Redeem. Full list: ${SITE_URL}/codes`,
+    a: `As of June 18, 2026, try ATOMIC first ($10,000 + 20 nukes), then UPDATE2 ($10,000 + 10 nukes), then BOOM ($5,000). Redeem via ${REDEEM_SHORT_PATH}. Full list: ${SITE_URL}/codes`,
   },
   {
     q: "How do I redeem codes?",
-    a: 'Launch Merge a Nuke on Roblox, click Store on the left, scroll to the bottom, paste a working code into "Type Code Here", and click Redeem. Try ATOMIC, UPDATE2, and BOOM in that order for the biggest rewards. Codes are case-sensitive — copy them directly from this page.',
+    a: `${REDEEM_FAQ_ANSWER} Try ATOMIC, UPDATE2, and BOOM in that order for the biggest rewards.`,
   },
   {
     q: "Why is a code not working?",

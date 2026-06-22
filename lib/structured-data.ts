@@ -1,5 +1,6 @@
 import { ACTIVE_CODES } from "@/lib/codes-data"
 import { getContentMonthYear } from "@/lib/content-freshness"
+import { buildRedeemHowToSchemaSteps } from "@/lib/redeem-guide-data"
 import { FAQS } from "@/lib/faqs"
 import { ROBLOX_GAME_ABOUT_URL, ROBLOX_GAME_URL } from "@/lib/game-links"
 import { MERGE_STEPS } from "@/lib/merge-guide-data"
@@ -120,32 +121,7 @@ function buildCodeRedeemHowTo() {
     name: "How to redeem Merge a Nuke codes",
     description:
       "Redeem ATOMIC, UPDATE2, and BOOM in the Roblox game Merge a Nuke.",
-    step: [
-      {
-        "@type": "HowToStep",
-        position: 1,
-        name: "Open the game",
-        text: "Launch Merge a Nuke on Roblox and load into your base.",
-      },
-      {
-        "@type": "HowToStep",
-        position: 2,
-        name: "Open Store",
-        text: "Click the Store button on the left side of the screen.",
-      },
-      {
-        "@type": "HowToStep",
-        position: 3,
-        name: "Find the code box",
-        text: 'Scroll to the bottom of the Store menu until you see "Type Code Here".',
-      },
-      {
-        "@type": "HowToStep",
-        position: 4,
-        name: "Redeem",
-        text: "Paste the code exactly as written, then click Redeem to claim your reward.",
-      },
-    ],
+    step: buildRedeemHowToSchemaSteps(),
   }
 }
 

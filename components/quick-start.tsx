@@ -12,12 +12,13 @@ import {
 } from "lucide-react"
 
 import { SectionHeading } from "@/components/hud"
+import { REDEEM_SHORT_PATH } from "@/lib/redeem-guide-data"
 
 const STEPS = [
   {
     icon: Ticket,
     title: "Redeem all active codes",
-    desc: "Grab every working code first so you start with extra cash and nukes.",
+    desc: `Grab every working code first via ${REDEEM_SHORT_PATH} for extra cash and nukes.`,
     href: "/codes",
   },
   {
