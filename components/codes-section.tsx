@@ -21,8 +21,12 @@ import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
 import { WikiIllustration } from "@/components/wiki-illustration"
 import { ACTIVE_CODES } from "@/lib/codes-data"
 import { toPlausibleCodeName, trackPlausible } from "@/lib/analytics"
+import { getContentCheckedDate, getContentMonthYear } from "@/lib/content-freshness"
 import { copyToClipboard } from "@/lib/copy-to-clipboard"
 import { ROBLOX_GAME_URL } from "@/lib/game-links"
+
+const CODES_MONTH_YEAR = getContentMonthYear()
+const CODES_CHECKED_DATE = getContentCheckedDate()
 import { cn } from "@/lib/utils"
 
 type CodeEntry = (typeof ACTIVE_CODES)[number]
@@ -179,11 +183,11 @@ export function CodesSection() {
         <div className="mt-8 overflow-hidden rounded-2xl border-2 border-primary/25 bg-card/80 shadow-lg glow-border">
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/50 bg-secondary/30 px-4 py-3">
             <span className="text-sm font-semibold text-foreground">
-              Working codes — June 2026
+              Working codes — {CODES_MONTH_YEAR}
             </span>
             <span className="text-xs text-muted-foreground">
               Last checked:{" "}
-              <span className="font-medium text-primary">June 18, 2026</span>
+              <span className="font-medium text-primary">{CODES_CHECKED_DATE}</span>
               <span className="hidden sm:inline">
                 {" "}
                 · synced with community code lists

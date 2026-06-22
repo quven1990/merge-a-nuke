@@ -1,3 +1,7 @@
+import { getContentMonthYear } from "@/lib/content-freshness"
+
+const CODES_MONTH_YEAR = getContentMonthYear()
+
 export type SeoPageConfig = {
   path: "/" | `/${string}`
   title: string
@@ -29,10 +33,10 @@ export const SEO_PAGES = {
   },
   codes: {
     path: "/codes",
-    title: "Merge a Nuke Codes — ATOMIC, UPDATE2 & BOOM",
+    title: `Merge a Nuke Codes (${CODES_MONTH_YEAR}) — 3 Working Roblox Codes`,
     description:
-      "Working Merge a Nuke codes for Roblox with rewards and sources. Copy ATOMIC, UPDATE2, and BOOM, then redeem them in Store with our step-by-step guide.",
-    h1: "Merge a Nuke Codes",
+      `3 working Merge a Nuke codes for Roblox (${CODES_MONTH_YEAR}): ATOMIC $10K + 20 nukes, UPDATE2 $10K + 10, BOOM $5K. Tap Copy, then redeem in Store → Type Code Here.`,
+    h1: `Merge a Nuke Codes (${CODES_MONTH_YEAR})`,
     intro:
       "Working Merge a Nuke codes for Roblox, plus the exact steps to redeem them in the Store menu.",
     tldr:

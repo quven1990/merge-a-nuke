@@ -1,3 +1,7 @@
+import { getContentMonthYear } from "@/lib/content-freshness"
+
+const CODES_MONTH_YEAR = getContentMonthYear()
+
 export type CodeEntry = {
   code: string
   reward: string
@@ -10,7 +14,7 @@ export const ACTIVE_CODES: CodeEntry[] = [
   {
     code: "ATOMIC",
     reward: "$10,000 + 20 nukes",
-    source: "RoCodes & Pocket Tactics (June 2026)",
+    source: `RoCodes & Pocket Tactics (${CODES_MONTH_YEAR})`,
     status: "Active",
     highlight: "Best nuke reward",
   },

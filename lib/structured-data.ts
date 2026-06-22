@@ -1,4 +1,5 @@
 import { ACTIVE_CODES } from "@/lib/codes-data"
+import { getContentMonthYear } from "@/lib/content-freshness"
 import { FAQS } from "@/lib/faqs"
 import { ROBLOX_GAME_ABOUT_URL, ROBLOX_GAME_URL } from "@/lib/game-links"
 import { MERGE_STEPS } from "@/lib/merge-guide-data"
@@ -11,6 +12,7 @@ import { EARLY_UPGRADE_ROUTE, STORE_UPGRADES } from "@/lib/upgrades-data"
 
 const LAST_MODIFIED = "2026-06-18"
 const HOME_LAST_MODIFIED = "2026-06-21"
+const CODES_MONTH_YEAR = getContentMonthYear()
 
 function pageUrl(siteUrl: string, path: SeoPageConfig["path"]) {
   return path === "/" ? siteUrl : `${siteUrl}${path}`
@@ -167,7 +169,7 @@ function buildCodeItemList() {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Merge a Nuke active codes — June 2026",
+    name: `Merge a Nuke active codes — ${CODES_MONTH_YEAR}`,
     itemListElement: ACTIVE_CODES.map((entry, index) => ({
       "@type": "ListItem",
       position: index + 1,
