@@ -40,17 +40,28 @@ export type OutboundPlacement =
   | "footer"
   | "privacy"
   | "codes_toast"
+  | "codes_redeem"
   | "other"
 
 export type CtaPlacement =
   | "hero_primary"
   | "hero_card"
+  | "hero_chips"
   | "hero_loop"
   | "header"
   | "header_mobile"
   | "guide_cards"
   | "game_overview"
+  | "codes_redeem"
 
+/**
+ * Plausible custom events (enable matching Goals in the dashboard).
+ *
+ * Goals: copy_code, codes_open_roblox, cta_click, outbound_click, nav_open
+ * Custom properties: page, code, source, label, target, placement, destination
+ *
+ * `placement` / `source` values appear after first event — no per-value setup.
+ */
 export type PlausibleEventProps = {
   copy_code: {
     code: PlausibleCodeName

@@ -5,6 +5,7 @@ import { createPortal } from "react-dom"
 import { usePathname } from "next/navigation"
 import {
   AlertTriangle,
+  ArrowRight,
   Check,
   Copy,
   Gamepad2,
@@ -15,6 +16,7 @@ import {
 } from "lucide-react"
 
 import { SectionHeading } from "@/components/hud"
+import { TrackedCtaLink } from "@/components/tracked-cta-link"
 import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
 import { WikiIllustration } from "@/components/wiki-illustration"
 import { ACTIVE_CODES } from "@/lib/codes-data"
@@ -27,23 +29,30 @@ type CodeEntry = (typeof ACTIVE_CODES)[number]
 
 const CODES: CodeEntry[] = ACTIVE_CODES
 
+const REDEEM_LINK_CLASS =
+  "inline-block rounded-md py-1 font-semibold text-primary underline decoration-primary/40 underline-offset-2 hover:decoration-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card"
+
 const REDEEM_STEPS = [
   {
+    id: "open-game",
     icon: Gamepad2,
     title: "Open the game",
     desc: "Launch Merge a Nuke on Roblox and load into your base.",
   },
   {
+    id: "open-store",
     icon: Store,
     title: "Open Store",
     desc: "Click the Store button on the left side of the screen.",
   },
   {
+    id: "find-code-box",
     icon: ScrollText,
     title: "Find the code box",
     desc: 'Scroll to the bottom of the Store menu until you see "Type Code Here".',
   },
   {
+    id: "redeem",
     icon: MousePointerClick,
     title: "Redeem",
     desc: "Paste the code exactly as written, then click Redeem to claim your reward.",
@@ -110,6 +119,28 @@ export function CodesSection() {
       setCopied(null)
       setToast({ code, ok: false })
     }
+  }
+
+  const renderRedeemStepDesc = (step: (typeof REDEEM_STEPS)[number]) => {
+    if (step.id === "open-game") {
+      return (
+        <>
+          Launch{" "}
+          <TrackedOutboundLink
+            href={ROBLOX_GAME_URL}
+            placement="codes_redeem"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={REDEEM_LINK_CLASS}
+          >
+            Merge a Nuke on Roblox
+          </TrackedOutboundLink>{" "}
+          and load into your base.
+        </>
+      )
+    }
+
+    return step.desc
   }
 
   const openRobloxAfterCopy = (code: string) => {
@@ -306,13 +337,13 @@ export function CodesSection() {
             <ol className="mt-6 grid gap-4 sm:grid-cols-2">
               {REDEEM_STEPS.map((step, i) => (
                 <li
-                  key={step.title}
+                  key={step.id}
                   className="flex gap-4 rounded-2xl border border-border/70 bg-card/70 p-4 shadow-sm"
                 >
                   <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary">
                     <step.icon className="size-5" aria-hidden="true" />
                   </span>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs font-semibold text-primary">
                       Step {i + 1}
                     </p>
@@ -320,12 +351,27 @@ export function CodesSection() {
                       {step.title}
                     </p>
                     <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                      {step.desc}
+                      {renderRedeemStepDesc(step)}
                     </p>
                   </div>
                 </li>
               ))}
             </ol>
+
+            <div className="mt-5 rounded-2xl border border-primary/25 bg-primary/5 p-4 sm:p-5">
+              <p className="text-sm text-muted-foreground">
+                After redeeming codes in Store:
+              </p>
+              <TrackedCtaLink
+                href="/beginner-guide"
+                label="Beginner Guide"
+                placement="codes_redeem"
+                className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-primary/40 bg-card/90 px-4 text-sm font-bold text-primary shadow-sm transition-colors hover:border-primary/60 hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto"
+              >
+                Start the Beginner Guide
+                <ArrowRight className="size-4 shrink-0" aria-hidden="true" />
+              </TrackedCtaLink>
+            </div>
           </div>
 
           <WikiIllustration
