@@ -5,7 +5,7 @@ import { LegalDocument } from "@/components/legal-document"
 import { SiteShell } from "@/components/site-shell"
 import { createPageMetadata } from "@/lib/page-metadata"
 import { SEO_PAGES } from "@/lib/seo-pages"
-import { CONTACT_EMAIL } from "@/lib/site-contact"
+import { ContactEmailLink } from "@/components/contact-email-link"
 import { SITE_NAME } from "@/lib/site"
 
 const page = SEO_PAGES.privacy
@@ -198,7 +198,7 @@ export default function PrivacyPage() {
               content: (
                 <p>
                   Privacy questions:{" "}
-                  <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. See
+                  <ContactEmailLink />. See
                   also our <Link href="/terms">Terms of Use</Link>.
                 </p>
               ),

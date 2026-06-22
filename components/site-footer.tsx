@@ -2,9 +2,9 @@ import Link from "next/link"
 import { ExternalLink, Gamepad2, Radiation, Users } from "lucide-react"
 
 import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
+import { ContactEmailLink } from "@/components/contact-email-link"
 import { NAV_ITEMS } from "@/lib/navigation"
 import { ROBLOX_GAME_ABOUT_URL, ROBLOX_GAME_URL } from "@/lib/game-links"
-import { CONTACT_EMAIL } from "@/lib/site-contact"
 
 export function SiteFooter() {
   return (
@@ -108,12 +108,7 @@ export function SiteFooter() {
             >
               Terms of Use
             </Link>
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="text-muted-foreground transition-colors hover:text-primary"
-            >
-              {CONTACT_EMAIL}
-            </a>
+            <ContactEmailLink className="text-muted-foreground transition-colors hover:text-primary" />
           </nav>
           <p className="mt-4 text-xs text-muted-foreground leading-relaxed">
             Disclaimer: This is a fan-made guide and is not affiliated with,
