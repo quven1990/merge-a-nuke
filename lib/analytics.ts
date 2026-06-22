@@ -96,6 +96,11 @@ declare global {
       event: string,
       options?: { props?: Record<string, string> },
     ) => void
+    gtag?: (
+      command: "event",
+      eventName: string,
+      params?: Record<string, string | number | boolean>,
+    ) => void
   }
 }
 
@@ -103,7 +108,7 @@ export function trackPlausible<E extends PlausibleEvent>(
   event: E,
   props: PlausibleEventProps[E],
 ) {
-  if (!PLAUSIBLE_ENABLED || typeof window === "undefined") {
+  if (typeof window === "undefined") {
     return
   }
 
@@ -111,7 +116,32 @@ export function trackPlausible<E extends PlausibleEvent>(
     Object.entries(props).map(([key, value]) => [key, String(value)]),
   )
 
-  window.plausible?.(event, { props: payload })
+  if (PLAUSIBLE_ENABLED) {
+    window.plausible?.(event, { props: payload })
+  }
+
+  if (!GA_ENABLED) {
+    return
+  }
+
+  window.gtag?.("event", event, {
+    ...payload,
+    send_to: GA_MEASUREMENT_ID,
+  })
+
+  const opensRoblox =
+    event === "codes_open_roblox" ||
+    (event === "outbound_click" &&
+      (payload.destination === "roblox_game" ||
+        payload.destination === "roblox_about"))
+
+  if (opensRoblox) {
+    window.gtag?.("event", "open_roblox", {
+      ...payload,
+      source_event: event,
+      send_to: GA_MEASUREMENT_ID,
+    })
+  }
 }
 
 export function resolveOutboundDestination(href: string): OutboundDestination {
