@@ -26,7 +26,7 @@ export function SiteHeader() {
           </span>
           <Badge
             variant="outline"
-            className="ml-1 hidden shrink-0 rounded-full border-boom/50 bg-boom/10 text-boom sm:inline-flex"
+            className="ml-1 hidden shrink-0 rounded-full border-boom/50 bg-boom/10 text-boom xl:inline-flex"
           >
             Fan Guide
           </Badge>

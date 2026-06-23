@@ -23,7 +23,7 @@ export function SiteHeaderMobileMenu({ navItems }: { navItems: NavItem[] }) {
       <Button
         variant="outline"
         size="icon"
-        className="lg:hidden"
+        className="xl:hidden"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         onClick={() => {
@@ -42,7 +42,7 @@ export function SiteHeaderMobileMenu({ navItems }: { navItems: NavItem[] }) {
         <div className="absolute inset-x-0 top-full border-t border-border/60 bg-background/95 backdrop-blur-md lg:hidden">
           <nav
             aria-label="Mobile"
-            className="mx-auto grid max-w-7xl grid-cols-2 gap-1 px-4 py-4 sm:px-6"
+            className="mx-auto grid max-w-7xl grid-cols-2 gap-1 px-4 py-4 sm:grid-cols-3 sm:px-6"
           >
             {navItems.map((link) => {
               const active = pathname === link.href

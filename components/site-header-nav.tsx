@@ -10,7 +10,7 @@ export function SiteHeaderNav({ navItems }: { navItems: NavItem[] }) {
   const pathname = usePathname()
 
   return (
-    <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
+    <nav aria-label="Primary" className="hidden items-center gap-0.5 xl:flex">
       {navItems.map((link) => {
         const active = pathname === link.href
         return (
@@ -19,7 +19,7 @@ export function SiteHeaderNav({ navItems }: { navItems: NavItem[] }) {
             href={link.href}
             aria-current={active ? "page" : undefined}
             className={cn(
-              "rounded-lg px-2.5 py-1.5 text-sm font-medium transition-colors",
+              "rounded-lg px-2 py-1.5 text-[13px] font-medium transition-colors",
               active
                 ? "bg-primary/15 text-primary"
                 : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
