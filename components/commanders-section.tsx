@@ -94,6 +94,37 @@ export function CommandersSection() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-20">
 
+      {/* WHAT ARE COMMANDERS — GEO definition block */}
+      <section id="what-are-commanders" className="scroll-mt-20">
+        <SectionHeading
+          icon={Crown}
+          kicker="Overview"
+          title="What Are Commanders?"
+        />
+        <div className="mt-5 max-w-2xl space-y-3 text-sm leading-relaxed text-muted-foreground">
+          <p>
+            <strong className="text-foreground">Commanders are special units</strong> you can
+            equip in Merge a Nuke to give your island passive buffs. Each commander has a unique
+            ability — from automatically merging your lowest nukes every minute, to boosting
+            the cash output of nearby nukes every 30 seconds, to adding a flat +15% damage
+            bonus to every nuke attack you launch.
+          </p>
+          <p>
+            There are 4 rarity tiers: <strong className="text-foreground">Common</strong>{" "}
+            (3 commanders), <strong className="text-blue-400">Rare</strong> (2 commanders),{" "}
+            <strong className="text-purple-400">Epic</strong> (1 commander), and{" "}
+            <strong className="text-yellow-400">Legendary</strong> (1 commander). Higher rarity
+            means stronger and rarer abilities. Multiple commanders can be active at the
+            same time.
+          </p>
+          <p>
+            Commanders first appear as enemy units on the shared map — they arrive by boat and
+            have an HP bar. Any player can attack them, but only the player who lands the
+            killing blow captures the commander.
+          </p>
+        </div>
+      </section>
+
       {/* HOW TO GET */}
       <section id="how-to-get" className="scroll-mt-20">
         <SectionHeading

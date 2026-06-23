@@ -133,6 +133,28 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
       a: "Reinvest in Spawn Speed, Spawn Tier, or Max Spawn first so your next session starts with faster income, not cosmetic buys.",
     },
   ],
+  "/commanders": [
+    {
+      q: "What are commanders in Merge a Nuke?",
+      a: "Commanders are special units you can equip to buff your nuke output. Each has a passive ability — ranging from auto-merging your lowest nukes (Salvager) to boosting cash income (Spotter) to adding +15% damage across all attacks (Sovereign).",
+    },
+    {
+      q: "How do you get commanders in Merge a Nuke?",
+      a: "Three ways: defeat a spawned commander on the shared map (last hit wins), purchase one in the Shop with in-game cash or Robux, or earn a free starter commander at certain level milestones.",
+    },
+    {
+      q: "What is the best commander in Merge a Nuke?",
+      a: "Sovereign (Legendary) is the strongest overall — it adds +15% nuke damage passively and auto-attacks city events. For income, Spotter (Rare) is the best choice; for new players, Salvager (Common) is the easiest to use.",
+    },
+    {
+      q: "Can another player steal a commander I am trying to capture?",
+      a: "Yes. Commanders on the map are captured by whoever lands the killing blow. Attack with your strongest nuke quickly — other players compete for the same commander.",
+    },
+    {
+      q: "How many commanders can I equip at once in Merge a Nuke?",
+      a: "Multiple commanders can be active simultaneously. Pair non-overlapping roles for best results — for example Spotter for income and Gunner for PvP raids.",
+    },
+  ],
 }
 
 export function getPageFaqs(path: SeoPageConfig["path"]): PageFaq[] {
@@ -148,6 +170,7 @@ export function getPageFaqHeading(path: SeoPageConfig["path"]): string {
     "/tier-list": "Common tier list questions",
     "/raid": "Common raid & defense questions",
     "/offline-cash": "Common offline cash questions",
+    "/commanders": "Common commanders questions",
   }
 
   return headings[path] ?? "Common questions"

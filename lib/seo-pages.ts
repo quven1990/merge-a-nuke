@@ -136,7 +136,7 @@ export const SEO_PAGES = {
   },
   commanders: {
     path: "/commanders",
-    title: "Merge a Nuke Commanders Guide — All 7 Types, How to Get & Best Picks",
+    title: "Merge a Nuke Commanders — All 7 Types, How to Get & Best Picks",
     description:
       "Every Merge a Nuke commander ranked by rarity: 3 Common, 2 Rare, 1 Epic, 1 Legendary. How to capture them on the map, what each one does, and which to chase first.",
     h1: "Merge a Nuke Commanders Guide",

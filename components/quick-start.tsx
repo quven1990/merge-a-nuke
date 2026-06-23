@@ -5,6 +5,7 @@ import {
   Clock,
   Coins,
   Combine,
+  Crown,
   Lock,
   Rocket,
   Swords,
@@ -57,6 +58,12 @@ const STEPS = [
     desc: "Protect your progress so you return to a safe, productive base.",
     href: "/offline-cash",
   },
+  {
+    icon: Crown,
+    title: "Capture your first commander",
+    desc: "Commanders give permanent buffs. Start with Salvager (auto-merges) or Spotter (cash boost).",
+    href: "/commanders",
+  },
 ]
 
 export function QuickStart() {
@@ -71,7 +78,7 @@ export function QuickStart() {
           icon={Clock}
           kicker="New player route"
           title="First 30 Minutes"
-          tag="7 easy steps"
+          tag="8 easy steps"
         />
         <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
           A simple beginner route to give your base a strong, fast start. Follow

@@ -10,9 +10,11 @@ import type { SeoPageConfig } from "@/lib/seo-pages"
 import { getSiteUrl, SITE_NAME } from "@/lib/site"
 import { NUKE_TIER_ROWS } from "@/lib/tier-list-data"
 import { EARLY_UPGRADE_ROUTE, STORE_UPGRADES } from "@/lib/upgrades-data"
+import { ACQUIRE_METHODS, COMMANDERS } from "@/lib/commanders-data"
 
 const LAST_MODIFIED = "2026-06-18"
 const HOME_LAST_MODIFIED = "2026-06-21"
+const COMMANDERS_LAST_MODIFIED = "2026-06-23"
 const CODES_MONTH_YEAR = getContentMonthYear()
 
 function pageUrl(siteUrl: string, path: SeoPageConfig["path"]) {
@@ -47,13 +49,17 @@ function buildOrganization(siteUrl: string) {
 }
 
 function buildWebPage(siteUrl: string, page: SeoPageConfig) {
+  const dateModified =
+    page.path === "/" ? HOME_LAST_MODIFIED
+    : page.path === "/commanders" ? COMMANDERS_LAST_MODIFIED
+    : LAST_MODIFIED
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: page.title,
     description: page.description,
     url: pageUrl(siteUrl, page.path),
-    dateModified: page.path === "/" ? HOME_LAST_MODIFIED : LAST_MODIFIED,
+    dateModified,
     inLanguage: "en-US",
     isPartOf: {
       "@type": "WebSite",
@@ -199,6 +205,36 @@ function buildProgressionHowTo() {
   }
 }
 
+function buildCommanderAcquireHowTo() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to get commanders in Merge a Nuke",
+    description:
+      "Three ways to unlock commanders in the Roblox game Merge a Nuke: defeat map spawns, buy in the Shop, or earn at level milestones.",
+    step: ACQUIRE_METHODS.map((method, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: method.title,
+      text: `${method.how} Tip: ${method.tip}`,
+    })),
+  }
+}
+
+function buildCommanderItemList() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Merge a Nuke commanders list by rarity",
+    itemListElement: COMMANDERS.map((cmd, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: cmd.name,
+      description: `${cmd.rarity} — ${cmd.ability} Best for: ${cmd.bestFor}`,
+    })),
+  }
+}
+
 function buildRaidHowTo() {
   return {
     "@context": "https://schema.org",
@@ -264,6 +300,11 @@ export function buildPageStructuredData(page: SeoPageConfig): object[] {
 
   if (page.path === "/raid") {
     graphs.push(buildRaidHowTo())
+  }
+
+  if (page.path === "/commanders") {
+    graphs.push(buildCommanderAcquireHowTo())
+    graphs.push(buildCommanderItemList())
   }
 
   return graphs

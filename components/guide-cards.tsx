@@ -1,6 +1,7 @@
 import type { ComponentType } from "react"
 import {
   Coins,
+  Crown,
   ScrollText,
   Sparkles,
   Swords,
@@ -63,6 +64,12 @@ const GUIDES: Guide[] = [
     href: "/offline-cash",
   },
   {
+    icon: Crown,
+    title: "Commanders",
+    desc: "All 7 commanders by rarity, how to capture them, and which to get first.",
+    href: "/commanders",
+  },
+  {
     icon: ScrollText,
     title: "FAQ",
     desc: "Quick answers to the most common Merge a Nuke questions.",
@@ -81,7 +88,7 @@ export function GuideCards() {
           icon={Boxes}
           kicker="Pick a guide"
           title="Wiki Guides"
-          tag="8 topics"
+          tag="9 topics"
         />
         <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
           Open the focused article when you need more than the quick-start path.
