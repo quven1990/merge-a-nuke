@@ -97,6 +97,12 @@ export function SiteFooter() {
             className="flex flex-wrap gap-x-4 gap-y-2 text-xs"
           >
             <Link
+              href="/about"
+              className="text-muted-foreground transition-colors hover:text-primary"
+            >
+              About
+            </Link>
+            <Link
               href="/privacy"
               className="text-muted-foreground transition-colors hover:text-primary"
             >

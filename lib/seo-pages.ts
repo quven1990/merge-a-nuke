@@ -134,6 +134,15 @@ export const SEO_PAGES = {
       "Fan-made wiki, not official. ATOMIC, UPDATE2, and BOOM are the current codes — check back after Friday updates.",
     breadcrumb: "FAQ",
   },
+  about: {
+    path: "/about",
+    title: "About — Merge a Nuke Wiki",
+    description:
+      "Merge a Nuke Wiki is an independent fan guide maintained by Remy, a player who built the resource they wished existed. Updated after every Friday patch.",
+    h1: "About This Wiki",
+    intro: "Who maintains this site, how content is researched, and why it exists.",
+    breadcrumb: "About",
+  },
   privacy: {
     path: "/privacy",
     title: "Privacy Policy — Merge a Nuke Wiki",

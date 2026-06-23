@@ -16,6 +16,7 @@ const PAGE_LAST_MODIFIED: Record<string, string> = {
   "/raid": "2026-06-20",
   "/offline-cash": "2026-06-20",
   "/faq": "2026-06-20",
+  "/about": "2026-06-23",
   "/privacy": "2026-06-18",
   "/terms": "2026-06-18",
 }
@@ -37,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const legalPages = [
+    { path: "/about", priority: 0.4 },
     { path: "/privacy", priority: 0.3 },
     { path: "/terms", priority: 0.3 },
   ] as const
