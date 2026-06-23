@@ -1,4 +1,3 @@
-import Link from "next/link"
 import {
   ArrowRight,
   Coins,
@@ -65,29 +64,6 @@ const UPGRADE_STEPS = [
   "Defeat or purchase a duplicate of the same commander to raise their level cap.",
   "Upgrade their tier — higher tiers increase the strength of their passive ability.",
   "Stack multiple commanders for compound bonuses (e.g. Gunner + Siege Breaker for PvP).",
-]
-
-const FAQ_ITEMS = [
-  {
-    q: "Can another player steal a commander I'm attacking?",
-    a: "Yes. Commanders are captured by whoever deals the killing blow. Attack fast with your strongest nuke — don't chip slowly while others build up.",
-  },
-  {
-    q: "How many commanders can I equip at once?",
-    a: "Multiple commanders can be active simultaneously. Prioritize non-overlapping roles (e.g. Spotter for income + Gunner for raids).",
-  },
-  {
-    q: "Do commanders work while I'm offline?",
-    a: "Sovereign auto-attacks city events but only triggers while you are active in-game. Passive stat bonuses (damage, cash) still apply while offline.",
-  },
-  {
-    q: "What is the best commander overall?",
-    a: "Sovereign (Legendary). +15% nuke damage passively plus auto city attacks makes it the highest-value commander at any stage of the game.",
-  },
-  {
-    q: "How often do commanders spawn on the map?",
-    a: "Spawns are not on a fixed timer — they appear periodically throughout a session. Stay active and watch for the boat arrival notification.",
-  },
 ]
 
 export function CommandersSection() {
@@ -191,26 +167,31 @@ export function CommandersSection() {
                 key={cmd.name}
                 className={`rounded-2xl border ${border} bg-card/70 p-4`}
               >
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-2.5">
-                    <span className="flex size-9 items-center justify-center rounded-xl border border-primary/25 bg-primary/10">
+                {/* Header: icon + name left, rarity + priority right */}
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex min-w-0 items-center gap-2.5">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-xl border border-primary/25 bg-primary/10">
                       <RoleIcon className="size-4 text-primary" aria-hidden="true" />
                     </span>
-                    <span className="font-bold text-foreground">{cmd.name}</span>
+                    <span className="truncate font-bold text-foreground">{cmd.name}</span>
                   </div>
-                  <span className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-semibold ${badge}`}>
-                    {cmd.rarity}
-                  </span>
+                  <div className="flex shrink-0 items-center gap-1.5">
+                    <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${badge}`}>
+                      {cmd.rarity}
+                    </span>
+                    <span className={`text-xs font-bold ${PRIORITY_STYLE[cmd.priority]}`}>
+                      {cmd.priority}
+                    </span>
+                  </div>
                 </div>
+                {/* Ability */}
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {cmd.ability}
                 </p>
-                <div className="mt-3 flex items-center justify-between text-xs">
-                  <span className="text-muted-foreground">{cmd.bestFor}</span>
-                  <span className={PRIORITY_STYLE[cmd.priority]}>
-                    {cmd.priority}-tier
-                  </span>
-                </div>
+                {/* Best for */}
+                <p className="mt-2 line-clamp-2 text-xs text-muted-foreground/70">
+                  {cmd.bestFor}
+                </p>
               </div>
             )
           })}
@@ -322,26 +303,6 @@ export function CommandersSection() {
             </li>
           ))}
         </ol>
-      </section>
-
-      {/* FAQ */}
-      <section id="faq" className="scroll-mt-20">
-        <SectionHeading
-          icon={Info}
-          kicker="Quick answers"
-          title="Commanders FAQ"
-          tag={`${FAQ_ITEMS.length} questions`}
-        />
-        <dl className="mt-6 divide-y divide-border/60">
-          {FAQ_ITEMS.map((item) => (
-            <div key={item.q} className="py-4">
-              <dt className="font-semibold text-foreground">{item.q}</dt>
-              <dd className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                {item.a}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </section>
 
       {/* CTA */}
