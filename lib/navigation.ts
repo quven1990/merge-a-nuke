@@ -41,6 +41,11 @@ export const NAV_ITEMS: NavItem[] = [
     description: "How offline income works and how to set up your base before leaving.",
   },
   {
+    label: "Commanders",
+    href: "/commanders",
+    description: "All 7 commanders by rarity, how to capture them on the map, and which to prioritize first.",
+  },
+  {
     label: "FAQ",
     href: "/faq",
     description: "Quick answers about codes, progression, raids, and this fan-made wiki.",

@@ -16,6 +16,7 @@ const PAGE_LAST_MODIFIED: Record<string, string> = {
   "/raid": "2026-06-20",
   "/offline-cash": "2026-06-20",
   "/faq": "2026-06-20",
+  "/commanders": "2026-06-23",
   "/about": "2026-06-23",
   "/privacy": "2026-06-18",
   "/terms": "2026-06-18",

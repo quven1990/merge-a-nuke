@@ -134,6 +134,18 @@ export const SEO_PAGES = {
       "Fan-made wiki, not official. ATOMIC, UPDATE2, and BOOM are the current codes — check back after Friday updates.",
     breadcrumb: "FAQ",
   },
+  commanders: {
+    path: "/commanders",
+    title: "Merge a Nuke Commanders Guide — All 7 Types, How to Get & Best Picks",
+    description:
+      "Every Merge a Nuke commander ranked by rarity: 3 Common, 2 Rare, 1 Epic, 1 Legendary. How to capture them on the map, what each one does, and which to chase first.",
+    h1: "Merge a Nuke Commanders Guide",
+    intro:
+      "All 7 commanders by rarity, how to unlock them, what each one does to your nuke output, and which to prioritize at each stage of the game.",
+    tldr:
+      "Defeat spawned commanders on the map (last hit wins) or buy them in the Shop. Start with Salvager (auto-merges) or Spotter (cash boost). Endgame: Sovereign (legendary, +15% damage + auto city attacks).",
+    breadcrumb: "Commanders",
+  },
   about: {
     path: "/about",
     title: "About — Merge a Nuke Wiki",
