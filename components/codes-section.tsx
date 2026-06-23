@@ -314,6 +314,18 @@ export function CodesSection() {
           </ul>
         </div>
 
+        <div className="mt-3 flex justify-end">
+          <TrackedCtaLink
+            href="/codes"
+            label="Full codes page"
+            placement="codes_redeem"
+            className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            Full Merge a Nuke codes page
+            <ArrowRight className="size-3.5 shrink-0" aria-hidden="true" />
+          </TrackedCtaLink>
+        </div>
+
         <div className="mt-10 flex flex-col gap-8 lg:grid lg:grid-cols-[1fr_280px] lg:items-start">
           <div className="min-w-0">
             <h2 className="text-lg font-bold text-foreground">
