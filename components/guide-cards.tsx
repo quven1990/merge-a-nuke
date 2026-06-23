@@ -1,8 +1,6 @@
 import type { ComponentType } from "react"
 import {
   Coins,
-  Combine,
-  Lock,
   ScrollText,
   Sparkles,
   Swords,
@@ -47,12 +45,6 @@ const GUIDES: Guide[] = [
     href: "/upgrades",
   },
   {
-    icon: Combine,
-    title: "How to Merge",
-    desc: "Same-level rules, doubling chain, and board space tips.",
-    href: "/beginner-guide",
-  },
-  {
     icon: Swords,
     title: "Raid Guide",
     desc: "Learn when to raid, what to protect, and how to avoid wasted runs.",
@@ -69,18 +61,6 @@ const GUIDES: Guide[] = [
     title: "Offline Cash",
     desc: "Prepare your base properly before you leave the game.",
     href: "/offline-cash",
-  },
-  {
-    icon: Combine,
-    title: "Merging",
-    desc: "Master efficient merge order to keep your grid clean and fast.",
-    href: "/beginner-guide#how-to-merge",
-  },
-  {
-    icon: Lock,
-    title: "Base Lock",
-    desc: "Keep your progress safe while you are away or merging.",
-    href: "/raid",
   },
   {
     icon: ScrollText,
@@ -101,11 +81,11 @@ export function GuideCards() {
           icon={Boxes}
           kicker="Pick a guide"
           title="Wiki Guides"
-          tag="11 topics"
+          tag="8 topics"
         />
         <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-          Each topic has its own page with a focused guide. Browse here on the
-          homepage, or open the full article from the navigation bar.
+          Open the focused article when you need more than the quick-start path.
+          The homepage keeps the most common routes close at hand.
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

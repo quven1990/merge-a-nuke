@@ -53,9 +53,8 @@ export function HeroSection() {
           </h1>
           <p className="hero-lcp mt-5 max-w-xl text-base leading-relaxed text-muted-foreground text-pretty sm:mt-6 sm:text-lg">
             A fan-made <strong className="text-foreground">Merge a Nuke Wiki</strong>{" "}
-            for Roblox players — find working codes, upgrade priorities, nuke
-            tier lists, raid strategies, offline cash tips, and rebirth advice
-            in one place.
+            for Roblox players — copy working codes, redeem rewards, then follow
+            the fastest beginner upgrade path.
           </p>
 
           <HeroPrimaryTrackedLinks />
@@ -71,7 +70,7 @@ export function HeroSection() {
           <HeroInfoCardTrackedLinks />
         </div>
 
-        <div className="relative min-w-0 space-y-5">
+        <div className="relative hidden min-w-0 space-y-5 sm:block">
           <WikiIllustration
             src="/images/hero-base-merge.webp"
             alt="Roblox-style illustration of a blocky avatar beside giant yellow studded nukes on a green baseplate"
@@ -83,7 +82,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative border-t border-primary/15 bg-card/50 px-4 py-2.5">
+      <div className="relative hidden border-t border-primary/15 bg-card/50 px-4 py-2.5 sm:block">
         <div className="mx-auto flex max-w-7xl items-center gap-3">
           <span
             className="hazard-stripes hidden h-2.5 w-8 shrink-0 rounded-full sm:block"

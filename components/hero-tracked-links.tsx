@@ -5,7 +5,6 @@ import {
   Atom,
   BadgeCheck,
   Sparkles,
-  Swords,
   TrendingUp,
 } from "lucide-react"
 
@@ -23,12 +22,6 @@ const INFO_CARDS = [
     title: "Beginner Friendly",
     note: "Easy early route",
     href: "/beginner-guide",
-  },
-  {
-    icon: Swords,
-    title: "Raid & Defense Tips",
-    note: "Attack and protect",
-    href: "/raid",
   },
   {
     icon: TrendingUp,
@@ -68,7 +61,7 @@ export function HeroPrimaryTrackedLinks() {
 
 export function HeroInfoCardTrackedLinks() {
   return (
-    <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10">
+    <div className="mt-8 hidden grid-cols-3 gap-3 sm:mt-10 sm:grid">
         {INFO_CARDS.map((card) => (
           <TrackedCtaLink
             key={card.title}

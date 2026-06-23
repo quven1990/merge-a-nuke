@@ -26,13 +26,11 @@ export default function Page() {
         <HeroSection />
         <BelowFold>
           <HazardDivider />
-          <GameOverview />
-          <HazardDivider />
           <CodesSection />
           <HazardDivider />
-          <MergeGuide />
-          <HazardDivider />
           <QuickStart />
+          <HazardDivider />
+          <MergeGuide />
           <HazardDivider />
           <GuideCards />
           <HazardDivider />
@@ -45,6 +43,8 @@ export default function Page() {
           <OfflineCash />
           <HazardDivider />
           <FaqSection />
+          <HazardDivider />
+          <GameOverview />
         </BelowFold>
       </main>
     </SiteShell>
