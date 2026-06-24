@@ -46,7 +46,7 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
   "/progression": [
     {
       q: "What is the best early progression path in Merge a Nuke?",
-      a: "Codes → Spawn Speed → Spawn Tier → merge toward 16+ → lock base → raid only when your economy is stable. Rebirth unlocks higher Index tiers later.",
+      a: "Codes → Spawn Speed → Spawn Tier → merge toward 16+ → capture a commander (Salvager or Spotter) → lock base → raid only when your economy is stable. Rebirth unlocks higher Index tiers later.",
     },
     {
       q: "When should I merge to higher nuke tiers?",
@@ -59,6 +59,10 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
     {
       q: "Is rebirth worth it in Merge a Nuke?",
       a: "Yes when growth slows — rebirth unlocks higher Index nukes beyond the mid-game cap (community runs report ~35 tiers before rebirth).",
+    },
+    {
+      q: "When should I get my first commander?",
+      a: "After Spawn Speed and Spawn Tier are online — Salvager (Common) auto-merges your grid; Spotter (Rare) boosts cash. Full guide: mergeanuke.site/commanders",
     },
   ],
   "/upgrades": [

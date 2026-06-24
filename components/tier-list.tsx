@@ -149,8 +149,15 @@ export function TierList() {
             After each update, re-check this tier list alongside the{" "}
             <Link href="/codes" className="font-medium text-primary hover:underline">
               Codes
-            </Link>{" "}
-            and{" "}
+            </Link>
+            ,{" "}
+            <Link
+              href="/commanders"
+              className="font-medium text-primary hover:underline"
+            >
+              Commanders
+            </Link>
+            , and{" "}
             <Link
               href="/progression"
               className="font-medium text-primary hover:underline"

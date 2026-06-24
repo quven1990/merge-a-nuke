@@ -130,7 +130,19 @@ export function ProgressionRoadmap() {
           >
             Store upgrades guide
           </Link>{" "}
-          for Spawn Tier, Spawn Speed, and Lock Base priorities.
+          for Spawn Tier, Spawn Speed, and Lock Base priorities. After income is
+          stable, unlock passive buffs via{" "}
+          <Link
+            href="/commanders"
+            className="font-medium text-primary hover:underline"
+          >
+            commanders
+          </Link>{" "}
+          — start with Salvager or Spotter. Redeem free cash first on the{" "}
+          <Link href="/codes" className="font-medium text-primary hover:underline">
+            codes page
+          </Link>
+          .
         </p>
       </div>
     </section>

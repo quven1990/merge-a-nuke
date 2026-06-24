@@ -144,6 +144,39 @@ export function CodesSection() {
     setToast(null)
   }
 
+  const isHome = pathname === "/"
+
+  if (isHome) {
+    return (
+      <section
+        id="codes"
+        className="relative scroll-mt-20 border-b border-border/60 py-16 lg:py-20"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            icon={Ticket}
+            kicker="Free codes"
+            title="Latest Merge a Nuke Codes"
+            tag="Checked weekly"
+          />
+          <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+            Tap a code in the hero section above to copy. For the full table,
+            redeem steps, and FAQ, open the dedicated codes page.
+          </p>
+          <TrackedCtaLink
+            href="/codes"
+            label="Full codes page"
+            placement="codes_redeem"
+            className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-xl border border-primary/40 bg-card/90 px-4 text-sm font-bold text-primary shadow-sm transition-colors hover:border-primary/60 hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            Full Merge a Nuke codes page
+            <ArrowRight className="size-4 shrink-0" aria-hidden="true" />
+          </TrackedCtaLink>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section
       id="codes"

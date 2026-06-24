@@ -35,6 +35,10 @@ export const FAQS = [
     a: "The map center has a PvE city target separate from player bases. It opens on a long cooldown (often 40+ minutes in gameplay footage), pays large rewards, and works best with your highest-damage nukes. It is not the same as raiding another player.",
   },
   {
+    q: "What are commanders in Merge a Nuke?",
+    a: `Commanders are special units you equip for passive buffs — auto-merging (Salvager), cash boosts (Spotter), or +15% damage (Sovereign). See all 7 types and how to capture them: ${SITE_URL}/commanders`,
+  },
+  {
     q: "How does raiding work?",
     a: `Launch your nukes at another player's base to steal cash — but only if their Lock Base shield is down. Getting raided can wipe nukes from your board. PvP and center city guide: ${SITE_URL}/raid`,
   },
