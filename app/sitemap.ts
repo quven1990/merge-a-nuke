@@ -7,7 +7,7 @@ export const dynamic = "force-static"
 
 /** Last content update per indexable path (YYYY-MM-DD), from recent git history. */
 const PAGE_LAST_MODIFIED: Record<string, string> = {
-  "/": "2026-06-21",
+  "/": "2026-06-25",
   "/codes": "2026-06-24",
   "/beginner-guide": "2026-06-20",
   "/progression": "2026-06-20",
@@ -16,7 +16,7 @@ const PAGE_LAST_MODIFIED: Record<string, string> = {
   "/raid": "2026-06-20",
   "/offline-cash": "2026-06-20",
   "/faq": "2026-06-20",
-  "/commanders": "2026-06-23",
+  "/commanders": "2026-06-24",
   "/about": "2026-06-23",
   "/privacy": "2026-06-18",
   "/terms": "2026-06-18",

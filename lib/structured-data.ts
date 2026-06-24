@@ -13,8 +13,8 @@ import { EARLY_UPGRADE_ROUTE, STORE_UPGRADES } from "@/lib/upgrades-data"
 import { ACQUIRE_METHODS, COMMANDERS } from "@/lib/commanders-data"
 
 const LAST_MODIFIED = "2026-06-18"
-const HOME_LAST_MODIFIED = "2026-06-21"
-const COMMANDERS_LAST_MODIFIED = "2026-06-23"
+const HOME_LAST_MODIFIED = "2026-06-25"
+const COMMANDERS_LAST_MODIFIED = "2026-06-24"
 const CODES_MONTH_YEAR = getContentMonthYear()
 
 function pageUrl(siteUrl: string, path: SeoPageConfig["path"]) {
