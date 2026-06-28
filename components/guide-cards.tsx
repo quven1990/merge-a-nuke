@@ -48,7 +48,7 @@ const GUIDES: Guide[] = [
   {
     icon: Swords,
     title: "Raid Guide",
-    desc: "Learn when to raid, what to protect, and how to avoid wasted runs.",
+    desc: "When to raid, how to defend, plus the new Harbor & Oil Rig event maps.",
     href: "/raid",
   },
   {

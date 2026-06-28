@@ -118,6 +118,18 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
       q: "How do I defend my base from raids?",
       a: "Lock before offline play, upgrade Lock Base duration, and avoid leaving high-tier merge chains exposed in public lobbies.",
     },
+    {
+      q: "What are the Harbor and Oil Rig event maps in Merge a Nuke?",
+      a: "Harbor and Oil Rig are two rotating event maps added in the Commanders Pt. 2 update (June 28, 2026). They sit apart from your base and the center city, and each one drops 2 exclusive commanders — the main way to capture the new Admiral-rarity units. Bring your highest-tier nukes, as event targets are tougher than early PvP bases.",
+    },
+    {
+      q: "What changed with destruction physics in Commanders Pt. 2?",
+      a: "Commanders Pt. 2 reworked how structures break apart, so buildings now collapse and react to hits with new physics. It's mostly a visual upgrade, but it makes it clearer which targets your nuke actually connected with.",
+    },
+    {
+      q: "How do I skip the nuke launch cooldown when raiding?",
+      a: "Fire a nuke before you merge it. Because the copy you launched is already gone, you can immediately combine its twin and fire again, sidestepping most of the reload timer. Remember that launching also drops your own Lock Base shield, so re-lock right after attacking.",
+    },
   ],
   "/offline-cash": [
     {

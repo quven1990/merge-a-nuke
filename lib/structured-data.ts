@@ -15,6 +15,7 @@ import { ACQUIRE_METHODS, COMMANDERS } from "@/lib/commanders-data"
 const LAST_MODIFIED = "2026-06-18"
 const HOME_LAST_MODIFIED = "2026-06-25"
 const COMMANDERS_LAST_MODIFIED = "2026-06-28"
+const RAID_LAST_MODIFIED = "2026-06-28"
 const CODES_MONTH_YEAR = getContentMonthYear()
 
 function pageUrl(siteUrl: string, path: SeoPageConfig["path"]) {
@@ -52,6 +53,7 @@ function buildWebPage(siteUrl: string, page: SeoPageConfig) {
   const dateModified =
     page.path === "/" ? HOME_LAST_MODIFIED
     : page.path === "/commanders" ? COMMANDERS_LAST_MODIFIED
+    : page.path === "/raid" ? RAID_LAST_MODIFIED
     : LAST_MODIFIED
   return {
     "@context": "https://schema.org",

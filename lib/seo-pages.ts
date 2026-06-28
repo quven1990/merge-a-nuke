@@ -100,14 +100,14 @@ export const SEO_PAGES = {
   },
   raid: {
     path: "/raid",
-    title: "Merge a Nuke Raid Guide — PvP, City & Defense",
+    title: "Merge a Nuke Raid Guide — PvP, City, Event Maps & Defense",
     description:
-      "Merge a Nuke raid guide: PvP base attacks, center city PvE payouts, Lock Base shields, launch cooldowns, and how to avoid losing your merge progress.",
+      "Merge a Nuke raid guide: PvP base attacks, center city PvE payouts, the new Harbor & Oil Rig event maps (Commanders Pt. 2), Lock Base shields, and how to avoid losing merge progress.",
     h1: "Merge a Nuke Raid & Defense Guide",
     intro:
-      "Raid smarter, farm the center city on cooldown, and lock your base so offline players cannot wipe your progress.",
+      "Raid smarter, farm the center city on cooldown, hit the new Harbor & Oil Rig event maps, and lock your base so offline players cannot wipe your progress.",
     tldr:
-      "Check shields before launching. Lock before merging in busy lobbies. Center city pays more than early PvP — save your biggest nukes for its window.",
+      "Check shields before launching. Lock before merging in busy lobbies. Center city pays more than early PvP, and the new Harbor & Oil Rig event maps drop exclusive Admiral commanders — bring your biggest nukes.",
     breadcrumb: "Raid Guide",
   },
   offlineCash: {

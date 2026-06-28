@@ -16,7 +16,7 @@ Codes and balance can change after Friday game updates. Tier names and some stat
 - [Upgrades](https://mergeanuke.site/upgrades): Store upgrade priority for free players
 - [Progression](https://mergeanuke.site/progression): Stage-by-stage growth path
 - [Tier List](https://mergeanuke.site/tier-list): Merge levels and community-reported nuke names
-- [Raid Guide](https://mergeanuke.site/raid): PvP raids, center city, and Lock Base defense
+- [Raid Guide](https://mergeanuke.site/raid): PvP raids, center city, the new Harbor & Oil Rig event maps (Commanders Pt. 2), and Lock Base defense
 - [Offline Cash](https://mergeanuke.site/offline-cash): Passive income and pre-logout setup
 - [Commanders](https://mergeanuke.site/commanders): All 15 commanders by rarity incl. the new Admiral tier (Commanders Pt. 2), how to capture them, and which to get first
 - [FAQ](https://mergeanuke.site/faq): Rebirth, code troubleshooting, and wiki scope

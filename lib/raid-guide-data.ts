@@ -46,6 +46,58 @@ export const SHIELD_MECHANICS = [
   },
 ] as const
 
+export const ADVANCED_RAID_TACTICS = [
+  {
+    title: "Fire first, then merge to skip the cooldown",
+    desc: "Launch a nuke before you combine it. The copy you fired is already gone, so you can immediately merge its twin and fire again — sidestepping most of the reload timer.",
+  },
+  {
+    title: "Launching drops your own shield",
+    desc: "The moment you attack, your Lock Base shield goes down. Hit first, then re-lock — or you'll be wide open right after your own launch.",
+  },
+  {
+    title: "Pick up and hide your best nuke",
+    desc: "You can grab and reposition nukes on your board. Move your single highest-tier nuke somewhere safe so one incoming raid can't wipe the unit you worked hardest for.",
+  },
+  {
+    title: "Spread nukes across the launch zone",
+    desc: "You can only launch from part of the map, and clustered nukes get cleared together. Keep your board spread out so a single hit doesn't take multiple high-tier units.",
+  },
+  {
+    title: "Aim at buildings when farming the city",
+    desc: "Center-city damage only registers on structures, and every hit pays cash (late-game runs report huge payouts per launch). Target buildings directly — the city slowly regains health between hits.",
+  },
+] as const
+
+export const EVENT_MAPS = [
+  {
+    name: "Harbor",
+    summary:
+      "A new event map added in Commanders Pt. 2 (June 28, 2026). It rotates as a separate target from your base and the center city.",
+    exclusiveCommanders: "Carrier (Admiral) plus a second event-exclusive unit",
+  },
+  {
+    name: "Oil Rig",
+    summary:
+      "The second Commanders Pt. 2 event map. Like Harbor, it spawns on rotation and pays its own rewards on top of standard raids.",
+    exclusiveCommanders: "Apache (Admiral) plus a second event-exclusive unit",
+  },
+] as const
+
+export const EVENT_MAP_GUIDE = {
+  title: "Event maps: Harbor & Oil Rig (Commanders Pt. 2)",
+  summary:
+    "Commanders Pt. 2 added two rotating event maps — Harbor and Oil Rig — that each drop 2 exclusive commanders. They are the main way to capture the new Admiral-rarity units.",
+  points: [
+    "Each event map carries 2 map-exclusive commanders, so clearing both maps is how you collect the new Pt. 2 units.",
+    "Event maps rotate in and out — check the map selector when an event window is live so you don't miss the exclusive drops.",
+    "Bring your highest-tier nukes: event targets are tuned tougher than early PvP bases, similar to the center city.",
+    "Exact spawn timers, rewards, and commander drop rules are still being confirmed in-game — treat the schedule as approximate until verified.",
+  ],
+  destructionPhysics:
+    "Pt. 2 also reworked destruction with new physics, so structures collapse and react to hits differently. It is mostly visual, but it makes it clearer which targets your nuke actually connected with.",
+} as const
+
 export const CENTER_CITY_GUIDE = {
   title: "Center City (PvE)",
   summary:

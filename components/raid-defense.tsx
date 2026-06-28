@@ -1,9 +1,13 @@
 import Link from "next/link"
 import {
+  Anchor,
   Building2,
+  Fuel,
+  Lightbulb,
   Lock,
   Radar,
   ShieldCheck,
+  Sparkles,
   Swords,
   Target,
   Timer,
@@ -11,11 +15,16 @@ import {
 
 import { WikiIllustration } from "@/components/wiki-illustration"
 import {
+  ADVANCED_RAID_TACTICS,
   CENTER_CITY_GUIDE,
+  EVENT_MAP_GUIDE,
+  EVENT_MAPS,
   PVP_RAID_STEPS,
   RAID_CONSEQUENCES,
   SHIELD_MECHANICS,
 } from "@/lib/raid-guide-data"
+
+const EVENT_MAP_ICON = [Anchor, Fuel] as const
 
 const RAID_POINTS = [
   "Raid only when your income and defense are both ready.",
@@ -48,6 +57,26 @@ export function RaidDefense() {
           huge payouts. Win more by attacking smart, locking often, and knowing
           when each target is worth it.
         </p>
+
+        <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-primary/40 bg-primary/10 p-5 sm:flex-row sm:items-start sm:gap-4">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-xl border border-primary/40 bg-primary/15 text-primary">
+            <Sparkles className="size-4.5" aria-hidden="true" />
+          </span>
+          <div className="space-y-1">
+            <p className="text-sm font-bold text-foreground">
+              Patch update — Commanders Pt. 2 (June 28, 2026)
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Two new event maps, <span className="font-semibold text-foreground">Harbor</span> and{" "}
+              <span className="font-semibold text-foreground">Oil Rig</span>, now rotate alongside the
+              center city — each drops 2 exclusive commanders, including the new{" "}
+              <Link href="/commanders" className="font-medium text-primary hover:underline">
+                Admiral-rarity units
+              </Link>
+              . The update also reworked destruction with new physics.
+            </p>
+          </div>
+        </div>
 
         <WikiIllustration
           src="/images/raid-action.webp"
@@ -152,6 +181,32 @@ export function RaidDefense() {
           </ul>
         </div>
 
+        <div className="mt-8 rounded-2xl border border-primary/30 bg-primary/5 p-5 sm:p-6">
+          <div className="flex items-center gap-2">
+            <Lightbulb className="size-5 text-primary" aria-hidden="true" />
+            <h3 className="text-lg font-bold text-foreground">
+              Advanced raid tactics
+            </h3>
+          </div>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Higher-level tricks pulled from community gameplay. Mechanics can
+            change between patches — confirm anything that looks new in-game.
+          </p>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            {ADVANCED_RAID_TACTICS.map((tactic) => (
+              <div
+                key={tactic.title}
+                className="rounded-xl border border-border/60 bg-card/80 p-4"
+              >
+                <p className="font-semibold text-foreground">{tactic.title}</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {tactic.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
           <div className="rounded-2xl border border-boom/25 bg-card/80 p-5 sm:p-6">
             <div className="flex items-center gap-2">
@@ -208,6 +263,69 @@ export function RaidDefense() {
               {CENTER_CITY_GUIDE.vsPvp}
             </p>
           </div>
+        </div>
+
+        <div className="mt-8 rounded-2xl border border-primary/30 bg-card/70 p-5 sm:p-6">
+          <div className="flex items-center gap-2">
+            <Sparkles className="size-5 text-primary" aria-hidden="true" />
+            <h3 className="text-lg font-bold text-foreground">
+              {EVENT_MAP_GUIDE.title}
+            </h3>
+          </div>
+          <p className="mt-3 text-sm text-muted-foreground">
+            {EVENT_MAP_GUIDE.summary}
+          </p>
+
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            {EVENT_MAPS.map((map, i) => {
+              const Icon = EVENT_MAP_ICON[i] ?? Anchor
+              return (
+                <div
+                  key={map.name}
+                  className="rounded-xl border border-border/60 bg-card/80 p-4"
+                >
+                  <div className="flex items-center gap-2">
+                    <Icon className="size-4.5 text-primary" aria-hidden="true" />
+                    <p className="font-semibold text-foreground">{map.name}</p>
+                  </div>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {map.summary}
+                  </p>
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    <span className="font-semibold text-foreground">Exclusive: </span>
+                    {map.exclusiveCommanders}
+                  </p>
+                </div>
+              )
+            })}
+          </div>
+
+          <ul className="mt-5 space-y-2">
+            {EVENT_MAP_GUIDE.points.map((point) => (
+              <li
+                key={point}
+                className="flex gap-2 text-sm text-muted-foreground"
+              >
+                <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                {point}
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-4 rounded-xl border border-border/60 bg-card/60 p-3 text-sm text-muted-foreground">
+            <span className="font-semibold text-foreground">Destruction physics: </span>
+            {EVENT_MAP_GUIDE.destructionPhysics}
+          </p>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Capture details for every new unit are on the{" "}
+            <Link
+              href="/commanders"
+              className="font-medium text-primary hover:underline"
+            >
+              commanders guide
+            </Link>
+            .
+          </p>
         </div>
       </div>
     </section>

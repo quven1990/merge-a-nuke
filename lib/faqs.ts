@@ -64,7 +64,7 @@ export const FAQS = [
   },
   {
     q: "Is rebirth worth it?",
-    a: "Yes — rebirth is required to unlock the highest Index nukes beyond the mid-game cap (community runs report ~35 tiers before rebirth, with more after). Rebirth when growth slows and the reset bonuses outweigh your current board.",
+    a: "Yes — rebirth is required to unlock the highest Index nukes beyond the mid-game cap (community runs report ~35 tiers before rebirth, with more after). Rebirth trades your current board progress for a permanent boost and access to those higher tiers, so only do it once growth has clearly stalled — not for a small early bonus. Check the exact reset and bonus details in-game, as they can change between patches.",
   },
   {
     q: "Is mergeanuke.site official?",
