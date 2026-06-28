@@ -143,6 +143,14 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
       a: "Commanders are special units you can equip to buff your nuke output. Each has a passive ability — ranging from auto-merging your lowest nukes (Salvager) to boosting cash income (Spotter) to adding +15% damage across all attacks (Sovereign).",
     },
     {
+      q: "What new commanders were added in Commanders Pt. 2?",
+      a: "Commanders Pt. 2 added a new Admiral rarity plus 8 units: Broker and Foreman (Common), Artillery, Barrier and Looter (Rare), Overclocker (Epic), and Apache and Carrier (Admiral). A limited-time Conquerors pack adds two more, and the new Harbor and Oil Rig event maps each spawn two event-exclusive commanders. Salvager, Engineer, Gunner and Spotter were converted into ground units.",
+    },
+    {
+      q: "What is the Admiral rarity in Merge a Nuke?",
+      a: "Admiral is the new top commander rarity introduced in Commanders Pt. 2. The first two Admiral units are Apache and Carrier. Their exact abilities are pending in-game verification — check back after we confirm them.",
+    },
+    {
       q: "How do you get commanders in Merge a Nuke?",
       a: "Three ways: defeat a spawned commander on the shared map (last hit wins), purchase one in the Shop with in-game cash or Robux, or earn a free starter commander at certain level milestones.",
     },

@@ -1,4 +1,5 @@
 import {
+  Anchor,
   ArrowRight,
   Coins,
   Crown,
@@ -6,6 +7,7 @@ import {
   Layers,
   ShieldAlert,
   ShoppingBag,
+  Sparkles,
   Star,
   Swords,
   Target,
@@ -30,7 +32,7 @@ const ROLE_ICON: Record<Commander["role"], React.ElementType> = {
   automation: Zap,
 }
 
-const ACQUIRE_ICON = [Target, ShoppingBag, Trophy]
+const ACQUIRE_ICON = [Target, ShoppingBag, Trophy, Anchor]
 
 const PICK_GUIDE = [
   {
@@ -70,6 +72,50 @@ export function CommandersSection() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-20">
 
+      {/* PATCH UPDATE BANNER — Commanders Pt. 2 */}
+      <section
+        id="commanders-pt2"
+        aria-labelledby="commanders-pt2-heading"
+        className="rounded-2xl border border-primary/30 bg-primary/5 p-5 sm:p-6"
+      >
+        <div className="flex items-center gap-2.5">
+          <span className="flex size-8 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10">
+            <Sparkles className="size-4 text-primary" aria-hidden="true" />
+          </span>
+          <h2
+            id="commanders-pt2-heading"
+            className="text-base font-bold tracking-tight text-foreground sm:text-lg"
+          >
+            Update: Commanders Pt. 2 (June 28, 2026)
+          </h2>
+        </div>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+          The Commanders Pt. 2 patch added a brand-new{" "}
+          <strong className="text-rose-400">Admiral</strong> rarity plus 8 units:{" "}
+          <strong className="text-foreground">Broker</strong> and{" "}
+          <strong className="text-foreground">Foreman</strong> (Common),{" "}
+          <strong className="text-foreground">Artillery</strong>,{" "}
+          <strong className="text-foreground">Barrier</strong> and{" "}
+          <strong className="text-foreground">Looter</strong> (Rare),{" "}
+          <strong className="text-foreground">Overclocker</strong> (Epic), and{" "}
+          <strong className="text-foreground">Apache</strong> and{" "}
+          <strong className="text-foreground">Carrier</strong> (Admiral). A
+          limited-time <strong className="text-foreground">Conquerors pack</strong>{" "}
+          adds two more.
+        </p>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          Two new event maps —{" "}
+          <strong className="text-foreground">Harbor</strong> and{" "}
+          <strong className="text-foreground">Oil Rig</strong> — each spawn two
+          event-exclusive commanders, and{" "}
+          <strong className="text-foreground">
+            Salvager, Engineer, Gunner and Spotter
+          </strong>{" "}
+          are now ground units. New unit abilities are pending in-game
+          verification.
+        </p>
+      </section>
+
       {/* WHAT ARE COMMANDERS — GEO definition block */}
       <section id="what-are-commanders" className="scroll-mt-20">
         <SectionHeading
@@ -86,12 +132,14 @@ export function CommandersSection() {
             bonus to every nuke attack you launch.
           </p>
           <p>
-            There are 4 rarity tiers: <strong className="text-foreground">Common</strong>{" "}
-            (3 commanders), <strong className="text-blue-400">Rare</strong> (2 commanders),{" "}
-            <strong className="text-purple-400">Epic</strong> (1 commander), and{" "}
-            <strong className="text-yellow-400">Legendary</strong> (1 commander). Higher rarity
-            means stronger and rarer abilities. Multiple commanders can be active at the
-            same time.
+            After the Commanders Pt. 2 update there are 5 rarity tiers:{" "}
+            <strong className="text-foreground">Common</strong> (5 commanders),{" "}
+            <strong className="text-blue-400">Rare</strong> (5 commanders),{" "}
+            <strong className="text-purple-400">Epic</strong> (2 commanders),{" "}
+            <strong className="text-yellow-400">Legendary</strong> (1 commander), and the
+            new <strong className="text-rose-400">Admiral</strong> tier (2 commanders).
+            Higher rarity means stronger and rarer abilities. Multiple commanders can be
+            active at the same time.
           </p>
           <p>
             Commanders first appear as enemy units on the shared map — they arrive by boat and
@@ -107,15 +155,15 @@ export function CommandersSection() {
           icon={Target}
           kicker="Unlock methods"
           title="How to Get Commanders"
-          tag="3 ways"
+          tag="4 ways"
         />
         <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          Commanders can be unlocked in three ways. Capturing them on the map is
-          the most reliable free method — the other two are faster but cost
-          resources.
+          Commanders can be unlocked in four ways. Capturing them on the map —
+          including the new Harbor and Oil Rig event maps — is the most reliable
+          free method, while buying in the Shop is faster but costs resources.
         </p>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {ACQUIRE_METHODS.map((method, i) => {
             const Icon = ACQUIRE_ICON[i]
             return (
@@ -150,18 +198,20 @@ export function CommandersSection() {
           icon={Layers}
           kicker="Full roster"
           title="All Commanders by Rarity"
-          tag="7 commanders"
+          tag="15 commanders"
         />
         <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
           Abilities sourced from community gameplay footage — verify exact values
-          in-game after Friday patches.
+          in-game after Friday patches. Units marked{" "}
+          <span className="font-semibold text-primary">New</span> were added in
+          Commanders Pt. 2 and their abilities are pending verification.
         </p>
 
         {/* Mobile cards */}
         <div className="mt-8 space-y-3 lg:hidden">
           {COMMANDERS.map((cmd) => {
             const { badge, border } = RARITY_STYLE[cmd.rarity]
-            const RoleIcon = ROLE_ICON[cmd.role]
+            const RoleIcon = cmd.pending ? Sparkles : ROLE_ICON[cmd.role]
             return (
               <div
                 key={cmd.name}
@@ -174,6 +224,11 @@ export function CommandersSection() {
                       <RoleIcon className="size-4 text-primary" aria-hidden="true" />
                     </span>
                     <span className="truncate font-bold text-foreground">{cmd.name}</span>
+                    {cmd.pending && (
+                      <span className="shrink-0 rounded-full bg-primary/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary">
+                        New
+                      </span>
+                    )}
                   </div>
                   <div className="flex shrink-0 items-center gap-1.5">
                     <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${badge}`}>
@@ -209,7 +264,7 @@ export function CommandersSection() {
           <ul className="divide-y divide-border/40">
             {COMMANDERS.map((cmd) => {
               const { badge, border } = RARITY_STYLE[cmd.rarity]
-              const RoleIcon = ROLE_ICON[cmd.role]
+              const RoleIcon = cmd.pending ? Sparkles : ROLE_ICON[cmd.role]
               return (
                 <li
                   key={cmd.name}
@@ -219,7 +274,14 @@ export function CommandersSection() {
                     <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-primary/25 bg-primary/10">
                       <RoleIcon className="size-3.5 text-primary" aria-hidden="true" />
                     </span>
-                    <span className="text-sm font-bold text-foreground">{cmd.name}</span>
+                    <span className="text-sm font-bold text-foreground">
+                      {cmd.name}
+                      {cmd.pending && (
+                        <span className="ml-1.5 rounded-full bg-primary/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary align-middle">
+                          New
+                        </span>
+                      )}
+                    </span>
                   </div>
                   <span className={`w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold ${badge}`}>
                     {cmd.rarity}

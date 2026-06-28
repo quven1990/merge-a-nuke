@@ -14,6 +14,7 @@ import { QuickStart } from "@/components/quick-start"
 import { RaidDefense } from "@/components/raid-defense"
 import { SiteShell } from "@/components/site-shell"
 import { TierList } from "@/components/tier-list"
+import { UpdateBanner } from "@/components/update-banner"
 import { createPageMetadata } from "@/lib/page-metadata"
 import { SEO_PAGES } from "@/lib/seo-pages"
 
@@ -24,6 +25,7 @@ export default function Page() {
     <SiteShell seoPage={SEO_PAGES.home}>
       <main>
         <HeroSection />
+        <UpdateBanner />
         <BelowFold>
           <HazardDivider />
           <CodesSection />

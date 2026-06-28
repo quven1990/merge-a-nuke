@@ -1,4 +1,4 @@
-export type CommanderRarity = "Common" | "Rare" | "Epic" | "Legendary"
+export type CommanderRarity = "Common" | "Rare" | "Epic" | "Legendary" | "Admiral"
 export type CommanderRole = "income" | "offense" | "defense" | "automation"
 
 export type Commander = {
@@ -7,11 +7,14 @@ export type Commander = {
   role: CommanderRole
   ability: string
   bestFor: string
-  priority: "S" | "A" | "B" | "C"
+  priority: "S" | "A" | "B" | "C" | "?"
   notes: string
+  /** True for units added in Commanders Pt. 2 whose abilities are not yet verified in-game. */
+  pending?: boolean
 }
 
 export const COMMANDERS: Commander[] = [
+  // --- Common ---
   {
     name: "Salvager",
     rarity: "Common",
@@ -19,7 +22,7 @@ export const COMMANDERS: Commander[] = [
     ability: "Merges the 2 lowest-tier nukes on your plot automatically every minute.",
     bestFor: "Early game — keeps your grid clean without manual merging",
     priority: "A",
-    notes: "Best common for new players. Frees up board space passively.",
+    notes: "Best common for new players. Pt. 2: converted to a ground unit.",
   },
   {
     name: "Engineer",
@@ -28,7 +31,7 @@ export const COMMANDERS: Commander[] = [
     ability: "Upgrades the worst nuke on your plot by 1 tier every 2 minutes.",
     bestFor: "Passive progression when you can't actively play",
     priority: "B",
-    notes: "Slower than Salvager but still useful for AFK sessions.",
+    notes: "Slower than Salvager but useful for AFK sessions. Pt. 2: converted to a ground unit.",
   },
   {
     name: "Gunner",
@@ -37,8 +40,29 @@ export const COMMANDERS: Commander[] = [
     ability: "Increases the damage of nuclear attacks against other players.",
     bestFor: "PvP raiding — more damage per nuke launched",
     priority: "B",
-    notes: "Only worth equipping if you raid often. Useless for passive play.",
+    notes: "Only worth equipping if you raid often. Pt. 2: converted to a ground unit.",
   },
+  {
+    name: "Broker",
+    rarity: "Common",
+    role: "income",
+    ability: "Newly added in the Commanders Pt. 2 update — ability details pending in-game verification.",
+    bestFor: "Pending — check back after we confirm it in-game",
+    priority: "?",
+    notes: "Added in Commanders Pt. 2 (June 28, 2026).",
+    pending: true,
+  },
+  {
+    name: "Foreman",
+    rarity: "Common",
+    role: "automation",
+    ability: "Newly added in the Commanders Pt. 2 update — ability details pending in-game verification.",
+    bestFor: "Pending — check back after we confirm it in-game",
+    priority: "?",
+    notes: "Added in Commanders Pt. 2 (June 28, 2026).",
+    pending: true,
+  },
+  // --- Rare ---
   {
     name: "Spotter",
     rarity: "Rare",
@@ -46,7 +70,7 @@ export const COMMANDERS: Commander[] = [
     ability: "Fires a flare onto a random spot every 30 seconds, granting a cash boost to all nukes within the radius.",
     bestFor: "Income farming — best rare for passive cash growth",
     priority: "S",
-    notes: "Top priority rare. Cash boosts compound with higher-tier nukes.",
+    notes: "Top priority rare. Pt. 2: converted to a ground unit.",
   },
   {
     name: "Interceptor",
@@ -58,6 +82,37 @@ export const COMMANDERS: Commander[] = [
     notes: "Situational. Only useful if you're getting raided constantly.",
   },
   {
+    name: "Artillery",
+    rarity: "Rare",
+    role: "offense",
+    ability: "Newly added in the Commanders Pt. 2 update — ability details pending in-game verification.",
+    bestFor: "Pending — check back after we confirm it in-game",
+    priority: "?",
+    notes: "Added in Commanders Pt. 2 (June 28, 2026).",
+    pending: true,
+  },
+  {
+    name: "Barrier",
+    rarity: "Rare",
+    role: "defense",
+    ability: "Newly added in the Commanders Pt. 2 update — ability details pending in-game verification.",
+    bestFor: "Pending — check back after we confirm it in-game",
+    priority: "?",
+    notes: "Added in Commanders Pt. 2 (June 28, 2026).",
+    pending: true,
+  },
+  {
+    name: "Looter",
+    rarity: "Rare",
+    role: "income",
+    ability: "Newly added in the Commanders Pt. 2 update — ability details pending in-game verification.",
+    bestFor: "Pending — check back after we confirm it in-game",
+    priority: "?",
+    notes: "Added in Commanders Pt. 2 (June 28, 2026).",
+    pending: true,
+  },
+  // --- Epic ---
+  {
     name: "Siege Breaker",
     rarity: "Epic",
     role: "offense",
@@ -67,6 +122,17 @@ export const COMMANDERS: Commander[] = [
     notes: "Strong in raid-heavy lobbies. The 20% damage boost stacks well with Gunner.",
   },
   {
+    name: "Overclocker",
+    rarity: "Epic",
+    role: "automation",
+    ability: "Newly added in the Commanders Pt. 2 update — ability details pending in-game verification.",
+    bestFor: "Pending — check back after we confirm it in-game",
+    priority: "?",
+    notes: "Added in Commanders Pt. 2 (June 28, 2026).",
+    pending: true,
+  },
+  // --- Legendary ---
+  {
     name: "Sovereign",
     rarity: "Legendary",
     role: "offense",
@@ -74,6 +140,27 @@ export const COMMANDERS: Commander[] = [
     bestFor: "Late game — best overall commander for city farming and raids",
     priority: "S",
     notes: "Best commander in the game. Auto-attacks the city even while active.",
+  },
+  // --- Admiral (new rarity in Pt. 2) ---
+  {
+    name: "Apache",
+    rarity: "Admiral",
+    role: "offense",
+    ability: "Newly added with the Admiral rarity in Commanders Pt. 2 — ability details pending in-game verification.",
+    bestFor: "Pending — check back after we confirm it in-game",
+    priority: "?",
+    notes: "Admiral rarity, added in Commanders Pt. 2 (June 28, 2026).",
+    pending: true,
+  },
+  {
+    name: "Carrier",
+    rarity: "Admiral",
+    role: "offense",
+    ability: "Newly added with the Admiral rarity in Commanders Pt. 2 — ability details pending in-game verification.",
+    bestFor: "Pending — check back after we confirm it in-game",
+    priority: "?",
+    notes: "Admiral rarity, added in Commanders Pt. 2 (June 28, 2026).",
+    pending: true,
   },
 ]
 
@@ -103,6 +190,12 @@ export const ACQUIRE_METHODS: AcquireMethod[] = [
     how: "Starter and some custom commanders are granted for free when you reach certain in-game levels or upgrade ranks.",
     tip: "Check your progress milestones — you may already have a free commander waiting to be claimed.",
   },
+  {
+    id: "event-map",
+    title: "Spawn during event maps",
+    how: "Commanders Pt. 2 added the Harbor and Oil Rig event maps. While an event is active, two event-exclusive commanders spawn on the map — defeat them the same way, where the last hit captures the commander.",
+    tip: "Event commanders only appear during the active event window, so jump in while the Harbor or Oil Rig event is live.",
+  },
 ]
 
 export const RARITY_STYLE: Record<CommanderRarity, { badge: string; border: string; label: string }> = {
@@ -110,6 +203,7 @@ export const RARITY_STYLE: Record<CommanderRarity, { badge: string; border: stri
   Rare:      { badge: "bg-blue-500/15 text-blue-400",                   border: "border-blue-500/30",  label: "Rare" },
   Epic:      { badge: "bg-purple-500/15 text-purple-400",               border: "border-purple-500/30",label: "Epic" },
   Legendary: { badge: "bg-yellow-500/15 text-yellow-400",               border: "border-yellow-500/30",label: "Legendary" },
+  Admiral:   { badge: "bg-rose-500/15 text-rose-400",                   border: "border-rose-500/30",  label: "Admiral" },
 }
 
 export const PRIORITY_STYLE: Record<Commander["priority"], string> = {
@@ -117,4 +211,5 @@ export const PRIORITY_STYLE: Record<Commander["priority"], string> = {
   A: "text-primary font-bold",
   B: "text-foreground font-semibold",
   C: "text-muted-foreground",
+  "?": "text-muted-foreground/60",
 }

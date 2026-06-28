@@ -14,7 +14,7 @@ import { ACQUIRE_METHODS, COMMANDERS } from "@/lib/commanders-data"
 
 const LAST_MODIFIED = "2026-06-18"
 const HOME_LAST_MODIFIED = "2026-06-25"
-const COMMANDERS_LAST_MODIFIED = "2026-06-24"
+const COMMANDERS_LAST_MODIFIED = "2026-06-28"
 const CODES_MONTH_YEAR = getContentMonthYear()
 
 function pageUrl(siteUrl: string, path: SeoPageConfig["path"]) {

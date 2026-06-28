@@ -53,6 +53,7 @@ export type CtaPlacement =
   | "guide_cards"
   | "game_overview"
   | "codes_redeem"
+  | "home_update"
 
 /**
  * Plausible custom events (enable matching Goals in the dashboard).

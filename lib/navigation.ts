@@ -43,7 +43,7 @@ export const NAV_ITEMS: NavItem[] = [
   {
     label: "Commanders",
     href: "/commanders",
-    description: "All 7 commanders by rarity, how to capture them on the map, and which to prioritize first.",
+    description: "All 15 commanders by rarity, the new Admiral tier, how to capture them on the map, and which to prioritize first.",
   },
   {
     label: "FAQ",

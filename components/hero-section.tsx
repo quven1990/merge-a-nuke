@@ -12,10 +12,10 @@ import { WikiIllustration } from "@/components/wiki-illustration"
 import { SEO_PAGES } from "@/lib/seo-pages"
 
 const TICKER = [
-  "Merge bigger nukes",
+  "Commanders Pt. 2 is live",
+  "New Admiral rarity",
+  "Harbor & Oil Rig event maps",
   "New codes every Friday",
-  "Raid smart, lock often",
-  "Fan-made player guide",
 ] as const
 
 export function HeroSection() {

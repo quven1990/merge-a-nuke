@@ -2,7 +2,7 @@
 
 > Independent fan-made strategy wiki for Merge a Nuke on Roblox — not affiliated with Roblox Corporation or Nuke The Game.
 
-Last updated: 2026-06-25
+Last updated: 2026-06-28
 
 Working codes (June 2026): ATOMIC ($10,000 + 20 nukes), UPDATE2 ($10,000 + 10 nukes), BOOM ($5,000). Redeem: Shop (left) → scroll to bottom → enter code → Redeem. New players: merge same-level pairs (2+2=4) → buy Spawn Speed then Spawn Tier → lock base before raiding.
 
@@ -18,7 +18,7 @@ Codes and balance can change after Friday game updates. Tier names and some stat
 - [Tier List](https://mergeanuke.site/tier-list): Merge levels and community-reported nuke names
 - [Raid Guide](https://mergeanuke.site/raid): PvP raids, center city, and Lock Base defense
 - [Offline Cash](https://mergeanuke.site/offline-cash): Passive income and pre-logout setup
-- [Commanders](https://mergeanuke.site/commanders): All 7 commanders by rarity, how to capture them, and which to get first
+- [Commanders](https://mergeanuke.site/commanders): All 15 commanders by rarity incl. the new Admiral tier (Commanders Pt. 2), how to capture them, and which to get first
 - [FAQ](https://mergeanuke.site/faq): Rebirth, code troubleshooting, and wiki scope
 
 ## Optional

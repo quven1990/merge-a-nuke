@@ -136,14 +136,14 @@ export const SEO_PAGES = {
   },
   commanders: {
     path: "/commanders",
-    title: "Merge a Nuke Commanders — All 7 Types, How to Get & Best Picks",
+    title: "Merge a Nuke Commanders — All 15 Types, Admiral Rarity & Best Picks",
     description:
-      "Every Merge a Nuke commander ranked by rarity: 3 Common, 2 Rare, 1 Epic, 1 Legendary. How to capture them on the map, what each one does, and which to chase first.",
+      "Every Merge a Nuke commander by rarity after Commanders Pt. 2: 5 Common, 5 Rare, 2 Epic, 1 Legendary, 2 Admiral. How to capture them on the map and which to chase first.",
     h1: "Merge a Nuke Commanders Guide",
     intro:
-      "All 7 commanders by rarity, how to unlock them, what each one does to your nuke output, and which to prioritize at each stage of the game.",
+      "All 15 commanders by rarity, the new Admiral tier from Commanders Pt. 2, how to unlock them, and which to prioritize at each stage of the game.",
     tldr:
-      "Defeat spawned commanders on the map (last hit wins) or buy them in the Shop. Start with Salvager (auto-merges) or Spotter (cash boost). Endgame: Sovereign (legendary, +15% damage + auto city attacks).",
+      "Defeat spawned commanders on the map (last hit wins) or buy them in the Shop. Start with Salvager (auto-merges) or Spotter (cash boost). Endgame: Sovereign (legendary, +15% damage + auto city attacks). Commanders Pt. 2 added the Admiral rarity plus 8 new units.",
     breadcrumb: "Commanders",
   },
   about: {
