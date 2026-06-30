@@ -22,6 +22,12 @@ type Guide = {
 
 const GUIDES: Guide[] = [
   {
+    icon: Crown,
+    title: "Commanders",
+    desc: "All 15 commanders by rarity incl. the new Admiral tier — how to capture them and which to get first.",
+    href: "/commanders",
+  },
+  {
     icon: Ticket,
     title: "Codes",
     desc: "Find active codes and learn the quickest way to redeem them.",
@@ -64,12 +70,6 @@ const GUIDES: Guide[] = [
     href: "/offline-cash",
   },
   {
-    icon: Crown,
-    title: "Commanders",
-    desc: "All 15 commanders by rarity incl. the new Admiral tier — how to capture them and which to get first.",
-    href: "/commanders",
-  },
-  {
     icon: ScrollText,
     title: "FAQ",
     desc: "Quick answers to the most common Merge a Nuke questions.",
@@ -91,8 +91,9 @@ export function GuideCards() {
           tag="9 topics"
         />
         <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-          Open the focused article when you need more than the quick-start path.
-          The homepage keeps the most common routes close at hand.
+          Each guide lives on its own page so you get focused answers without
+          scrolling through duplicate content. Pick a topic and open the full
+          article.
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

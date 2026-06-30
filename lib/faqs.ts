@@ -71,3 +71,17 @@ export const FAQS = [
     a: "No. mergeanuke.site is an independent fan-made Merge a Nuke Wiki. It is not affiliated with Roblox Corporation or Nuke The Game. For official news, use the Roblox game page and developer group.",
   },
 ] as const
+
+const HOME_FAQ_TEASER_QUESTIONS = [
+  "What are commanders in Merge a Nuke?",
+  "Is rebirth worth it?",
+  "How does raiding work?",
+] as const
+
+export function getHomeFaqTeaser() {
+  return HOME_FAQ_TEASER_QUESTIONS.map((question) => {
+    const item = FAQS.find((faq) => faq.q === question)
+    if (!item) throw new Error(`Missing home FAQ teaser: ${question}`)
+    return item
+  })
+}

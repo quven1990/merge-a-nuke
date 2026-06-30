@@ -56,42 +56,47 @@ export const GUIDE_CARDS = [
   {
     label: "Codes",
     href: "/codes" as const,
-    anchor: "#codes" as const,
+    anchor: "/codes" as const,
   },
   {
     label: "Beginner Guide",
     href: "/beginner-guide" as const,
-    anchor: "#quick-start" as const,
+    anchor: "/beginner-guide" as const,
   },
   {
     label: "Progression",
     href: "/progression" as const,
-    anchor: "#progression" as const,
+    anchor: "/progression" as const,
   },
   {
     label: "Upgrades",
     href: "/upgrades" as const,
-    anchor: "#upgrades" as const,
+    anchor: "/upgrades" as const,
   },
   {
     label: "Raid Guide",
     href: "/raid" as const,
-    anchor: "#raid" as const,
+    anchor: "/raid" as const,
   },
   {
     label: "Tier List",
     href: "/tier-list" as const,
-    anchor: "#tier-list" as const,
+    anchor: "/tier-list" as const,
   },
   {
     label: "Offline Cash",
     href: "/offline-cash" as const,
-    anchor: "#offline" as const,
+    anchor: "/offline-cash" as const,
+  },
+  {
+    label: "Commanders",
+    href: "/commanders" as const,
+    anchor: "/commanders" as const,
   },
   {
     label: "FAQ",
     href: "/faq" as const,
-    anchor: "#faq" as const,
+    anchor: "/faq" as const,
   },
 ] as const
 

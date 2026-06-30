@@ -4,8 +4,8 @@ import {
   ArrowUpRight,
   Atom,
   BadgeCheck,
+  Crown,
   Sparkles,
-  TrendingUp,
 } from "lucide-react"
 
 import { TrackedCtaLink } from "@/components/tracked-cta-link"
@@ -24,10 +24,10 @@ const INFO_CARDS = [
     href: "/beginner-guide",
   },
   {
-    icon: TrendingUp,
-    title: "Progression Guide",
-    note: "Grow your base",
-    href: "/progression",
+    icon: Crown,
+    title: "Commanders",
+    note: "Best picks & Admiral tier",
+    href: "/commanders",
   },
 ] as const
 

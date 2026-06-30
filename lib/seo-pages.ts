@@ -27,9 +27,9 @@ export const SEO_PAGES = {
       "Merge a Nuke Roblox wiki with working codes, upgrade priorities, tier lists, raid strategies, offline cash, and rebirth advice. Updated after Friday patches.",
     h1: "Merge a Nuke Wiki",
     intro:
-      "Codes, beginner tips, raid strategy, nuke tiers, offline cash, and progression guides for Merge a Nuke on Roblox — all in one place.",
+      "Your hub for Merge a Nuke on Roblox — copy codes in the hero, follow the quick-start route, then open focused guides for commanders, raids, tiers, and more.",
     tldr:
-      `Tap Copy on a working code below, then redeem via ${REDEEM_SHORT_PATH}. New players: merge 2+2 → buy Spawn Speed then Spawn Tier → lock base before raiding.`,
+      `Tap Copy on a working code in the hero, then redeem via ${REDEEM_SHORT_PATH}. New players: merge 2+2 → buy Spawn Speed then Spawn Tier → open the Commanders or Beginner guide for the full route.`,
     breadcrumb: "Home",
   },
   codes: {

@@ -1,28 +1,26 @@
 import type { Metadata } from "next"
 
 import { BelowFold } from "@/components/below-fold"
-import { MergeGuide } from "@/components/merge-guide"
 import { CodesSection } from "@/components/codes-section"
-import { FaqSection } from "@/components/faq-section"
+import { FeaturedCommandersSpotlight } from "@/components/featured-commanders-spotlight"
 import { GameOverview } from "@/components/game-overview"
 import { GuideCards } from "@/components/guide-cards"
 import { HazardDivider } from "@/components/hud"
 import { HeroSection } from "@/components/hero-section"
-import { OfflineCash } from "@/components/offline-cash"
-import { ProgressionRoadmap } from "@/components/progression-roadmap"
+import { HomeFaqTeaser } from "@/components/home-faq-teaser"
 import { QuickStart } from "@/components/quick-start"
-import { RaidDefense } from "@/components/raid-defense"
 import { SiteShell } from "@/components/site-shell"
-import { TierList } from "@/components/tier-list"
 import { UpdateBanner } from "@/components/update-banner"
 import { createPageMetadata } from "@/lib/page-metadata"
 import { SEO_PAGES } from "@/lib/seo-pages"
 
-export const metadata: Metadata = createPageMetadata(SEO_PAGES.home)
+const page = SEO_PAGES.home
+
+export const metadata: Metadata = createPageMetadata(page)
 
 export default function Page() {
   return (
-    <SiteShell seoPage={SEO_PAGES.home}>
+    <SiteShell seoPage={page}>
       <main>
         <HeroSection />
         <UpdateBanner />
@@ -32,19 +30,11 @@ export default function Page() {
           <HazardDivider />
           <QuickStart />
           <HazardDivider />
-          <MergeGuide />
+          <FeaturedCommandersSpotlight />
           <HazardDivider />
           <GuideCards />
           <HazardDivider />
-          <ProgressionRoadmap />
-          <HazardDivider />
-          <TierList />
-          <HazardDivider />
-          <RaidDefense />
-          <HazardDivider />
-          <OfflineCash />
-          <HazardDivider />
-          <FaqSection />
+          <HomeFaqTeaser />
           <HazardDivider />
           <GameOverview />
         </BelowFold>

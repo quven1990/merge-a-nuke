@@ -1,7 +1,7 @@
 import { ACTIVE_CODES } from "@/lib/codes-data"
 import { getContentMonthYear } from "@/lib/content-freshness"
 import { buildRedeemHowToSchemaSteps } from "@/lib/redeem-guide-data"
-import { FAQS } from "@/lib/faqs"
+import { FAQS, getHomeFaqTeaser } from "@/lib/faqs"
 import { ROBLOX_GAME_ABOUT_URL, ROBLOX_GAME_URL } from "@/lib/game-links"
 import { MERGE_STEPS } from "@/lib/merge-guide-data"
 import { getPageFaqs, type PageFaq } from "@/lib/page-faqs"
@@ -13,7 +13,7 @@ import { EARLY_UPGRADE_ROUTE, STORE_UPGRADES } from "@/lib/upgrades-data"
 import { ACQUIRE_METHODS, COMMANDERS } from "@/lib/commanders-data"
 
 const LAST_MODIFIED = "2026-06-18"
-const HOME_LAST_MODIFIED = "2026-06-25"
+const HOME_LAST_MODIFIED = "2026-07-01"
 const COMMANDERS_LAST_MODIFIED = "2026-06-28"
 const RAID_LAST_MODIFIED = "2026-06-28"
 const CODES_MONTH_YEAR = getContentMonthYear()
@@ -267,24 +267,25 @@ export function buildPageStructuredData(page: SeoPageConfig): object[] {
   const breadcrumb = buildBreadcrumbList(siteUrl, page)
   if (breadcrumb) graphs.push(breadcrumb)
 
-  if (page.path === "/" || page.path === "/faq") {
+  if (page.path === "/faq") {
     graphs.push(buildFaqPage())
-  } else {
+  }
+
+  if (page.path === "/") {
+    graphs.push(buildFaqPageFromItems(getHomeFaqTeaser()))
+  } else if (page.path !== "/faq") {
     const pageFaqs = getPageFaqs(page.path)
     if (pageFaqs.length > 0) {
       graphs.push(buildFaqPageFromItems(pageFaqs))
     }
   }
 
-  if (page.path === "/" || page.path === "/codes") {
-    graphs.push(buildCodeRedeemHowTo())
-  }
-
   if (page.path === "/codes") {
+    graphs.push(buildCodeRedeemHowTo())
     graphs.push(buildCodeItemList())
   }
 
-  if (page.path === "/" || page.path === "/beginner-guide") {
+  if (page.path === "/beginner-guide") {
     graphs.push(buildMergeHowTo())
   }
 
