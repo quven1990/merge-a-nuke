@@ -136,9 +136,9 @@ export const SEO_PAGES = {
   },
   commanders: {
     path: "/commanders",
-    title: "Merge a Nuke Commanders — All 15 Types, Admiral Rarity & Best Picks",
+    title: "Merge a Nuke Commanders — Best Picks & New Admiral Tier",
     description:
-      "Every Merge a Nuke commander by rarity after Commanders Pt. 2: 5 Common, 5 Rare, 2 Epic, 1 Legendary, 2 Admiral. How to capture them on the map and which to chase first.",
+      "All 15 Merge a Nuke commanders ranked by rarity — including the new Admiral tier. Learn which to capture first, how to unlock each, and who to skip.",
     h1: "Merge a Nuke Commanders Guide",
     intro:
       "All 15 commanders by rarity, the new Admiral tier from Commanders Pt. 2, how to unlock them, and which to prioritize at each stage of the game.",
