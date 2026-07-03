@@ -17,4 +17,10 @@ export const SISTER_WIKIS: SisterWiki[] = [
     description:
       "Active codes, 51-seed database, mutations, rings, and a free profit calculator.",
   },
+  {
+    name: "Evomon Wiki",
+    href: "https://evomon.cc/",
+    description:
+      "Evomon Dex with 76+ pet sprites, active codes, type chart, team builder, and tier list for the Roblox creature-collection RPG.",
+  },
 ]
