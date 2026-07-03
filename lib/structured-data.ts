@@ -10,7 +10,7 @@ import type { SeoPageConfig } from "@/lib/seo-pages"
 import { getSiteUrl, SITE_NAME } from "@/lib/site"
 import { NUKE_TIER_ROWS } from "@/lib/tier-list-data"
 import { EARLY_UPGRADE_ROUTE, STORE_UPGRADES } from "@/lib/upgrades-data"
-import { ACQUIRE_METHODS, COMMANDERS } from "@/lib/commanders-data"
+import { ACQUIRE_METHODS, COMMANDERS, getCommanderPath } from "@/lib/commanders-data"
 
 const LAST_MODIFIED = "2026-06-18"
 const HOME_LAST_MODIFIED = "2026-07-01"
@@ -50,9 +50,11 @@ function buildOrganization(siteUrl: string) {
 }
 
 function buildWebPage(siteUrl: string, page: SeoPageConfig) {
+  const isCommanderDetail =
+    page.path.startsWith("/commanders/") && page.path !== "/commanders"
   const dateModified =
     page.path === "/" ? HOME_LAST_MODIFIED
-    : page.path === "/commanders" ? COMMANDERS_LAST_MODIFIED
+    : page.path === "/commanders" || isCommanderDetail ? COMMANDERS_LAST_MODIFIED
     : page.path === "/raid" ? RAID_LAST_MODIFIED
     : LAST_MODIFIED
   return {
@@ -83,23 +85,49 @@ function buildWebPage(siteUrl: string, page: SeoPageConfig) {
 function buildBreadcrumbList(siteUrl: string, page: SeoPageConfig) {
   if (page.path === "/") return null
 
+  const isCommanderDetail =
+    page.path.startsWith("/commanders/") && page.path !== "/commanders"
+
+  const itemListElement = isCommanderDetail
+    ? [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: siteUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Commanders",
+          item: `${siteUrl}/commanders`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: page.breadcrumb,
+          item: pageUrl(siteUrl, page.path),
+        },
+      ]
+    : [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: siteUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: page.breadcrumb,
+          item: pageUrl(siteUrl, page.path),
+        },
+      ]
+
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: siteUrl,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: page.breadcrumb,
-        item: pageUrl(siteUrl, page.path),
-      },
-    ],
+    itemListElement,
   }
 }
 
@@ -223,7 +251,7 @@ function buildCommanderAcquireHowTo() {
   }
 }
 
-function buildCommanderItemList() {
+function buildCommanderItemList(siteUrl: string) {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -232,6 +260,7 @@ function buildCommanderItemList() {
       "@type": "ListItem",
       position: index + 1,
       name: cmd.name,
+      url: `${siteUrl}${getCommanderPath(cmd)}`,
       description: `${cmd.rarity} — ${cmd.ability} Best for: ${cmd.bestFor}`,
     })),
   }
@@ -307,7 +336,7 @@ export function buildPageStructuredData(page: SeoPageConfig): object[] {
 
   if (page.path === "/commanders") {
     graphs.push(buildCommanderAcquireHowTo())
-    graphs.push(buildCommanderItemList())
+    graphs.push(buildCommanderItemList(siteUrl))
   }
 
   return graphs

@@ -8,6 +8,10 @@ type PageIntroProps = {
   description: string
   current: string
   tldr?: string
+  parent?: {
+    label: string
+    href: `/${string}`
+  }
 }
 
 export function PageIntro({
@@ -15,6 +19,7 @@ export function PageIntro({
   description,
   current,
   tldr,
+  parent,
 }: PageIntroProps) {
   return (
     <div className="border-b border-border/60 bg-card/40">
@@ -29,6 +34,21 @@ export function PageIntro({
                 Home
               </Link>
             </li>
+            {parent ? (
+              <>
+                <li aria-hidden="true">
+                  <ChevronRight className="size-3.5" />
+                </li>
+                <li>
+                  <Link
+                    href={parent.href}
+                    className="transition-colors hover:text-primary"
+                  >
+                    {parent.label}
+                  </Link>
+                </li>
+              </>
+            ) : null}
             <li aria-hidden="true">
               <ChevronRight className="size-3.5" />
             </li>

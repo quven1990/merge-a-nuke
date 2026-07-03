@@ -11,6 +11,30 @@ export type Commander = {
   notes: string
   /** True for units added in Commanders Pt. 2 whose abilities are not yet verified in-game. */
   pending?: boolean
+  /** Event map where this commander spawns, if event-exclusive. */
+  eventMap?: "Harbor" | "Oil Rig"
+  /** Optional in-game portrait path under /public, e.g. /images/commanders/salvager.webp */
+  image?: string
+}
+
+function slugifyCommanderName(name: string) {
+  return name.toLowerCase().replace(/\s+/g, "-")
+}
+
+export function getCommanderSlug(commander: Pick<Commander, "name">) {
+  return slugifyCommanderName(commander.name)
+}
+
+export function getCommanderPath(commander: Pick<Commander, "name">) {
+  return `/commanders/${getCommanderSlug(commander)}` as const
+}
+
+export function getCommanderBySlug(slug: string) {
+  return COMMANDERS.find((cmd) => getCommanderSlug(cmd) === slug)
+}
+
+export function getAllCommanderSlugs() {
+  return COMMANDERS.map((cmd) => getCommanderSlug(cmd))
 }
 
 export const COMMANDERS: Commander[] = [
@@ -151,6 +175,7 @@ export const COMMANDERS: Commander[] = [
     priority: "?",
     notes: "Admiral rarity, added in Commanders Pt. 2 (June 28, 2026).",
     pending: true,
+    eventMap: "Oil Rig",
   },
   {
     name: "Carrier",
@@ -161,6 +186,7 @@ export const COMMANDERS: Commander[] = [
     priority: "?",
     notes: "Admiral rarity, added in Commanders Pt. 2 (June 28, 2026).",
     pending: true,
+    eventMap: "Harbor",
   },
 ]
 

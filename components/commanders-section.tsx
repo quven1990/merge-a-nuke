@@ -16,21 +16,9 @@ import {
 } from "lucide-react"
 
 import { SectionHeading } from "@/components/hud"
+import { CommanderRoster } from "@/components/commander-roster"
 import { TrackedCtaLink } from "@/components/tracked-cta-link"
-import {
-  ACQUIRE_METHODS,
-  COMMANDERS,
-  PRIORITY_STYLE,
-  RARITY_STYLE,
-  type Commander,
-} from "@/lib/commanders-data"
-
-const ROLE_ICON: Record<Commander["role"], React.ElementType> = {
-  income: Coins,
-  offense: Swords,
-  defense: ShieldAlert,
-  automation: Zap,
-}
+import { ACQUIRE_METHODS } from "@/lib/commanders-data"
 
 const ACQUIRE_ICON = [Target, ShoppingBag, Trophy, Anchor]
 
@@ -204,103 +192,11 @@ export function CommandersSection() {
           Abilities sourced from community gameplay footage — verify exact values
           in-game after Friday patches. Units marked{" "}
           <span className="font-semibold text-primary">New</span> were added in
-          Commanders Pt. 2 and their abilities are pending verification.
+          Commanders Pt. 2 and their abilities are pending verification. Tap any
+          commander to open its full guide page.
         </p>
 
-        {/* Mobile cards */}
-        <div className="mt-8 space-y-3 lg:hidden">
-          {COMMANDERS.map((cmd) => {
-            const { badge, border } = RARITY_STYLE[cmd.rarity]
-            const RoleIcon = cmd.pending ? Sparkles : ROLE_ICON[cmd.role]
-            return (
-              <div
-                key={cmd.name}
-                className={`rounded-2xl border ${border} bg-card/70 p-4`}
-              >
-                {/* Header: icon + name left, rarity + priority right */}
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex min-w-0 items-center gap-2.5">
-                    <span className="flex size-9 shrink-0 items-center justify-center rounded-xl border border-primary/25 bg-primary/10">
-                      <RoleIcon className="size-4 text-primary" aria-hidden="true" />
-                    </span>
-                    <span className="truncate font-bold text-foreground">{cmd.name}</span>
-                    {cmd.pending && (
-                      <span className="shrink-0 rounded-full bg-primary/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary">
-                        New
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex shrink-0 items-center gap-1.5">
-                    <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${badge}`}>
-                      {cmd.rarity}
-                    </span>
-                    <span className={`text-xs font-bold ${PRIORITY_STYLE[cmd.priority]}`}>
-                      {cmd.priority}
-                    </span>
-                  </div>
-                </div>
-                {/* Ability */}
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {cmd.ability}
-                </p>
-                {/* Best for */}
-                <p className="mt-2 line-clamp-2 text-xs text-muted-foreground/70">
-                  {cmd.bestFor}
-                </p>
-              </div>
-            )
-          })}
-        </div>
-
-        {/* Desktop table */}
-        <div className="mt-8 hidden overflow-hidden rounded-2xl border border-border/60 bg-card/50 lg:block">
-          <div className="grid grid-cols-[120px_90px_1fr_160px_60px] gap-4 border-b border-border/40 px-5 py-3 text-xs font-medium text-muted-foreground">
-            <span>Commander</span>
-            <span>Rarity</span>
-            <span>Ability</span>
-            <span>Best for</span>
-            <span className="text-right">Priority</span>
-          </div>
-          <ul className="divide-y divide-border/40">
-            {COMMANDERS.map((cmd) => {
-              const { badge, border } = RARITY_STYLE[cmd.rarity]
-              const RoleIcon = cmd.pending ? Sparkles : ROLE_ICON[cmd.role]
-              return (
-                <li
-                  key={cmd.name}
-                  className="grid grid-cols-[120px_90px_1fr_160px_60px] items-start gap-4 px-5 py-4 hover:bg-primary/5 transition-colors"
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-primary/25 bg-primary/10">
-                      <RoleIcon className="size-3.5 text-primary" aria-hidden="true" />
-                    </span>
-                    <span className="text-sm font-bold text-foreground">
-                      {cmd.name}
-                      {cmd.pending && (
-                        <span className="ml-1.5 rounded-full bg-primary/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary align-middle">
-                          New
-                        </span>
-                      )}
-                    </span>
-                  </div>
-                  <span className={`w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold ${badge}`}>
-                    {cmd.rarity}
-                  </span>
-                  <div>
-                    <p className="text-sm text-foreground">{cmd.ability}</p>
-                    {cmd.notes && (
-                      <p className="mt-1 text-xs text-muted-foreground">{cmd.notes}</p>
-                    )}
-                  </div>
-                  <p className="text-sm text-muted-foreground">{cmd.bestFor}</p>
-                  <p className={`text-right text-sm ${PRIORITY_STYLE[cmd.priority]}`}>
-                    {cmd.priority}
-                  </p>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
+        <CommanderRoster />
 
         <p className="mt-3 text-xs text-muted-foreground">
           Priority rating: S = must-have · A = strong pick · B = situational · C = skip unless you have it

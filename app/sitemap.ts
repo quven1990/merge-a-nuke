@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 
+import { getAllCommanderSlugs } from "@/lib/commanders-data"
 import { NAV_ITEMS } from "@/lib/navigation"
 import { getSiteUrl } from "@/lib/site"
 
@@ -44,6 +45,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/terms", priority: 0.3 },
   ] as const
 
+  const commanderPages = getAllCommanderSlugs().map((slug) => ({
+    url: `${siteUrl}/commanders/${slug}`,
+    lastModified: getLastModified("/commanders"),
+    changeFrequency: "weekly" as const,
+    priority: 0.75,
+  }))
+
   return [
     {
       url: siteUrl,
@@ -52,6 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     ...guidePages,
+    ...commanderPages,
     ...legalPages.map((page) => ({
       url: `${siteUrl}${page.path}`,
       lastModified: getLastModified(page.path),

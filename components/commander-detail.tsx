@@ -1,0 +1,206 @@
+import type { ElementType } from "react"
+import Link from "next/link"
+import {
+  ArrowLeft,
+  ArrowRight,
+  Coins,
+  Crown,
+  ShieldAlert,
+  Sparkles,
+  Swords,
+  Target,
+  Zap,
+} from "lucide-react"
+
+import { TrackedCtaLink } from "@/components/tracked-cta-link"
+import { WikiIllustration } from "@/components/wiki-illustration"
+import {
+  ACQUIRE_METHODS,
+  type Commander,
+  getCommanderPath,
+  PRIORITY_STYLE,
+  RARITY_STYLE,
+} from "@/lib/commanders-data"
+import { getRelatedCommanders } from "@/lib/commander-page"
+
+const ROLE_META: Record<
+  Commander["role"],
+  { label: string; icon: ElementType }
+> = {
+  income: { label: "Income", icon: Coins },
+  offense: { label: "Offense", icon: Swords },
+  defense: { label: "Defense", icon: ShieldAlert },
+  automation: { label: "Automation", icon: Zap },
+}
+
+export function CommanderDetail({ commander }: { commander: Commander }) {
+  const { badge, border } = RARITY_STYLE[commander.rarity]
+  const role = ROLE_META[commander.role]
+  const RoleIcon = commander.pending ? Sparkles : role.icon
+  const related = getRelatedCommanders(commander)
+
+  return (
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <TrackedCtaLink
+        href="/commanders"
+        label="Back to all commanders"
+        placement="guide_cards"
+        className="inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-primary"
+      >
+        <ArrowLeft className="size-4" aria-hidden="true" />
+        All commanders
+      </TrackedCtaLink>
+
+      <div className={`mt-6 rounded-2xl border bg-card/80 p-6 sm:p-8 ${border}`}>
+        <div className="flex flex-wrap items-start gap-4">
+          <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10">
+            <RoleIcon className="size-7 text-primary" aria-hidden="true" />
+          </span>
+          <div className="min-w-0 flex-1">
+            <div className="flex flex-wrap items-center gap-2">
+              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                {commander.name}
+              </h2>
+              {commander.pending ? (
+                <span className="rounded-full bg-primary/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary">
+                  New
+                </span>
+              ) : null}
+            </div>
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${badge}`}>
+                {commander.rarity}
+              </span>
+              <span className="rounded-full border border-border/70 bg-background px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
+                {role.label}
+              </span>
+              <span className={`text-sm ${PRIORITY_STYLE[commander.priority]}`}>
+                Priority {commander.priority}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {commander.image ? (
+          <WikiIllustration
+            src={commander.image}
+            alt={`${commander.name} commander in Merge a Nuke`}
+            variant="banner"
+            caption={`${commander.name} — Merge a Nuke commander`}
+            className="mt-6"
+          />
+        ) : null}
+
+        {commander.pending ? (
+          <p className="mt-6 rounded-xl border border-primary/25 bg-primary/5 px-4 py-3 text-sm text-muted-foreground">
+            Added in Commanders Pt. 2 (June 28, 2026). Ability details are still
+            pending in-game verification — this page will update once confirmed.
+          </p>
+        ) : null}
+
+        <dl className="mt-8 space-y-5">
+          <div>
+            <dt className="text-sm font-bold uppercase tracking-wide text-primary">
+              Ability
+            </dt>
+            <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              {commander.ability}
+            </dd>
+          </div>
+          <div>
+            <dt className="text-sm font-bold uppercase tracking-wide text-primary">
+              Best for
+            </dt>
+            <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              {commander.bestFor}
+            </dd>
+          </div>
+          {commander.notes ? (
+            <div>
+              <dt className="text-sm font-bold uppercase tracking-wide text-primary">
+                Notes
+              </dt>
+              <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {commander.notes}
+              </dd>
+            </div>
+          ) : null}
+        </dl>
+      </div>
+
+      <section className="mt-10">
+        <h3 className="text-lg font-bold text-foreground">How to get {commander.name}</h3>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+          {commander.eventMap
+            ? `${commander.name} is tied to the ${commander.eventMap} event map in Commanders Pt. 2. While that event is live, defeat the spawned commander on the map — last hit captures it.`
+            : "Commanders can be captured on the map, bought in the Shop, or earned from milestones depending on the unit."}
+        </p>
+        <ul className="mt-5 space-y-3">
+          {ACQUIRE_METHODS.map((method) => (
+            <li
+              key={method.id}
+              className="rounded-xl border border-border/70 bg-card/70 p-4 text-sm text-muted-foreground"
+            >
+              <p className="font-semibold text-foreground">{method.title}</p>
+              <p className="mt-1 leading-relaxed">{method.how}</p>
+            </li>
+          ))}
+        </ul>
+        {commander.eventMap ? (
+          <p className="mt-4 text-sm text-muted-foreground">
+            See the{" "}
+            <Link href="/raid" className="font-medium text-primary hover:underline">
+              raid guide
+            </Link>{" "}
+            for Harbor &amp; Oil Rig event map tips.
+          </p>
+        ) : null}
+      </section>
+
+      {related.length > 0 ? (
+        <section className="mt-10">
+          <h3 className="text-lg font-bold text-foreground">
+            Other {commander.rarity} commanders
+          </h3>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+            {related.map((item) => (
+              <li key={item.name}>
+                <Link
+                  href={getCommanderPath(item)}
+                  className="group flex items-center justify-between rounded-xl border border-border/70 bg-card/70 px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                >
+                  {item.name}
+                  <ArrowRight
+                    className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                    aria-hidden="true"
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      <div className="mt-10 flex flex-wrap gap-3">
+        <TrackedCtaLink
+          href="/commanders"
+          label="All commanders"
+          placement="guide_cards"
+          className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+        >
+          <Crown className="size-4" aria-hidden="true" />
+          All commanders
+        </TrackedCtaLink>
+        <TrackedCtaLink
+          href="/raid"
+          label="Raid guide"
+          placement="guide_cards"
+          className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-primary/40 bg-card/90 px-4 text-sm font-bold text-primary shadow-sm transition-colors hover:border-primary/60 hover:bg-card"
+        >
+          <Target className="size-4" aria-hidden="true" />
+          Raid guide
+        </TrackedCtaLink>
+      </div>
+    </div>
+  )
+}
