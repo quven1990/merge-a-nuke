@@ -58,7 +58,7 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
     },
     {
       q: "Is rebirth worth it in Merge a Nuke?",
-      a: "Yes when growth slows — rebirth unlocks higher Index nukes beyond the mid-game cap (community runs report ~35 tiers before rebirth).",
+      a: "Yes when growth slows — rebirth unlocks higher Index nukes beyond the mid-game cap (community runs report ~35 tiers before rebirth). Rebirth 7 (July 4, 2026) added 5 new nukes.",
     },
     {
       q: "When should I get my first commander?",
@@ -130,6 +130,18 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
       q: "How do I skip the nuke launch cooldown when raiding?",
       a: "Fire a nuke before you merge it. Because the copy you launched is already gone, you can immediately combine its twin and fire again, sidestepping most of the reload timer. Remember that launching also drops your own Lock Base shield, so re-lock right after attacking.",
     },
+    {
+      q: "How do wars work in Merge a Nuke?",
+      a: "Added in the July 4, 2026 patch. Attack the same player 3 times and the game declares war on them. War score tracks the fight — reach 100% to win. The winner takes 50% of the loser's cash. Wars raise the stakes beyond a single raid, so lock your base and avoid spam-attacking unless you want retaliation.",
+    },
+    {
+      q: "What are Mystery Supply Drops in Merge a Nuke?",
+      a: "Random commander loot crates added July 4, 2026. They have a 50% chance to spawn every 3 minutes. Destroy one to roll a random commander from all available pools in the game — low effort but RNG-heavy.",
+    },
+    {
+      q: "What is the Military Compound event in Merge a Nuke?",
+      a: "A timed LTM event map added July 4, 2026. It runs roughly every 2 hours. Clear the compound to spawn Stalker (Legendary). Bring high-tier nukes like you would for Harbor or the center city.",
+    },
   ],
   "/offline-cash": [
     {
@@ -164,7 +176,7 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
     },
     {
       q: "How do you get commanders in Merge a Nuke?",
-      a: "Three ways: defeat a spawned commander on the shared map (last hit wins), purchase one in the Shop with in-game cash or Robux, or earn a free starter commander at certain level milestones.",
+      a: "Five ways: defeat a spawned commander on the shared map (last hit wins), purchase one in the Shop with in-game cash or Robux, earn a free starter at level milestones, clear rotating event maps like Military Compound or Harbor, or destroy Mystery Supply Drops for a random roll.",
     },
     {
       q: "What is the best commander in Merge a Nuke?",
@@ -175,8 +187,12 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
       a: "Yes. Commanders on the map are captured by whoever lands the killing blow. Attack with your strongest nuke quickly — other players compete for the same commander.",
     },
     {
+      q: "What new commanders were added in the July 4, 2026 patch?",
+      a: "Uncle Sam (Common, 4th of July event), Sergeant (Rare), Tank (Epic), and Stalker (Legendary) from the Military Compound LTM. Mystery Supply Drops can also roll any commander in the game. Sovereign's auto-attack rate was nerfed and Apache's map spawn dropped from 0.2% to 0.05%.",
+    },
+    {
       q: "How many commanders can I equip at once in Merge a Nuke?",
-      a: "Multiple commanders can be active simultaneously. Pair non-overlapping roles for best results — for example Spotter for income and Gunner for PvP raids.",
+      a: "Multiple commanders can be active simultaneously. A Robux product (+1 Commander Equip, up to 3 purchases) raises the cap to 6 equipped commanders. Pair non-overlapping roles for best results — for example Spotter for income and Gunner for PvP raids.",
     },
   ],
 }

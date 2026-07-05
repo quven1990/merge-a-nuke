@@ -66,6 +66,11 @@ export function CommanderDetail({ commander }: { commander: Commander }) {
                   New
                 </span>
               ) : null}
+              {commander.limited ? (
+                <span className="rounded-full bg-hazard/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-hazard">
+                  LTM
+                </span>
+              ) : null}
             </div>
             <div className="mt-3 flex flex-wrap items-center gap-2">
               <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${badge}`}>
@@ -93,8 +98,9 @@ export function CommanderDetail({ commander }: { commander: Commander }) {
 
         {commander.pending ? (
           <p className="mt-6 rounded-xl border border-primary/25 bg-primary/5 px-4 py-3 text-sm text-muted-foreground">
-            Added in Commanders Pt. 2 (June 28, 2026). Ability details are still
-            pending in-game verification — this page will update once confirmed.
+            {commander.limited
+              ? "Limited-time or recently added commander — ability details are still pending in-game verification. This page will update once confirmed."
+              : "Recently added commander — ability details are still pending in-game verification. This page will update once confirmed."}
           </p>
         ) : null}
 
@@ -132,8 +138,8 @@ export function CommanderDetail({ commander }: { commander: Commander }) {
         <h3 className="text-lg font-bold text-foreground">How to get {commander.name}</h3>
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
           {commander.eventMap
-            ? `${commander.name} is tied to the ${commander.eventMap} event map in Commanders Pt. 2. While that event is live, defeat the spawned commander on the map — last hit captures it.`
-            : "Commanders can be captured on the map, bought in the Shop, or earned from milestones depending on the unit."}
+            ? `${commander.name} is tied to the ${commander.eventMap} event. While that event is live, clear the map or defeat the spawned commander — last hit captures it.`
+            : "Commanders can be captured on the map, bought in the Shop, earned from milestones, rolled from Mystery Supply Drops, or dropped from event maps depending on the unit."}
         </p>
         <ul className="mt-5 space-y-3">
           {ACQUIRE_METHODS.map((method) => (
@@ -152,7 +158,7 @@ export function CommanderDetail({ commander }: { commander: Commander }) {
             <Link href="/raid" className="font-medium text-primary hover:underline">
               raid guide
             </Link>{" "}
-            for Harbor &amp; Oil Rig event map tips.
+            for event map timers, war mechanics, and Mystery Supply Drop tips.
           </p>
         ) : null}
       </section>

@@ -24,7 +24,7 @@ const GUIDES: Guide[] = [
   {
     icon: Crown,
     title: "Commanders",
-    desc: "All 15 commanders by rarity incl. the new Admiral tier — how to capture them and which to get first.",
+    desc: "All 19 commanders by rarity incl. the new Admiral tier — how to capture them and which to get first.",
     href: "/commanders",
   },
   {

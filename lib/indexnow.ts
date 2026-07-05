@@ -1,3 +1,4 @@
+import { getAllCommanderSlugs } from "@/lib/commanders-data"
 import { NAV_ITEMS } from "@/lib/navigation"
 import { SITE_URL } from "@/lib/site"
 
@@ -9,11 +10,12 @@ export function getIndexNowKeyLocation(siteUrl = SITE_URL) {
 
 /** All indexable URLs — kept in sync with app/sitemap.ts. */
 export function getIndexNowUrlList(siteUrl = SITE_URL): string[] {
-  const legalPaths = ["/privacy", "/terms"] as const
+  const legalPaths = ["/about", "/privacy", "/terms"] as const
 
   return [
     siteUrl,
     ...NAV_ITEMS.map((item) => `${siteUrl}${item.href}`),
+    ...getAllCommanderSlugs().map((slug) => `${siteUrl}/commanders/${slug}`),
     ...legalPaths.map((path) => `${siteUrl}${path}`),
   ]
 }

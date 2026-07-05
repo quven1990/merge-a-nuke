@@ -2,7 +2,7 @@ import { ArrowRight, Sparkles } from "lucide-react"
 
 import { TrackedCtaLink } from "@/components/tracked-cta-link"
 
-const UPDATE_DATE = "June 28, 2026"
+const UPDATE_DATE = "July 4, 2026"
 
 export function UpdateBanner() {
   return (
@@ -26,15 +26,14 @@ export function UpdateBanner() {
               What&apos;s New · {UPDATE_DATE}
             </p>
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              Commanders Pt. 2 is live — a new{" "}
-              <strong className="text-rose-400">Admiral</strong> rarity, 8 new
-              units, and the Harbor &amp; Oil Rig event maps.
+              LTM &amp; 4th of July patch — Military Compound, 4 new commanders,
+              PvP wars, Mystery Supply Drops, and Rebirth 7.
             </p>
           </div>
         </div>
         <TrackedCtaLink
           href="/commanders"
-          label="Whats New Commanders Pt2"
+          label="Whats New July 4 LTM"
           placement="home_update"
           className="inline-flex min-h-10 shrink-0 items-center gap-2 self-start rounded-xl border border-primary/40 bg-card/90 px-4 text-sm font-bold text-primary shadow-sm transition-colors hover:border-primary/60 hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:self-center"
         >

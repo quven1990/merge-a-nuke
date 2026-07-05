@@ -3,8 +3,8 @@ import { ArrowRight, Crown, Sparkles } from "lucide-react"
 import { TrackedCtaLink } from "@/components/tracked-cta-link"
 
 const HIGHLIGHTS = [
-  "All 15 commanders ranked by rarity — including the new Admiral tier from Commanders Pt. 2",
-  "How to capture them on the map, in the Shop, and on Harbor & Oil Rig event maps",
+  "All 19 commanders ranked by rarity — including July 4 LTM units and the Admiral tier",
+  "How to capture them on event maps, Mystery Supply Drops, the Shop, and map spawns",
   "Best picks for early, mid, and endgame — Salvager, Spotter, Sovereign, and more",
 ] as const
 
@@ -28,7 +28,7 @@ export function FeaturedCommandersSpotlight() {
               </h2>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
                 The fastest-growing topic on this wiki — every commander by rarity,
-                how to unlock each one, and which to chase first after the June 28
+                how to unlock each one, and which to chase first after the July 4
                 patch.
               </p>
               <ul className="mt-5 space-y-2.5">

@@ -73,29 +73,64 @@ export const EVENT_MAPS = [
   {
     name: "Harbor",
     summary:
-      "A new event map added in Commanders Pt. 2 (June 28, 2026). It rotates as a separate target from your base and the center city.",
+      "Naval event city from Commanders Pt. 2. Rotates as a separate PvE target from your base and the center city.",
     exclusiveCommanders: "Carrier (Admiral) plus a second event-exclusive unit",
   },
   {
     name: "Oil Rig",
     summary:
-      "The second Commanders Pt. 2 event map. Like Harbor, it spawns on rotation and pays its own rewards on top of standard raids.",
+      "Offshore event map from Commanders Pt. 2. Spawns on rotation with its own destructible targets and commander drops.",
     exclusiveCommanders: "Apache (Admiral) plus a second event-exclusive unit",
+  },
+  {
+    name: "Military Compound",
+    summary:
+      "Timed LTM event added July 4, 2026. Runs every ~2 hours — clear the compound to spawn Stalker (Legendary).",
+    exclusiveCommanders: "Stalker (Legendary, limited-time)",
+  },
+  {
+    name: "Military Base (Tier 2)",
+    summary:
+      "Tier-2 military event map with 8 new destructibles. Added in the July 4, 2026 patch alongside the LTM rotation.",
+    exclusiveCommanders: "Commander drops still being confirmed in-game",
   },
 ] as const
 
 export const EVENT_MAP_GUIDE = {
-  title: "Event maps: Harbor & Oil Rig (Commanders Pt. 2)",
+  title: "Event maps & timed events",
   summary:
-    "Commanders Pt. 2 added two rotating event maps — Harbor and Oil Rig — that each drop 2 exclusive commanders. They are the main way to capture the new Admiral-rarity units.",
+    "Beyond PvP bases and the center city, rotating event maps — Harbor, Oil Rig, Military Compound, and Military Base — pay exclusive commander drops when you clear them.",
   points: [
-    "Each event map carries 2 map-exclusive commanders, so clearing both maps is how you collect the new Pt. 2 units.",
-    "Event maps rotate in and out — check the map selector when an event window is live so you don't miss the exclusive drops.",
-    "Bring your highest-tier nukes: event targets are tuned tougher than early PvP bases, similar to the center city.",
-    "Exact spawn timers, rewards, and commander drop rules are still being confirmed in-game — treat the schedule as approximate until verified.",
+    "Military Compound runs on a ~2-hour timer and drops Stalker (Legendary) after a successful clear.",
+    "Military Base tier 2 adds 8 new destructibles — bring high-tier nukes like you would for Harbor or the center city.",
+    "Harbor and Oil Rig still rotate with Admiral-rarity exclusives from Commanders Pt. 2.",
+    "The July 4 event also spawned Uncle Sam (Common) during the holiday window — check if it returns on future events.",
   ],
   destructionPhysics:
-    "Pt. 2 also reworked destruction with new physics, so structures collapse and react to hits differently. It is mostly visual, but it makes it clearer which targets your nuke actually connected with.",
+    "Event maps use the same destruction physics as Commanders Pt. 2 — aim at structures directly so you can see what connected.",
+} as const
+
+export const WAR_MECHANICS = {
+  title: "War declarations (July 4, 2026)",
+  summary:
+    "PvP now escalates into formal wars. Repeatedly hitting the same player can trigger a war with a cash payout on the line.",
+  points: [
+    "Attack the same player 3 times and the game declares war on them.",
+    "War score tracks progress during the fight — reach 100% to win.",
+    "The winner takes 50% of the loser's cash when war score hits 100%.",
+    "Wars raise the stakes beyond a single raid — lock your base and avoid spam-attacking unless you want the retaliation.",
+  ],
+} as const
+
+export const SUPPLY_DROPS = {
+  title: "Mystery Supply Drops",
+  summary:
+    "Random commander loot crates that spawn throughout the map during the July 4, 2026 update.",
+  points: [
+    "A Mystery Supply Drop has a 50% chance to spawn every 3 minutes.",
+    "Destroy the drop to roll a random commander from all available pools in the game.",
+    "RNG-heavy but passive — worth clearing while waiting for Military Compound or center city timers.",
+  ],
 } as const
 
 export const CENTER_CITY_GUIDE = {

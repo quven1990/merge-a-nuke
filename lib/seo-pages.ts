@@ -100,14 +100,14 @@ export const SEO_PAGES = {
   },
   raid: {
     path: "/raid",
-    title: "Merge a Nuke Raid Guide — PvP, City, Event Maps & Defense",
+    title: "Merge a Nuke Raid Guide — PvP, Wars, Event Maps & Defense",
     description:
-      "Merge a Nuke raid guide: PvP base attacks, center city PvE payouts, the new Harbor & Oil Rig event maps (Commanders Pt. 2), Lock Base shields, and how to avoid losing merge progress.",
+      "Merge a Nuke raid guide: PvP base attacks, war declarations, center city PvE, Military Compound & Harbor event maps, Mystery Supply Drops, Lock Base shields, and defense tips.",
     h1: "Merge a Nuke Raid & Defense Guide",
     intro:
-      "Raid smarter, farm the center city on cooldown, hit the new Harbor & Oil Rig event maps, and lock your base so offline players cannot wipe your progress.",
+      "Raid smarter, farm the center city on cooldown, hit rotating event maps, declare wars for cash payouts, and lock your base so offline players cannot wipe your progress.",
     tldr:
-      "Check shields before launching. Lock before merging in busy lobbies. Center city pays more than early PvP, and the new Harbor & Oil Rig event maps drop exclusive Admiral commanders — bring your biggest nukes.",
+      "Check shields before launching. Lock before merging in busy lobbies. Attack the same player 3 times to declare war — 100% war score steals 50% of their cash. Military Compound drops Stalker every ~2 hours.",
     breadcrumb: "Raid Guide",
   },
   offlineCash: {
@@ -138,12 +138,12 @@ export const SEO_PAGES = {
     path: "/commanders",
     title: "Merge a Nuke Commanders — Best Picks & New Admiral Tier",
     description:
-      "All 15 Merge a Nuke commanders ranked by rarity — including the new Admiral tier. Learn which to capture first, how to unlock each, and who to skip.",
+      "All 19 Merge a Nuke commanders ranked by rarity — including the new Admiral tier. Learn which to capture first, how to unlock each, and who to skip.",
     h1: "Merge a Nuke Commanders Guide",
     intro:
-      "All 15 commanders by rarity, the new Admiral tier from Commanders Pt. 2, how to unlock them, and which to prioritize at each stage of the game.",
+      "All 19 commanders by rarity, the new Admiral tier from Commanders Pt. 2, July 4 LTM units, how to unlock them, and which to prioritize at each stage of the game.",
     tldr:
-      "Defeat spawned commanders on the map (last hit wins) or buy them in the Shop. Start with Salvager (auto-merges) or Spotter (cash boost). Endgame: Sovereign (legendary, +15% damage + auto city attacks). Commanders Pt. 2 added the Admiral rarity plus 8 new units.",
+      "Defeat spawned commanders on the map (last hit wins), clear event maps, destroy Mystery Supply Drops, or buy in the Shop. Start with Salvager (auto-merges) or Spotter (cash boost). Endgame: Sovereign (legendary, +15% damage). Military Compound drops Stalker (Legendary) every ~2 hours.",
     breadcrumb: "Commanders",
   },
   about: {

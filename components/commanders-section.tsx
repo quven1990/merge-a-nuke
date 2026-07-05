@@ -5,6 +5,7 @@ import {
   Crown,
   Info,
   Layers,
+  Package,
   ShieldAlert,
   ShoppingBag,
   Sparkles,
@@ -20,7 +21,7 @@ import { CommanderRoster } from "@/components/commander-roster"
 import { TrackedCtaLink } from "@/components/tracked-cta-link"
 import { ACQUIRE_METHODS } from "@/lib/commanders-data"
 
-const ACQUIRE_ICON = [Target, ShoppingBag, Trophy, Anchor]
+const ACQUIRE_ICON = [Target, ShoppingBag, Trophy, Anchor, Package]
 
 const PICK_GUIDE = [
   {
@@ -59,6 +60,42 @@ const UPGRADE_STEPS = [
 export function CommandersSection() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-20">
+
+      {/* PATCH UPDATE BANNER — July 4 LTM */}
+      <section
+        id="commanders-july4"
+        aria-labelledby="commanders-july4-heading"
+        className="rounded-2xl border border-hazard/30 bg-hazard/5 p-5 sm:p-6"
+      >
+        <div className="flex items-center gap-2.5">
+          <span className="flex size-8 shrink-0 items-center justify-center rounded-xl border border-hazard/30 bg-hazard/10">
+            <Sparkles className="size-4 text-hazard" aria-hidden="true" />
+          </span>
+          <h2
+            id="commanders-july4-heading"
+            className="text-base font-bold tracking-tight text-foreground sm:text-lg"
+          >
+            Update: LTM &amp; 4th of July (July 4, 2026)
+          </h2>
+        </div>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+          Four new commanders joined the roster:{" "}
+          <strong className="text-foreground">Uncle Sam</strong> (Common, 4th of July
+          event), <strong className="text-foreground">Sergeant</strong> (Rare),{" "}
+          <strong className="text-foreground">Tank</strong> (Epic), and{" "}
+          <strong className="text-yellow-400">Stalker</strong> (Legendary) from the{" "}
+          <strong className="text-foreground">Military Compound</strong> LTM (~2-hour
+          rotation).{" "}
+          <strong className="text-foreground">Mystery Supply Drops</strong> also roll a
+          random commander when destroyed.
+        </p>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          Balance changes: <strong className="text-foreground">Sovereign</strong> auto-attack
+          rate was significantly nerfed, and <strong className="text-foreground">Apache</strong>{" "}
+          map spawn dropped from 0.2% to 0.05%. New unit abilities are pending in-game
+          verification.
+        </p>
+      </section>
 
       {/* PATCH UPDATE BANNER — Commanders Pt. 2 */}
       <section
@@ -120,12 +157,12 @@ export function CommandersSection() {
             bonus to every nuke attack you launch.
           </p>
           <p>
-            After the Commanders Pt. 2 update there are 5 rarity tiers:{" "}
-            <strong className="text-foreground">Common</strong> (5 commanders),{" "}
-            <strong className="text-blue-400">Rare</strong> (5 commanders),{" "}
-            <strong className="text-purple-400">Epic</strong> (2 commanders),{" "}
-            <strong className="text-yellow-400">Legendary</strong> (1 commander), and the
-            new <strong className="text-rose-400">Admiral</strong> tier (2 commanders).
+            After the July 4, 2026 update there are 5 rarity tiers:{" "}
+            <strong className="text-foreground">Common</strong> (6 commanders),{" "}
+            <strong className="text-blue-400">Rare</strong> (6 commanders),{" "}
+            <strong className="text-purple-400">Epic</strong> (3 commanders),{" "}
+            <strong className="text-yellow-400">Legendary</strong> (2 commanders), and{" "}
+            <strong className="text-rose-400">Admiral</strong> (2 commanders).
             Higher rarity means stronger and rarer abilities. Multiple commanders can be
             active at the same time.
           </p>
@@ -143,12 +180,12 @@ export function CommandersSection() {
           icon={Target}
           kicker="Unlock methods"
           title="How to Get Commanders"
-          tag="4 ways"
+          tag="5 ways"
         />
         <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          Commanders can be unlocked in four ways. Capturing them on the map —
-          including the new Harbor and Oil Rig event maps — is the most reliable
-          free method, while buying in the Shop is faster but costs resources.
+          Commanders can be unlocked in five ways. Capturing them on event maps —
+          Harbor, Oil Rig, Military Compound, and Military Base — is the most reliable
+          free method for exclusives, while Mystery Supply Drops add a passive RNG path.
         </p>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -186,14 +223,14 @@ export function CommandersSection() {
           icon={Layers}
           kicker="Full roster"
           title="All Commanders by Rarity"
-          tag="15 commanders"
+          tag="19 commanders"
         />
         <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
           Abilities sourced from community gameplay footage — verify exact values
           in-game after Friday patches. Units marked{" "}
-          <span className="font-semibold text-primary">New</span> were added in
-          Commanders Pt. 2 and their abilities are pending verification. Tap any
-          commander to open its full guide page.
+          <span className="font-semibold text-primary">New</span> have unverified
+          abilities. <span className="font-semibold text-hazard">LTM</span> marks
+          limited-time event units. Tap any commander to open its full guide page.
         </p>
 
         <CommanderRoster />

@@ -13,9 +13,9 @@ import { EARLY_UPGRADE_ROUTE, STORE_UPGRADES } from "@/lib/upgrades-data"
 import { ACQUIRE_METHODS, COMMANDERS, getCommanderPath } from "@/lib/commanders-data"
 
 const LAST_MODIFIED = "2026-06-18"
-const HOME_LAST_MODIFIED = "2026-07-01"
-const COMMANDERS_LAST_MODIFIED = "2026-06-28"
-const RAID_LAST_MODIFIED = "2026-06-28"
+const HOME_LAST_MODIFIED = "2026-07-05"
+const COMMANDERS_LAST_MODIFIED = "2026-07-05"
+const RAID_LAST_MODIFIED = "2026-07-05"
 const CODES_MONTH_YEAR = getContentMonthYear()
 
 function pageUrl(siteUrl: string, path: SeoPageConfig["path"]) {
@@ -241,7 +241,7 @@ function buildCommanderAcquireHowTo() {
     "@type": "HowTo",
     name: "How to get commanders in Merge a Nuke",
     description:
-      "Three ways to unlock commanders in the Roblox game Merge a Nuke: defeat map spawns, buy in the Shop, or earn at level milestones.",
+      "Five ways to unlock commanders in the Roblox game Merge a Nuke: defeat map spawns, buy in the Shop, earn at level milestones, clear event maps, or destroy Mystery Supply Drops.",
     step: ACQUIRE_METHODS.map((method, index) => ({
       "@type": "HowToStep",
       position: index + 1,

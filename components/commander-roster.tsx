@@ -58,6 +58,11 @@ export function CommanderRoster() {
                       New
                     </span>
                   ) : null}
+                  {cmd.limited ? (
+                    <span className="shrink-0 rounded-full bg-hazard/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-hazard">
+                      LTM
+                    </span>
+                  ) : null}
                 </div>
                 <div className="flex shrink-0 items-center gap-1.5">
                   <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${badge}`}>
@@ -111,6 +116,11 @@ export function CommanderRoster() {
                       {cmd.pending ? (
                         <span className="ml-1.5 rounded-full bg-primary/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary align-middle">
                           New
+                        </span>
+                      ) : null}
+                      {cmd.limited ? (
+                        <span className="ml-1.5 rounded-full bg-hazard/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-hazard align-middle">
+                          LTM
                         </span>
                       ) : null}
                     </span>

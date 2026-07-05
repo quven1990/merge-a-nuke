@@ -1,5 +1,10 @@
 export type CommanderRarity = "Common" | "Rare" | "Epic" | "Legendary" | "Admiral"
 export type CommanderRole = "income" | "offense" | "defense" | "automation"
+export type CommanderEventMap =
+  | "Harbor"
+  | "Oil Rig"
+  | "Military Compound"
+  | "4th of July"
 
 export type Commander = {
   name: string
@@ -9,10 +14,12 @@ export type Commander = {
   bestFor: string
   priority: "S" | "A" | "B" | "C" | "?"
   notes: string
-  /** True for units added in Commanders Pt. 2 whose abilities are not yet verified in-game. */
+  /** True when ability details are not yet verified in-game. */
   pending?: boolean
-  /** Event map where this commander spawns, if event-exclusive. */
-  eventMap?: "Harbor" | "Oil Rig"
+  /** Limited-time or event-exclusive commander. */
+  limited?: boolean
+  /** Event map or holiday event where this commander spawns. */
+  eventMap?: CommanderEventMap
   /** Optional in-game portrait path under /public, e.g. /images/commanders/salvager.webp */
   image?: string
 }
@@ -86,6 +93,18 @@ export const COMMANDERS: Commander[] = [
     notes: "Added in Commanders Pt. 2 (June 28, 2026).",
     pending: true,
   },
+  {
+    name: "Uncle Sam",
+    rarity: "Common",
+    role: "offense",
+    ability: "Added for the 4th of July event — ability details pending in-game verification.",
+    bestFor: "Holiday event collectors — grab it while the July 4 event is live",
+    priority: "?",
+    notes: "Limited-time 4th of July event unit (July 2026).",
+    pending: true,
+    limited: true,
+    eventMap: "4th of July",
+  },
   // --- Rare ---
   {
     name: "Spotter",
@@ -135,6 +154,16 @@ export const COMMANDERS: Commander[] = [
     notes: "Added in Commanders Pt. 2 (June 28, 2026).",
     pending: true,
   },
+  {
+    name: "Sergeant",
+    rarity: "Rare",
+    role: "offense",
+    ability: "Added in the July 4, 2026 LTM patch — ability details pending in-game verification.",
+    bestFor: "Pending — check back after we confirm it in-game",
+    priority: "?",
+    notes: "Added in the LTM / 4th of July update (July 4, 2026).",
+    pending: true,
+  },
   // --- Epic ---
   {
     name: "Siege Breaker",
@@ -155,6 +184,16 @@ export const COMMANDERS: Commander[] = [
     notes: "Added in Commanders Pt. 2 (June 28, 2026).",
     pending: true,
   },
+  {
+    name: "Tank",
+    rarity: "Epic",
+    role: "offense",
+    ability: "Added in the July 4, 2026 LTM patch — ability details pending in-game verification.",
+    bestFor: "Pending — check back after we confirm it in-game",
+    priority: "?",
+    notes: "Added in the LTM / 4th of July update (July 4, 2026).",
+    pending: true,
+  },
   // --- Legendary ---
   {
     name: "Sovereign",
@@ -163,7 +202,19 @@ export const COMMANDERS: Commander[] = [
     ability: "Increases your nuke damage by 15% passively. Also auto-attacks city events and deals bonus damage to event targets.",
     bestFor: "Late game — best overall commander for city farming and raids",
     priority: "S",
-    notes: "Best commander in the game. Auto-attacks the city even while active.",
+    notes: "Best legendary commander. July 4, 2026 patch significantly nerfed its auto-attack rate.",
+  },
+  {
+    name: "Stalker",
+    rarity: "Legendary",
+    role: "offense",
+    ability: "Limited-time Legendary from the Military Compound event — ability details pending in-game verification.",
+    bestFor: "Event farmers — beat Military Compound when it rotates every ~2 hours",
+    priority: "?",
+    notes: "LTM reward from Military Compound (July 4, 2026). Spawns after the event is cleared.",
+    pending: true,
+    limited: true,
+    eventMap: "Military Compound",
   },
   // --- Admiral (new rarity in Pt. 2) ---
   {
@@ -173,7 +224,7 @@ export const COMMANDERS: Commander[] = [
     ability: "Newly added with the Admiral rarity in Commanders Pt. 2 — ability details pending in-game verification.",
     bestFor: "Pending — check back after we confirm it in-game",
     priority: "?",
-    notes: "Admiral rarity, added in Commanders Pt. 2 (June 28, 2026).",
+    notes: "Admiral rarity. July 4, 2026 patch nerfed map spawn rate from 0.2% to 0.05%.",
     pending: true,
     eventMap: "Oil Rig",
   },
@@ -219,8 +270,14 @@ export const ACQUIRE_METHODS: AcquireMethod[] = [
   {
     id: "event-map",
     title: "Spawn during event maps",
-    how: "Commanders Pt. 2 added the Harbor and Oil Rig event maps. While an event is active, two event-exclusive commanders spawn on the map — defeat them the same way, where the last hit captures the commander.",
-    tip: "Event commanders only appear during the active event window, so jump in while the Harbor or Oil Rig event is live.",
+    how: "Harbor, Oil Rig, Military Compound, and Military Base rotate as event targets. Beat the event to capture map-exclusive commanders — Military Compound runs every ~2 hours and drops Stalker (Legendary) when cleared.",
+    tip: "Event commanders only appear during the active window. Check which map is live before grinding.",
+  },
+  {
+    id: "supply-drop",
+    title: "Destroy Mystery Supply Drops",
+    how: "Mystery Supply Drops have a 50% chance to spawn every 3 minutes. Destroy one to roll a random commander from all available pools in the game.",
+    tip: "Low effort but RNG-heavy — good filler while you wait for a timed event map to open.",
   },
 ]
 
