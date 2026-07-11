@@ -9,15 +9,17 @@ export const dynamic = "force-static"
 /** Last content update per indexable path (YYYY-MM-DD), from recent git history. */
 const PAGE_LAST_MODIFIED: Record<string, string> = {
   "/": "2026-07-05",
-  "/codes": "2026-06-24",
+  "/codes": "2026-07-11",
   "/beginner-guide": "2026-06-20",
-  "/progression": "2026-06-20",
+  "/progression": "2026-07-11",
   "/upgrades": "2026-06-20",
   "/tier-list": "2026-06-20",
   "/raid": "2026-07-05",
   "/offline-cash": "2026-06-20",
   "/faq": "2026-07-05",
   "/commanders": "2026-07-11",
+  "/updates": "2026-07-11",
+  "/community": "2026-07-11",
   "/about": "2026-06-23",
   "/privacy": "2026-06-18",
   "/terms": "2026-06-18",
@@ -36,11 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${siteUrl}${item.href}`,
     lastModified: getLastModified(item.href),
     changeFrequency: "weekly" as const,
-    priority: item.href === "/codes" ? 0.9 : 0.8,
+    priority: item.href === "/codes" ? 0.9 : item.href === "/updates" ? 0.85 : 0.8,
   }))
 
   const legalPages = [
     { path: "/about", priority: 0.4 },
+    { path: "/community", priority: 0.45 },
     { path: "/privacy", priority: 0.3 },
     { path: "/terms", priority: 0.3 },
   ] as const

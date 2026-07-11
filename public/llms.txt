@@ -2,27 +2,29 @@
 
 > Independent fan-made strategy wiki for Merge a Nuke on Roblox — not affiliated with Roblox Corporation or Nuke The Game.
 
-Last updated: 2026-07-05
+Last updated: 2026-07-11
 
-Working codes (June 2026): ATOMIC ($10,000 + 20 nukes), UPDATE2 ($10,000 + 10 nukes), BOOM ($5,000). Redeem: Shop (left) → scroll to bottom → enter code → Redeem. New players: merge same-level pairs (2+2=4) → buy Spawn Speed then Spawn Tier → lock base before raiding.
+Working codes (June 2026): ATOMIC ($10,000 + 20 nukes), UPDATE2 ($10,000 + 10 nukes), BOOM ($5,000). Redeem: Shop (left) → scroll to bottom → enter code → Redeem. Upgrade Max Spawn before redeeming nuke-heavy codes. New players: merge same-level pairs (2+2=4) → buy Spawn Speed then Spawn Tier → lock base before raiding.
 
 Codes and balance can change after Friday game updates. Tier names and some stats are community-reported — verify in the in-game Index.
 
 ## Primary guides
 
 - [Wiki Home](https://mergeanuke.site/): Codes, beginner route, tier list, raid tips, and FAQ
-- [Codes](https://mergeanuke.site/codes): Active codes, rewards, and step-by-step redeem instructions
+- [Codes](https://mergeanuke.site/codes): Active codes, rewards, Max Spawn redeem tips, and step-by-step instructions
 - [Beginner Guide](https://mergeanuke.site/beginner-guide): First steps, merge rules, and early mistakes to avoid
 - [Upgrades](https://mergeanuke.site/upgrades): Store upgrade priority for free players
-- [Progression](https://mergeanuke.site/progression): Stage-by-stage growth path
+- [Progression](https://mergeanuke.site/progression): Stage-by-stage growth path and Rebirth 7 checklist
 - [Tier List](https://mergeanuke.site/tier-list): Merge levels and community-reported nuke names
 - [Raid Guide](https://mergeanuke.site/raid): PvP raids, war declarations, center city, Military Compound & Harbor event maps, Mystery Supply Drops, and Lock Base defense
 - [Offline Cash](https://mergeanuke.site/offline-cash): Passive income and pre-logout setup
-- [Commanders](https://mergeanuke.site/commanders): All 19 commanders by rarity incl. the new Admiral tier, July 4 LTM units, how to capture them, and which to get first
+- [Commanders](https://mergeanuke.site/commanders): All 19 commanders, PvP/income/event tier lists, drop tables, and Admiral tier guides
+- [Updates](https://mergeanuke.site/updates): Friday patch log — Commanders Pt. 2, July 4 LTM, wars, Rebirth 7
 - [FAQ](https://mergeanuke.site/faq): Rebirth, code troubleshooting, and wiki scope
 
 ## Optional
 
+- [Community](https://mergeanuke.site/community): Official Roblox game and About-tab links (group, Discord)
 - [Privacy Policy](https://mergeanuke.site/privacy): Analytics, cookies, and data handling
 - [Terms of Use](https://mergeanuke.site/terms): Fan-site disclaimer and liability limits
 - [Contact](mailto:contact@mergeanuke.site): Questions or corrections about this wiki

@@ -1,19 +1,17 @@
 import type { Metadata } from "next"
 
-import { PageFaqSection } from "@/components/page-faq-section"
+import { CommunitySection } from "@/components/community-section"
 import { PageIntro } from "@/components/page-intro"
-import { ProgressionRoadmap } from "@/components/progression-roadmap"
-import { RebirthGuideSection } from "@/components/rebirth-guide-section"
 import { RelatedGuides } from "@/components/related-guides"
 import { SiteShell } from "@/components/site-shell"
 import { createPageMetadata } from "@/lib/page-metadata"
 import { SEO_PAGES } from "@/lib/seo-pages"
 
-const page = SEO_PAGES.progression
+const page = SEO_PAGES.community
 
 export const metadata: Metadata = createPageMetadata(page)
 
-export default function ProgressionPage() {
+export default function CommunityPage() {
   return (
     <SiteShell seoPage={page}>
       <main>
@@ -23,9 +21,7 @@ export default function ProgressionPage() {
           description={page.intro}
           tldr={page.tldr}
         />
-        <ProgressionRoadmap />
-        <RebirthGuideSection />
-        <PageFaqSection pagePath={page.path} />
+        <CommunitySection />
         <RelatedGuides current={page.path} />
       </main>
     </SiteShell>

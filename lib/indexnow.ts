@@ -10,7 +10,7 @@ export function getIndexNowKeyLocation(siteUrl = SITE_URL) {
 
 /** All indexable URLs — kept in sync with app/sitemap.ts. */
 export function getIndexNowUrlList(siteUrl = SITE_URL): string[] {
-  const legalPaths = ["/about", "/privacy", "/terms"] as const
+  const legalPaths = ["/about", "/community", "/privacy", "/terms"] as const
 
   return [
     siteUrl,

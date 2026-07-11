@@ -18,7 +18,11 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
     },
     {
       q: "Why is a Merge a Nuke code not working?",
-      a: "Codes fail when expired, already redeemed, or typed incorrectly. Try ATOMIC, then UPDATE2, then BOOM. Rejoin on a fresh session if one code fails.",
+      a: "Codes fail when expired, already redeemed, typed incorrectly, or when your Max Spawn cap is too low for nuke rewards — upgrade Max Spawn before redeeming ATOMIC (20 nukes) or UPDATE2 (10 nukes). Rejoin on a fresh session if one code fails.",
+    },
+    {
+      q: "Can code rewards waste nukes if my base is full?",
+      a: "Yes. Nuke rewards from codes respect your Max Spawn limit. If slots are full, extra nukes may not apply — raise Max Spawn in the Store first, then redeem codes in order: ATOMIC, UPDATE2, BOOM.",
     },
     {
       q: "When do Merge a Nuke codes update?",
@@ -180,7 +184,15 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
     },
     {
       q: "What is the best commander in Merge a Nuke?",
-      a: "Sovereign (Legendary) is the strongest overall — it adds +15% nuke damage passively and auto-attacks city events. For income, Spotter (Rare) is the best choice; for new players, Salvager (Common) is the easiest to use.",
+      a: "Depends on goal: Sovereign (Legendary) for overall damage and city farming; Spotter (Rare) for income; Siege Breaker (Epic) for PvP lock breaking. See the commander tier list on mergeanuke.site/commanders#commander-tier-list.",
+    },
+    {
+      q: "What is the best commander for PvP in Merge a Nuke?",
+      a: "Siege Breaker weakens locked bases and buffs your next nuke; pair with Gunner or Artillery for counter-raids. Carrier Airstrike also cuts lock timers after hits.",
+    },
+    {
+      q: "What is the best commander for income in Merge a Nuke?",
+      a: "Spotter (Rare) — flare cash boost every 30 seconds. Early game: Salvager auto-merges your grid. Broker (Dividends) is reported on Downtown but ability numbers are still pending verification.",
     },
     {
       q: "Can another player steal a commander I am trying to capture?",
@@ -193,6 +205,20 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
     {
       q: "How many commanders can I equip at once in Merge a Nuke?",
       a: "Multiple commanders can be active simultaneously. A Robux product (+1 Commander Equip, up to 3 purchases) raises the cap to 6 equipped commanders. Pair non-overlapping roles for best results — for example Spotter for income and Gunner for PvP raids.",
+    },
+  ],
+  "/updates": [
+    {
+      q: "When does Merge a Nuke update?",
+      a: "Nuke The Game ships new content every Friday on Roblox. Check this update log and the codes page after each weekly patch.",
+    },
+    {
+      q: "What changed in the July 4, 2026 Merge a Nuke patch?",
+      a: "Military Compound LTM, four holiday commanders, PvP wars, Mystery Supply Drops, Sovereign/Apache balance tweaks, and Rebirth 7 with five new Index nukes.",
+    },
+    {
+      q: "What was Commanders Pt. 2 in Merge a Nuke?",
+      a: "The June 28, 2026 patch added Admiral rarity, eight new commanders, Harbor and Oil Rig event maps, and ground-unit conversions for Salvager, Engineer, Gunner, and Spotter.",
     },
   ],
 }
@@ -211,6 +237,7 @@ export function getPageFaqHeading(path: SeoPageConfig["path"]): string {
     "/raid": "Common raid & defense questions",
     "/offline-cash": "Common offline cash questions",
     "/commanders": "Common commanders questions",
+    "/updates": "Common update & patch questions",
   }
 
   return headings[path] ?? "Common questions"

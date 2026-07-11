@@ -46,6 +46,11 @@ export const NAV_ITEMS: NavItem[] = [
     description: "All 19 commanders by rarity, the new Admiral tier, how to capture them on the map, and which to prioritize first.",
   },
   {
+    label: "Updates",
+    href: "/updates",
+    description: "Friday patch log for commanders, wars, rebirth tiers, and codes freshness.",
+  },
+  {
     label: "FAQ",
     href: "/faq",
     description: "Quick answers about codes, progression, raids, and this fan-made wiki.",
@@ -92,6 +97,11 @@ export const GUIDE_CARDS = [
     label: "Commanders",
     href: "/commanders" as const,
     anchor: "/commanders" as const,
+  },
+  {
+    label: "Updates",
+    href: "/updates" as const,
+    anchor: "/updates" as const,
   },
   {
     label: "FAQ",

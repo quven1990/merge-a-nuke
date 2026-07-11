@@ -424,12 +424,34 @@ export function CodesSection() {
             aria-hidden="true"
           />
           <p className="text-sm text-muted-foreground">
+            <span className="font-semibold text-warning">Max Spawn tip: </span>
+            Code nukes respect your Max Spawn cap. Upgrade Max Spawn in the Store
+            before redeeming ATOMIC (20 nukes) or UPDATE2 (10 nukes) so rewards
+            are not wasted on a full board.
+          </p>
+        </div>
+
+        <div className="mt-5 flex items-start gap-3 rounded-2xl border border-warning/40 bg-warning/10 p-4">
+          <AlertTriangle
+            className="mt-0.5 size-5 shrink-0 text-warning"
+            aria-hidden="true"
+          />
+          <p className="text-sm text-muted-foreground">
             <span className="font-semibold text-warning">Heads up: </span>
             Codes can expire after Friday updates. All three codes below were
             active as of{" "}
             <strong className="text-foreground">June 18, 2026</strong> per
             community trackers — if one fails, try the others in order, rejoin
-            the game on a fresh session, and follow {REDEEM_SHORT_PATH}.
+            the game on a fresh session, and follow {REDEEM_SHORT_PATH}. See the{" "}
+            <TrackedCtaLink
+              href="/updates"
+              label="Update log"
+              placement="codes_redeem"
+              className="font-semibold text-primary hover:underline"
+            >
+              update log
+            </TrackedCtaLink>{" "}
+            after each patch.
           </p>
         </div>
       </div>

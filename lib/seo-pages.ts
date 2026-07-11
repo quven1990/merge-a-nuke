@@ -64,14 +64,14 @@ export const SEO_PAGES = {
   },
   progression: {
     path: "/progression",
-    title: "Merge a Nuke Progression Guide — Upgrade Path",
+    title: "Merge a Nuke Progression & Rebirth Guide",
     description:
-      "Merge a Nuke progression guide for Roblox: what to upgrade first, when to merge higher nukes, and how to grow your base through each stage without wasting cash.",
+      "Merge a Nuke progression guide for Roblox: upgrade path, when to rebirth, Rebirth 7 unlocks, and how commanders persist across resets.",
     h1: "Merge a Nuke Progression Guide",
     intro:
-      "Know what to focus on at each stage so your base keeps growing without wasted upgrades.",
+      "Know what to focus on at each stage, when rebirth pays off, and how Rebirth 7 fits into long-term scaling.",
     tldr:
-      "Codes → Spawn Speed → Spawn Tier → merge toward 16+ → lock base → raid only when stable. Rebirth unlocks higher Index tiers.",
+      "Codes → Spawn Speed → Spawn Tier → merge toward 16+ → commanders → lock base → rebirth when growth slows. Commanders persist; cash and upgrades reset.",
     breadcrumb: "Progression",
   },
   upgrades: {
@@ -136,15 +136,39 @@ export const SEO_PAGES = {
   },
   commanders: {
     path: "/commanders",
-    title: "Merge a Nuke Commanders — Best Picks & New Admiral Tier",
+    title: "Merge a Nuke Commanders — Tier List & Admiral Guide",
     description:
-      "All 19 Merge a Nuke commanders ranked by rarity — including the new Admiral tier. Learn which to capture first, how to unlock each, and who to skip.",
+      "All 19 Merge a Nuke commanders with PvP, income, and event tier lists. Admiral tier, July 4 LTM units, drop tables, and which to capture first.",
     h1: "Merge a Nuke Commanders Guide",
     intro:
-      "All 19 commanders by rarity, the new Admiral tier from Commanders Pt. 2, July 4 LTM units, how to unlock them, and which to prioritize at each stage of the game.",
+      "All 19 commanders by rarity, commander tier lists for PvP and income, event drop tables, and which to prioritize at each stage.",
     tldr:
-      "Defeat spawned commanders on the map (last hit wins), clear event maps, destroy Mystery Supply Drops, or buy in the Shop. Start with Salvager (auto-merges) or Spotter (cash boost). Endgame: Sovereign (legendary, +15% damage). Military Compound drops Stalker (Legendary) every ~2 hours.",
+      "Defeat spawned commanders (last hit wins), clear event maps, destroy Mystery Supply Drops, or buy in the Shop. PvP: Siege Breaker + Artillery. Income: Spotter. Event: Carrier from Harbor.",
     breadcrumb: "Commanders",
+  },
+  updates: {
+    path: "/updates",
+    title: "Merge a Nuke Updates — Patch Log & Friday Changes",
+    description:
+      "Merge a Nuke update log for Roblox: Commanders Pt. 2, July 4 LTM, wars, Rebirth 7, and weekly Friday patch notes with links to guides.",
+    h1: "Merge a Nuke Update Log",
+    intro:
+      "Major patch timeline for Merge a Nuke on Roblox — what changed, when, and where to read the full guide on this wiki.",
+    tldr:
+      "Latest: July 4 LTM (wars, Military Compound, Supply Drops, Rebirth 7). Before that: Commanders Pt. 2 (Admiral tier, Harbor/Oil Rig). Check back every Friday.",
+    breadcrumb: "Updates",
+  },
+  community: {
+    path: "/community",
+    title: "Merge a Nuke Community — Official Roblox Links",
+    description:
+      "Official Merge a Nuke Roblox game link, developer group, and where to find Discord and Friday code drops — fan wiki community page.",
+    h1: "Merge a Nuke Community Links",
+    intro:
+      "Play the game, join the developer group, and find official social links — without unverified third-party Discord copy.",
+    tldr:
+      "Open the Roblox game About tab for group rewards, Discord, and studio links. Codes usually drop Fridays — see /updates and /codes.",
+    breadcrumb: "Community",
   },
   about: {
     path: "/about",

@@ -8,10 +8,13 @@ const NEXT_GUIDE: Partial<Record<`/${string}`, `/${string}`>> = {
   "/beginner-guide": "/upgrades",
   "/progression": "/raid",
   "/upgrades": "/tier-list",
-  "/tier-list": "/raid",
+  "/tier-list": "/commanders",
+  "/commanders": "/updates",
+  "/updates": "/raid",
   "/raid": "/offline-cash",
-  "/offline-cash": "/faq#rebirth",
+  "/offline-cash": "/progression#rebirth",
   "/faq": "/codes",
+  "/community": "/updates",
 }
 
 export function RelatedGuides({ current }: { current: `/${string}` }) {

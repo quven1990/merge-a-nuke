@@ -1,5 +1,6 @@
 import type { ComponentType } from "react"
 import {
+  Calendar,
   Coins,
   Crown,
   ScrollText,
@@ -24,8 +25,14 @@ const GUIDES: Guide[] = [
   {
     icon: Crown,
     title: "Commanders",
-    desc: "All 19 commanders by rarity incl. the new Admiral tier — how to capture them and which to get first.",
+    desc: "Tier lists, event drops, and all 19 commanders incl. Admiral rarity.",
     href: "/commanders",
+  },
+  {
+    icon: Calendar,
+    title: "Updates",
+    desc: "Friday patch log — Commanders Pt. 2, July 4 LTM, and rebirth changes.",
+    href: "/updates",
   },
   {
     icon: Ticket,
@@ -88,7 +95,7 @@ export function GuideCards() {
           icon={Boxes}
           kicker="Pick a guide"
           title="Wiki Guides"
-          tag="9 topics"
+          tag="10 topics"
         />
         <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
           Each guide lives on its own page so you get focused answers without

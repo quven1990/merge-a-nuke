@@ -18,6 +18,8 @@ import {
 
 import { SectionHeading } from "@/components/hud"
 import { CommanderRoster } from "@/components/commander-roster"
+import { CommanderTierList } from "@/components/commander-tier-list"
+import { EventMapDropsSection } from "@/components/event-map-drops-section"
 import { TrackedCtaLink } from "@/components/tracked-cta-link"
 import { ACQUIRE_METHODS } from "@/lib/commanders-data"
 
@@ -239,6 +241,10 @@ export function CommandersSection() {
           Priority rating: S = must-have · A = strong pick · B = situational · C = skip unless you have it
         </p>
       </section>
+
+      <CommanderTierList />
+
+      <EventMapDropsSection />
 
       {/* WHICH COMMANDER FIRST */}
       <section id="best-commanders" className="scroll-mt-20">

@@ -32,12 +32,12 @@ export function UpdateBanner() {
           </div>
         </div>
         <TrackedCtaLink
-          href="/commanders"
+          href="/updates"
           label="Whats New July 4 LTM"
           placement="home_update"
           className="inline-flex min-h-10 shrink-0 items-center gap-2 self-start rounded-xl border border-primary/40 bg-card/90 px-4 text-sm font-bold text-primary shadow-sm transition-colors hover:border-primary/60 hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:self-center"
         >
-          See what&apos;s new
+          See update log
           <ArrowRight className="size-4 shrink-0" aria-hidden="true" />
         </TrackedCtaLink>
       </div>
