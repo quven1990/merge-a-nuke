@@ -6,7 +6,7 @@ import { HeaderCodesCta } from "@/components/header-codes-cta"
 import { SiteHeaderMobileMenu } from "@/components/site-header-mobile-menu"
 import { SiteHeaderNav } from "@/components/site-header-nav"
 import { Badge } from "@/components/ui/badge"
-import { NAV_ITEMS } from "@/lib/navigation"
+import { getHeaderMoreNavItems, getHeaderPrimaryNavItems, getMobileNavItems } from "@/lib/navigation"
 
 export function SiteHeader() {
   return (
@@ -32,11 +32,14 @@ export function SiteHeader() {
           </Badge>
         </Link>
 
-        <SiteHeaderNav navItems={NAV_ITEMS} />
+        <SiteHeaderNav
+          primaryItems={getHeaderPrimaryNavItems()}
+          moreItems={getHeaderMoreNavItems()}
+        />
 
         <div className="flex items-center gap-2">
           <HeaderCodesCta />
-          <SiteHeaderMobileMenu navItems={NAV_ITEMS} />
+          <SiteHeaderMobileMenu navItems={getMobileNavItems()} />
         </div>
       </div>
     </header>

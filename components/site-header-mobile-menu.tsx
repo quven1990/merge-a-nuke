@@ -23,7 +23,7 @@ export function SiteHeaderMobileMenu({ navItems }: { navItems: NavItem[] }) {
       <Button
         variant="outline"
         size="icon"
-        className="xl:hidden"
+        className="lg:hidden"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         onClick={() => {

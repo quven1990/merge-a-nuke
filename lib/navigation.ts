@@ -2,8 +2,11 @@ export type NavItem = {
   label: string
   href: `/${string}`
   description: string
+  /** Shorter label for the compact header */
+  navLabel?: string
 }
 
+/** Full guide list — footer, sitemap, mobile menu, related guides */
 export const NAV_ITEMS: NavItem[] = [
   {
     label: "Codes",
@@ -12,6 +15,7 @@ export const NAV_ITEMS: NavItem[] = [
   },
   {
     label: "Beginner Guide",
+    navLabel: "Beginner",
     href: "/beginner-guide",
     description: "A simple early-game route for new Merge a Nuke players on Roblox.",
   },
@@ -32,11 +36,13 @@ export const NAV_ITEMS: NavItem[] = [
   },
   {
     label: "Raid Guide",
+    navLabel: "Raid",
     href: "/raid",
     description: "When to raid, how to defend your base, and how to lock before you log off.",
   },
   {
     label: "Offline Cash",
+    navLabel: "Offline",
     href: "/offline-cash",
     description: "How offline income works and how to set up your base before leaving.",
   },
@@ -56,6 +62,47 @@ export const NAV_ITEMS: NavItem[] = [
     description: "Quick answers about codes, progression, raids, and this fan-made wiki.",
   },
 ]
+
+/** Desktop header — primary row (keep ≤6 items) */
+export const HEADER_PRIMARY_HREFS = [
+  "/beginner-guide",
+  "/commanders",
+  "/raid",
+  "/updates",
+] as const satisfies readonly NavItem["href"][]
+
+/** Desktop header — overflow menu (includes Codes — header already has Check Codes CTA) */
+export const HEADER_MORE_HREFS = [
+  "/codes",
+  "/progression",
+  "/upgrades",
+  "/tier-list",
+  "/offline-cash",
+  "/blog",
+  "/faq",
+] as const satisfies readonly NavItem["href"][]
+
+const BLOG_NAV_ITEM: NavItem = {
+  label: "Blog",
+  href: "/blog",
+  description: "Sourced gameplay articles with cited YouTube footage.",
+}
+
+const navByHref = new Map(NAV_ITEMS.map((item) => [item.href, item]))
+
+export function getHeaderPrimaryNavItems(): NavItem[] {
+  return HEADER_PRIMARY_HREFS.map((href) => navByHref.get(href)!)
+}
+
+export function getHeaderMoreNavItems(): NavItem[] {
+  return HEADER_MORE_HREFS.map((href) =>
+    href === "/blog" ? BLOG_NAV_ITEM : navByHref.get(href)!,
+  )
+}
+
+export function getMobileNavItems(): NavItem[] {
+  return [...NAV_ITEMS, BLOG_NAV_ITEM]
+}
 
 export const GUIDE_CARDS = [
   {
