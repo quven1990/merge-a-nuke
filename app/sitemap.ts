@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next"
 
 import { getAllCommanderSlugs } from "@/lib/commanders-data"
+import { getAllBlogSlugs } from "@/lib/blog-posts"
 import { NAV_ITEMS } from "@/lib/navigation"
 import { getSiteUrl } from "@/lib/site"
 
@@ -20,6 +21,7 @@ const PAGE_LAST_MODIFIED: Record<string, string> = {
   "/commanders": "2026-07-11",
   "/updates": "2026-07-11",
   "/community": "2026-07-11",
+  "/blog": "2026-07-11",
   "/about": "2026-06-23",
   "/privacy": "2026-06-18",
   "/terms": "2026-06-18",
@@ -55,6 +57,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }))
 
+  const blogPages = getAllBlogSlugs().map((slug) => ({
+    url: `${siteUrl}/blog/${slug}`,
+    lastModified: getLastModified("/blog"),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }))
+
   return [
     {
       url: siteUrl,
@@ -63,6 +72,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     ...guidePages,
+    {
+      url: `${siteUrl}/blog`,
+      lastModified: getLastModified("/blog"),
+      changeFrequency: "weekly" as const,
+      priority: 0.65,
+    },
+    ...blogPages,
     ...commanderPages,
     ...legalPages.map((page) => ({
       url: `${siteUrl}${page.path}`,

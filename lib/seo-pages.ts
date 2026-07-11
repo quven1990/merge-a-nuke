@@ -170,6 +170,18 @@ export const SEO_PAGES = {
       "Open the Roblox game About tab for group rewards, Discord, and studio links. Codes usually drop Fridays — see /updates and /codes.",
     breadcrumb: "Community",
   },
+  blog: {
+    path: "/blog",
+    title: "Merge a Nuke Blog — Sourced Gameplay Articles",
+    description:
+      "Merge a Nuke blog with cited YouTube gameplay and wiki cross-links — wars, commanders, and patch mechanics without guessed stats.",
+    h1: "Merge a Nuke Blog",
+    intro:
+      "Short articles sourced from gameplay footage and our verified guides — each post lists YouTube sources and what is still pending.",
+    tldr:
+      "Latest: how wars work (July 2026) from Hoplas2 footage — 3 hits declare war, 50% cash at 100% war score.",
+    breadcrumb: "Blog",
+  },
   about: {
     path: "/about",
     title: "About — Merge a Nuke Wiki",

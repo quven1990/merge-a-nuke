@@ -1,4 +1,5 @@
 import { getAllCommanderSlugs } from "@/lib/commanders-data"
+import { getAllBlogSlugs } from "@/lib/blog-posts"
 import { NAV_ITEMS } from "@/lib/navigation"
 import { SITE_URL } from "@/lib/site"
 
@@ -16,6 +17,7 @@ export function getIndexNowUrlList(siteUrl = SITE_URL): string[] {
     siteUrl,
     ...NAV_ITEMS.map((item) => `${siteUrl}${item.href}`),
     ...getAllCommanderSlugs().map((slug) => `${siteUrl}/commanders/${slug}`),
+    ...getAllBlogSlugs().map((slug) => `${siteUrl}/blog/${slug}`),
     ...legalPaths.map((path) => `${siteUrl}${path}`),
   ]
 }

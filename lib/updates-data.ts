@@ -30,6 +30,7 @@ export const PATCH_UPDATES: PatchUpdate[] = [
     links: [
       { label: "Commanders guide", href: "/commanders" },
       { label: "Raid & war guide", href: "/raid" },
+      { label: "How wars work (blog)", href: "/blog/how-wars-work-july-2026" },
       { label: "Rebirth checklist", href: "/progression#rebirth" },
     ],
   },

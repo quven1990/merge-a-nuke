@@ -234,11 +234,11 @@ export const COMMANDERS: Commander[] = [
     rarity: "Legendary",
     role: "offense",
     ability:
-      "Military Compound reward — passive name and effect pending in-game verification.",
-    bestFor: "Event farmers — beat Military Compound when it rotates every ~2 hours",
+      "Reign of Commander — buffs commander effects on your plot by 1.5× and retaliates against attackers with a warhead that lasts 20 seconds (Hoplas2 narration, July 10, 2026; pending in-game card verification).",
+    bestFor: "War lobbies — retaliation during formal wars and counter-raids",
     priority: "?",
     notes:
-      "LTM reward from Military Compound (July 4, 2026). Spawns after the event is cleared.",
+      "LTM reward from Military Compound (July 4, 2026). Ability wording from Hoplas2 YouTube (qZHP32lDOWc) — verify against the in-game commander card.",
     pending: true,
     limited: true,
     eventMap: "Military Compound",
