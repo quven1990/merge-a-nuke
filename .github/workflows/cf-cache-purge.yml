@@ -16,7 +16,7 @@ jobs:
   purge:
     if: github.event_name == 'workflow_dispatch' || github.event.check_suite.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
 
     steps:
       - name: Verify Cloudflare Pages production check
@@ -84,6 +84,12 @@ jobs:
             exit 1
           }
           echo "Cache purged successfully."
+
+      - name: Wait for CDN to warm up
+        if: github.event_name == 'workflow_dispatch' || steps.verify.outputs.should_purge == 'true'
+        run: |
+          echo "Sleeping 180s so edge cache can repopulate before Bingbot is pinged via IndexNow..."
+          sleep 180
 
       - name: Checkout repository
         if: github.event_name == 'workflow_dispatch' || steps.verify.outputs.should_purge == 'true'
