@@ -5,6 +5,8 @@ export type CommanderEventMap =
   | "Oil Rig"
   | "Military Compound"
   | "4th of July"
+  | "Downtown"
+  | "Shipping Port"
 
 export type Commander = {
   name: string
@@ -77,27 +79,34 @@ export const COMMANDERS: Commander[] = [
     name: "Broker",
     rarity: "Common",
     role: "income",
-    ability: "Newly added in the Commanders Pt. 2 update — ability details pending in-game verification.",
-    bestFor: "Pending — check back after we confirm it in-game",
-    priority: "?",
-    notes: "Added in Commanders Pt. 2 (June 28, 2026).",
+    ability:
+      "Dividends — passive income bonus (exact numbers pending in-game verification).",
+    bestFor: "Income farming — passive cash while you play or AFK",
+    priority: "B",
+    notes:
+      "Added in Commanders Pt. 2 (June 28, 2026). Community reports ~70% drop weight on Downtown.",
     pending: true,
+    eventMap: "Downtown",
   },
   {
     name: "Foreman",
     rarity: "Common",
     role: "automation",
-    ability: "Newly added in the Commanders Pt. 2 update — ability details pending in-game verification.",
-    bestFor: "Pending — check back after we confirm it in-game",
-    priority: "?",
-    notes: "Added in Commanders Pt. 2 (June 28, 2026).",
+    ability:
+      "Hammer Time — automates plot upgrades or merges (exact effect pending in-game verification).",
+    bestFor: "Mid-game automation — less manual merging on your plot",
+    priority: "B",
+    notes:
+      "Added in Commanders Pt. 2 (June 28, 2026). Community reports ~70% drop weight on Shipping Port. May do little once your base is fully maxed.",
     pending: true,
+    eventMap: "Shipping Port",
   },
   {
     name: "Uncle Sam",
     rarity: "Common",
     role: "offense",
-    ability: "Added for the 4th of July event — ability details pending in-game verification.",
+    ability:
+      "July 4 event commander — passive name and effect pending in-game verification.",
     bestFor: "Holiday event collectors — grab it while the July 4 event is live",
     priority: "?",
     notes: "Limited-time 4th of July event unit (July 2026).",
@@ -128,41 +137,51 @@ export const COMMANDERS: Commander[] = [
     name: "Artillery",
     rarity: "Rare",
     role: "offense",
-    ability: "Newly added in the Commanders Pt. 2 update — ability details pending in-game verification.",
-    bestFor: "Pending — check back after we confirm it in-game",
-    priority: "?",
-    notes: "Added in Commanders Pt. 2 (June 28, 2026).",
-    pending: true,
+    ability:
+      "Retaliation — when your base is attacked, fires two shells at a random enemy nuke. Instantly destroys nukes tier 19 and below; deals 50% max HP damage to higher tiers. Also reduces the attacker's active base lock timer by 40%.",
+    bestFor: "PvP counter-raids — punishes attackers and shaves lock timers",
+    priority: "A",
+    notes:
+      "Added in Commanders Pt. 2 (June 28, 2026). Community reports ~30% drop weight on Downtown. Retaliation text confirmed from in-game commander card (June 2026).",
+    eventMap: "Downtown",
   },
   {
     name: "Barrier",
     rarity: "Rare",
     role: "defense",
-    ability: "Newly added in the Commanders Pt. 2 update — ability details pending in-game verification.",
-    bestFor: "Pending — check back after we confirm it in-game",
-    priority: "?",
-    notes: "Added in Commanders Pt. 2 (June 28, 2026).",
+    ability:
+      "Forcefield — defensive shield passive (exact effect pending in-game verification).",
+    bestFor: "Base defense when raids are common in your lobby",
+    priority: "B",
+    notes:
+      "Added in Commanders Pt. 2 (June 28, 2026). Community reports ~30% drop weight on Shipping Port.",
     pending: true,
+    eventMap: "Shipping Port",
   },
   {
     name: "Looter",
     rarity: "Rare",
     role: "income",
-    ability: "Newly added in the Commanders Pt. 2 update — ability details pending in-game verification.",
-    bestFor: "Pending — check back after we confirm it in-game",
-    priority: "?",
-    notes: "Added in Commanders Pt. 2 (June 28, 2026).",
-    pending: true,
+    ability:
+      "Scorched Earth — launches an explosive round onto a random enemy plot. Fragments siphon 10% of cash generated there for 5 seconds.",
+    bestFor: "PvP income raids — steals cash from enemy plots while you attack",
+    priority: "B",
+    notes:
+      "Added in Commanders Pt. 2 (June 28, 2026). Community reports ~70% drop weight on Oil Rig. Scorched Earth text confirmed from in-game commander card (June 2026).",
+    eventMap: "Oil Rig",
   },
   {
     name: "Sergeant",
     rarity: "Rare",
     role: "offense",
-    ability: "Added in the July 4, 2026 LTM patch — ability details pending in-game verification.",
-    bestFor: "Pending — check back after we confirm it in-game",
+    ability:
+      "July 4 LTM commander — passive name and effect pending in-game verification.",
+    bestFor: "July 4 event farmers — grab during the limited-time window",
     priority: "?",
     notes: "Added in the LTM / 4th of July update (July 4, 2026).",
     pending: true,
+    limited: true,
+    eventMap: "4th of July",
   },
   // --- Epic ---
   {
@@ -178,21 +197,27 @@ export const COMMANDERS: Commander[] = [
     name: "Overclocker",
     rarity: "Epic",
     role: "automation",
-    ability: "Newly added in the Commanders Pt. 2 update — ability details pending in-game verification.",
-    bestFor: "Pending — check back after we confirm it in-game",
-    priority: "?",
-    notes: "Added in Commanders Pt. 2 (June 28, 2026).",
+    ability:
+      "Overclock — speeds up automation or production timers (exact effect pending in-game verification).",
+    bestFor: "Players who want faster passive plot automation",
+    priority: "B",
+    notes:
+      "Added in Commanders Pt. 2 (June 28, 2026). Community reports ~30% drop weight on Oil Rig.",
     pending: true,
+    eventMap: "Oil Rig",
   },
   {
     name: "Tank",
     rarity: "Epic",
     role: "offense",
-    ability: "Added in the July 4, 2026 LTM patch — ability details pending in-game verification.",
-    bestFor: "Pending — check back after we confirm it in-game",
+    ability:
+      "July 4 LTM commander — passive name and effect pending in-game verification.",
+    bestFor: "July 4 event farmers — grab during the limited-time window",
     priority: "?",
     notes: "Added in the LTM / 4th of July update (July 4, 2026).",
     pending: true,
+    limited: true,
+    eventMap: "4th of July",
   },
   // --- Legendary ---
   {
@@ -208,10 +233,12 @@ export const COMMANDERS: Commander[] = [
     name: "Stalker",
     rarity: "Legendary",
     role: "offense",
-    ability: "Limited-time Legendary from the Military Compound event — ability details pending in-game verification.",
+    ability:
+      "Military Compound reward — passive name and effect pending in-game verification.",
     bestFor: "Event farmers — beat Military Compound when it rotates every ~2 hours",
     priority: "?",
-    notes: "LTM reward from Military Compound (July 4, 2026). Spawns after the event is cleared.",
+    notes:
+      "LTM reward from Military Compound (July 4, 2026). Spawns after the event is cleared.",
     pending: true,
     limited: true,
     eventMap: "Military Compound",
@@ -221,10 +248,12 @@ export const COMMANDERS: Commander[] = [
     name: "Apache",
     rarity: "Admiral",
     role: "offense",
-    ability: "Newly added with the Admiral rarity in Commanders Pt. 2 — ability details pending in-game verification.",
-    bestFor: "Pending — check back after we confirm it in-game",
-    priority: "?",
-    notes: "Admiral rarity. July 4, 2026 patch nerfed map spawn rate from 0.2% to 0.05%.",
+    ability:
+      "M.A.D. — high-impact Admiral offensive passive (exact effect pending in-game verification).",
+    bestFor: "Late-game PvP and event farming — rare Admiral pickup",
+    priority: "A",
+    notes:
+      "Admiral rarity. Rare map spawn reported ~0.05% after the July 4, 2026 nerf (down from ~0.2%). Also tied to Oil Rig in community drop tables — verify in-game.",
     pending: true,
     eventMap: "Oil Rig",
   },
@@ -232,11 +261,12 @@ export const COMMANDERS: Commander[] = [
     name: "Carrier",
     rarity: "Admiral",
     role: "offense",
-    ability: "Newly added with the Admiral rarity in Commanders Pt. 2 — ability details pending in-game verification.",
-    bestFor: "Pending — check back after we confirm it in-game",
-    priority: "?",
-    notes: "Admiral rarity, added in Commanders Pt. 2 (June 28, 2026).",
-    pending: true,
+    ability:
+      "Carrier Airstrike — after you attack a player's base or the city, fighter jets scramble and strike the target for extra damage. Reduces the target's base lock timer by 30 seconds (40 seconds at max commander level). Jets can keep striking city targets after the first hit.",
+    bestFor: "High-end PvP and city events — jets add damage and cut base lock timers",
+    priority: "A",
+    notes:
+      "Admiral rarity, added in Commanders Pt. 2 (June 28, 2026). Sources conflict: Harbor event drop vs ~0.5% Commander Pack — treat both as reported until verified. Lock timer reduction scales with commander level.",
     eventMap: "Harbor",
   },
 ]
@@ -270,7 +300,7 @@ export const ACQUIRE_METHODS: AcquireMethod[] = [
   {
     id: "event-map",
     title: "Spawn during event maps",
-    how: "Harbor, Oil Rig, Military Compound, and Military Base rotate as event targets. Beat the event to capture map-exclusive commanders — Military Compound runs every ~2 hours and drops Stalker (Legendary) when cleared.",
+    how: "Harbor, Oil Rig, Downtown, Shipping Port, Military Compound, and Military Base rotate as event or spawn targets. Beat the event or roll the drop pool — Military Compound runs every ~2 hours and drops Stalker (Legendary) when cleared.",
     tip: "Event commanders only appear during the active window. Check which map is live before grinding.",
   },
   {

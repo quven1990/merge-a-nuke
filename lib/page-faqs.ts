@@ -172,7 +172,7 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
     },
     {
       q: "What is the Admiral rarity in Merge a Nuke?",
-      a: "Admiral is the new top commander rarity introduced in Commanders Pt. 2. The first two Admiral units are Apache and Carrier. Their exact abilities are pending in-game verification — check back after we confirm them.",
+      a: "Admiral is the top commander rarity from Commanders Pt. 2. Carrier (Harbor / Commander Pack reports) uses Carrier Airstrike — fighter jets after you hit a base or city and shorter lock timers. Apache uses M.A.D.; rare map spawns were nerfed to ~0.05% in the July 4 patch. Full M.A.D. numbers are still pending in-game verification.",
     },
     {
       q: "How do you get commanders in Merge a Nuke?",
