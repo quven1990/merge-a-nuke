@@ -266,7 +266,7 @@ export const COMMANDERS: Commander[] = [
     bestFor: "High-end PvP and city events — jets add damage and cut base lock timers",
     priority: "A",
     notes:
-      "Admiral rarity, added in Commanders Pt. 2 (June 28, 2026). Sources conflict: Harbor event drop vs ~0.5% Commander Pack — treat both as reported until verified. Lock timer reduction scales with commander level.",
+      "Admiral rarity, added in Commanders Pt. 2 (June 28, 2026). Harbor event drop vs ~0.5% Conquerors pack — Hoplas2 reports 0.5% pack rate on camera (June 30, 2026, oqNOVaY2SEo). Lock timer reduction scales with commander level.",
     eventMap: "Harbor",
   },
 ]

@@ -26,6 +26,117 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "carrier-looter-artillery-hoplas2-june-2026",
+    title: "Carrier, Looter & Artillery — In-Game Cards (Hoplas2, June 2026)",
+    description:
+      "Hoplas2 reads the Looter, Artillery, and Carrier commander cards on camera: Scorched Earth siphon, Retaliation shells, and Carrier Airstrike jets. Includes map captures vs 0.5% Conquerors pack drop.",
+    published: "2026-07-12",
+    updated: "2026-07-12",
+    tldr: [
+      "Hoplas2 captures Looter on the map (last hit) and reads Scorched Earth: siphon 0.1 of enemy plot cash for 5 seconds — matches our 10% wording.",
+      "Artillery card on camera: Retaliation destroys tier 19 and below, 50% max HP above, cuts active base lock by 40%.",
+      "Carrier Airstrike: jets after hitting a base or city; −30s lock timer base, −40s at max level. He pulls Carrier from a Conquerors pack at a stated 0.5% rate.",
+      "Foreman spawns on the map in the same session but he does not read its card — still pending on this wiki.",
+    ],
+    sections: [
+      {
+        type: "p",
+        text: "This post quotes only what Hoplas2 shows or reads in his June 30, 2026 video while hunting Commanders Pt. 2 units — not script sites or guessed stats. Where his narration matches our commander detail pages, we link there; where it adds new context (pack odds, bugs), we label the source.",
+      },
+      {
+        type: "h2",
+        text: "What Hoplas2 is trying to do in the video",
+      },
+      {
+        type: "p",
+        text: "He already has a maxed base and max rebirth. The Commanders Pt. 2 index adds a new legendary entry plus two Admiral slots he is missing. He joins public servers to capture map spawns, buys Conquerors / Admiral packs with Robux, and reads new commander cards as he unlocks them.",
+      },
+      {
+        type: "h2",
+        text: "Looter — map capture + card text",
+      },
+      {
+        type: "ul",
+        items: [
+          "He wins a map fight for a spawned commander and unlocks Looter (last hit on the shared spawn).",
+          "On-camera ability name: Scorched Earth.",
+          "Card wording he reads: launches an explosive round onto a random enemy plot; fragments siphon 0.1 of the cash generated there for 5 seconds.",
+          "Our Looter page lists 10% for 5 seconds — 0.1 matches 10%.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Artillery — map capture + card text",
+      },
+      {
+        type: "ul",
+        items: [
+          "He picks up Artillery from another map spawn after the Looter fight.",
+          "On-camera ability name: Retaliation.",
+          "Card wording he reads: when attacked, fires two shells at a random enemy nuke; instantly destroys nukes tier 19 and below; deals 50% max HP above that; also cuts an active base lock timer by 40%.",
+          "This matches the verified text already on mergeanuke.site/commanders/artillery.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Carrier (Admiral) — Conquerors pack + card text",
+      },
+      {
+        type: "ul",
+        items: [
+          "He buys multiple Conquerors / Admiral packs (20, then 10 more in the video) and mostly pulls commons such as Gunner and Interceptor.",
+          "He calls Carrier a 0.5% pull when it drops from the pack — treat that as one video source, not a verified global drop table.",
+          "Card wording he reads: after attacking a player's base or the city, fighter jets scramble and strike the target for damage; reduces base lock timer by 30 seconds, or 40 seconds at max commander level.",
+          "Our Carrier guide already documents the 30s / 40s lock-timer reduction; Harbor event drops are a separate reported path not shown in this video.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Carrier in PvP and city (what the video shows)",
+      },
+      {
+        type: "ul",
+        items: [
+          "On a private server he hits the city once; fighter jets appear and keep striking — he notes downtown falls faster than usual with Sovereign plus Carrier active.",
+          "On a locked player base he sometimes sees no timer change or delayed jets and wonders if the ability is bugged; later jets do fire on another target.",
+          "He concludes damage between two maxed players can be heavily reduced (example: Void Eater vs Void Eater doing roughly half) — anecdotal, not a stated game rule in the card text.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Foreman & other Pt. 2 units",
+        text: "Foreman appears as a map spawn in the same lobby, but Hoplas2 does not read its ability card — only notes it may not help a fully maxed base. Broker, Barrier, Overclocker, and Apache are not shown in this video. Do not treat this upload as a complete Pt. 2 roster guide.",
+      },
+      {
+        type: "h2",
+        text: "Takeaways if you are hunting these three",
+      },
+      {
+        type: "ul",
+        items: [
+          "Map spawns: compete for last hit — Hoplas2 steals Looter and Artillery from other players in the lobby.",
+          "Admiral Carrier: video path is Robux Conquerors packs at a claimed 0.5% rate; budget accordingly or wait for Harbor / map reports.",
+          "For PvP, Artillery is framed as strong if you want to counter-attack locked bases; Carrier adds follow-up jets and lock-timer cuts when it procs reliably.",
+          "Always re-read the card after Friday patches — Hoplas2 himself hits possible Carrier bugs on locked bases.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label: "Hoplas2 — I Maxed EVERY NUKE To Unlock The RAREST Commander in Roblox Merge A Nuke…",
+        url: "https://www.youtube.com/watch?v=oqNOVaY2SEo",
+        note: "Published June 30, 2026 · Commanders Pt. 2",
+      },
+    ],
+    relatedLinks: [
+      { label: "Looter commander", href: "/commanders/looter" },
+      { label: "Artillery commander", href: "/commanders/artillery" },
+      { label: "Carrier commander", href: "/commanders/carrier" },
+      { label: "All commanders & tier lists", href: "/commanders" },
+      { label: "Commanders Pt. 2 update log", href: "/updates" },
+    ],
+  },
+  {
     slug: "how-wars-work-july-2026",
     title: "How Wars Work in Merge a Nuke (July 2026)",
     description:

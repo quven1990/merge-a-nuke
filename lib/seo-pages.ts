@@ -179,7 +179,7 @@ export const SEO_PAGES = {
     intro:
       "Short articles sourced from gameplay footage and our verified guides — each post lists YouTube sources and what is still pending.",
     tldr:
-      "Latest: how wars work (July 2026) from Hoplas2 footage — 3 hits declare war, 50% cash at 100% war score.",
+      "Latest: Carrier/Looter/Artillery cards from Hoplas2 (June 2026). Wars guide from July footage. Check back after Friday patches.",
     breadcrumb: "Blog",
   },
   about: {
