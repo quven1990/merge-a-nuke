@@ -68,6 +68,49 @@ export function BlogArticle({ post }: { post: BlogPost }) {
         ))}
       </div>
 
+      {post.endCta ? (
+        <section
+          className="mt-12 overflow-hidden rounded-2xl border border-primary/35 bg-gradient-to-br from-primary/10 via-card/80 to-card/70 p-5 shadow-md sm:p-6"
+          aria-labelledby="blog-end-cta-heading"
+        >
+          <h2 id="blog-end-cta-heading" className="text-lg font-bold text-foreground sm:text-xl">
+            {post.endCta.title}
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">{post.endCta.description}</p>
+          <div className="mt-5 flex flex-col gap-3">
+            {post.endCta.links
+              .filter((link) => link.primary)
+              .map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                >
+                  {link.label}
+                  <ArrowRight className="size-4 shrink-0" aria-hidden="true" />
+                </Link>
+              ))}
+            {post.endCta.links.some((link) => !link.primary) ? (
+              <ul className="grid gap-2 sm:grid-cols-2">
+                {post.endCta.links
+                  .filter((link) => !link.primary)
+                  .map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="flex items-center justify-between rounded-xl border border-border/70 bg-background/60 px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                      >
+                        {link.label}
+                        <ArrowRight className="size-4 shrink-0" aria-hidden="true" />
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
+
       <section className="mt-12 rounded-2xl border border-border/70 bg-card/70 p-5 sm:p-6">
         <h2 className="text-lg font-bold text-foreground">Sources</h2>
         <ul className="mt-4 space-y-3">

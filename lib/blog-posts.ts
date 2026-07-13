@@ -11,6 +11,18 @@ export type BlogSection =
   | { type: "ul"; items: string[] }
   | { type: "callout"; title: string; text: string }
 
+export type BlogCtaLink = {
+  label: string
+  href: `/${string}`
+  primary?: boolean
+}
+
+export type BlogEndCta = {
+  title: string
+  description: string
+  links: BlogCtaLink[]
+}
+
 export type BlogPost = {
   slug: string
   title: string
@@ -20,6 +32,8 @@ export type BlogPost = {
   tldr: string[]
   sections: BlogSection[]
   sources: BlogSource[]
+  /** Prominent next-step block before Sources — reduces single-page bounce */
+  endCta?: BlogEndCta
   /** Verified wiki pages this post links to — no new mechanics beyond sources */
   relatedLinks: { label: string; href: `/${string}` }[]
 }
@@ -244,6 +258,19 @@ export const BLOG_POSTS: BlogPost[] = [
         note: "Published July 10, 2026 · English gameplay",
       },
     ],
+    endCta: {
+      title: "Build your war loadout on the wiki",
+      description:
+        "Hoplas2’s video covers one high-end PvP session. For lock timers, war score rules, and commander cards you can verify in-game, continue on these pages.",
+      links: [
+        { label: "Raid & war mechanics", href: "/raid", primary: true },
+        { label: "Siege Breaker commander", href: "/commanders/siege-breaker" },
+        { label: "Carrier commander", href: "/commanders/carrier" },
+        { label: "Stalker commander", href: "/commanders/stalker" },
+        { label: "July 4 update log", href: "/updates" },
+        { label: "Carrier card guide (blog)", href: "/blog/carrier-looter-artillery-hoplas2-june-2026" },
+      ],
+    },
     relatedLinks: [
       { label: "Raid & war mechanics", href: "/raid" },
       { label: "July 4 update log", href: "/updates" },
