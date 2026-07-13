@@ -111,14 +111,29 @@ export const EVENT_MAP_GUIDE = {
 } as const
 
 export const WAR_MECHANICS = {
-  title: "War declarations (July 4, 2026)",
+  title: "War declarations (updated July 13, 2026)",
   summary:
-    "PvP now escalates into formal wars. Repeatedly hitting the same player can trigger a war with a cash payout on the line.",
+    "PvP escalates into formal wars with cash on the line. Use the Declare War button or hit the same player 3 times — only one active war per player.",
   points: [
-    "Attack the same player 3 times and the game declares war on them.",
-    "War score tracks progress during the fight — reach 100% to win.",
-    "The winner takes 50% of the loser's cash when war score hits 100%.",
-    "Wars raise the stakes beyond a single raid — lock your base and avoid spam-attacking unless you want the retaliation.",
+    "Use the Declare War button on the redesigned targeting UI, or attack the same player 3 times for an automatic war declaration.",
+    "War score tracks progress — reach 100% to win a standard war. The winner takes 50% of the loser's cash (July 4 rules still apply to non-betrayal wars).",
+    "You can only participate in one war at a time.",
+    "The targeting UI now shows avatar, username, shield status, diplomatic status (Friendly / Neutral / Hostile), Ally, and Declare War.",
+    "Nukes on a target's plot are highlighted more clearly, especially on lower graphics settings.",
+    "Lock your base and pick targets carefully — wars raise the stakes beyond a single raid.",
+  ],
+} as const
+
+export const ALLIES_MECHANICS = {
+  title: "Allies & betrayal wars",
+  summary:
+    "The July 13, 2026 patch adds in-server alliances with a shared income boost — and harsh penalties for attacking an ally.",
+  points: [
+    "Send alliance requests to other players in your server. While allied, both players receive +10% cash income.",
+    "Attacking an allied player immediately cancels the alliance and declares war between both players.",
+    "Betrayal wars use different war score targets: the betraying attacker must reach 1,000% war score; the defending ally only needs 500%.",
+    "If the betrayer wins, they receive 25% of the defender's cash. If the betrayer loses, they lose 75% of their own cash.",
+    "Friendly, Neutral, and Hostile diplomatic status icons appear on the targeting UI — check status before you launch.",
   ],
 } as const
 

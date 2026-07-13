@@ -97,13 +97,13 @@ export const EVENT_DROP_TIPS = [
 ] as const
 
 export const REBIRTH_GUIDE = {
-  title: "Rebirth guide — including Rebirth 7",
+  title: "Rebirth guide — Rebirth 7 & Rebirth 8",
   summary:
     "Rebirth resets cash, nukes, and Store upgrades but keeps commanders and grants permanent multipliers plus higher Index tiers.",
   whenToRebirth: [
     "Growth slows — merges no longer push you toward the next Index tier efficiently.",
     "You have cleared enough missile tiers that the permanent money multiplier outweighs the reset cost.",
-    "You need higher rebirth-gated nukes for city farming or event maps (Rebirth 7 added five new Index entries July 4, 2026).",
+    "You need higher rebirth-gated nukes for city farming or event maps (Rebirth 7 added five Index entries July 4, 2026; Rebirth 8 added five more July 13, 2026).",
   ],
   whatResets: [
     "Cash on hand and placed nukes on your plot.",
@@ -115,4 +115,6 @@ export const REBIRTH_GUIDE = {
   ],
   rebirth7Note:
     "The July 4, 2026 patch added Rebirth 7 with five new nukes. Rebirth when your current run has exhausted practical merges — not the moment you unlock the button.",
+  rebirth8Note:
+    "The July 13, 2026 patch added Rebirth 8: +110% cash and 5 additional nukes (Silent Whisper, False Step, Peek-a-Boo, Colossus, Fragmenter). Requires the final nuke tier in the Index plus Overclocker and Barrier commanders equipped or owned — confirm exact UI requirements in-game.",
 } as const

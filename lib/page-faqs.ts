@@ -62,7 +62,7 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
     },
     {
       q: "Is rebirth worth it in Merge a Nuke?",
-      a: "Yes when growth slows — rebirth unlocks higher Index nukes beyond the mid-game cap (community runs report ~35 tiers before rebirth). Rebirth 7 (July 4, 2026) added 5 new nukes.",
+      a: "Yes when growth slows — rebirth unlocks higher Index nukes beyond the mid-game cap (community runs report ~35 tiers before rebirth). Rebirth 7 (July 4, 2026) added 5 nukes; Rebirth 8 (July 13, 2026) adds +110% cash, 5 more nukes, and requires the final Index tier plus Overclocker and Barrier.",
     },
     {
       q: "When should I get my first commander?",
@@ -136,7 +136,11 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
     },
     {
       q: "How do wars work in Merge a Nuke?",
-      a: "Added in the July 4, 2026 patch. Attack the same player 3 times and the game declares war on them. War score tracks the fight — reach 100% to win. The winner takes 50% of the loser's cash. Wars raise the stakes beyond a single raid, so lock your base and avoid spam-attacking unless you want retaliation.",
+      a: "Use the Declare War button on the targeting UI or attack the same player 3 times for an automatic war. Standard wars reach 100% war score for a 50% cash payout (July 4 rules). Only one active war per player. The July 13, 2026 patch added allies and betrayal wars — see the allies section on this raid guide.",
+    },
+    {
+      q: "How do allies work in Merge a Nuke?",
+      a: "Added July 13, 2026. Send alliance requests to players in your server. While allied, both players get +10% cash income. Attacking an ally cancels the alliance and declares war. Betrayal wars need 1,000% war score for the attacker (defender 500%); the betrayer wins 25% of defender cash or loses 75% of their own cash if defeated.",
     },
     {
       q: "What are Mystery Supply Drops in Merge a Nuke?",
@@ -203,6 +207,10 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
       a: "Uncle Sam (Common, 4th of July event), Sergeant (Rare), Tank (Epic), and Stalker (Legendary) from the Military Compound LTM. Mystery Supply Drops can also roll any commander in the game. Sovereign's auto-attack rate was nerfed and Apache's map spawn dropped from 0.2% to 0.05%.",
     },
     {
+      q: "What new commanders were added in the July 13, 2026 patch?",
+      a: "Advanced Warfare Commander Pack: Grifter and Scout (Rare), Sapper and Medic (Epic), Recon (Legendary, also base pool spawn), and Drone (Admiral, 0.5%). Ability text is pending in-game verification on this wiki.",
+    },
+    {
       q: "How many commanders can I equip at once in Merge a Nuke?",
       a: "Multiple commanders can be active simultaneously. A Robux product (+1 Commander Equip, up to 3 purchases) raises the cap to 6 equipped commanders. Pair non-overlapping roles for best results — for example Spotter for income and Gunner for PvP raids.",
     },
@@ -211,6 +219,10 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
     {
       q: "When does Merge a Nuke update?",
       a: "Nuke The Game ships new content every Friday on Roblox. Check this update log and the codes page after each weekly patch.",
+    },
+    {
+      q: "What changed in the July 13, 2026 Merge a Nuke patch?",
+      a: "Allies (+10% income, betrayal war rules), manual Declare War, Advanced Warfare Commander Pack (6 units), Rebirth 8 (+110% cash, 5 nukes, requires Overclocker and Barrier), and redesigned nuke targeting UI with diplomatic status icons.",
     },
     {
       q: "What changed in the July 4, 2026 Merge a Nuke patch?",

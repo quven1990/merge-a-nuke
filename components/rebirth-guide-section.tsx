@@ -62,11 +62,19 @@ export function RebirthGuideSection() {
         </div>
 
         <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          {REBIRTH_GUIDE.rebirth7Note} Pair rebirth timing with{" "}
-          <Link href="/commanders" className="font-medium text-primary hover:underline">
-            commanders
+          {REBIRTH_GUIDE.rebirth7Note}
+        </p>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          {REBIRTH_GUIDE.rebirth8Note} Pair rebirth timing with{" "}
+          <Link href="/commanders/overclocker" className="font-medium text-primary hover:underline">
+            Overclocker
           </Link>{" "}
-          — they persist across resets and accelerate your next run.
+          and{" "}
+          <Link href="/commanders/barrier" className="font-medium text-primary hover:underline">
+            Barrier
+          </Link>{" "}
+          if you are chasing Rebirth 8 — commanders persist across resets and accelerate your next
+          run.
         </p>
       </div>
     </section>

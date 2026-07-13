@@ -3,7 +3,7 @@ import { ArrowRight, Crown, Sparkles } from "lucide-react"
 import { TrackedCtaLink } from "@/components/tracked-cta-link"
 
 const HIGHLIGHTS = [
-  "All 19 commanders ranked by rarity — including July 4 LTM units and the Admiral tier",
+  "All 25 commanders ranked by rarity — Advanced Warfare Pack, July 4 LTM, and Admiral tier",
   "How to capture them on event maps, Mystery Supply Drops, the Shop, and map spawns",
   "Best picks for early, mid, and endgame — Salvager, Spotter, Sovereign, and more",
 ] as const
@@ -21,7 +21,7 @@ export function FeaturedCommandersSpotlight() {
             <div className="min-w-0">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                 <Sparkles className="size-3.5" aria-hidden="true" />
-                Updated · Commanders Pt. 2
+                Updated · July 13 Advanced Warfare
               </div>
               <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">
                 Merge a Nuke Commanders Guide

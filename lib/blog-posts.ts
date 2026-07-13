@@ -156,7 +156,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "War declarations in Merge a Nuke: attack a player 3 times, reach 100% war score, and the winner takes 50% of the loser's cash. Commander loadouts and caveats from Hoplas2 gameplay footage.",
     published: "2026-07-11",
-    updated: "2026-07-11",
+    updated: "2026-07-13",
     tldr: [
       "The July 2026 patch adds formal wars: hit the same player 3 times to declare war.",
       "At 100% war score, the winner receives 50% of the loser's cash (per in-game UI in Hoplas2's video).",
@@ -164,6 +164,11 @@ export const BLOG_POSTS: BlogPost[] = [
       "Wars can flip unexpectedly, and a post-war cooldown can block repeat attacks on the same player.",
     ],
     sections: [
+      {
+        type: "callout",
+        title: "July 13, 2026 patch — rules changed after this video",
+        text: "Allies, manual Declare War, betrayal war scores (1,000% vs 500%), and one-war-at-a-time limits were added after Hoplas2 recorded on July 10. See the raid guide for current allies and war rules; the footage below still shows the pre-allies war loop and commander loadout.",
+      },
       {
         type: "p",
         text: "This article summarizes the war system and one high-end PvP loadout exactly as shown in Hoplas2's July 10, 2026 Roblox video — not speculation beyond that footage and our existing raid guide. If a detail is not spoken on-screen or already on this wiki, it is marked as unverified below.",

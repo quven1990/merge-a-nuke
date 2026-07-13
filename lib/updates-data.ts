@@ -14,6 +14,27 @@ export type PatchUpdate = {
 
 export const PATCH_UPDATES: PatchUpdate[] = [
   {
+    id: "july-13-allies-warfare",
+    date: "2026-07-13",
+    title: "Allies, Advanced Warfare Pack & Rebirth 8",
+    summary:
+      "Diplomacy update: alliance requests with +10% cash income, betrayal war rules, manual Declare War, and redesigned targeting UI. Six new Advanced Warfare commanders and Rebirth 8 with five Index nukes.",
+    highlights: [
+      "Allies: send alliance requests in-server — both players get +10% cash income while allied.",
+      "Attacking an ally cancels the alliance and declares war. Betrayal wars need 1,000% score to win (defender 500%); betrayer wins 25% cash or loses 75% if defeated.",
+      "Declare War button added — automatic 3-hit trigger still works. Only one active war per player.",
+      "Advanced Warfare Commander Pack: Drone (Admiral, 0.5%), Recon (Legendary, 4.5%), Medic (10%), Sapper (20%), Scout (30%), Grifter (35%). Recon also spawns in the base commander pool.",
+      "Rebirth 8: +110% cash and 5 additional nukes — requires final nuke tier plus Overclocker and Barrier commanders.",
+      "New Index nukes: Silent Whisper, False Step, Peek-a-Boo, Colossus, Fragmenter.",
+    ],
+    links: [
+      { label: "Raid, wars & allies", href: "/raid" },
+      { label: "All commanders", href: "/commanders" },
+      { label: "Rebirth checklist", href: "/progression#rebirth" },
+      { label: "How wars work (blog)", href: "/blog/how-wars-work-july-2026" },
+    ],
+  },
+  {
     id: "july-4-ltm",
     date: "2026-07-04",
     title: "LTM & 4th of July — Wars, Supply Drops, Rebirth 7",

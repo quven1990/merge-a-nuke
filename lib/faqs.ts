@@ -64,7 +64,7 @@ export const FAQS = [
   },
   {
     q: "Is rebirth worth it?",
-    a: "Yes — rebirth is required to unlock the highest Index nukes beyond the mid-game cap (community runs report ~35 tiers before rebirth, with more after each rebirth tier). Rebirth 7 (July 4, 2026) added 5 new nukes to the Index. Rebirth trades your current board progress for a permanent boost and access to those higher tiers, so only do it once growth has clearly stalled — not for a small early bonus. Check the exact reset and bonus details in-game, as they can change between patches.",
+    a: "Yes — rebirth is required to unlock the highest Index nukes beyond the mid-game cap (community runs report ~35 tiers before rebirth, with more after each rebirth tier). Rebirth 7 (July 4, 2026) added 5 Index nukes; Rebirth 8 (July 13, 2026) adds +110% cash, 5 more nukes, and requires the final Index tier plus Overclocker and Barrier commanders. Rebirth trades your current board progress for a permanent boost and access to those higher tiers, so only do it once growth has clearly stalled — not for a small early bonus. Check the exact reset and bonus details in-game, as they can change between patches.",
   },
   {
     q: "Is mergeanuke.site official?",

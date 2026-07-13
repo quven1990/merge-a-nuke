@@ -24,6 +24,7 @@ import {
   SHIELD_MECHANICS,
   SUPPLY_DROPS,
   WAR_MECHANICS,
+  ALLIES_MECHANICS,
 } from "@/lib/raid-guide-data"
 
 const EVENT_MAP_ICON = [Anchor, Fuel, Building2, Target] as const
@@ -66,7 +67,33 @@ export function RaidDefense() {
           </span>
           <div className="space-y-1">
             <p className="text-sm font-bold text-foreground">
-              Patch update — LTM &amp; 4th of July (July 4, 2026)
+              Patch update — Allies &amp; Advanced Warfare (July 13, 2026)
+            </p>
+            <p className="text-sm text-muted-foreground">
+              <span className="font-semibold text-foreground">Allies</span> grant +10% cash income
+              while active — attacking an ally cancels the alliance and starts a betrayal war (1,000%
+              vs 500% war score, 25% / 75% cash stakes). Use the new{" "}
+              <span className="font-semibold text-foreground">Declare War</span> button or the
+              existing 3-hit trigger. Only one war at a time.{" "}
+              <Link href="/commanders" className="font-medium text-primary hover:underline">
+                Six new commanders
+              </Link>{" "}
+              ship in the Advanced Warfare Pack;{" "}
+              <Link href="/progression#rebirth" className="font-medium text-primary hover:underline">
+                Rebirth 8
+              </Link>{" "}
+              adds five Index nukes.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-primary/40 bg-primary/10 p-5 sm:flex-row sm:items-start sm:gap-4">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-xl border border-primary/40 bg-primary/15 text-primary">
+            <Sparkles className="size-4.5" aria-hidden="true" />
+          </span>
+          <div className="space-y-1">
+            <p className="text-sm font-bold text-foreground">
+              Still live — LTM &amp; 4th of July (July 4, 2026)
             </p>
             <p className="text-sm text-muted-foreground">
               <span className="font-semibold text-foreground">Military Compound</span> runs every ~2
@@ -74,16 +101,14 @@ export function RaidDefense() {
               <Link href="/commanders/stalker" className="font-medium text-primary hover:underline">
                 Stalker (Legendary)
               </Link>
-              . PvP can now escalate into{" "}
-              <span className="font-semibold text-foreground">wars</span> — 3 hits declares war, 100%
-              war score steals 50% of the loser&apos;s cash.{" "}
+              . Standard wars still pay 50% cash at 100% war score.{" "}
               <span className="font-semibold text-foreground">Mystery Supply Drops</span> also spawn
               for random commander rolls.
             </p>
           </div>
         </div>
 
-        <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-primary/40 bg-primary/10 p-5 sm:flex-row sm:items-start sm:gap-4">
+        <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-border/70 bg-card/60 p-5 sm:flex-row sm:items-start sm:gap-4">
           <span className="flex size-9 shrink-0 items-center justify-center rounded-xl border border-primary/40 bg-primary/15 text-primary">
             <Sparkles className="size-4.5" aria-hidden="true" />
           </span>
@@ -351,7 +376,7 @@ export function RaidDefense() {
           </p>
         </div>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-2">
+        <div className="mt-8 grid gap-5 lg:grid-cols-3">
           <div className="rounded-2xl border border-hazard/30 bg-hazard/5 p-5 sm:p-6">
             <div className="flex items-center gap-2">
               <Swords className="size-5 text-hazard" aria-hidden="true" />
@@ -375,7 +400,30 @@ export function RaidDefense() {
             </ul>
           </div>
 
-          <div className="rounded-2xl border border-primary/30 bg-primary/5 p-5 sm:p-6">
+          <div className="rounded-2xl border border-warning/30 bg-warning/5 p-5 sm:p-6">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="size-5 text-warning" aria-hidden="true" />
+              <h3 className="text-lg font-bold text-foreground">
+                {ALLIES_MECHANICS.title}
+              </h3>
+            </div>
+            <p className="mt-3 text-sm text-muted-foreground">
+              {ALLIES_MECHANICS.summary}
+            </p>
+            <ul className="mt-4 space-y-2">
+              {ALLIES_MECHANICS.points.map((point) => (
+                <li
+                  key={point}
+                  className="flex gap-2 text-sm text-muted-foreground"
+                >
+                  <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-warning" />
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-primary/30 bg-primary/5 p-5 sm:p-6 lg:col-span-1">
             <div className="flex items-center gap-2">
               <Target className="size-5 text-primary" aria-hidden="true" />
               <h3 className="text-lg font-bold text-foreground">

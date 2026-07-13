@@ -66,10 +66,10 @@ export const SEO_PAGES = {
     path: "/progression",
     title: "Merge a Nuke Progression & Rebirth Guide",
     description:
-      "Merge a Nuke progression guide for Roblox: upgrade path, when to rebirth, Rebirth 7 unlocks, and how commanders persist across resets.",
+      "Merge a Nuke progression guide for Roblox: upgrade path, when to rebirth, Rebirth 7–8 unlocks, and how commanders persist across resets.",
     h1: "Merge a Nuke Progression Guide",
     intro:
-      "Know what to focus on at each stage, when rebirth pays off, and how Rebirth 7 fits into long-term scaling.",
+      "Know what to focus on at each stage, when rebirth pays off, and how Rebirth 8 fits into long-term scaling.",
     tldr:
       "Codes → Spawn Speed → Spawn Tier → merge toward 16+ → commanders → lock base → rebirth when growth slows. Commanders persist; cash and upgrades reset.",
     breadcrumb: "Progression",
@@ -102,12 +102,12 @@ export const SEO_PAGES = {
     path: "/raid",
     title: "Merge a Nuke Raid Guide — PvP, Wars, Event Maps & Defense",
     description:
-      "Merge a Nuke raid guide: PvP base attacks, war declarations, center city PvE, Military Compound & Harbor event maps, Mystery Supply Drops, Lock Base shields, and defense tips.",
+      "Merge a Nuke raid guide: PvP raids, allies, war declarations, betrayal rules, center city PvE, event maps, Mystery Supply Drops, Lock Base shields, and defense tips.",
     h1: "Merge a Nuke Raid & Defense Guide",
     intro:
-      "Raid smarter, farm the center city on cooldown, hit rotating event maps, declare wars for cash payouts, and lock your base so offline players cannot wipe your progress.",
+      "Raid smarter, ally for +10% income, declare wars for cash payouts, farm event maps, and lock your base so offline players cannot wipe your progress.",
     tldr:
-      "Check shields before launching. Lock before merging in busy lobbies. Attack the same player 3 times to declare war — 100% war score steals 50% of their cash. Military Compound drops Stalker every ~2 hours.",
+      "Check shields and diplomatic status before launching. Allies grant +10% cash — attacking an ally triggers betrayal war rules. Declare War manually or hit the same player 3 times. One active war per player.",
     breadcrumb: "Raid Guide",
   },
   offlineCash: {
@@ -138,24 +138,24 @@ export const SEO_PAGES = {
     path: "/commanders",
     title: "Merge a Nuke Commanders — Tier List & Admiral Guide",
     description:
-      "All 19 Merge a Nuke commanders with PvP, income, and event tier lists. Admiral tier, July 4 LTM units, drop tables, and which to capture first.",
+      "All 25 Merge a Nuke commanders with PvP, income, and event tier lists. Advanced Warfare Pack, Admiral tier, drop tables, and which to capture first.",
     h1: "Merge a Nuke Commanders Guide",
     intro:
-      "All 19 commanders by rarity, commander tier lists for PvP and income, event drop tables, and which to prioritize at each stage.",
+      "All 25 commanders by rarity, commander tier lists for PvP and income, event drop tables, and which to prioritize at each stage.",
     tldr:
-      "Defeat spawned commanders (last hit wins), clear event maps, destroy Mystery Supply Drops, or buy in the Shop. PvP: Siege Breaker + Artillery. Income: Spotter. Event: Carrier from Harbor.",
+      "Defeat spawned commanders (last hit wins), clear event maps, roll Advanced Warfare or Supply Drops, or buy in the Shop. PvP: Siege Breaker + Artillery. Income: Spotter. Rebirth 8 needs Overclocker + Barrier.",
     breadcrumb: "Commanders",
   },
   updates: {
     path: "/updates",
     title: "Merge a Nuke Updates — Patch Log & Friday Changes",
     description:
-      "Merge a Nuke update log for Roblox: Commanders Pt. 2, July 4 LTM, wars, Rebirth 7, and weekly Friday patch notes with links to guides.",
+      "Merge a Nuke update log for Roblox: July 13 Allies & Warfare, Commanders Pt. 2, July 4 LTM, wars, Rebirth 8, and weekly Friday patch notes.",
     h1: "Merge a Nuke Update Log",
     intro:
       "Major patch timeline for Merge a Nuke on Roblox — what changed, when, and where to read the full guide on this wiki.",
     tldr:
-      "Latest: July 4 LTM (wars, Military Compound, Supply Drops, Rebirth 7). Before that: Commanders Pt. 2 (Admiral tier, Harbor/Oil Rig). Check back every Friday.",
+      "Latest: July 13 Allies & Advanced Warfare (alliance income, betrayal wars, 6 commanders, Rebirth 8). Before that: July 4 LTM and Commanders Pt. 2. Check back every Friday.",
     breadcrumb: "Updates",
   },
   community: {
