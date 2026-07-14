@@ -2,7 +2,7 @@
 
 > Independent fan-made strategy wiki for Merge a Nuke on Roblox — not affiliated with Roblox Corporation or Nuke The Game.
 
-Last updated: 2026-07-13
+Last updated: 2026-07-14
 
 Working codes (June 2026): ATOMIC ($10,000 + 20 nukes), UPDATE2 ($10,000 + 10 nukes), BOOM ($5,000). Redeem: Shop (left) → scroll to bottom → enter code → Redeem. Upgrade Max Spawn before redeeming nuke-heavy codes. New players: merge same-level pairs (2+2=4) → buy Spawn Speed then Spawn Tier → lock base before raiding.
 
@@ -25,7 +25,7 @@ Codes and balance can change after Friday game updates. Tier names and some stat
 ## Optional
 
 - [Community](https://mergeanuke.site/community): Official Roblox game and About-tab links (group, Discord)
-- [Blog](https://mergeanuke.site/blog): Sourced gameplay articles — wars, commander cards
+- [Blog](https://mergeanuke.site/blog): Sourced gameplay articles — Rebirth 8 requirements, wars, commander cards
 - [Privacy Policy](https://mergeanuke.site/privacy): Analytics, cookies, and data handling
 - [Terms of Use](https://mergeanuke.site/terms): Fan-site disclaimer and liability limits
 - [Contact](mailto:contact@mergeanuke.site): Questions or corrections about this wiki

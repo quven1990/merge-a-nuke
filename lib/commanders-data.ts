@@ -267,7 +267,7 @@ export const COMMANDERS: Commander[] = [
       "Admiral rarity, added in Commanders Pt. 2 (June 28, 2026). Harbor event drop vs ~0.5% Conquerors pack — Hoplas2 reports 0.5% pack rate on camera (June 30, 2026, oqNOVaY2SEo). Lock timer reduction scales with commander level.",
     eventMap: "Harbor",
   },
-  // --- Advanced Warfare Pack (July 13, 2026) — abilities pending in-game card verification ---
+  // --- Advanced Warfare Pack (July 13, 2026) ---
   {
     name: "Grifter",
     rarity: "Rare",
@@ -292,11 +292,12 @@ export const COMMANDERS: Commander[] = [
     name: "Medic",
     rarity: "Epic",
     role: "defense",
-    ability: "Advanced Warfare Commander Pack unit — ability text pending in-game verification.",
-    bestFor: "Advanced Warfare pack pulls — verify the card after Friday patches",
-    priority: "?",
-    notes: "Added July 13, 2026. Advanced Warfare Commander Pack reported 10% drop rate.",
-    pending: true,
+    ability:
+      "Sends a supply pulse across your commanders, resupplying 2 commanders, reducing their cooldown by 10%, and boosting their effectiveness.",
+    bestFor: "Commander-heavy builds — cooldown support for Overclocker and other active passives",
+    priority: "B",
+    notes:
+      "Added July 13, 2026. Advanced Warfare Commander Pack reported 10% drop rate. Ability wording from Kream Blox July 11 video (g-Tc884OqL4); verify level scaling in-game.",
   },
   {
     name: "Sapper",

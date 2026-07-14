@@ -179,7 +179,7 @@ export const SEO_PAGES = {
     intro:
       "Short articles sourced from gameplay footage and our verified guides — each post lists YouTube sources and what is still pending.",
     tldr:
-      "Latest: Carrier/Looter/Artillery cards from Hoplas2 (June 2026). Wars guide from July footage. Check back after Friday patches.",
+      "Latest: Rebirth 8 requirements from Kream Blox gameplay, plus Hoplas2 commander card reads and war footage. Check back after Friday patches.",
     breadcrumb: "Blog",
   },
   about: {

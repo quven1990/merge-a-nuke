@@ -40,6 +40,143 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "rebirth-8-requirements-overclocker-barrier-july-2026",
+    title: "Merge a Nuke Rebirth 8 Requirements — Overclocker, Barrier & New Nukes",
+    description:
+      "Kream Blox reaches the July 2026 Rebirth 8 update, shows the Overclocker requirement path, rolls the Advanced War Pack, and maxes the new glitched-error nuke tier. Includes notes on the Barrier/Overclocker wording mismatch.",
+    published: "2026-07-14",
+    updated: "2026-07-14",
+    tldr: [
+      "Kream Blox opens the new update already maxed at the old top tier, then checks the Rebirth panel and says it requires owning Barrier or Overclocker before he can rebirth.",
+      "He finds Overclocker through commander hunting, sinks it, and immediately says he can rebirth; this is video evidence that Overclocker can satisfy the requirement in that session.",
+      "The patch note text we have says Rebirth 8 requires the final nuke tier, Overclocker, and Barrier, so treat the Barrier/Overclocker wording as something to verify on your own in-game Rebirth panel.",
+      "Advanced War Pack appears in the same video with Medic, Sapper, Grifter, Scout, and Recon names shown or rolled; only Medic's card text is read clearly enough to quote.",
+    ],
+    sections: [
+      {
+        type: "p",
+        text: "This article uses Kream Blox's July 11 gameplay as the main source and a short Rebirth clip as a secondary source. It is not a full Advanced Warfare commander guide: if the video does not read a card or show a mechanic clearly, we keep that detail pending on the wiki.",
+      },
+      {
+        type: "h2",
+        text: "What the video confirms about Rebirth 8",
+      },
+      {
+        type: "p",
+        text: "Kream starts with the previous top-tier base already filled, then the server restarts into the new update. He opens the Rebirth requirement and says the update will unlock more cash and new rocket tiers, but he needs to own Barrier or Overclocker before he can take the max rebirth.",
+      },
+      {
+        type: "ul",
+        items: [
+          "He initially cannot rebirth because he does not have Overclocker.",
+          "He later finds an Overclocker commander, uses Launch All Nukes against it, sinks it, and then says he can rebirth.",
+          "After taking the rebirth, he starts over and equips Overclocker because faster spawning helps the post-rebirth rebuild.",
+          "He later maxes Overclocker and reads 58% faster spawning nukes with a 1 minute 46 second cooldown in his session.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Requirement wording mismatch",
+        text: "The patch notes we have say Rebirth 8 requires the final nuke tier, Overclocker, and Barrier. Kream's narration says Barrier or Overclocker, and in his run Overclocker appears to satisfy the gate. Until we capture the Rebirth panel directly, check your own in-game UI before assuming Barrier is optional.",
+      },
+      {
+        type: "h2",
+        text: "Overclocker path: why it matters",
+      },
+      {
+        type: "p",
+        text: "Overclocker is more than a collection item after this patch. It is tied to the Rebirth 8 gate and also speeds up the rebuild after a reset. In the video, once Kream rebirths, he uses Overclocker to recover through early tiers faster and repeatedly calls it strong during the climb back up.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Video route: hunt Overclocker as an Epic commander, sink it, then return to the Rebirth panel.",
+          "Post-rebirth use: equip Overclocker to speed nuke spawning during the weak early rebuild.",
+          "Maxed read in the video: 58% faster spawning nukes, 1:46 cooldown. Our commander page still labels the exact scaling as level-dependent until we have clean card screenshots.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Advanced War Pack details shown",
+      },
+      {
+        type: "p",
+        text: "Kream opens the store and sees an Advanced War Pack with different names from older packs. He mentions Sapper, Recon, and Medic in the pack, then rolls Medic, Sapper, Grifter, and Scout during the video.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Medic card text he reads: sends a supply pulse across, resupplying two commanders, reducing their cooldown by 10%, and boosting their effectiveness.",
+          "Sapper, Grifter, and Scout are rolled or named, but he does not read their card text in enough detail to verify abilities.",
+          "He does not pull Drone or Recon's full card in the usable transcript, so both remain pending on this wiki.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Allies and war details from the run",
+      },
+      {
+        type: "p",
+        text: "The same run briefly shows the new social/war layer. Another player sends an ally request, Kream accepts, then he gets pulled into war and notes that he cannot lock his base while at war.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Ally request appears in normal gameplay: \"Nico wants to ally\".",
+          "During war, he tries to lock and says you cannot lock during war.",
+          "He uses the Declare War button later, but one target is on cooldown.",
+          "These are useful observations, but the full betrayal-war numbers still come from the July 13 patch notes rather than this video.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "New nuke ceiling shown",
+      },
+      {
+        type: "p",
+        text: "After the Rebirth 8 climb, Kream shows new rocket tiers and eventually reaches what he calls the new best nuke. He describes it as a glitched-error style nuke, tier 590 quintillion, doing 118,000 damage in his run.",
+      },
+      {
+        type: "callout",
+        title: "Do not treat one run as a final tier table",
+        text: "The video is good evidence that Rebirth 8 opens new top-end rocket tiers, but it is not a clean Index capture for every new nuke name. Keep using the in-game Index for exact names, cash/sec, and damage after balance patches.",
+      },
+    ],
+    sources: [
+      {
+        label: "Kream Blox — Unlocking EVERYTHING in Merge a Nuke Update!",
+        url: "https://www.youtube.com/watch?v=g-Tc884OqL4",
+        note: "Published July 11, 2026 · Rebirth 8 / Overclocker / Advanced War Pack gameplay",
+      },
+      {
+        label: "Poison React — Merge a Nuke! rebirth #roblox #robloxshorts",
+        url: "https://www.youtube.com/shorts/LtuQV9XapvY",
+        note: "Published June 28, 2026 · short Rebirth clip; no detailed card text",
+      },
+    ],
+    endCta: {
+      title: "Plan your Rebirth 8 run",
+      description:
+        "Use the progression checklist for the reset timing, then open the commander pages for Overclocker, Barrier, and the Advanced Warfare units that are still pending.",
+      links: [
+        { label: "Rebirth checklist", href: "/progression#rebirth", primary: true },
+        { label: "Overclocker commander", href: "/commanders/overclocker" },
+        { label: "Barrier commander", href: "/commanders/barrier" },
+        { label: "Medic commander", href: "/commanders/medic" },
+        { label: "Advanced Warfare update log", href: "/updates" },
+        { label: "All commanders", href: "/commanders" },
+      ],
+    },
+    relatedLinks: [
+      { label: "Progression & Rebirth guide", href: "/progression#rebirth" },
+      { label: "Overclocker commander", href: "/commanders/overclocker" },
+      { label: "Barrier commander", href: "/commanders/barrier" },
+      { label: "Medic commander", href: "/commanders/medic" },
+      { label: "July 13 update log", href: "/updates" },
+      { label: "Raid & allies guide", href: "/raid" },
+    ],
+  },
+  {
     slug: "carrier-looter-artillery-hoplas2-june-2026",
     title: "Carrier, Looter & Artillery — In-Game Cards (Hoplas2, June 2026)",
     description:
