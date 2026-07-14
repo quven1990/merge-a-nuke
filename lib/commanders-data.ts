@@ -55,7 +55,7 @@ export const COMMANDERS: Commander[] = [
     ability: "Merges the 2 lowest-tier nukes on your plot automatically every minute.",
     bestFor: "Early game — keeps your grid clean without manual merging",
     priority: "A",
-    notes: "Best common for new players. Pt. 2: converted to a ground unit.",
+    notes: "Best common for new players. Ability wording confirmed from Hoplas2 commander launch video (June 20, 2026, fE1HcHTYg6Q). Pt. 2: converted to a ground unit.",
   },
   {
     name: "Engineer",
@@ -64,7 +64,7 @@ export const COMMANDERS: Commander[] = [
     ability: "Upgrades the worst nuke on your plot by 1 tier every 2 minutes.",
     bestFor: "Passive progression when you can't actively play",
     priority: "B",
-    notes: "Slower than Salvager but useful for AFK sessions. Pt. 2: converted to a ground unit.",
+    notes: "Slower than Salvager but useful for AFK sessions. Ability wording confirmed from Hoplas2 commander launch video (June 20, 2026, fE1HcHTYg6Q). Pt. 2: converted to a ground unit.",
   },
   {
     name: "Gunner",
@@ -73,19 +73,18 @@ export const COMMANDERS: Commander[] = [
     ability: "Increases the damage of nuclear attacks against other players.",
     bestFor: "PvP raiding — more damage per nuke launched",
     priority: "B",
-    notes: "Only worth equipping if you raid often. Pt. 2: converted to a ground unit.",
+    notes: "Only worth equipping if you raid often. Ability wording confirmed from Hoplas2 commander launch video (June 20, 2026, fE1HcHTYg6Q). Pt. 2: converted to a ground unit.",
   },
   {
     name: "Broker",
     rarity: "Common",
     role: "income",
     ability:
-      "Dividends — passive income bonus (exact numbers pending in-game verification).",
-    bestFor: "Income farming — passive cash while you play or AFK",
+      "Dividends — when you merge a nuke, pays out a lump sum equal to 55% of what that nuke earns in 30 seconds.",
+    bestFor: "Active merging income — extra cash bursts while cleaning your plot",
     priority: "B",
     notes:
-      "Added in Commanders Pt. 2 (June 28, 2026). Community reports ~70% drop weight on Downtown.",
-    pending: true,
+      "Added in Commanders Pt. 2 (June 28, 2026). Community reports ~70% drop weight on Downtown. Ability wording from Hoplas2 July 4 video (46HqVOGK57o); verify whether 55% scales by commander level.",
     eventMap: "Downtown",
   },
   {
@@ -122,7 +121,7 @@ export const COMMANDERS: Commander[] = [
     ability: "Fires a flare onto a random spot every 30 seconds, granting a cash boost to all nukes within the radius.",
     bestFor: "Income farming — best rare for passive cash growth",
     priority: "S",
-    notes: "Top priority rare. Pt. 2: converted to a ground unit.",
+    notes: "Top priority rare. Ability wording confirmed from Hoplas2 commander launch video (June 20, 2026, fE1HcHTYg6Q). Pt. 2: converted to a ground unit.",
   },
   {
     name: "Interceptor",
@@ -131,7 +130,7 @@ export const COMMANDERS: Commander[] = [
     ability: "Has a 50% chance to intercept an incoming enemy nuke, reducing its damage by 30%.",
     bestFor: "Defense in aggressive lobbies with frequent raids",
     priority: "C",
-    notes: "Situational. Only useful if you're getting raided constantly.",
+    notes: "Situational. Only useful if you're getting raided constantly. Ability wording confirmed from Hoplas2 commander launch video (June 20, 2026, fE1HcHTYg6Q).",
   },
   {
     name: "Artillery",
@@ -198,12 +197,11 @@ export const COMMANDERS: Commander[] = [
     rarity: "Epic",
     role: "automation",
     ability:
-      "Overclock — speeds up automation or production timers (exact effect pending in-game verification).",
-    bestFor: "Players who want faster passive plot automation",
+      "Overclock — overclocks your laboratory, spawning nukes 58% faster for 14 seconds.",
+    bestFor: "Rebirth 8 prep and burst production — faster nuke spawns during active sessions",
     priority: "B",
     notes:
-      "Added in Commanders Pt. 2 (June 28, 2026). Community reports ~30% drop weight on Oil Rig. Required commander for Rebirth 8 (July 13, 2026 patch).",
-    pending: true,
+      "Added in Commanders Pt. 2 (June 28, 2026). Community reports ~30% drop weight on Oil Rig. Required commander for Rebirth 8 (July 13, 2026 patch). Ability wording from Hoplas2 July 4 video (46HqVOGK57o); verify whether 58% / 14s scales by commander level.",
     eventMap: "Oil Rig",
   },
   {
@@ -234,11 +232,11 @@ export const COMMANDERS: Commander[] = [
     rarity: "Legendary",
     role: "offense",
     ability:
-      "Reign of Commander — buffs commander effects on your plot by 1.5× and retaliates against attackers with a warhead that lasts 20 seconds (Hoplas2 narration, July 10, 2026; pending in-game card verification).",
+      "Reign of Commander — about every 2 minutes, buffs a random commander on your plot by 1.5× for 60 seconds and retaliates against attackers with a warhead that lasts 20 seconds (damage and cash-cut numbers may scale by level).",
     bestFor: "War lobbies — retaliation during formal wars and counter-raids",
     priority: "?",
     notes:
-      "LTM reward from Military Compound (July 4, 2026). Ability wording from Hoplas2 YouTube (qZHP32lDOWc) — verify against the in-game commander card.",
+      "LTM reward from Military Compound (July 4, 2026). Hoplas2's July 4 video (46HqVOGK57o) read 56% cash cut / nuke damage, while the July 10 war video (qZHP32lDOWc) summarized the retaliation effect. Keep exact numbers pending until matched to an in-game card level.",
     pending: true,
     limited: true,
     eventMap: "Military Compound",
