@@ -4,6 +4,8 @@ import { SectionHeading } from "@/components/hud"
 import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
 import { GAME_FACTS, ROBLOX_GAME_ABOUT_URL, ROBLOX_GAME_URL } from "@/lib/game-links"
 
+const TESTER_APPLICATION_FORM_URL = "https://forms.gle/8tFRTymU4HQq8U6i6"
+
 export function CommunitySection() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -16,6 +18,34 @@ export function CommunitySection() {
         This wiki is fan-made. For codes, group rewards, and Discord, use the official Roblox game
         page — we link out instead of copying unverified social posts.
       </p>
+
+      <div className="mt-8 rounded-2xl border border-primary/30 bg-primary/5 p-5 shadow-sm sm:p-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <p className="text-sm font-bold text-foreground">Tester applications re-opened</p>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Nuke The Game is looking for more Merge a Nuke testers. Applicants must be 15+, active
+              for most test sessions, and professional in their responses. Applications are listed as
+              open until <span className="font-semibold text-foreground">July 19, 2026 at 06:00</span>,
+              but may close early if enough eligible testers are found.
+            </p>
+          </div>
+          <TrackedOutboundLink
+            href={TESTER_APPLICATION_FORM_URL}
+            placement="community_tester_application"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-10 shrink-0 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+          >
+            Apply via Google Form
+            <ExternalLink className="size-4 shrink-0" aria-hidden="true" />
+          </TrackedOutboundLink>
+        </div>
+        <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+          Use only the form linked from the announcement. This wiki is not involved in reviewing
+          applications or announcing results.
+        </p>
+      </div>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         <TrackedOutboundLink

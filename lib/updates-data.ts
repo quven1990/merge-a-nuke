@@ -14,6 +14,23 @@ export type PatchUpdate = {
 
 export const PATCH_UPDATES: PatchUpdate[] = [
   {
+    id: "tester-applications-july-2026",
+    date: "2026-07-15",
+    title: "Tester Applications Re-opening",
+    summary:
+      "Nuke The Game is looking for more Merge a Nuke testers. Applications are open until July 19, 2026 at 06:00, with a 15+ age requirement and expectations for active, professional test-session participation.",
+    highlights: [
+      "Applicants must be 15+ and active enough to attend most test sessions.",
+      "Responses should show effort and professionalism; do not ask when results will be announced.",
+      "Applications may close early if enough eligible testers are found.",
+      "Use only the announcement's Google Form link — we list it on the Community page so players avoid fake forms.",
+    ],
+    links: [
+      { label: "Community links & tester form", href: "/community" },
+      { label: "Latest update log", href: "/updates" },
+    ],
+  },
+  {
     id: "july-13-allies-warfare",
     date: "2026-07-13",
     title: "Allies, Advanced Warfare Pack & Rebirth 8",

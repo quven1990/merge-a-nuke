@@ -150,24 +150,24 @@ export const SEO_PAGES = {
     path: "/updates",
     title: "Merge a Nuke Updates — Patch Log & Friday Changes",
     description:
-      "Merge a Nuke update log for Roblox: July 13 Allies & Warfare, Commanders Pt. 2, July 4 LTM, wars, Rebirth 8, and weekly Friday patch notes.",
+      "Merge a Nuke update log for Roblox: tester applications, July 13 Allies & Warfare, Commanders Pt. 2, wars, Rebirth 8, and weekly Friday patch notes.",
     h1: "Merge a Nuke Update Log",
     intro:
       "Major patch timeline for Merge a Nuke on Roblox — what changed, when, and where to read the full guide on this wiki.",
     tldr:
-      "Latest: July 13 Allies & Advanced Warfare (alliance income, betrayal wars, 6 commanders, Rebirth 8). Before that: July 4 LTM and Commanders Pt. 2. Check back every Friday.",
+      "Latest: tester applications re-opened until July 19, 2026. Recent gameplay patch: July 13 Allies & Advanced Warfare (6 commanders, Rebirth 8).",
     breadcrumb: "Updates",
   },
   community: {
     path: "/community",
     title: "Merge a Nuke Community — Official Roblox Links",
     description:
-      "Official Merge a Nuke Roblox game link, developer group, and where to find Discord and Friday code drops — fan wiki community page.",
+      "Official Merge a Nuke Roblox game link, developer group, tester application form, and where to find Discord and Friday code drops — fan wiki community page.",
     h1: "Merge a Nuke Community Links",
     intro:
-      "Play the game, join the developer group, and find official social links — without unverified third-party Discord copy.",
+      "Play the game, join the developer group, find official social links, and use the current tester application form — without unverified third-party Discord copy.",
     tldr:
-      "Open the Roblox game About tab for group rewards, Discord, and studio links. Codes usually drop Fridays — see /updates and /codes.",
+      "Tester applications are open until July 19, 2026 at 06:00. Open the Roblox game About tab for group rewards, Discord, and studio links.",
     breadcrumb: "Community",
   },
   blog: {
