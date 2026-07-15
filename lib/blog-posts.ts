@@ -40,6 +40,161 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "merge-a-nuke-tester-application-guide-july-2026",
+    title: "Merge a Nuke Tester Application Guide — Requirements, Questions & Deadline",
+    description:
+      "Merge a Nuke tester applications are open until July 19, 2026 at 06:00. Here is what the official Google Form asks for, what to prepare before applying, and how to write stronger answers without sharing personal details publicly.",
+    published: "2026-07-15",
+    updated: "2026-07-15",
+    tldr: [
+      "Tester applications are open until July 19, 2026 at 06:00, but the announcement says they may close early if enough eligible testers apply.",
+      "You must be 15+, active, able to attend most test sessions, and professional in your answers.",
+      "The form asks for Discord username/ID, Roblox username, age, timezone, motivation, testing experience, availability, devices, and whether you can provide screenshots or clips.",
+      "Do not submit through random copied forms. Use the official Google Form linked from the announcement or our Community page.",
+    ],
+    sections: [
+      {
+        type: "p",
+        text: "Nuke The Game has re-opened tester applications for Merge a Nuke. This is a short application window, so this guide focuses on the official requirements, the questions shown in the Google Form, and how to prepare answers that look useful to a testing team.",
+      },
+      {
+        type: "callout",
+        title: "Privacy note",
+        text: "Do not post your Discord ID, Roblox username, age, or timezone publicly just to ask for help. Fill those into the official form only. This article summarizes the fields but does not collect applications.",
+      },
+      {
+        type: "h2",
+        text: "Deadline and basic requirements",
+      },
+      {
+        type: "ul",
+        items: [
+          "Applications are listed as open until July 19, 2026 at 06:00.",
+          "The announcement says applications may close early if enough eligible candidates are found.",
+          "Applicants must be 15+.",
+          "Applicants should be active and able to attend a majority of test sessions.",
+          "The team asks for effort and professionalism in responses.",
+          "Do not ask when results will be announced; the team says updates will be shared when they have them.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Personal questions on the form",
+      },
+      {
+        type: "p",
+        text: "The first section is basic identity and timezone information so the team can contact you and understand whether your schedule fits test sessions.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Discord username.",
+          "Discord ID.",
+          "Roblox username.",
+          "Age.",
+          "Timezone.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Use accurate account info",
+        text: "The form warns applicants not to change the username written in the first question until after acceptance. If your Discord or Roblox name changes mid-review, staff may not be able to match your application.",
+      },
+      {
+        type: "h2",
+        text: "Attribute questions: what they want to learn",
+      },
+      {
+        type: "p",
+        text: "The next section asks why you want the tester role and why the team should choose you. Short one-word answers are unlikely to help; the form explicitly asks applicants to be elaborate.",
+      },
+      {
+        type: "ul",
+        items: [
+          "What inspired you to apply for the tester position at Merge a Nuke?",
+          "Why should the team choose you over other applicants?",
+          "Have you ever tested a game before? If yes, provide details.",
+        ],
+      },
+      {
+        type: "p",
+        text: "A stronger answer should mention how often you play, what kinds of bugs you notice, whether you can reproduce issues, and whether you can explain steps clearly. You do not need to pretend to be a developer; reliable reporting and patience are more important than hype.",
+      },
+      {
+        type: "h2",
+        text: "Testing availability questions",
+      },
+      {
+        type: "p",
+        text: "The form also checks whether you can actually show up for tests and provide useful evidence when something breaks.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Current in-game playtime, or an estimate if you do not know.",
+          "How many hours per week you can dedicate to testing Merge a Nuke.",
+          "Times of day when you are unavailable.",
+          "Devices you play on: PC, PC with controller, mobile, console, or other.",
+          "Whether you can take screenshots and record clips.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Screenshots and clips matter",
+        text: "The form says clipping bugs and console logs can be crucial for bug testing. If you can record short clips or screenshots, say so honestly and explain what device you use.",
+      },
+      {
+        type: "h2",
+        text: "End of application notes",
+      },
+      {
+        type: "p",
+        text: "The final section reminds applicants to answer honestly, put effort into the application, and ask any remaining question in the final field. It also says accepted testers are obligated to be in the Merge a Nuke server and the Nuke The Game Roblox group.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Use the final field for relevant context only, such as your strongest availability window or testing experience.",
+          "Do not use the final field to ask when results will be announced.",
+          "Make sure you can join or remain in the required Discord server and Roblox group.",
+          "Review your answers before submitting; tester applications reward clarity more than speed.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Should you apply?",
+      },
+      {
+        type: "p",
+        text: "Apply if you actively play Merge a Nuke, can attend tests, and are willing to report bugs with clear steps. Do not apply just for early access, leaks, or perks. A good tester helps the developers find confusing UI, broken commander behavior, economy bugs, device-specific issues, and update regressions before they reach everyone.",
+      },
+    ],
+    sources: [
+      {
+        label: "Merge a Nuke tester application Google Form",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSdA3i-vYtQbARrT3vVJ5Rll-yoCwhZc_DFVbpEwzbwApXrE-w/viewform",
+        note: "Official application form shared with the July 2026 tester applications announcement",
+      },
+    ],
+    endCta: {
+      title: "Apply through the official link",
+      description:
+        "Use the Community page to open the official tester form and official Roblox links. This wiki does not review applications or announce results.",
+      links: [
+        { label: "Community links & tester form", href: "/community", primary: true },
+        { label: "Latest update log", href: "/updates" },
+        { label: "Rebirth 8 guide", href: "/blog/rebirth-8-requirements-overclocker-barrier-july-2026" },
+        { label: "All commanders", href: "/commanders" },
+      ],
+    },
+    relatedLinks: [
+      { label: "Community links & tester form", href: "/community" },
+      { label: "Update log", href: "/updates" },
+      { label: "Rebirth 8 requirements", href: "/blog/rebirth-8-requirements-overclocker-barrier-july-2026" },
+      { label: "Raid & allies guide", href: "/raid" },
+    ],
+  },
+  {
     slug: "rebirth-8-requirements-overclocker-barrier-july-2026",
     title: "Merge a Nuke Rebirth 8 Requirements — Overclocker, Barrier & New Nukes",
     description:

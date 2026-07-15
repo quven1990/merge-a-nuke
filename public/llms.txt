@@ -25,7 +25,7 @@ Codes and balance can change after Friday game updates. Tier names and some stat
 ## Optional
 
 - [Community](https://mergeanuke.site/community): Official Roblox game, tester application form, and About-tab links (group, Discord)
-- [Blog](https://mergeanuke.site/blog): Sourced gameplay articles — Rebirth 8 requirements, wars, commander cards
+- [Blog](https://mergeanuke.site/blog): Sourced gameplay articles — tester applications, Rebirth 8 requirements, wars, commander cards
 - [Privacy Policy](https://mergeanuke.site/privacy): Analytics, cookies, and data handling
 - [Terms of Use](https://mergeanuke.site/terms): Fan-site disclaimer and liability limits
 - [Contact](mailto:contact@mergeanuke.site): Questions or corrections about this wiki
