@@ -31,6 +31,20 @@ function SectionBlock({ section }: { section: BlogSection }) {
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{section.text}</p>
         </div>
       )
+    case "cta":
+      return (
+        <div className="mt-6 rounded-2xl border border-primary/30 bg-primary/5 p-4 sm:p-5">
+          <p className="text-sm font-bold text-foreground">{section.title}</p>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{section.text}</p>
+          <Link
+            href={section.href}
+            className="mt-4 inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            {section.label}
+            <ArrowRight className="size-4 shrink-0" aria-hidden="true" />
+          </Link>
+        </div>
+      )
     default:
       return null
   }

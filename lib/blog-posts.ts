@@ -10,6 +10,7 @@ export type BlogSection =
   | { type: "h2"; text: string }
   | { type: "ul"; items: string[] }
   | { type: "callout"; title: string; text: string }
+  | { type: "cta"; title: string; text: string; href: `/${string}`; label: string }
 
 export type BlogCtaLink = {
   label: string
@@ -444,46 +445,77 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "how-wars-work-july-2026",
-    title: "How Wars Work in Merge a Nuke (July 2026)",
+    title: "How Wars Work in Merge a Nuke — War, Allies & Betrayal Rules",
     description:
-      "War declarations in Merge a Nuke: attack a player 3 times, reach 100% war score, and the winner takes 50% of the loser's cash. Commander loadouts and caveats from Hoplas2 gameplay footage.",
+      "Current Merge a Nuke war rules after the July 13 patch: manual Declare War, one active war, allies, betrayal war score, cash penalties, and Hoplas2 PvP footage caveats.",
     published: "2026-07-11",
-    updated: "2026-07-13",
+    updated: "2026-07-16",
     tldr: [
-      "The July 2026 patch adds formal wars: hit the same player 3 times to declare war.",
-      "At 100% war score, the winner receives 50% of the loser's cash (per in-game UI in Hoplas2's video).",
-      "Hoplas2 ran Siege Breaker, Stalker, Sovereign, and Carrier for shield-breaking — ability numbers in the video may differ from your commander level; verify on the card.",
-      "Wars can flip unexpectedly, and a post-war cooldown can block repeat attacks on the same player.",
+      "Current rule: use Declare War manually or attack the same player repeatedly; only one active war can run per player.",
+      "Standard wars use normal war score and cash payouts; betrayal wars are harsher after attacking an ally.",
+      "Allies grant +10% cash income, but attacking an ally cancels the alliance and starts a betrayal war.",
+      "Hoplas2's July 10 video is still useful for PvP flow, but it was recorded before Allies and betrayal rules were added.",
     ],
     sections: [
       {
-        type: "callout",
-        title: "July 13, 2026 patch — rules changed after this video",
-        text: "Allies, manual Declare War, betrayal war scores (1,000% vs 500%), and one-war-at-a-time limits were added after Hoplas2 recorded on July 10. See the raid guide for current allies and war rules; the footage below still shows the pre-allies war loop and commander loadout.",
-      },
-      {
-        type: "p",
-        text: "This article summarizes the war system and one high-end PvP loadout exactly as shown in Hoplas2's July 10, 2026 Roblox video — not speculation beyond that footage and our existing raid guide. If a detail is not spoken on-screen or already on this wiki, it is marked as unverified below.",
-      },
-      {
         type: "h2",
-        text: "What the July update adds (from the video)",
+        text: "Current war rules after the July 13 patch",
       },
       {
         type: "p",
-        text: "Hoplas2 describes war as a new feature in the most recent update at the time of recording. The rules stated in the video match what we already document from the July 4, 2026 patch notes:",
+        text: "If you came here from search, start with the current rules. The July 13, 2026 patch changed how wars are started and added Allies, betrayal wars, one-war-at-a-time limits, and diplomatic status icons on the targeting UI.",
       },
       {
         type: "ul",
         items: [
-          "Attack the same player three times and the game declares war on them.",
-          "War score tracks the fight — reaching 100% makes you the winner.",
-          "The winner receives 50% of the loser's cash when war score hits 100%.",
+          "Declare War can be triggered from the targeting UI instead of relying only on repeated attacks.",
+          "Only one active war can run per player, so you cannot stack several war payouts at once.",
+          "Standard wars are still the normal PvP cash-risk loop: build war score, resolve the fight, and expect a large cash swing.",
+          "Allies give both players +10% cash income while the alliance is active.",
+          "Attacking an ally cancels the alliance and starts a betrayal war with much harsher score and cash penalties.",
         ],
       },
       {
+        type: "h2",
+        text: "War vs Allies vs Betrayal",
+      },
+      {
+        type: "ul",
+        items: [
+          "War: a direct PvP state against another player. Use it when you are ready to risk cash for a payout.",
+          "Allies: a temporary friendly status that grants +10% cash income to both players.",
+          "Betrayal: the punishment path after attacking an ally. Reports list 1,000% war score for the attacker, 500% for the defender, a 25% defender-cash win if the betrayer succeeds, and a 75% attacker-cash loss if the betrayer fails.",
+          "Targeting UI: the July 13 redesign shows diplomatic status icons so you can avoid accidentally betraying an ally.",
+        ],
+      },
+      {
+        type: "cta",
+        title: "Need the full current rules?",
+        text: "This blog explains the war idea and the Hoplas2 footage. For the live wiki version with Allies, betrayal penalties, raid timing, and Lock Base defense, use the raid guide.",
+        href: "/raid",
+        label: "Open the raid & war guide",
+      },
+      {
+        type: "callout",
+        title: "Why the Hoplas2 video differs from the current rules",
+        text: "Hoplas2 recorded on July 10, before Allies, manual Declare War, betrayal war scores, and one-war-at-a-time limits were added. The footage below is still useful for PvP flow and commander choices, but use the current rules above when deciding what to do in-game.",
+      },
+      {
+        type: "h2",
+        text: "What Hoplas2's July 10 video shows",
+      },
+      {
         type: "p",
-        text: "The video's goal is leaderboard PvP: Hoplas2 joins a public server with a maxed base and deliberately picks high-nuke opponents instead of bullying low boards.",
+        text: "This section summarizes one high-end PvP loadout exactly as shown in Hoplas2's Roblox video — not speculation beyond that footage and our existing raid guide. If a detail is not spoken on-screen or already on this wiki, it is marked as unverified below.",
+      },
+      {
+        type: "ul",
+        items: [
+          "At the time of the video, attacking the same player three times could declare war on them.",
+          "War score tracks the fight, and the video UI shows 100% as the resolution point.",
+          "The winner receives 50% of the loser's cash when war score resolves in the footage.",
+          "The session focuses on leaderboard PvP: Hoplas2 joins a public server with a maxed base and picks high-nuke opponents.",
+        ],
       },
       {
         type: "h2",
@@ -556,21 +588,21 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
     endCta: {
-      title: "Build your war loadout on the wiki",
+      title: "Check the live war rules before you fight",
       description:
-        "Hoplas2’s video covers one high-end PvP session. For lock timers, war score rules, and commander cards you can verify in-game, continue on these pages.",
+        "The video is useful for PvP flow, but the July 13 patch changed the live rules. Use these pages for current Allies, betrayal, Lock Base, and commander details.",
       links: [
         { label: "Raid & war mechanics", href: "/raid", primary: true },
         { label: "Siege Breaker commander", href: "/commanders/siege-breaker" },
         { label: "Carrier commander", href: "/commanders/carrier" },
         { label: "Stalker commander", href: "/commanders/stalker" },
-        { label: "July 4 update log", href: "/updates" },
+        { label: "July 13 update log", href: "/updates" },
         { label: "Carrier card guide (blog)", href: "/blog/carrier-looter-artillery-hoplas2-june-2026" },
       ],
     },
     relatedLinks: [
       { label: "Raid & war mechanics", href: "/raid" },
-      { label: "July 4 update log", href: "/updates" },
+      { label: "July 13 update log", href: "/updates" },
       { label: "Siege Breaker commander", href: "/commanders/siege-breaker" },
       { label: "Stalker commander (pending card)", href: "/commanders/stalker" },
       { label: "Carrier commander", href: "/commanders/carrier" },
