@@ -64,14 +64,14 @@ export const SEO_PAGES = {
   },
   progression: {
     path: "/progression",
-    title: "Merge a Nuke Progression & Rebirth Guide",
+    title: "Merge a Nuke Rebirth 8 Requirements & Progression Guide",
     description:
-      "Merge a Nuke progression guide for Roblox: upgrade path, when to rebirth, Rebirth 7–8 unlocks, and how commanders persist across resets.",
-    h1: "Merge a Nuke Progression Guide",
+      "Merge a Nuke Rebirth 8 requirements for Roblox: final Index tier, Overclocker, Barrier, upgrade path, when to rebirth, and what resets.",
+    h1: "Merge a Nuke Rebirth 8 & Progression Guide",
     intro:
-      "Know what to focus on at each stage, when rebirth pays off, and how Rebirth 8 fits into long-term scaling.",
+      "Check the Rebirth 8 gates first, then follow the upgrade path, commander priorities, and reset timing that keep each run efficient.",
     tldr:
-      "Codes → Spawn Speed → Spawn Tier → merge toward 16+ → commanders → lock base → rebirth when growth slows. Commanders persist; cash and upgrades reset.",
+      "Rebirth 8 needs the final Index tier plus Overclocker and Barrier. For normal progression: codes → Spawn Speed → Spawn Tier → commanders → lock base → rebirth when growth slows.",
     breadcrumb: "Progression",
   },
   upgrades: {

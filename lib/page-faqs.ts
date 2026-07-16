@@ -49,6 +49,14 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
   ],
   "/progression": [
     {
+      q: "What do you need for Rebirth 8 in Merge a Nuke?",
+      a: "The July 13, 2026 patch added Rebirth 8 with +110% cash and 5 more nukes. Current reports say you need the final nuke tier in the Index plus Overclocker and Barrier owned or equipped. Confirm the exact requirement in the in-game UI before spending Robux or cash.",
+    },
+    {
+      q: "Do you need Overclocker and Barrier for Rebirth 8?",
+      a: "Yes, Overclocker and Barrier are reported as part of the Rebirth 8 gate. Overclocker is tied to faster laboratory spawns, while Barrier is a commander requirement players should secure before trying to unlock Rebirth 8.",
+    },
+    {
       q: "What is the best early progression path in Merge a Nuke?",
       a: "Codes → Spawn Speed → Spawn Tier → merge toward 16+ → capture a commander (Salvager or Spotter) → lock base → raid only when your economy is stable. Rebirth unlocks higher Index tiers later.",
     },

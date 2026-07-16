@@ -100,6 +100,15 @@ export const REBIRTH_GUIDE = {
   title: "Rebirth guide — Rebirth 7 & Rebirth 8",
   summary:
     "Rebirth resets cash, nukes, and Store upgrades but keeps commanders and grants permanent multipliers plus higher Index tiers.",
+  rebirth8RequirementTitle: "Rebirth 8 requirements",
+  rebirth8RequirementSummary:
+    "If you came here for Rebirth 8, check these gates first before resetting or grinding the wrong commander.",
+  rebirth8Requirements: [
+    "Reach the final nuke tier shown in the in-game Index for your current run.",
+    "Own or equip Overclocker — the Epic commander tied to faster laboratory spawns.",
+    "Own or equip Barrier — the Rare commander reported as part of the Rebirth 8 gate.",
+    "Confirm the exact in-game UI before spending Robux or cash, because patch requirements can change.",
+  ],
   whenToRebirth: [
     "Growth slows — merges no longer push you toward the next Index tier efficiently.",
     "You have cleared enough missile tiers that the permanent money multiplier outweighs the reset cost.",

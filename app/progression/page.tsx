@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { PageFaqSection } from "@/components/page-faq-section"
 import { PageIntro } from "@/components/page-intro"
 import { ProgressionRoadmap } from "@/components/progression-roadmap"
-import { RebirthGuideSection } from "@/components/rebirth-guide-section"
+import { Rebirth8RequirementsPanel, RebirthGuideSection } from "@/components/rebirth-guide-section"
 import { RelatedGuides } from "@/components/related-guides"
 import { SiteShell } from "@/components/site-shell"
 import { createPageMetadata } from "@/lib/page-metadata"
@@ -23,6 +23,7 @@ export default function ProgressionPage() {
           description={page.intro}
           tldr={page.tldr}
         />
+        <Rebirth8RequirementsPanel />
         <ProgressionRoadmap />
         <RebirthGuideSection />
         <PageFaqSection pagePath={page.path} />

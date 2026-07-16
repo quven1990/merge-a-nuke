@@ -14,7 +14,7 @@ Codes and balance can change after Friday game updates. Tier names and some stat
 - [Codes](https://mergeanuke.site/codes): Active codes, rewards, Max Spawn redeem tips, and step-by-step instructions
 - [Beginner Guide](https://mergeanuke.site/beginner-guide): First steps, merge rules, and early mistakes to avoid
 - [Upgrades](https://mergeanuke.site/upgrades): Store upgrade priority for free players
-- [Progression](https://mergeanuke.site/progression): Stage-by-stage growth path and Rebirth 7–8 checklist
+- [Progression](https://mergeanuke.site/progression): Rebirth 8 requirements (final Index tier, Overclocker, Barrier), stage-by-stage growth path, and reset checklist
 - [Tier List](https://mergeanuke.site/tier-list): Merge levels and community-reported nuke names
 - [Raid Guide](https://mergeanuke.site/raid): PvP raids, allies, wars, betrayal rules, event maps, Mystery Supply Drops, and Lock Base defense
 - [Offline Cash](https://mergeanuke.site/offline-cash): Passive income and pre-logout setup

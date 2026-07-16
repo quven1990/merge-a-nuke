@@ -58,8 +58,8 @@ const STAGES: Stage[] = [
     icon: Rocket,
     stage: "Rebirth",
     goal: "Reset for long-term gains",
-    focus: "Rebirth once growth clearly slows down.",
-    mistake: "Rebirthing far too early for small bonuses.",
+    focus: "Check Rebirth 8 gates, then reset once growth clearly slows down.",
+    mistake: "Rebirthing before Overclocker, Barrier, or the Index gate is ready.",
   },
 ]
 

@@ -37,6 +37,9 @@ export type OutboundDestination =
 export type OutboundPlacement =
   | "hero"
   | "game_overview"
+  | "community_about"
+  | "community_play"
+  | "community_tester_application"
   | "footer"
   | "privacy"
   | "codes_toast"
