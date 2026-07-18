@@ -2,7 +2,7 @@
 
 > Independent fan-made strategy wiki for Merge a Nuke on Roblox — not affiliated with Roblox Corporation or Nuke The Game.
 
-Last updated: 2026-07-15
+Last updated: 2026-07-18
 
 Working codes (June 2026): ATOMIC ($10,000 + 20 nukes), UPDATE2 ($10,000 + 10 nukes), BOOM ($5,000). Redeem: Shop (left) → scroll to bottom → enter code → Redeem. Upgrade Max Spawn before redeeming nuke-heavy codes. New players: merge same-level pairs (2+2=4) → buy Spawn Speed then Spawn Tier → lock base before raiding.
 
@@ -16,14 +16,17 @@ Codes and balance can change after Friday game updates. Tier names and some stat
 - [Upgrades](https://mergeanuke.site/upgrades): Store upgrade priority for free players
 - [Progression](https://mergeanuke.site/progression): Rebirth 8 requirements (final Index tier, Overclocker, Barrier), stage-by-stage growth path, and reset checklist
 - [Tier List](https://mergeanuke.site/tier-list): Merge levels and community-reported nuke names
-- [Raid Guide](https://mergeanuke.site/raid): PvP raids, allies, wars, betrayal rules, event maps, Mystery Supply Drops, and Lock Base defense
+- [Raid Guide](https://mergeanuke.site/raid): PvP raids, allies, wars, Contract Board, Volcano & Disco Admin Abuse, Town Square, Mystery Supply Drops, and Lock Base defense
 - [Offline Cash](https://mergeanuke.site/offline-cash): Passive income and pre-logout setup
-- [Commanders](https://mergeanuke.site/commanders): Full list of all 25 commanders with abilities and how to get each — Advanced Warfare Pack, Overclocker/Barrier for Rebirth 8, tier lists, drop tables
+- [Commanders](https://mergeanuke.site/commanders): Full list of all 28 commanders with abilities and how to get each — Contract Board Diplomat, Advanced Warfare Pack, Overclocker/Barrier for Rebirth 8, tier lists, drop tables
+- [Diplomat](https://mergeanuke.site/commanders/diplomat): Contract Board Unique Commander — Daily/Weekly/Monthly contracts, 14-day rotation
+- [Welder](https://mergeanuke.site/commanders/welder): Common unit from the July 18, 2026 patch (ability pending)
+- [Forklift Operator](https://mergeanuke.site/commanders/forklift-operator): Rare unit from the July 18, 2026 patch (ability pending)
 - [Overclocker](https://mergeanuke.site/commanders/overclocker): How to get Overclocker on Oil Rig, Overclock ability, Rebirth 8 gate
 - [Barrier](https://mergeanuke.site/commanders/barrier): How to get Barrier on Shipping Port, Rebirth 8 requirement (ability pending)
 - [Artillery](https://mergeanuke.site/commanders/artillery): How to get Artillery on Downtown and Retaliation ability
-- [Updates](https://mergeanuke.site/updates): Friday patch log — July 13 Allies & Warfare, Commanders Pt. 2, July 4 LTM, Rebirth 8
-- [FAQ](https://mergeanuke.site/faq): Rebirth, allies, code troubleshooting, and wiki scope
+- [Updates](https://mergeanuke.site/updates): Friday patch log — July 18 Contract Board & Volcano, July 13 Allies & Warfare, Commanders Pt. 2, July 4 LTM, Rebirth 8
+- [FAQ](https://mergeanuke.site/faq): Rebirth, allies, Contract Board, code troubleshooting, and wiki scope
 
 ## Optional
 

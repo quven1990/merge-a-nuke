@@ -3,7 +3,7 @@ import { ArrowRight, Crown, Sparkles } from "lucide-react"
 import { TrackedCtaLink } from "@/components/tracked-cta-link"
 
 const HIGHLIGHTS = [
-  "All 25 commanders ranked by rarity — Advanced Warfare Pack, July 4 LTM, and Admiral tier",
+  "All 28 commanders ranked by rarity — Contract Board, Advanced Warfare Pack, July 4 LTM, and Admiral tier",
   "How to capture them on event maps, Mystery Supply Drops, the Shop, and map spawns",
   "Best picks for early, mid, and endgame — Salvager, Spotter, Sovereign, and more",
 ] as const

@@ -24,7 +24,7 @@ import { EventMapDropsSection } from "@/components/event-map-drops-section"
 import { TrackedCtaLink } from "@/components/tracked-cta-link"
 import { ACQUIRE_METHODS, COMMANDERS } from "@/lib/commanders-data"
 
-const ACQUIRE_ICON = [Target, ShoppingBag, Trophy, Anchor, Sparkles, Package]
+const ACQUIRE_ICON = [Target, ShoppingBag, Trophy, Anchor, Sparkles, Layers, Package]
 
 const PICK_GUIDE = [
   {
@@ -109,11 +109,70 @@ export function CommandersSection() {
         </div>
       </section>
 
+      {/* PATCH UPDATE BANNER — July 18 Contract Board */}
+      <section
+        id="commanders-july18"
+        aria-labelledby="commanders-july18-heading"
+        className="rounded-2xl border border-hazard/30 bg-hazard/5 p-5 sm:p-6"
+      >
+        <div className="flex items-center gap-2.5">
+          <span className="flex size-8 shrink-0 items-center justify-center rounded-xl border border-hazard/30 bg-hazard/10">
+            <Sparkles className="size-4 text-hazard" aria-hidden="true" />
+          </span>
+          <h2
+            id="commanders-july18-heading"
+            className="text-base font-bold tracking-tight text-foreground sm:text-lg"
+          >
+            Update: Contract Board &amp; Town Square (July 18, 2026)
+          </h2>
+        </div>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+          Three new commanders:{" "}
+          <strong className="text-foreground">Welder</strong> (Common),{" "}
+          <strong className="text-foreground">Forklift Operator</strong> (Rare), and{" "}
+          <strong className="text-yellow-400">Diplomat</strong> (Legendary) — the first{" "}
+          <strong className="text-foreground">Contract Board</strong>-exclusive Unique Commander.
+          Complete Daily, Weekly, and Monthly contracts for cash, boosts, and Unique Commander
+          progress; the exclusive slot rotates every 14 days and requires finishing all available
+          contracts first.{" "}
+          <strong className="text-foreground">Town Square</strong> Tier 1 (150,000 HP) also joined
+          the event map rotation. Ability cards for the new units are{" "}
+          <strong className="text-foreground">pending verification</strong>.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <Link
+            href="/commanders/diplomat"
+            className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3.5 py-1.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+          >
+            Diplomat
+            <ArrowRight className="size-3.5" aria-hidden="true" />
+          </Link>
+          <Link
+            href="/commanders/welder"
+            className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card px-3.5 py-1.5 text-sm font-semibold text-foreground transition hover:border-primary/40 hover:text-primary"
+          >
+            Welder
+          </Link>
+          <Link
+            href="/commanders/forklift-operator"
+            className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card px-3.5 py-1.5 text-sm font-semibold text-foreground transition hover:border-primary/40 hover:text-primary"
+          >
+            Forklift Operator
+          </Link>
+          <Link
+            href="/raid"
+            className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card px-3.5 py-1.5 text-sm font-semibold text-foreground transition hover:border-primary/40 hover:text-primary"
+          >
+            Contract Board &amp; Volcano
+          </Link>
+        </div>
+      </section>
+
       {/* PATCH UPDATE BANNER — July 13 Advanced Warfare */}
       <section
         id="commanders-july13"
         aria-labelledby="commanders-july13-heading"
-        className="rounded-2xl border border-hazard/30 bg-hazard/5 p-5 sm:p-6"
+        className="rounded-2xl border border-primary/30 bg-primary/5 p-5 sm:p-6"
       >
         <div className="flex items-center gap-2.5">
           <span className="flex size-8 shrink-0 items-center justify-center rounded-xl border border-hazard/30 bg-hazard/10">
@@ -236,11 +295,11 @@ export function CommandersSection() {
             bonus to every nuke attack you launch.
           </p>
           <p>
-            After the July 13, 2026 update there are 5 rarity tiers:{" "}
-            <strong className="text-foreground">Common</strong> (6 commanders),{" "}
-            <strong className="text-blue-400">Rare</strong> (8 commanders),{" "}
+            After the July 18, 2026 update there are 5 rarity tiers:{" "}
+            <strong className="text-foreground">Common</strong> (7 commanders),{" "}
+            <strong className="text-blue-400">Rare</strong> (9 commanders),{" "}
             <strong className="text-purple-400">Epic</strong> (5 commanders),{" "}
-            <strong className="text-yellow-400">Legendary</strong> (3 commanders), and{" "}
+            <strong className="text-yellow-400">Legendary</strong> (4 commanders), and{" "}
             <strong className="text-rose-400">Admiral</strong> (3 commanders).
             Higher rarity means stronger and rarer abilities. Multiple commanders can be
             active at the same time.
@@ -259,13 +318,13 @@ export function CommandersSection() {
           icon={Target}
           kicker="Unlock methods"
           title="How to Get Commanders"
-          tag="6 ways"
+          tag="7 ways"
         />
         <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          Commanders can be unlocked in six ways. Capturing them on event maps —
-          Harbor, Oil Rig, Military Compound, and Military Base — is the most reliable
-          free method for exclusives, while the Advanced Warfare Pack and Mystery Supply
-          Drops add Robux and passive RNG paths.
+          Commanders can be unlocked in seven ways. Capturing them on event maps —
+          Harbor, Oil Rig, Military Compound, Town Square, and Military Base — is the most
+          reliable free method for exclusives, while the Contract Board, Advanced Warfare Pack,
+          and Mystery Supply Drops add grind, Robux, and passive RNG paths.
         </p>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

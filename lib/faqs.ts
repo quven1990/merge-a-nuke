@@ -36,7 +36,7 @@ export const FAQS = [
   },
   {
     q: "What are commanders in Merge a Nuke?",
-    a: `Commanders are special units you equip for passive buffs — auto-merging (Salvager), cash boosts (Spotter), or +15% damage (Sovereign). Commanders Pt. 2 added the new Admiral rarity and 8 more units. See all 15 types and how to capture them: ${SITE_URL}/commanders`,
+    a: `Commanders are special units you equip for passive buffs — auto-merging (Salvager), cash boosts (Spotter), or +15% damage (Sovereign). The roster now includes Contract Board exclusives like Diplomat. See all 28 types and how to capture them: ${SITE_URL}/commanders`,
   },
   {
     q: "How does raiding work?",

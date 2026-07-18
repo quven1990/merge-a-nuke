@@ -79,6 +79,22 @@ export const EVENT_MAP_DROPS: EventMapDrop[] = [
     href: "/commanders/stalker",
   },
   {
+    map: "Town Square",
+    commander: "Pending drop pool",
+    rarity: "Tier 1 map",
+    weight: "150,000 HP — drops TBD (July 18, 2026)",
+    pending: true,
+    href: "/commanders",
+  },
+  {
+    map: "Contract Board",
+    commander: "Diplomat",
+    rarity: "Legendary",
+    weight: "Unique Commander (complete all contracts; rotates every 14 days)",
+    pending: true,
+    href: "/commanders/diplomat",
+  },
+  {
     map: "4th of July event",
     commander: "Uncle Sam / Sergeant / Tank",
     rarity: "Common–Epic",
@@ -93,6 +109,7 @@ export const EVENT_DROP_TIPS = [
   "Bring your highest-tier nukes; event structures have more HP than early PvP bases.",
   "Last-hit capture rules still apply on commander boat spawns competing with other players.",
   "Mystery Supply Drops roll any commander pool — good filler between timed events.",
+  "Contract Board Unique Commanders (Diplomat first) require completing all available contracts; the exclusive rotates every 14 days.",
   "Weights marked Pending are community reports, not verified drop tables.",
 ] as const
 

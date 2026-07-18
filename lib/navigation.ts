@@ -49,12 +49,12 @@ export const NAV_ITEMS: NavItem[] = [
   {
     label: "Commanders",
     href: "/commanders",
-    description: "All 25 commanders by rarity, Advanced Warfare Pack units, Admiral tier, how to capture them on the map, and which to prioritize first.",
+    description: "All 28 commanders by rarity, Contract Board Diplomat, Advanced Warfare Pack units, Admiral tier, how to capture them on the map, and which to prioritize first.",
   },
   {
     label: "Updates",
     href: "/updates",
-    description: "Friday patch log for commanders, wars, rebirth tiers, and codes freshness.",
+    description: "Friday patch log for Contract Board, Volcano, commanders, wars, rebirth tiers, and codes freshness.",
   },
   {
     label: "FAQ",

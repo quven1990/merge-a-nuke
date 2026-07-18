@@ -7,6 +7,8 @@ export type CommanderEventMap =
   | "4th of July"
   | "Downtown"
   | "Shipping Port"
+  | "Town Square"
+  | "Contract Board"
 
 export type Commander = {
   name: string
@@ -364,6 +366,61 @@ export const COMMANDERS: Commander[] = [
     notes: "Added July 13, 2026. Advanced Warfare Commander Pack reported 0.5% drop rate.",
     pending: true,
   },
+  // --- Contract Board & Town Square patch (July 18, 2026) ---
+  {
+    name: "Welder",
+    rarity: "Common",
+    role: "automation",
+    ability: "Contract Board / Town Square patch unit — ability text pending in-game verification.",
+    bestFor: "New Common pool unit — verify the card after the July 18, 2026 patch",
+    priority: "?",
+    notes: "Added July 18, 2026 alongside Town Square and Contract Board content.",
+    pending: true,
+    acquireSummary:
+      "Welder (Common) was added July 18, 2026 — check map spawns, Shop, Mystery Supply Drops, and event pools after the Contract Board patch.",
+    acquireSteps: [
+      "Added in the July 18, 2026 Contract Board / Town Square patch.",
+      "Exact spawn or Shop path is still pending in-game verification on this wiki.",
+      "Mystery Supply Drops can roll commanders from available pools — worth clearing while grinding contracts.",
+    ],
+  },
+  {
+    name: "Forklift Operator",
+    rarity: "Rare",
+    role: "automation",
+    ability: "Contract Board / Town Square patch unit — ability text pending in-game verification.",
+    bestFor: "New Rare pool unit — verify the card after the July 18, 2026 patch",
+    priority: "?",
+    notes: "Added July 18, 2026 alongside Town Square and Contract Board content.",
+    pending: true,
+    acquireSummary:
+      "Forklift Operator (Rare) was added July 18, 2026 — check map spawns, Shop, Mystery Supply Drops, and event pools after the Contract Board patch.",
+    acquireSteps: [
+      "Added in the July 18, 2026 Contract Board / Town Square patch.",
+      "Exact spawn or Shop path is still pending in-game verification on this wiki.",
+      "Mystery Supply Drops can roll commanders from available pools — worth clearing while grinding contracts.",
+    ],
+  },
+  {
+    name: "Diplomat",
+    rarity: "Legendary",
+    role: "income",
+    ability: "Contract Board-exclusive Unique Commander — ability text pending in-game verification.",
+    bestFor: "Contract Board grind — first Unique Commander reward from the rotating exclusive slot",
+    priority: "A",
+    notes:
+      "Added July 18, 2026 as the first Contract Board-exclusive Unique Commander. The Unique Commander contract rotates every 14 days and requires all available contracts to be completed before it can be claimed.",
+    pending: true,
+    eventMap: "Contract Board",
+    acquireSummary:
+      "Earn Diplomat from the Contract Board Unique Commander track — complete Daily, Weekly, and Monthly contracts, then claim after finishing all available contracts.",
+    acquireSteps: [
+      "Open the Contract Board and clear Daily (5), Weekly (5), and Monthly (2) slots as they refresh.",
+      "Contract rewards include cash, temporary boosts, permanent stat boosts, and Unique Commander progress.",
+      "The Unique Commander contract rotates every 14 days and only becomes claimable after all available contracts are completed.",
+      "Diplomat is the first Contract Board-exclusive Unique Commander listed in the July 18, 2026 patch notes.",
+    ],
+  },
 ]
 
 export type AcquireMethod = {
@@ -395,7 +452,7 @@ export const ACQUIRE_METHODS: AcquireMethod[] = [
   {
     id: "event-map",
     title: "Spawn during event maps",
-    how: "Harbor, Oil Rig, Downtown, Shipping Port, Military Compound, and Military Base rotate as event or spawn targets. Beat the event or roll the drop pool — Military Compound runs every ~2 hours and drops Stalker (Legendary) when cleared.",
+    how: "Harbor, Oil Rig, Downtown, Shipping Port, Military Compound, Military Base, and Town Square rotate as event or spawn targets. Beat the event or roll the drop pool — Military Compound runs every ~2 hours and drops Stalker (Legendary) when cleared. Town Square is a Tier 1 map with 150,000 HP.",
     tip: "Event commanders only appear during the active window. Check which map is live before grinding.",
   },
   {
@@ -403,6 +460,12 @@ export const ACQUIRE_METHODS: AcquireMethod[] = [
     title: "Roll the Advanced Warfare Commander Pack",
     how: "Open the Shop and buy the Advanced Warfare Commander Pack (added July 13, 2026). Reported drop rates: Grifter 35%, Scout 30%, Sapper 20%, Medic 10%, Recon 4.5%, Drone 0.5%.",
     tip: "Recon can also spawn through the base commander pool per the July 13 patch notes — ability text is still pending verification on this wiki.",
+  },
+  {
+    id: "contract-board",
+    title: "Complete Contract Board contracts",
+    how: "The Contract Board (July 18, 2026) has 5 Daily, 5 Weekly, and 2 Monthly slots. Completing contracts grants cash, temporary boosts, permanent stat boosts, and progress toward a Unique Commander that rotates every 14 days.",
+    tip: "Diplomat is the first Contract Board-exclusive Unique Commander. Claim it only after finishing all available contracts on the board.",
   },
   {
     id: "supply-drop",

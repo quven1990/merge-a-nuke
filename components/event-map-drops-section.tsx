@@ -14,7 +14,7 @@ export function EventMapDropsSection() {
         tag="Community reports"
       />
       <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-        Rotating maps — Downtown, Shipping Port, Harbor, Oil Rig, Military Compound, and holiday
+        Rotating maps — Downtown, Shipping Port, Harbor, Oil Rig, Military Compound, Town Square, and holiday
         events — are the main free path to exclusive commanders. Weights below are{" "}
         <strong className="text-foreground">community-reported</strong> until verified in-game.
       </p>

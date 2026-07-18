@@ -14,7 +14,7 @@ import { ACQUIRE_METHODS, COMMANDERS, getCommanderPath } from "@/lib/commanders-
 
 const LAST_MODIFIED = "2026-06-18"
 const HOME_LAST_MODIFIED = "2026-07-05"
-const COMMANDERS_LAST_MODIFIED = "2026-07-05"
+const COMMANDERS_LAST_MODIFIED = "2026-07-18"
 const RAID_LAST_MODIFIED = "2026-07-05"
 const CODES_MONTH_YEAR = getContentMonthYear()
 

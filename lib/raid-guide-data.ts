@@ -25,6 +25,8 @@ export const RAID_CONSEQUENCES = [
   "Getting raided can wipe nukes from your board and reset merge progress you were building.",
   "Stronger attackers destroy more — high-tier boards need Lock Base and Nuke Health upgrades.",
   "Raiding too early stalls growth if you lose income nukes and spend cash rebuilding.",
+  "As of July 18, 2026, nukes you are holding still take damage when your base is hit — picking them up no longer fully protects them.",
+  "Nuke healing speed was reduced in the same patch, so recovery after raids is slower.",
 ] as const
 
 export const SHIELD_MECHANICS = [
@@ -56,8 +58,8 @@ export const ADVANCED_RAID_TACTICS = [
     desc: "The moment you attack, your Lock Base shield goes down. Hit first, then re-lock — or you'll be wide open right after your own launch.",
   },
   {
-    title: "Pick up and hide your best nuke",
-    desc: "You can grab and reposition nukes on your board. Move your single highest-tier nuke somewhere safe so one incoming raid can't wipe the unit you worked hardest for.",
+    title: "Reposition carefully — held nukes still take damage",
+    desc: "You can grab and move nukes on your board, but as of July 18, 2026 nukes being held still take damage when your base is attacked. Spreading units across the launch zone matters more than picking one up to 'hide' it.",
   },
   {
     title: "Spread nukes across the launch zone",
@@ -94,13 +96,20 @@ export const EVENT_MAPS = [
       "Tier-2 military event map with 8 new destructibles. Added in the July 4, 2026 patch alongside the LTM rotation.",
     exclusiveCommanders: "Commander drops still being confirmed in-game",
   },
+  {
+    name: "Town Square (Tier 1)",
+    summary:
+      "New Tier 1 event map from July 18, 2026 with 150,000 HP plus multiple new destructible buildings and scenery.",
+    exclusiveCommanders: "Drop pool still being confirmed — Welder and Forklift Operator joined the same patch",
+  },
 ] as const
 
 export const EVENT_MAP_GUIDE = {
   title: "Event maps & timed events",
   summary:
-    "Beyond PvP bases and the center city, rotating event maps — Harbor, Oil Rig, Military Compound, and Military Base — pay exclusive commander drops when you clear them.",
+    "Beyond PvP bases and the center city, rotating event maps — Harbor, Oil Rig, Military Compound, Military Base, and Town Square — pay exclusive commander drops when you clear them.",
   points: [
+    "Town Square (Tier 1) was added July 18, 2026 with 150,000 HP and new destructible buildings.",
     "Military Compound runs on a ~2-hour timer and drops Stalker (Legendary) after a successful clear.",
     "Military Base tier 2 adds 8 new destructibles — bring high-tier nukes like you would for Harbor or the center city.",
     "Harbor and Oil Rig still rotate with Admiral-rarity exclusives from Commanders Pt. 2.",
@@ -109,6 +118,43 @@ export const EVENT_MAP_GUIDE = {
   destructionPhysics:
     "Event maps use the same destruction physics as Commanders Pt. 2 — aim at structures directly so you can see what connected.",
 } as const
+
+export const CONTRACT_BOARD = {
+  title: "Contract Board",
+  summary:
+    "Added July 18, 2026. Complete Daily, Weekly, and Monthly contracts for cash, boosts, and Unique Commander progress.",
+  points: [
+    "Slots: 5 Daily, 5 Weekly, and 2 Monthly — each refreshes on its own timer.",
+    "Rewards: cash, temporary boosts, permanent stat boosts, and progress toward a Unique Commander.",
+    "The Unique Commander contract rotates every 14 days and only becomes claimable after all available contracts are completed.",
+    "Daily contracts in the launch set: Nuisance, Doomsday, Backstabber, Military Money Moves, and I'm The Captain Now.",
+    "Weekly contracts: Damage Do-er, Peacekeeper, Triple Threat, Credit Stealer, and Leader.",
+    "Monthly rotation includes Ultimate Arsenal, Damage Do-er-er, and Nuclear Threat (3 contracts rotate into the 2 Monthly slots).",
+    "Diplomat (Legendary) is the first Contract Board-exclusive Unique Commander.",
+  ],
+} as const
+
+export const ADMIN_ABUSE_EVENTS = {
+  title: "Admin Abuse events — Disco & Volcano",
+  summary:
+    "Server-wide events triggered by admins. July 18, 2026 reworked Disco and added Volcano with Magma Multiplier rewards.",
+  points: [
+    "Disco: reworked VFX with less flashing; grants 2x Cash, Spawn Rate, and Commander Spawn Rate. Active boosts show in the bottom-right.",
+    "A new Admin Abuse command can temporarily grant Auto Merge to all players in the server.",
+    "Volcano: ocean becomes lava, player plots become magma plots, and custom event music plays.",
+    "The Volcano has 150 HP and can only be damaged by hitting changing weak points — every successful hit deals exactly 1 damage regardless of nuke tier.",
+    "A live damage leaderboard shows the leading player plus your own damage and server placement.",
+    "Every 15 weak points destroyed, the Volcano spews lava onto the leading player's plot and applies Magma Multiplier to nukes currently on their base.",
+    "Lava Merge: merged nukes have a chance to permanently receive Magma Multiplier.",
+    "Magma Multiplier nukes earn 50% more cash, deal increased damage, and set their target on fire after exploding.",
+    "Magma Multiplier rewards require at least 3 players in the server and cannot be earned in VIP servers.",
+  ],
+} as const
+
+export const JULY_18_RAID_NOTES = [
+  "Nukes being held by a player now still take damage when their base is attacked.",
+  "The healing speed of all nukes has been reduced.",
+] as const
 
 export const WAR_MECHANICS = {
   title: "War declarations (updated July 13, 2026)",

@@ -12,10 +12,10 @@ import { WikiIllustration } from "@/components/wiki-illustration"
 import { SEO_PAGES } from "@/lib/seo-pages"
 
 const TICKER = [
-  "July 4 LTM is live",
-  "Military Compound every 2h",
-  "4 new commanders",
-  "PvP wars & supply drops",
+  "Contract Board is live",
+  "Volcano Admin Abuse",
+  "Town Square Tier 1",
+  "Diplomat Unique Commander",
 ] as const
 
 export function HeroSection() {

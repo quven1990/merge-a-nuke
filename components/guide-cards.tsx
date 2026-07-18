@@ -25,13 +25,13 @@ const GUIDES: Guide[] = [
   {
     icon: Crown,
     title: "Commanders",
-    desc: "Tier lists, event drops, and all 25 commanders incl. Advanced Warfare.",
+    desc: "Tier lists, event drops, and all 28 commanders incl. Contract Board & Advanced Warfare.",
     href: "/commanders",
   },
   {
     icon: Calendar,
     title: "Updates",
-    desc: "Friday patch log — Allies, Advanced Warfare, Rebirth 8, and more.",
+    desc: "Friday patch log — Contract Board, Volcano, Allies, Rebirth 8, and more.",
     href: "/updates",
   },
   {

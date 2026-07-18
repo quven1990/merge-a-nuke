@@ -155,6 +155,22 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
       a: "Random commander loot crates added July 4, 2026. They have a 50% chance to spawn every 3 minutes. Destroy one to roll a random commander from all available pools in the game — low effort but RNG-heavy.",
     },
     {
+      q: "What is the Contract Board in Merge a Nuke?",
+      a: "Added July 18, 2026. It has 5 Daily, 5 Weekly, and 2 Monthly contract slots that refresh on their own timers. Completing contracts grants cash, temporary boosts, permanent stat boosts, and progress toward a Unique Commander that rotates every 14 days. Claim the Unique Commander only after finishing all available contracts. Diplomat (Legendary) is the first Contract Board exclusive.",
+    },
+    {
+      q: "What is the Volcano Admin Abuse event in Merge a Nuke?",
+      a: "Added July 18, 2026. The ocean becomes lava and plots become magma plots. The Volcano has 150 HP and only takes damage on changing weak points (exactly 1 damage per hit). A live leaderboard tracks damage. Every 15 weak points, lava hits the leading player's plot and applies Magma Multiplier. Magma Multiplier nukes earn +50% cash, deal more damage, and set targets on fire. Rewards need 3+ players and are unavailable in VIP servers.",
+    },
+    {
+      q: "What is Town Square in Merge a Nuke?",
+      a: "A Tier 1 event map added July 18, 2026 with 150,000 HP and new destructible buildings and scenery. Bring high-tier nukes like you would for other event maps.",
+    },
+    {
+      q: "Do held nukes take damage when my base is attacked?",
+      a: "Yes, as of July 18, 2026. Nukes being held by a player still take damage when their base is attacked. Nuke healing speed was also reduced in the same patch.",
+    },
+    {
       q: "What is the Military Compound event in Merge a Nuke?",
       a: "A timed LTM event map added July 4, 2026. It runs roughly every 2 hours. Clear the compound to spawn Stalker (Legendary). Bring high-tier nukes like you would for Harbor or the center city.",
     },
@@ -192,7 +208,7 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
     },
     {
       q: "How do you get commanders in Merge a Nuke?",
-      a: "Five ways: defeat a spawned commander on the shared map (last hit wins), purchase one in the Shop with in-game cash or Robux, earn a free starter at level milestones, clear rotating event maps like Military Compound or Harbor, or destroy Mystery Supply Drops for a random roll.",
+      a: "Seven ways: defeat a spawned commander on the shared map (last hit wins), purchase one in the Shop with in-game cash or Robux, earn a free starter at level milestones, clear rotating event maps like Town Square or Military Compound, complete Contract Board contracts for Unique Commanders like Diplomat, roll the Advanced Warfare Pack, or destroy Mystery Supply Drops for a random roll.",
     },
     {
       q: "What is the best commander in Merge a Nuke?",
@@ -215,6 +231,14 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
       a: "Uncle Sam (Common, 4th of July event), Sergeant (Rare), Tank (Epic), and Stalker (Legendary) from the Military Compound LTM. Mystery Supply Drops can also roll any commander in the game. Sovereign's auto-attack rate was nerfed and Apache's map spawn dropped from 0.2% to 0.05%.",
     },
     {
+      q: "What new commanders were added in the July 18, 2026 patch?",
+      a: "Welder (Common), Forklift Operator (Rare), and Diplomat (Legendary) — the first Contract Board-exclusive Unique Commander. Ability text is pending in-game verification on this wiki.",
+    },
+    {
+      q: "How do you get Diplomat in Merge a Nuke?",
+      a: "Diplomat is the first Contract Board Unique Commander (July 18, 2026). Complete Daily, Weekly, and Monthly contracts for Unique Commander progress. The exclusive contract rotates every 14 days and only becomes claimable after you finish all available contracts on the board.",
+    },
+    {
       q: "What new commanders were added in the July 13, 2026 patch?",
       a: "Advanced Warfare Commander Pack: Grifter and Scout (Rare), Sapper and Medic (Epic), Recon (Legendary, also base pool spawn), and Drone (Admiral, 0.5%). Ability text is pending in-game verification on this wiki.",
     },
@@ -227,6 +251,10 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
     {
       q: "When does Merge a Nuke update?",
       a: "Nuke The Game ships new content every Friday on Roblox. Check this update log and the codes page after each weekly patch.",
+    },
+    {
+      q: "What changed in the July 18, 2026 Merge a Nuke patch?",
+      a: "Contract Board (Daily/Weekly/Monthly contracts plus Unique Commander progress), Diplomat (Legendary), Welder (Common), Forklift Operator (Rare), Volcano Admin Abuse with Magma Multiplier, Disco Admin Abuse rework (2x Cash/Spawn/Commander Spawn, Auto Merge command), Town Square Tier 1 (150,000 HP), held nukes take damage when bases are hit, and slower nuke healing.",
     },
     {
       q: "What changed in the July 13, 2026 Merge a Nuke patch?",

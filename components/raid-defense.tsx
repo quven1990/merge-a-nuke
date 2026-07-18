@@ -16,9 +16,12 @@ import {
 import { WikiIllustration } from "@/components/wiki-illustration"
 import {
   ADVANCED_RAID_TACTICS,
+  ADMIN_ABUSE_EVENTS,
   CENTER_CITY_GUIDE,
+  CONTRACT_BOARD,
   EVENT_MAP_GUIDE,
   EVENT_MAPS,
+  JULY_18_RAID_NOTES,
   PVP_RAID_STEPS,
   RAID_CONSEQUENCES,
   SHIELD_MECHANICS,
@@ -27,7 +30,7 @@ import {
   ALLIES_MECHANICS,
 } from "@/lib/raid-guide-data"
 
-const EVENT_MAP_ICON = [Anchor, Fuel, Building2, Target] as const
+const EVENT_MAP_ICON = [Anchor, Fuel, Building2, Target, Sparkles] as const
 
 const RAID_POINTS = [
   "Raid only when your income and defense are both ready.",
@@ -67,7 +70,32 @@ export function RaidDefense() {
           </span>
           <div className="space-y-1">
             <p className="text-sm font-bold text-foreground">
-              Patch update — Allies &amp; Advanced Warfare (July 13, 2026)
+              Patch update — Contract Board, Volcano &amp; Town Square (July 18, 2026)
+            </p>
+            <p className="text-sm text-muted-foreground">
+              <span className="font-semibold text-foreground">Contract Board</span> adds Daily,
+              Weekly, and Monthly contracts with cash, boosts, and a Unique Commander track —
+              first exclusive:{" "}
+              <Link href="/commanders/diplomat" className="font-medium text-primary hover:underline">
+                Diplomat (Legendary)
+              </Link>
+              .{" "}
+              <span className="font-semibold text-foreground">Volcano</span> and reworked{" "}
+              <span className="font-semibold text-foreground">Disco</span> Admin Abuse events,
+              plus{" "}
+              <span className="font-semibold text-foreground">Town Square</span> Tier 1 (150,000
+              HP). Held nukes now take damage when your base is hit; nuke healing is slower.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-primary/40 bg-primary/10 p-5 sm:flex-row sm:items-start sm:gap-4">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-xl border border-primary/40 bg-primary/15 text-primary">
+            <Sparkles className="size-4.5" aria-hidden="true" />
+          </span>
+          <div className="space-y-1">
+            <p className="text-sm font-bold text-foreground">
+              Still live — Allies &amp; Advanced Warfare (July 13, 2026)
             </p>
             <p className="text-sm text-muted-foreground">
               <span className="font-semibold text-foreground">Allies</span> grant +10% cash income
@@ -76,18 +104,18 @@ export function RaidDefense() {
               <span className="font-semibold text-foreground">Declare War</span> button or the
               existing 3-hit trigger. Only one war at a time.{" "}
               <Link href="/commanders" className="font-medium text-primary hover:underline">
-                Six new commanders
+                Six Advanced Warfare commanders
               </Link>{" "}
-              ship in the Advanced Warfare Pack;{" "}
+              and{" "}
               <Link href="/progression#rebirth" className="font-medium text-primary hover:underline">
                 Rebirth 8
               </Link>{" "}
-              adds five Index nukes.
+              remain live.
             </p>
           </div>
         </div>
 
-        <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-primary/40 bg-primary/10 p-5 sm:flex-row sm:items-start sm:gap-4">
+        <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-border/70 bg-card/60 p-5 sm:flex-row sm:items-start sm:gap-4">
           <span className="flex size-9 shrink-0 items-center justify-center rounded-xl border border-primary/40 bg-primary/15 text-primary">
             <Sparkles className="size-4.5" aria-hidden="true" />
           </span>
@@ -103,25 +131,11 @@ export function RaidDefense() {
               </Link>
               . Standard wars still pay 50% cash at 100% war score.{" "}
               <span className="font-semibold text-foreground">Mystery Supply Drops</span> also spawn
-              for random commander rolls.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-border/70 bg-card/60 p-5 sm:flex-row sm:items-start sm:gap-4">
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-xl border border-primary/40 bg-primary/15 text-primary">
-            <Sparkles className="size-4.5" aria-hidden="true" />
-          </span>
-          <div className="space-y-1">
-            <p className="text-sm font-bold text-foreground">
-              Still live — Commanders Pt. 2 (June 28, 2026)
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Harbor and Oil Rig event cities still rotate with{" "}
+              for random commander rolls. Harbor and Oil Rig still rotate with{" "}
               <Link href="/commanders" className="font-medium text-primary hover:underline">
                 Admiral-rarity units
               </Link>
-              . Apache spawn rate was nerfed to 0.05% in the July 4 patch.
+              .
             </p>
           </div>
         </div>
@@ -374,6 +388,75 @@ export function RaidDefense() {
             </Link>
             .
           </p>
+        </div>
+
+        <div className="mt-8 grid gap-5 lg:grid-cols-2">
+          <div className="rounded-2xl border border-primary/30 bg-card/70 p-5 sm:p-6">
+            <div className="flex items-center gap-2">
+              <Sparkles className="size-5 text-primary" aria-hidden="true" />
+              <h3 className="text-lg font-bold text-foreground">
+                {CONTRACT_BOARD.title}
+              </h3>
+            </div>
+            <p className="mt-3 text-sm text-muted-foreground">
+              {CONTRACT_BOARD.summary}
+            </p>
+            <ul className="mt-4 space-y-2">
+              {CONTRACT_BOARD.points.map((point) => (
+                <li
+                  key={point}
+                  className="flex gap-2 text-sm text-muted-foreground"
+                >
+                  <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                  {point}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Full Unique Commander path:{" "}
+              <Link
+                href="/commanders/diplomat"
+                className="font-medium text-primary hover:underline"
+              >
+                Diplomat
+              </Link>
+              .
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-hazard/30 bg-hazard/5 p-5 sm:p-6">
+            <div className="flex items-center gap-2">
+              <Target className="size-5 text-hazard" aria-hidden="true" />
+              <h3 className="text-lg font-bold text-foreground">
+                {ADMIN_ABUSE_EVENTS.title}
+              </h3>
+            </div>
+            <p className="mt-3 text-sm text-muted-foreground">
+              {ADMIN_ABUSE_EVENTS.summary}
+            </p>
+            <ul className="mt-4 space-y-2">
+              {ADMIN_ABUSE_EVENTS.points.map((point) => (
+                <li
+                  key={point}
+                  className="flex gap-2 text-sm text-muted-foreground"
+                >
+                  <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-hazard" />
+                  {point}
+                </li>
+              ))}
+            </ul>
+            <ul className="mt-4 space-y-2 border-t border-hazard/20 pt-4">
+              {JULY_18_RAID_NOTES.map((note) => (
+                <li
+                  key={note}
+                  className="flex gap-2 text-sm text-muted-foreground"
+                >
+                  <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-hazard" />
+                  {note}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="mt-8 grid gap-5 lg:grid-cols-3">

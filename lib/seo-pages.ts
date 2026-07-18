@@ -24,7 +24,7 @@ export const SEO_PAGES = {
     path: "/",
     title: "Merge a Nuke Wiki: Codes, Tier List & Guides",
     description:
-      "Merge a Nuke Roblox wiki with working codes, upgrade priorities, raid strategies, offline cash, and rebirth advice. Open the commanders list for all 25 units.",
+      "Merge a Nuke Roblox wiki with working codes, upgrade priorities, raid strategies, offline cash, and rebirth advice. Open the commanders list for all 28 units.",
     h1: "Merge a Nuke Wiki",
     intro:
       "Your hub for Merge a Nuke on Roblox — copy codes in the hero, follow the quick-start route, then open focused guides for commanders, raids, tiers, and more.",
@@ -100,14 +100,14 @@ export const SEO_PAGES = {
   },
   raid: {
     path: "/raid",
-    title: "Merge a Nuke Raid Guide — PvP, Wars, Event Maps & Defense",
+    title: "Merge a Nuke Raid Guide — PvP, Wars, Contract Board & Defense",
     description:
-      "Merge a Nuke raid guide: PvP raids, allies, war declarations, betrayal rules, center city PvE, event maps, Mystery Supply Drops, Lock Base shields, and defense tips.",
+      "Merge a Nuke raid guide: PvP raids, allies, wars, Contract Board, Volcano & Disco Admin Abuse, Town Square, center city, event maps, and Lock Base defense.",
     h1: "Merge a Nuke Raid & Defense Guide",
     intro:
-      "Raid smarter, ally for +10% income, declare wars for cash payouts, farm event maps, and lock your base so offline players cannot wipe your progress.",
+      "Raid smarter, ally for +10% income, clear Contract Board and event maps, join Admin Abuse events, and lock your base so offline players cannot wipe your progress.",
     tldr:
-      "Check shields and diplomatic status before launching. Allies grant +10% cash — attacking an ally triggers betrayal war rules. Declare War manually or hit the same player 3 times. One active war per player.",
+      "July 18: Contract Board (Diplomat Unique Commander), Volcano Magma Multiplier, Town Square Tier 1. Held nukes take damage when your base is hit. Allies still grant +10% cash.",
     breadcrumb: "Raid Guide",
   },
   offlineCash: {
@@ -136,26 +136,26 @@ export const SEO_PAGES = {
   },
   commanders: {
     path: "/commanders",
-    title: "Merge a Nuke Commanders List — All 25 Abilities & How to Get",
+    title: "Merge a Nuke Commanders List — All 28 Abilities & How to Get",
     description:
-      "Full Merge a Nuke commanders list (25 units): abilities, rarities, and how to get each one — map spawns, event drops, Advanced Warfare Pack, and Shop. Includes Overclocker and Barrier for Rebirth 8.",
+      "Full Merge a Nuke commanders list (28 units): abilities, rarities, and how to get each one — map spawns, Contract Board, event drops, Advanced Warfare Pack, and Shop. Includes Diplomat, Overclocker, and Barrier.",
     h1: "Merge a Nuke Commanders List",
     intro:
-      "All 25 commanders with abilities, acquisition paths, PvP/income tier lists, and event drop tables — including Advanced Warfare Pack units.",
+      "All 28 commanders with abilities, acquisition paths, PvP/income tier lists, and event drop tables — including Contract Board and Advanced Warfare Pack units.",
     tldr:
-      "All 25 commanders with abilities and how-to-get paths. Capture map spawns (last hit wins), clear event maps, roll Advanced Warfare or Supply Drops, or buy in the Shop. PvP: Siege Breaker + Artillery. Income: Spotter. Rebirth 8 needs Overclocker + Barrier.",
+      "All 28 commanders with abilities and how-to-get paths. Capture map spawns, clear event maps (Town Square, Military Compound), finish Contract Board for Diplomat, roll Advanced Warfare or Supply Drops, or buy in the Shop. Rebirth 8 needs Overclocker + Barrier.",
     breadcrumb: "Commanders",
   },
   updates: {
     path: "/updates",
     title: "Merge a Nuke Updates — Patch Log & Friday Changes",
     description:
-      "Merge a Nuke update log for Roblox: tester applications, July 13 Allies & Warfare, Commanders Pt. 2, wars, Rebirth 8, and weekly Friday patch notes.",
+      "Merge a Nuke update log for Roblox: July 18 Contract Board & Volcano, July 13 Allies & Warfare, Commanders Pt. 2, wars, Rebirth 8, and weekly Friday patch notes.",
     h1: "Merge a Nuke Update Log",
     intro:
       "Major patch timeline for Merge a Nuke on Roblox — what changed, when, and where to read the full guide on this wiki.",
     tldr:
-      "Latest: tester applications re-opened until July 19, 2026. Recent gameplay patch: July 13 Allies & Advanced Warfare (6 commanders, Rebirth 8).",
+      "Latest: July 18 Contract Board, Volcano Admin Abuse, Town Square, Diplomat, Welder, and Forklift Operator. Prior: July 13 Allies & Advanced Warfare (Rebirth 8).",
     breadcrumb: "Updates",
   },
   community: {

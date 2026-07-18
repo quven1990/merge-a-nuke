@@ -14,6 +14,33 @@ export type PatchUpdate = {
 
 export const PATCH_UPDATES: PatchUpdate[] = [
   {
+    id: "july-18-contract-volcano",
+    date: "2026-07-18",
+    title: "Contract Board, Volcano Admin Abuse, Town Square & More",
+    summary:
+      "Contract Board adds Daily, Weekly, and Monthly contracts with cash, boosts, and a rotating Unique Commander reward. Volcano Admin Abuse, Disco rework, Town Square Tier 1, and two new commanders ship in the same patch.",
+    highlights: [
+      "Contract Board: 5 Daily, 5 Weekly, and 2 Monthly slots, each refreshing on their own timers.",
+      "Contract rewards include cash, temporary boosts, permanent stat boosts, and progress toward a Unique Commander that rotates every 14 days.",
+      "The Unique Commander contract requires completing all available contracts before it can be claimed.",
+      "Daily contracts: Nuisance, Doomsday, Backstabber, Military Money Moves, I'm The Captain Now.",
+      "Weekly contracts: Damage Do-er, Peacekeeper, Triple Threat, Credit Stealer, Leader.",
+      "Monthly rotation: Ultimate Arsenal, Damage Do-er-er, Nuclear Threat.",
+      "Diplomat (Legendary) is the first Contract Board-exclusive commander.",
+      "New commanders: Welder (Common) and Forklift Operator (Rare).",
+      "Volcano Admin Abuse: ocean becomes lava, plots turn into magma plots, 150 HP weak-point boss, live damage leaderboard, Magma Multiplier and Lava Merge rewards (3+ players, no VIP servers).",
+      "Disco Admin Abuse reworked with less flashing, 2x Cash / Spawn Rate / Commander Spawn Rate, and a temporary Auto Merge admin command.",
+      "Town Square Tier 1 event map added (150,000 HP) with new destructible buildings.",
+      "Held nukes now take damage when your base is attacked; nuke healing speed is reduced.",
+    ],
+    links: [
+      { label: "Raid, events & Admin Abuse", href: "/raid" },
+      { label: "All commanders", href: "/commanders" },
+      { label: "Diplomat commander", href: "/commanders/diplomat" },
+      { label: "Update log", href: "/updates" },
+    ],
+  },
+  {
     id: "tester-applications-july-2026",
     date: "2026-07-15",
     title: "Tester Applications Re-opening",
