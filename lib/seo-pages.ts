@@ -24,7 +24,7 @@ export const SEO_PAGES = {
     path: "/",
     title: "Merge a Nuke Wiki: Codes, Tier List & Guides",
     description:
-      "Merge a Nuke Roblox wiki with working codes, upgrade priorities, tier lists, raid strategies, offline cash, and rebirth advice. Updated after Friday patches.",
+      "Merge a Nuke Roblox wiki with working codes, upgrade priorities, raid strategies, offline cash, and rebirth advice. Open the commanders list for all 25 units.",
     h1: "Merge a Nuke Wiki",
     intro:
       "Your hub for Merge a Nuke on Roblox — copy codes in the hero, follow the quick-start route, then open focused guides for commanders, raids, tiers, and more.",
@@ -136,14 +136,14 @@ export const SEO_PAGES = {
   },
   commanders: {
     path: "/commanders",
-    title: "Merge a Nuke Commanders — Tier List & Admiral Guide",
+    title: "Merge a Nuke Commanders List — All 25 Abilities & How to Get",
     description:
-      "All 25 Merge a Nuke commanders with PvP, income, and event tier lists. Advanced Warfare Pack, Admiral tier, drop tables, and which to capture first.",
-    h1: "Merge a Nuke Commanders Guide",
+      "Full Merge a Nuke commanders list (25 units): abilities, rarities, and how to get each one — map spawns, event drops, Advanced Warfare Pack, and Shop. Includes Overclocker and Barrier for Rebirth 8.",
+    h1: "Merge a Nuke Commanders List",
     intro:
-      "All 25 commanders by rarity, commander tier lists for PvP and income, event drop tables, and which to prioritize at each stage.",
+      "All 25 commanders with abilities, acquisition paths, PvP/income tier lists, and event drop tables — including Advanced Warfare Pack units.",
     tldr:
-      "Defeat spawned commanders (last hit wins), clear event maps, roll Advanced Warfare or Supply Drops, or buy in the Shop. PvP: Siege Breaker + Artillery. Income: Spotter. Rebirth 8 needs Overclocker + Barrier.",
+      "All 25 commanders with abilities and how-to-get paths. Capture map spawns (last hit wins), clear event maps, roll Advanced Warfare or Supply Drops, or buy in the Shop. PvP: Siege Breaker + Artillery. Income: Spotter. Rebirth 8 needs Overclocker + Barrier.",
     breadcrumb: "Commanders",
   },
   updates: {

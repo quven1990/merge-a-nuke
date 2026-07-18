@@ -15,6 +15,7 @@ import {
   Trophy,
   Zap,
 } from "lucide-react"
+import Link from "next/link"
 
 import { SectionHeading } from "@/components/hud"
 import { CommanderRoster } from "@/components/commander-roster"
@@ -62,6 +63,51 @@ const UPGRADE_STEPS = [
 export function CommandersSection() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-20">
+
+      <section
+        id="rebirth-8-commanders"
+        aria-labelledby="rebirth-8-commanders-heading"
+        className="rounded-2xl border border-primary/30 bg-primary/5 p-5 sm:p-6"
+      >
+        <h2
+          id="rebirth-8-commanders-heading"
+          className="text-base font-bold tracking-tight text-foreground sm:text-lg"
+        >
+          Rebirth 8 commanders
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          Reports for the July 13, 2026 patch say Rebirth 8 needs the final Index tier plus{" "}
+          <strong className="text-foreground">Overclocker</strong> and{" "}
+          <strong className="text-foreground">Barrier</strong>. Confirm the exact gate in-game.
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <Link
+            href="/commanders/overclocker"
+            className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3.5 py-1.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+          >
+            Overclocker
+            <ArrowRight className="size-3.5" aria-hidden="true" />
+          </Link>
+          <Link
+            href="/commanders/barrier"
+            className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-background px-3.5 py-1.5 text-sm font-semibold text-primary transition hover:bg-primary/10"
+          >
+            Barrier
+          </Link>
+          <Link
+            href="/commanders/artillery"
+            className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card px-3.5 py-1.5 text-sm font-semibold text-foreground transition hover:border-primary/40 hover:text-primary"
+          >
+            Artillery
+          </Link>
+          <Link
+            href="/progression"
+            className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card px-3.5 py-1.5 text-sm font-semibold text-foreground transition hover:border-primary/40 hover:text-primary"
+          >
+            Rebirth 8 checklist
+          </Link>
+        </div>
+      </section>
 
       {/* PATCH UPDATE BANNER — July 13 Advanced Warfare */}
       <section

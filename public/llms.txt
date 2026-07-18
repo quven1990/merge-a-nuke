@@ -18,7 +18,10 @@ Codes and balance can change after Friday game updates. Tier names and some stat
 - [Tier List](https://mergeanuke.site/tier-list): Merge levels and community-reported nuke names
 - [Raid Guide](https://mergeanuke.site/raid): PvP raids, allies, wars, betrayal rules, event maps, Mystery Supply Drops, and Lock Base defense
 - [Offline Cash](https://mergeanuke.site/offline-cash): Passive income and pre-logout setup
-- [Commanders](https://mergeanuke.site/commanders): All 25 commanders, Advanced Warfare Pack, PvP/income/event tier lists, and drop tables
+- [Commanders](https://mergeanuke.site/commanders): Full list of all 25 commanders with abilities and how to get each — Advanced Warfare Pack, Overclocker/Barrier for Rebirth 8, tier lists, drop tables
+- [Overclocker](https://mergeanuke.site/commanders/overclocker): How to get Overclocker on Oil Rig, Overclock ability, Rebirth 8 gate
+- [Barrier](https://mergeanuke.site/commanders/barrier): How to get Barrier on Shipping Port, Rebirth 8 requirement (ability pending)
+- [Artillery](https://mergeanuke.site/commanders/artillery): How to get Artillery on Downtown and Retaliation ability
 - [Updates](https://mergeanuke.site/updates): Friday patch log — July 13 Allies & Warfare, Commanders Pt. 2, July 4 LTM, Rebirth 8
 - [FAQ](https://mergeanuke.site/faq): Rebirth, allies, code troubleshooting, and wiki scope
 

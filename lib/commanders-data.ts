@@ -24,6 +24,12 @@ export type Commander = {
   eventMap?: CommanderEventMap
   /** Optional in-game portrait path under /public, e.g. /images/commanders/salvager.webp */
   image?: string
+  /** Short primary acquisition path for search / quick-answer UI. */
+  acquireSummary?: string
+  /** Commander-specific acquisition steps shown above the generic methods list. */
+  acquireSteps?: string[]
+  /** When set, detail page shows a Rebirth 8 gate callout. */
+  rebirth8Note?: string
 }
 
 function slugifyCommanderName(name: string) {
@@ -143,6 +149,14 @@ export const COMMANDERS: Commander[] = [
     notes:
       "Added in Commanders Pt. 2 (June 28, 2026). Community reports ~30% drop weight on Downtown. Retaliation text confirmed from in-game commander card (June 2026).",
     eventMap: "Downtown",
+    acquireSummary:
+      "Farm Downtown while the event is live — community reports ~30% drop weight for Artillery vs Broker.",
+    acquireSteps: [
+      "Check that Downtown is the live event map before grinding.",
+      "Clear Downtown targets and compete for the commander spawn — last hit captures Artillery.",
+      "Community drop reports put Artillery around ~30% on Downtown (Broker ~70%); treat weights as unverified.",
+      "If the event is down, try the Shop, Mystery Supply Drops, or wait for the next Downtown rotation.",
+    ],
   },
   {
     name: "Barrier",
@@ -156,6 +170,16 @@ export const COMMANDERS: Commander[] = [
       "Added in Commanders Pt. 2 (June 28, 2026). Community reports ~30% drop weight on Shipping Port. Required commander for Rebirth 8 (July 13, 2026 patch).",
     pending: true,
     eventMap: "Shipping Port",
+    acquireSummary:
+      "Farm Shipping Port while the event is live — community reports ~30% drop weight for Barrier vs Foreman.",
+    acquireSteps: [
+      "Check that Shipping Port is the live event map before grinding.",
+      "Clear Shipping Port targets and take the last hit on the Barrier spawn.",
+      "Community drop reports put Barrier around ~30% on Shipping Port (Foreman ~70%); treat weights as unverified.",
+      "You can also buy Barrier in the Shop or roll Mystery Supply Drops if the event is offline.",
+    ],
+    rebirth8Note:
+      "Barrier is reported as part of the Rebirth 8 unlock gate with Overclocker and the final Index nuke tier. Confirm the exact in-game UI before spending Robux or cash.",
   },
   {
     name: "Looter",
@@ -203,6 +227,16 @@ export const COMMANDERS: Commander[] = [
     notes:
       "Added in Commanders Pt. 2 (June 28, 2026). Community reports ~30% drop weight on Oil Rig. Required commander for Rebirth 8 (July 13, 2026 patch). Ability wording from Hoplas2 July 4 video (46HqVOGK57o); verify whether 58% / 14s scales by commander level.",
     eventMap: "Oil Rig",
+    acquireSummary:
+      "Farm Oil Rig while the event is live — community reports ~30% drop weight for Overclocker vs Looter.",
+    acquireSteps: [
+      "Check that Oil Rig is the live event map before grinding.",
+      "Clear Oil Rig targets and take the last hit on the Overclocker spawn.",
+      "Community drop reports put Overclocker around ~30% on Oil Rig (Looter ~70%); treat weights as unverified.",
+      "Shop purchases and Mystery Supply Drops are backup options when Oil Rig is not rotating.",
+    ],
+    rebirth8Note:
+      "Overclocker is reported as part of the Rebirth 8 unlock gate with Barrier and the final Index nuke tier. Confirm the exact in-game UI before spending Robux or cash.",
   },
   {
     name: "Tank",

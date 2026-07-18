@@ -3,6 +3,7 @@ import Link from "next/link"
 import {
   ArrowLeft,
   ArrowRight,
+  CheckCircle2,
   Coins,
   Crown,
   ShieldAlert,
@@ -38,6 +39,7 @@ export function CommanderDetail({ commander }: { commander: Commander }) {
   const role = ROLE_META[commander.role]
   const RoleIcon = commander.pending ? Sparkles : role.icon
   const related = getRelatedCommanders(commander)
+  const hasAcquireGuide = Boolean(commander.acquireSummary || commander.acquireSteps?.length)
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
@@ -96,6 +98,50 @@ export function CommanderDetail({ commander }: { commander: Commander }) {
           />
         ) : null}
 
+        {commander.acquireSummary ? (
+          <div className="mt-6 rounded-2xl border border-primary/25 bg-primary/5 p-4 sm:p-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+              Quick answer
+            </p>
+            <p className="mt-2 text-sm font-semibold text-foreground">
+              How to get {commander.name}
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              {commander.acquireSummary}
+            </p>
+          </div>
+        ) : null}
+
+        {commander.rebirth8Note ? (
+          <div className="mt-4 rounded-2xl border border-hazard/30 bg-hazard/5 p-4 sm:p-5">
+            <p className="text-sm font-bold text-foreground">Rebirth 8 requirement</p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              {commander.rebirth8Note}
+            </p>
+            <div className="mt-3 flex flex-wrap gap-3 text-sm">
+              {commander.name !== "Overclocker" ? (
+                <Link
+                  href="/commanders/overclocker"
+                  className="font-semibold text-primary hover:underline"
+                >
+                  Overclocker
+                </Link>
+              ) : null}
+              {commander.name !== "Barrier" ? (
+                <Link
+                  href="/commanders/barrier"
+                  className="font-semibold text-primary hover:underline"
+                >
+                  Barrier
+                </Link>
+              ) : null}
+              <Link href="/progression" className="font-semibold text-primary hover:underline">
+                Rebirth 8 checklist
+              </Link>
+            </div>
+          </div>
+        ) : null}
+
         {commander.pending ? (
           <p className="mt-6 rounded-xl border border-primary/25 bg-primary/5 px-4 py-3 text-sm text-muted-foreground">
             {commander.limited
@@ -136,12 +182,42 @@ export function CommanderDetail({ commander }: { commander: Commander }) {
 
       <section className="mt-10">
         <h3 className="text-lg font-bold text-foreground">How to get {commander.name}</h3>
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          {commander.eventMap
-            ? `${commander.name} is tied to the ${commander.eventMap} event. While that event is live, clear the map or defeat the spawned commander — last hit captures it.`
-            : "Commanders can be captured on the map, bought in the Shop, earned from milestones, rolled from Mystery Supply Drops, or dropped from event maps depending on the unit."}
-        </p>
-        <ul className="mt-5 space-y-3">
+        {hasAcquireGuide ? (
+          <>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              {commander.acquireSummary ??
+                (commander.eventMap
+                  ? `${commander.name} is tied to the ${commander.eventMap} event. While that event is live, clear the map or defeat the spawned commander — last hit captures it.`
+                  : "Use the primary path below first, then fall back to Shop or Supply Drops if needed.")}
+            </p>
+            {commander.acquireSteps?.length ? (
+              <ul className="mt-5 space-y-2.5">
+                {commander.acquireSteps.map((step) => (
+                  <li
+                    key={step}
+                    className="flex gap-2 text-sm leading-relaxed text-muted-foreground"
+                  >
+                    <CheckCircle2
+                      className="mt-0.5 size-4 shrink-0 text-primary"
+                      aria-hidden="true"
+                    />
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+            <p className="mt-6 text-sm font-semibold text-foreground">
+              Other ways to get commanders
+            </p>
+          </>
+        ) : (
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            {commander.eventMap
+              ? `${commander.name} is tied to the ${commander.eventMap} event. While that event is live, clear the map or defeat the spawned commander — last hit captures it.`
+              : "Commanders can be captured on the map, bought in the Shop, earned from milestones, rolled from Mystery Supply Drops, or dropped from event maps depending on the unit."}
+          </p>
+        )}
+        <ul className={`space-y-3 ${hasAcquireGuide ? "mt-3" : "mt-5"}`}>
           {ACQUIRE_METHODS.map((method) => (
             <li
               key={method.id}
