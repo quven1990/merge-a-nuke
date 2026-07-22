@@ -2,7 +2,7 @@
 
 > Independent fan-made strategy wiki for Merge a Nuke on Roblox — not affiliated with Roblox Corporation or Nuke The Game.
 
-Last updated: 2026-07-18
+Last updated: 2026-07-22
 
 Working codes (June 2026): ATOMIC ($10,000 + 20 nukes), UPDATE2 ($10,000 + 10 nukes), BOOM ($5,000). Redeem: Shop (left) → scroll to bottom → enter code → Redeem. Upgrade Max Spawn before redeeming nuke-heavy codes. New players: merge same-level pairs (2+2=4) → buy Spawn Speed then Spawn Tier → lock base before raiding.
 
@@ -19,7 +19,7 @@ Codes and balance can change after Friday game updates. Tier names and some stat
 - [Raid Guide](https://mergeanuke.site/raid): PvP raids, allies, wars, Contract Board, Volcano & Disco Admin Abuse, Town Square, Mystery Supply Drops, and Lock Base defense
 - [Offline Cash](https://mergeanuke.site/offline-cash): Passive income and pre-logout setup
 - [Commanders](https://mergeanuke.site/commanders): Full list of all 28 commanders with abilities and how to get each — Contract Board Diplomat, Advanced Warfare Pack, Overclocker/Barrier for Rebirth 8, tier lists, drop tables
-- [Diplomat](https://mergeanuke.site/commanders/diplomat): Contract Board Unique Commander — Daily/Weekly/Monthly contracts, 14-day rotation
+- [Diplomat](https://mergeanuke.site/commanders/diplomat): How to get Diplomat via Contract Board — Daily/Weekly/Monthly slots, named contracts, 14-day Unique rotation (ability pending)
 - [Welder](https://mergeanuke.site/commanders/welder): Common unit from the July 18, 2026 patch (ability pending)
 - [Forklift Operator](https://mergeanuke.site/commanders/forklift-operator): Rare unit from the July 18, 2026 patch (ability pending)
 - [Overclocker](https://mergeanuke.site/commanders/overclocker): How to get Overclocker on Oil Rig, Overclock ability, Rebirth 8 gate
@@ -31,7 +31,8 @@ Codes and balance can change after Friday game updates. Tier names and some stat
 ## Optional
 
 - [Community](https://mergeanuke.site/community): Official Roblox game, tester application form, and About-tab links (group, Discord)
-- [Blog](https://mergeanuke.site/blog): Sourced gameplay articles — tester applications, Rebirth 8 requirements, wars, commander cards
+- [Blog](https://mergeanuke.site/blog): Sourced gameplay articles — how to get Diplomat / Contract Board, Rebirth 8, wars, commander cards
+- [How to get Diplomat](https://mergeanuke.site/blog/how-to-get-diplomat-contract-board-july-2026): Contract Board Daily/Weekly/Monthly guide, Unique 14-day rotation, launch contract names
 - [Privacy Policy](https://mergeanuke.site/privacy): Analytics, cookies, and data handling
 - [Terms of Use](https://mergeanuke.site/terms): Fan-site disclaimer and liability limits
 - [Contact](mailto:contact@mergeanuke.site): Questions or corrections about this wiki

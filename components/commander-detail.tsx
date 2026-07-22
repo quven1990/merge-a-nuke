@@ -142,11 +142,34 @@ export function CommanderDetail({ commander }: { commander: Commander }) {
           </div>
         ) : null}
 
+        {hasAcquireGuide && commander.acquireSteps?.length ? (
+          <div className="mt-6">
+            <h3 className="text-base font-bold text-foreground">
+              Step-by-step: how to get {commander.name}
+            </h3>
+            <ul className="mt-4 space-y-2.5">
+              {commander.acquireSteps.map((step) => (
+                <li
+                  key={step}
+                  className="flex gap-2 text-sm leading-relaxed text-muted-foreground"
+                >
+                  <CheckCircle2
+                    className="mt-0.5 size-4 shrink-0 text-primary"
+                    aria-hidden="true"
+                  />
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+
         {commander.pending ? (
-          <p className="mt-6 rounded-xl border border-primary/25 bg-primary/5 px-4 py-3 text-sm text-muted-foreground">
-            {commander.limited
-              ? "Limited-time or recently added commander — ability details are still pending in-game verification. This page will update once confirmed."
-              : "Recently added commander — ability details are still pending in-game verification. This page will update once confirmed."}
+          <p className="mt-6 rounded-xl border border-border/70 bg-card/60 px-4 py-3 text-sm text-muted-foreground">
+            Passive ability text is still pending in-game verification
+            {commander.acquireSummary
+              ? " — use the how-to-get steps above meanwhile."
+              : ". This page will update once a card read is confirmed."}
           </p>
         ) : null}
 
@@ -181,35 +204,14 @@ export function CommanderDetail({ commander }: { commander: Commander }) {
       </div>
 
       <section className="mt-10">
-        <h3 className="text-lg font-bold text-foreground">How to get {commander.name}</h3>
+        <h3 className="text-lg font-bold text-foreground">
+          {hasAcquireGuide ? "Other ways to get commanders" : `How to get ${commander.name}`}
+        </h3>
         {hasAcquireGuide ? (
-          <>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              {commander.acquireSummary ??
-                (commander.eventMap
-                  ? `${commander.name} is tied to the ${commander.eventMap} event. While that event is live, clear the map or defeat the spawned commander — last hit captures it.`
-                  : "Use the primary path below first, then fall back to Shop or Supply Drops if needed.")}
-            </p>
-            {commander.acquireSteps?.length ? (
-              <ul className="mt-5 space-y-2.5">
-                {commander.acquireSteps.map((step) => (
-                  <li
-                    key={step}
-                    className="flex gap-2 text-sm leading-relaxed text-muted-foreground"
-                  >
-                    <CheckCircle2
-                      className="mt-0.5 size-4 shrink-0 text-primary"
-                      aria-hidden="true"
-                    />
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-            <p className="mt-6 text-sm font-semibold text-foreground">
-              Other ways to get commanders
-            </p>
-          </>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            {commander.name}&apos;s primary path is above. These fallback methods apply to the
+            wider commander pool and may not drop Contract Board exclusives.
+          </p>
         ) : (
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             {commander.eventMap

@@ -174,7 +174,7 @@ export const SEO_PAGES = {
     path: "/blog",
     title: "Merge a Nuke Blog — Sourced Gameplay Articles",
     description:
-      "Merge a Nuke blog with cited YouTube gameplay and wiki cross-links — wars, commanders, and patch mechanics without guessed stats.",
+      "Merge a Nuke blog with cited patch notes and gameplay — Diplomat Contract Board how-to, wars, Rebirth 8, and commander cards without guessed stats.",
     h1: "Merge a Nuke Blog",
     intro:
       "Short articles sourced from gameplay footage and our verified guides — each post lists YouTube sources and what is still pending.",

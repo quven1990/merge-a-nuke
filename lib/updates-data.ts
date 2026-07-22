@@ -34,6 +34,7 @@ export const PATCH_UPDATES: PatchUpdate[] = [
       "Held nukes now take damage when your base is attacked; nuke healing speed is reduced.",
     ],
     links: [
+      { label: "How to get Diplomat (blog)", href: "/blog/how-to-get-diplomat-contract-board-july-2026" },
       { label: "Raid, events & Admin Abuse", href: "/raid" },
       { label: "All commanders", href: "/commanders" },
       { label: "Diplomat commander", href: "/commanders/diplomat" },

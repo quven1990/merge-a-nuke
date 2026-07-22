@@ -41,6 +41,170 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "how-to-get-diplomat-contract-board-july-2026",
+    title: "How to Get Diplomat in Merge a Nuke — Contract Board Guide (July 2026)",
+    description:
+      "How to unlock Diplomat (Legendary) via the Merge a Nuke Contract Board: Daily, Weekly, and Monthly slots, named launch contracts, Unique Commander progress, and the 14-day rotation rule.",
+    published: "2026-07-22",
+    updated: "2026-07-22",
+    tldr: [
+      "Diplomat is Legendary and Contract Board-exclusive — not a normal map-boat last-hit capture and not an Advanced Warfare Pack unit.",
+      "The board has 5 Daily, 5 Weekly, and 2 Monthly slots; each tier refreshes on its own timer.",
+      "Contracts pay cash, temporary boosts, permanent stat boosts, and Unique Commander progress toward Diplomat.",
+      "The Unique slot rotates every 14 days and only becomes claimable after you finish all available contracts on the board.",
+      "Diplomat ability card text is still unverified publicly — this guide covers how to get it, not guessed passives.",
+    ],
+    sections: [
+      {
+        type: "p",
+        text: "If you searched “how to get Diplomat Merge a Nuke,” you are looking for the July 18, 2026 Contract Board path — not another map spawn farm. Diplomat is the first Unique Commander tied to that board. This guide sticks to official patch wording and the Roblox CONTRACTS! event framing; it does not invent ability numbers.",
+      },
+      {
+        type: "callout",
+        title: "What this guide will not claim",
+        text: "As of July 22, 2026 we have not found a public creator card-read for Diplomat’s passive. Treat any third-party ability spreadsheet as unverified until you screenshot the in-game card.",
+      },
+      {
+        type: "h2",
+        text: "What the Contract Board is",
+      },
+      {
+        type: "p",
+        text: "The Contract Board shipped in the July 18 patch alongside Volcano Admin Abuse, a Disco Admin Abuse rework, Town Square Tier 1, Welder, and Forklift Operator. Roblox event listings labeled the window roughly July 18–25/26, 2026 (PT) as “CONTRACTS!” — quests that unlock new commanders, with Saturday Admin Abuse called out in the same blurb.",
+      },
+      {
+        type: "ul",
+        items: [
+          "5 Daily contract slots — refresh on a daily timer.",
+          "5 Weekly contract slots — refresh on a weekly timer.",
+          "2 Monthly contract slots — filled from a small monthly rotation set.",
+          "Rewards: cash, temporary boosts, permanent stat boosts, and Unique Commander progress.",
+          "Unique Commander contract: rotates every 14 days; claim only after all available contracts are completed.",
+        ],
+      },
+      {
+        type: "cta",
+        title: "Need the live raid / events page?",
+        text: "Contract Board sits next to Admin Abuse and Town Square on the raid guide. Use that page when you want the full July 18 mechanics list in one place.",
+        href: "/raid",
+        label: "Open raid, events & Contract Board",
+      },
+      {
+        type: "h2",
+        text: "Launch contract names (July 18 set)",
+      },
+      {
+        type: "p",
+        text: "Official patch notes published the first contract names. Use these as a checklist when the board first opened; later refreshes may swap objectives while keeping the same slot counts.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Daily: Nuisance, Doomsday, Backstabber, Military Money Moves, I'm The Captain Now.",
+          "Weekly: Damage Do-er, Peacekeeper, Triple Threat, Credit Stealer, Leader.",
+          "Monthly rotation into 2 slots: Ultimate Arsenal, Damage Do-er-er, Nuclear Threat.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step-by-step: unlock Diplomat",
+      },
+      {
+        type: "ul",
+        items: [
+          "Open the Contract Board in-game after the July 18 update.",
+          "Clear Daily contracts as they refresh — they are the fastest Unique progress loop.",
+          "Keep Weekly contracts moving so you do not stall Unique progress on longer timers.",
+          "Fill Monthly slots from the three-name rotation as they appear.",
+          "Watch Unique Commander progress climb from completed contracts.",
+          "Only claim Diplomat after every available contract on the board is finished — the Unique reward is gated behind a clear board, not a single lucky Daily.",
+          "Remember the Unique exclusive rotates every 14 days; Diplomat is the first exclusive in that slot, so later uniques will replace that claim window.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Common mistake",
+        text: "Do not wait for a map boat labeled Diplomat. Map last-hits still work for many commanders, but Diplomat’s documented path is Contract Board completion — same idea as “quests unlock commanders” in the CONTRACTS! Roblox event text.",
+      },
+      {
+        type: "h2",
+        text: "Diplomat vs Welder vs Forklift Operator",
+      },
+      {
+        type: "p",
+        text: "The same Friday patch added three commanders. Only Diplomat is called out as the Contract Board Unique exclusive.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Diplomat (Legendary) — Contract Board Unique path; ability pending verification.",
+          "Welder (Common) — added with the patch; treat as a normal post-patch pool unit until you confirm spawn/shop sources in your lobby.",
+          "Forklift Operator (Rare) — same as Welder: patch roster add, ability pending.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Long-tail FAQ answers (search-style)",
+      },
+      {
+        type: "ul",
+        items: [
+          "How do you get Diplomat in Merge a Nuke? Finish Contract Board Dailies, Weeklies, and Monthlies for Unique progress, then claim after the board is fully cleared.",
+          "Is Diplomat in the Advanced Warfare Pack? No — that pack is a separate July 13 path (Medic, Sapper, Scout, Grifter, Recon, Drone).",
+          "Does Diplomat spawn on a boat? Not as the documented primary unlock; use the Contract Board.",
+          "What does Diplomat’s ability do? Unverified on this wiki until an in-game card screenshot exists.",
+          "When does the Unique Commander change? Every 14 days per the July 18 notes.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "What to do after you claim Diplomat",
+      },
+      {
+        type: "ul",
+        items: [
+          "Read the card in your commander menu and keep a screenshot — that is how this wiki will replace the pending ability line.",
+          "Keep clearing refreshed contracts for cash and permanent boosts even after Unique is claimed.",
+          "Cross-check Friday patch notes on the update log; Contract Board objectives can rotate without a full wiki rewrite the same night.",
+          "If you still need Rebirth 8, Diplomat and Barrier remain separate gates — Diplomat does not replace those requirements.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label: "Merge a Nuke July 18, 2026 patch notes — Contract Board / Unique Commander (this wiki update log)",
+        url: "https://mergeanuke.site/updates",
+        note: "Summarizes official July 18 notes: slot counts, named contracts, 14-day Unique rotation, Diplomat exclusive",
+      },
+      {
+        label: "Roblox event framing — CONTRACTS! (quests unlock commanders)",
+        url: "https://www.roblox.com/games/10199301628/Merge-a-Nuke",
+        note: "Event window cited around July 18–25/26, 2026 PT on community trackers; Saturday Admin Abuse mentioned in the same blurb",
+      },
+    ],
+    endCta: {
+      title: "Open the Diplomat page next",
+      description:
+        "Use the commander detail for the step list and pending ability banner, then keep the raid and updates pages open for Contract Board and Friday patches.",
+      links: [
+        { label: "Diplomat commander", href: "/commanders/diplomat", primary: true },
+        { label: "Contract Board on raid guide", href: "/raid" },
+        { label: "July 18 update log", href: "/updates" },
+        { label: "All 28 commanders", href: "/commanders" },
+        { label: "Welder commander", href: "/commanders/welder" },
+        { label: "Forklift Operator commander", href: "/commanders/forklift-operator" },
+      ],
+    },
+    relatedLinks: [
+      { label: "Diplomat commander", href: "/commanders/diplomat" },
+      { label: "Raid, events & Contract Board", href: "/raid" },
+      { label: "July 18 update log", href: "/updates" },
+      { label: "Welder commander", href: "/commanders/welder" },
+      { label: "Forklift Operator commander", href: "/commanders/forklift-operator" },
+      { label: "All commanders", href: "/commanders" },
+    ],
+  },
+  {
     slug: "merge-a-nuke-tester-application-guide-july-2026",
     title: "Merge a Nuke Tester Application Guide — Requirements, Questions & Deadline",
     description:

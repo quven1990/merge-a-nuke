@@ -236,7 +236,7 @@ export const PAGE_FAQS: Partial<Record<SeoPageConfig["path"], PageFaq[]>> = {
     },
     {
       q: "How do you get Diplomat in Merge a Nuke?",
-      a: "Diplomat is the first Contract Board Unique Commander (July 18, 2026). Complete Daily, Weekly, and Monthly contracts for Unique Commander progress. The exclusive contract rotates every 14 days and only becomes claimable after you finish all available contracts on the board.",
+      a: "Diplomat is the first Contract Board Unique Commander (July 18, 2026). Open the board (5 Daily, 5 Weekly, 2 Monthly slots), clear contracts for Unique Commander progress, then claim only after finishing all available contracts. The Unique slot rotates every 14 days. Launch Daily names include Nuisance, Doomsday, Backstabber, Military Money Moves, and I'm The Captain Now. Ability card text is still pending verification — Diplomat is not a normal map-boat capture. Step-by-step walkthrough: /blog/how-to-get-diplomat-contract-board-july-2026.",
     },
     {
       q: "What new commanders were added in the July 13, 2026 patch?",

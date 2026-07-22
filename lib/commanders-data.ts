@@ -405,20 +405,25 @@ export const COMMANDERS: Commander[] = [
     name: "Diplomat",
     rarity: "Legendary",
     role: "income",
-    ability: "Contract Board-exclusive Unique Commander — ability text pending in-game verification.",
-    bestFor: "Contract Board grind — first Unique Commander reward from the rotating exclusive slot",
+    ability:
+      "Ability card text is still unverified publicly (no creator card read found as of July 22, 2026). Official patch notes only confirm Diplomat is Legendary and Contract Board-exclusive — not the passive numbers.",
+    bestFor:
+      "Players grinding the Contract Board for the rotating Unique Commander reward (first exclusive in that slot)",
     priority: "A",
     notes:
-      "Added July 18, 2026 as the first Contract Board-exclusive Unique Commander. The Unique Commander contract rotates every 14 days and requires all available contracts to be completed before it can be claimed.",
+      "Added July 18, 2026. Role tag on this wiki is provisional until the in-game card is verified. Roblox event listings labeled the window “CONTRACTS!” (about July 18–25/26, 2026 PT) as quests that unlock new commanders, with Saturday Admin Abuse called out in the same blurb.",
     pending: true,
     eventMap: "Contract Board",
     acquireSummary:
-      "Earn Diplomat from the Contract Board Unique Commander track — complete Daily, Weekly, and Monthly contracts, then claim after finishing all available contracts.",
+      "Complete Contract Board Daily, Weekly, and Monthly contracts for Unique Commander progress, then claim Diplomat after finishing every available contract on the board (Unique slot rotates every 14 days).",
     acquireSteps: [
-      "Open the Contract Board and clear Daily (5), Weekly (5), and Monthly (2) slots as they refresh.",
-      "Contract rewards include cash, temporary boosts, permanent stat boosts, and Unique Commander progress.",
-      "The Unique Commander contract rotates every 14 days and only becomes claimable after all available contracts are completed.",
-      "Diplomat is the first Contract Board-exclusive Unique Commander listed in the July 18, 2026 patch notes.",
+      "Open the Contract Board in-game (July 18, 2026 patch). It has 5 Daily slots, 5 Weekly slots, and 2 Monthly slots — each refreshes on its own timer.",
+      "Clear contracts as they refresh. Official launch Daily set: Nuisance, Doomsday, Backstabber, Military Money Moves, I'm The Captain Now.",
+      "Weekly set: Damage Do-er, Peacekeeper, Triple Threat, Credit Stealer, Leader.",
+      "Monthly rotation (3 contracts into 2 slots): Ultimate Arsenal, Damage Do-er-er, Nuclear Threat.",
+      "Rewards from contracts: cash, temporary boosts, permanent stat boosts, and Unique Commander progress.",
+      "The Unique Commander contract rotates every 14 days and only becomes claimable after all available contracts are completed — Diplomat is the first Contract Board-exclusive Unique Commander.",
+      "Diplomat is not a normal map-boat capture and is not listed as an Advanced Warfare Pack unit; treat Contract Board as the primary path.",
     ],
   },
 ]

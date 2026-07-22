@@ -44,7 +44,7 @@ export function buildCommanderSeoPage(commander: Commander): SeoPageConfig {
     ? [
         commander.acquireSummary,
         commander.pending
-          ? `Ability still pending full in-game verification — current note: ${commander.ability}`
+          ? "Passive ability numbers are still pending in-game verification on this wiki."
           : `Ability: ${commander.ability}`,
         commander.rebirth8Note
           ? "Reported as part of the Rebirth 8 unlock gate — confirm the in-game UI."
